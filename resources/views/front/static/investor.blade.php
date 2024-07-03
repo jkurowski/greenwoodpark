@@ -395,7 +395,7 @@
                             </div>
                         </div>
 
-                        <a href="/apartamenty/" class="btn btn-main mt-4">
+                        <a href="/apartamenty" class="btn btn-main mt-4">
                             dostępne mieszkania
                             <img
                                     class="ps-4"

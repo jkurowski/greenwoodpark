@@ -16,7 +16,7 @@
                                 <a href="/">Strona główna</a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="/apartamenty/">Apartamenty</a>
+                                <a href="/apartamenty">Apartamenty</a>
                             </li>
                             <li class="breadcrumb-item">
                                 <a href="{{ route('front.developro.investment.building', ['buildingSlug' => $building->slug]) }}">{{$building->name}}</a>

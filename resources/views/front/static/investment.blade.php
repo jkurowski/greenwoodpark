@@ -47,7 +47,7 @@
                             </div>
                         </div>
 
-                        <a href="/apartamenty/" class="btn btn-main mt-4" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-220">DOSTĘPNE MIESZKANIA <img class="ps-4" src="{{ asset('images/arrow-right.svg') }}" height="15.644" alt="strzałka" /> </a>
+                        <a href="/apartamenty" class="btn btn-main mt-4" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-220">DOSTĘPNE MIESZKANIA <img class="ps-4" src="{{ asset('images/arrow-right.svg') }}" height="15.644" alt="strzałka" /> </a>
                     </article>
 
                     <div class="col-lg-6 offset-lg-1 position-relative align-self-lg-center slider-container" data-aos="fade-left" data-aos-delay="400">
@@ -509,7 +509,7 @@
                             </div>
                         </div>
 
-                        <a href="/apartamenty/" class="btn btn-main mt-4">
+                        <a href="/apartamenty" class="btn btn-main mt-4">
                             DOSTĘPNE MIESZKANIA
                             <img class="ps-4" src="{{ asset('images/arrow-right.svg') }}" height="15.644" alt="strzałka" />
                         </a>

@@ -35,27 +35,27 @@
                 <p class="footer-title pb-4 mb-0">Menu</p>
                 <ul class="list-unstyled">
                     <li class="pb-3 link-con">
-                        <a class="footer-link link-anim" href="/o-inwestycji/"
+                        <a class="footer-link link-anim" href="/o-inwestycji"
                         >O INWESTYCJI</a
                         >
                     </li>
                     <li class="pb-3 link-con">
-                        <a class="footer-link link-anim" href="/apartamenty/"
+                        <a class="footer-link link-anim" href="/apartamenty"
                         >APARTAMENTY</a
                         >
                     </li>
                     <li class="pb-3 link-con">
-                        <a class="footer-link link-anim" href="/galeria/"
+                        <a class="footer-link link-anim" href="/galeria"
                         >GALERIA</a
                         >
                     </li>
                     <li class="pb-3 link-con">
-                        <a class="footer-link link-anim" href="/udogodnienia/"
+                        <a class="footer-link link-anim" href="/udogodnienia"
                         >UDOGODNIENIA</a
                         >
                     </li>
                     <li class="link-con">
-                        <a class="footer-link link-anim" href="/inwestor/"
+                        <a class="footer-link link-anim" href="/inwestor"
                         >INWESTOR</a
                         >
                     </li>

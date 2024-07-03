@@ -14,7 +14,7 @@
                                 <a href="/">Strona główna</a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="/apartamenty/">Apartamenty</a>
+                                <a href="/apartamenty">Apartamenty</a>
                             </li>
                             <li class="breadcrumb-item">
                                 <a href="{{ route('front.developro.investment.building', ['buildingSlug' => $building->slug]) }}">{{$building->name}}</a>
@@ -255,7 +255,7 @@
                                 data-aos-delay="200"
                                 data-aos-offset="120"
                         >
-                            <a href="/apartamenty/" class="ap-card-link">
+                            <a href="/apartamenty" class="ap-card-link">
                                 <div class="ap-card" data-order="1">
                                     <div class="box">
                                         <div class="type">1-pokojowe</div>
@@ -288,7 +288,7 @@
                                 data-aos-delay="400"
                                 data-aos-offset="120"
                         >
-                            <a href="/apartamenty/" class="ap-card-link">
+                            <a href="/apartamenty" class="ap-card-link">
                                 <div class="ap-card" data-order="2">
                                     <div class="box">
                                         <div class="type">2-pokojowe</div>
@@ -321,7 +321,7 @@
                                 data-aos-delay="600"
                                 data-aos-offset="120"
                         >
-                            <a href="/apartamenty/" class="ap-card-link">
+                            <a href="/apartamenty" class="ap-card-link">
                                 <div class="ap-card" data-order="3">
                                     <div class="box">
                                         <div class="type">3-pokojowe</div>
@@ -354,7 +354,7 @@
                                 data-aos-delay="800"
                                 data-aos-offset="120"
                         >
-                            <a href="/apartamenty/" class="ap-card-link">
+                            <a href="/apartamenty" class="ap-card-link">
                                 <div class="ap-card" data-order="4">
                                     <div class="box">
                                         <div class="type">4-pokojowe</div>
@@ -384,7 +384,7 @@
                     </div>
                     <div class="row text-center mt-5">
                         <div class="col-12 col-sm-6 offset-sm-3">
-                            <a class="cta-link" href="/apartamenty/">
+                            <a class="cta-link" href="/apartamenty">
                                 zobacz wszystkie
                                 <img
                                         class="ps-4"

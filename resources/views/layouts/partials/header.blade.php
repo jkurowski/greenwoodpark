@@ -66,7 +66,7 @@
             <div class="collapse navbar-collapse justify-content-end bg-white position-relative" id="navbarNav">
                 <ul class="navbar-nav fw-light py-4 py-xl-0 gap-2 gap-xl-4 align-items-xxl-center">
                     <li class="nav-item text-uppercase">
-                        <a class="nav-link link-anim @if($page->slug == 'o-inwestycji') active @endif" href="/o-inwestycji/">O inwestycji</a>
+                        <a class="nav-link link-anim @if($page->slug == 'o-inwestycji') active @endif" href="/o-inwestycji">O inwestycji</a>
                     </li>
                     <li class="nav-item text-uppercase">
                         <a class="nav-link link-anim" href="/apartamenty">Apartamenty</a>

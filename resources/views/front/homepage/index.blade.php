@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <a
-                                href="/kontakt/"
+                                href="/kontakt"
                                 class="btn btn-main mt-4"
                                 data-aos="fade-up"
                                 data-aos-delay="100"
@@ -307,7 +307,7 @@
                             </div>
                         </div>
 
-                        <a href="/apartamenty/" class="btn btn-main mt-4">
+                        <a href="/apartamenty" class="btn btn-main mt-4">
                             DOSTĘPNE MIESZKANIA
                             <img
                                     class="ps-4"
@@ -875,7 +875,7 @@
                             </div>
                         </div>
 
-                        <a href="/apartamenty/" class="btn btn-main mt-4">
+                        <a href="/apartamenty" class="btn btn-main mt-4">
                             sprawdź
                             <img
                                     class="ps-4"
@@ -969,7 +969,7 @@
                                 data-aos="fade-right"
                                 data-aos-delay="200"
                         >
-                            <a href="/apartamenty/" class="ap-card-link">
+                            <a href="/apartamenty" class="ap-card-link">
                                 <div class="ap-card" data-order="1">
                                     <div class="box">
                                         <div class="type">1-pokojowe</div>
@@ -1001,7 +1001,7 @@
                                 data-aos="fade-right"
                                 data-aos-delay="400"
                         >
-                            <a href="/apartamenty/" class="ap-card-link">
+                            <a href="/apartamenty" class="ap-card-link">
                                 <div class="ap-card" data-order="2">
                                     <div class="box">
                                         <div class="type">2-pokojowe</div>
@@ -1033,7 +1033,7 @@
                                 data-aos="fade-right"
                                 data-aos-delay="600"
                         >
-                            <a href="/apartamenty/" class="ap-card-link">
+                            <a href="/apartamenty" class="ap-card-link">
                                 <div class="ap-card" data-order="3">
                                     <div class="box">
                                         <div class="type">3-pokojowe</div>
@@ -1065,7 +1065,7 @@
                                 data-aos="fade-right"
                                 data-aos-delay="800"
                         >
-                            <a href="/apartamenty/" class="ap-card-link">
+                            <a href="/apartamenty" class="ap-card-link">
                                 <div class="ap-card" data-order="4">
                                     <div class="box">
                                         <div class="type">4-pokojowe</div>
@@ -1095,7 +1095,7 @@
                     </div>
                     <div class="row text-center mt-5">
                         <div class="col-12 col-sm-6 offset-sm-3">
-                            <a class="cta-link" href="/apartamenty/">
+                            <a class="cta-link" href="/apartamenty">
                                 zobacz wszystkie
                                 <img
                                         class="ps-4"
@@ -1162,7 +1162,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <a class="btn btn-main mt-auto" href="/inwestor/">
+                                <a class="btn btn-main mt-auto" href="/inwestor">
                                     SPRAWDŹ
                                     <img
                                             class="ps-4"
@@ -1239,7 +1239,7 @@
                                 </div>
                                 <a
                                         class="btn btn-main btn-main--white-slider mt-auto"
-                                        href="/o-inwestycji/"
+                                        href="/o-inwestycji"
                                 >
                                     SPRAWDŹ
                                     <img
