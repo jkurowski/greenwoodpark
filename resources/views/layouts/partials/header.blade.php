@@ -69,19 +69,19 @@
                         <a class="nav-link link-anim @if($page->slug == 'o-inwestycji') active @endif" href="/o-inwestycji/">O inwestycji</a>
                     </li>
                     <li class="nav-item text-uppercase">
-                        <a class="nav-link link-anim" href="/apartamenty/">Apartamenty</a>
+                        <a class="nav-link link-anim" href="/apartamenty">Apartamenty</a>
                     </li>
                     <li class="nav-item text-uppercase">
-                        <a class="nav-link link-anim @if($page->slug == 'galeria') active @endif" href="/galeria/">Galeria</a>
+                        <a class="nav-link link-anim @if($page->slug == 'galeria') active @endif" href="/galeria">Galeria</a>
                     </li>
                     <li class="nav-item text-uppercase">
-                        <a class="nav-link link-anim @if($page->slug == 'udogodnienia') active @endif" href="/udogodnienia/">Udogodnienia</a>
+                        <a class="nav-link link-anim @if($page->slug == 'udogodnienia') active @endif" href="/udogodnienia">Udogodnienia</a>
                     </li>
                     <li class="nav-item text-uppercase">
-                        <a class="nav-link link-anim @if($page->slug == 'inwestor') active @endif" href="/inwestor/">Inwestor</a>
+                        <a class="nav-link link-anim @if($page->slug == 'inwestor') active @endif" href="/inwestor">Inwestor</a>
                     </li>
                     <li class="nav-item text-uppercase">
-                        <a class="nav-link link-anim @if($page->slug == 'kontakt') active @endif" href="/kontakt/">KONTAKT</a>
+                        <a class="nav-link link-anim @if($page->slug == 'kontakt') active @endif" href="/kontakt">KONTAKT</a>
                     </li>
                     <li class="nav-item mt-3 text-uppercase d-flex justify-content-between li-hidden">
                         <div class="info-container__email info-container__box">
