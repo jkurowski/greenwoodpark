@@ -82,15 +82,9 @@
     </div>
     <div class="col-12">
         <div class="fs-7 mt-4">
-            Aby świadczyć usługi na najwyższym poziomie, strona
-            internetowa Kalter Nieruchomości Sp. z o.o. wykorzystuje
-            pliki cookies zapisywane w pamięci przeglądarki. Szczegółowe
-            informacje na temat celu ich używania oraz zmiany ustawień
-            plików cookies w przeglądarce internetowej znajdują się w
-            Polityce prywatności – obowiązki informacyjne. Dalsze
-            korzystanie z serwisu bez zmiany ustawień dotyczących
-            cookies w przeglądarce oznacza potwierdzenie zapoznania się
-            z powyższymi informacjami.
+            <p>Zgodnie z art. 13 ust.1 i ust. 2 Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych informujemy, że administratorem Pani/Pana danych osobowych jest Madey Development spółka z ograniczoną odpowiedzialnością 2 sp.k., z siedzibą w  93-120 Łódź ul. Przybyszewskiego 199/205. Dane będą przetwarzane w celu założenia i prowadzenia konta klienta na stronie internetowej w tym przede wszystkim świadczenia usług drogą elektroniczną jak również w celu komunikacji.</p>
+            <p></p>
+            <p>Osobie, której dane dotyczą, przysługuje prawo dostępu do treści swoich danych oraz ich poprawiania a także prawo sprzeciwu i żądania zaprzestania przetwarzania i usunięcia swoich danych osobowych.. Podanie danych osobowych przez użytkownika jest dobrowolne, jednakże odmowa podania danych osobowych spowoduje  brak możliwości skontaktowania się oraz udzielenia ewentualnej odpowiedzi na treść zamieszczoną w formularzu kontaktowym (w tym celu możesz wysłać takie oświadczenie na adres email biuro@madej-bud.pl lub pisemnie na adres siedziby.</p>
         </div>
     </div>
     @foreach ($rules as $r)
