@@ -68,11 +68,20 @@ class BuildingPropertyController extends Controller
 
     public function store(PropertyFormRequest $request, Investment $investment, Building $building, Floor $floor)
     {
-        $property = $this->repository->create(array_merge($request->validated(), [
+        $validatedData = $request->validated();
+        if (isset($validatedData['additional']) && is_array($validatedData['additional'])) {
+            $validatedData['additional'] = json_encode($validatedData['additional']);
+        }
+
+        // Merge the validated data with additional IDs
+        $mergedData = array_merge($validatedData, [
             'investment_id' => $investment->id,
             'building_id' => $building->id,
             'floor_id' => $floor->id
-        ]));
+        ]);
+
+        // Create the property
+        $property = $this->repository->create($mergedData);
 
         if ($request->hasFile('file')) {
             $this->service->upload($request->name, $request->file('file'), $property);
