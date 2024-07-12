@@ -149,7 +149,7 @@
                                             </div>
                                         </div>
                                         <div class="col">
-                                            @include('front.contact.form')
+                                            @include('front.contact.form', ['page_name' => 'Kontakt'])
                                         </div>
                                     </div>
                                 </div>

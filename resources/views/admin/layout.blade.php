@@ -87,8 +87,8 @@
                                     <span class="bullet bullet-dot"></span>
                                 </span> RODO</a>
                         </li>
-                        <li {{ Request::routeIs('admin.crm.inbox.*') ? 'class=active' : '' }}>
-                            <a href="{{ route('admin.crm.inbox.index') }}">
+                        <li {{ Request::routeIs('admin.crm.clients.*') ? 'class=active' : '' }}>
+                            <a href="{{ route('admin.crm.clients.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span> Leads</a>

@@ -32,13 +32,6 @@
                                         <div class="chat-text-desc">Nazwa inwestycji <span class="separator">·</span> Mieszkanie nr. 1 / Pokoje: 4 / 40 m<sup>2</sup></div>
                                     </div>
                                     <div class="chat-text-date w-50 pt-1 ps-2" title="{{ $msg->created_at }}">{{$msg->created_at->diffForHumans()}}</div>
-                                    <div class="chat-text-action w-50 pt-1 pe-2">
-                                        <a role="button" data-bs-toggle="dropdown" aria-expanded="false" class="dropdown-menu-dots"><i class="fe-more-horizontal-"></i></a>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item dropdown-item-replay" href="#">Odpowiedz</a></li>
-                                            <li><a class="dropdown-item dropdown-item-mark" href="#">Oznacz jako ważna</a></li>
-                                        </ul>
-                                    </div>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
@@ -59,68 +52,12 @@
                                     <div class="clearfix"></div>
                                 @endforeach
                             @endforeach
-
-                            <div class="chat-box d-flex align-items-end float-start mb-4">
-                                <div class="chat-avatar">
-                                    <div class="avatar">
-                                        <span class="avatar-title rounded-circle">JK</span>
-                                    </div>
-                                </div>
-                                <div class="chat-text">
-                                    <div class="chat-text-content">
-                                        <h4>Oferta nr. 4</h4>
-                                        <p>W nawiązaniu do spotkania przesyłam rzut wybranych mieszkań. W razie decyzji, proszę o telefon.</p>
-                                        <div class="row d-flex justify-content-center">
-                                            <div class="col-4">
-                                                <div class="offer">
-                                                    <img src="https://www.kalternieruchomosci.pl/files/inwestycje/pomieszczenie/lista/20220115013046-mieszkanie-d110.jpg" alt="" class="mb-2">
-                                                    <p><b>Mieszkanie D/110</b></p>
-                                                    <p>Pokoje: 4</p>
-                                                    <p>Pow.: 81.37 m<sup>2</sup></p>
-                                                    <p>Piętro: 2</p>
-                                                    <a href="">Link do mieszkania</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="offer">
-                                                    <img src="https://www.kalternieruchomosci.pl/files/inwestycje/pomieszczenie/lista/20220115124524-mieszkanie-a17.jpg" alt="" class="mb-2">
-                                                    <p><b>Mieszkanie A/17</b></p>
-                                                    <p>Pokoje: 3</p>
-                                                    <p>Pow.: 47.68 m<sup>2</sup></p>
-                                                    <p>Piętro: 3</p>
-                                                    <a href="">Link do mieszkania</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="chat-text-date">29-08-2022 11:46:34</div>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <div class="chat-box d-flex align-items-end float-start mb-4">
-                                <div class="chat-avatar">
-                                    <div class="avatar">
-                                        <span class="avatar-title rounded-circle">JK</span>
-                                    </div>
-                                </div>
-                                <div class="chat-text">
-                                    <div class="chat-text-content">
-                                        <p>Bardzo proszę :) Przesyłam jako załącznik umowę do podpisania oraz regulamin. Pozdrawiam</p>
-                                        <div class="file"><i class="fe-file-text"></i> <a href="">Umowa kupna-sprzedazy.pdf</a></div>
-                                        <div class="file"><i class="fe-file-text"></i> <a href="">Regulamin.pdf</a></div>
-                                    </div>
-                                    <div class="chat-text-date">30-08-2022 09:02:55</div>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @routes('chat')
     @push('scripts')
         <script>
             const chat = $("#chat");

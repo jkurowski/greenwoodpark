@@ -81,9 +81,6 @@ class IndexController extends Controller
         //dd($list);
 
         return Datatables::of($list)
-            ->editColumn('name', function ($row) {
-                return '<a href="' . route('admin.crm.clients.chat.show', $row->client->id) . '">' . $row->client->name . '</a>';
-            })
             ->editColumn('mail', function ($row) {
                 return $row->client->mail;
             })

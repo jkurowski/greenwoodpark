@@ -1308,7 +1308,7 @@
                         </div>
                     </div>
                     <div class="col col-lg-6 offset-lg-3">
-                        @include('front.contact.form')
+                        @include('front.contact.form', ['page_name' => 'Strona główna'])
                     </div>
                 </div>
             </div>

@@ -21,15 +21,6 @@
                         @method('PUT')
                         @csrf
                         <div class="row w-100 mb-4">
-                            <div class="col-3">
-                                @include('form-elements.html-select', ['label' => 'Status', 'name' => 'status', 'selected' => '', 'select' => ['1' => 'Aktywny']])
-                            </div>
-                            <div class="col-3">
-                                @include('form-elements.html-select', ['label' => 'Opiekun', 'name' => 'user_id', 'selected' => '', 'select' => ['1' => 'Jan Kowalski']])
-                            </div>
-                        </div>
-
-                        <div class="row w-100 mb-4">
                             <div class="col-6">
                                 @include('form-elements.html-input-text', ['label' => 'Imię', 'name' => 'name', 'value' => $client->name, 'required' => 1])
                             </div>
@@ -53,76 +44,6 @@
                             </div>
                             <div class="col-6">
                                 @include('form-elements.html-input-text', ['label' => 'Telefon 2', 'name' => 'phone2', 'value' => $client->phone2])
-                            </div>
-                        </div>
-
-                        <div class="row w-100">
-                            <div class="col-12">
-                                <div class="section">CRM</div>
-                            </div>
-                        </div>
-
-                        <div class="row w-100 mb-4">
-                            <div class="col-6">
-                                @include('form-elements.html-select', ['label' => 'Źródło kontaktu', 'name' => 'source', 'selected' => $client->source, 'select' => [
-                                    '1' => 'Formularz kontaktowy',
-                                    '2' => 'Bezpośrednia wiadomość e-mail',
-                                    '3' => 'Telefon',
-                                    '4' => 'Chat online',
-                                    '5' => 'Media społecznościowe',
-                                    '6' => 'Reklama',
-                                    '7' => 'Newsletter',
-                                    '8' => 'Rekomendacje',
-                                    '9' => 'Wydarzenia i konferencje',
-                                    '10' => 'Kontakt osobisty',
-                                    '11' => 'Inne'
-                                ]])
-                            </div>
-                            <div class="col-6">
-                                @include('form-elements.html-input-text', ['label' => 'Dodatkowa informacja o źródle', 'name' => 'source_additional', 'value' => $client->source_additional])
-                            </div>
-                        </div>
-
-                        <div class="row w-100 mb-4">
-                            <div class="col-6">
-                                @include('form-elements.html-select', ['label' => 'Status sprzedaży', 'name' => 'deal', 'selected' => $client->deal, 'select' => [
-                                    '1' => 'Kontakt początkowy',
-                                    '2' => 'Oferta',
-                                    '3' => 'Rozmowy/negocjacje',
-                                    '4' => 'Oczekiwanie na decyzję',
-                                    '5' => 'Wstrzymane',
-                                    '6' => 'Rezygnacja',
-                                    '7' => 'Inne'
-                                    ]])
-                            </div>
-                            <div class="col-6">
-                                @include('form-elements.html-input-text', ['label' => 'Dodatkowa informacja o statusie sprzedaży', 'name' => 'deal_additional', 'value' => $client->deal_additional])
-                            </div>
-                        </div>
-
-                        <div class="row w-100 mb-4">
-                            <div class="col-4">
-                                @include('form-elements.html-select', ['label' => 'Inwestycja', 'name' => 'investment_id', 'selected' => '', 'select' => ['1' => 'Nazwa inwestycji']])
-                            </div>
-                            <div class="col-4">
-                                @include('form-elements.html-input-text', ['label' => 'Pokoje', 'name' => 'room', 'value' => $client->room])
-                            </div>
-                            <div class="col-4">
-                                @include('form-elements.html-input-text', ['label' => 'Metraż', 'name' => 'area', 'value' => $client->area])
-                            </div>
-                        </div>
-
-                        <div class="row w-100 mb-4">
-                            <div class="col-6">
-                                @include('form-elements.html-input-text', ['label' => 'Budżet', 'name' => 'budget', 'value' => $client->budget])
-                            </div>
-                            <div class="col-6">
-                                @include('form-elements.html-input-text', ['label' => 'Przeznaczenie', 'name' => 'purpose', 'value' => $client->purpose])
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 text-end">
-                                <input name="submit" id="submit" value="Zapisz" class="btn btn-primary" type="submit">
                             </div>
                         </div>
                     </form>

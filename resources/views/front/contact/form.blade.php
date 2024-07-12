@@ -21,7 +21,9 @@
                         id="user-name"
                         placeholder="Imię i nazwisko"
                         name="form_name"
+                        required=""
                         value="{{ old('form_name') }}"
+                        data-prompt-position="topLeft:0"
                 />
                 <label for="user-name">Imię i nazwisko</label>
                 @error('form_name')
@@ -40,6 +42,7 @@
                         name="form_email"
                         required=""
                         value="{{ old('form_email') }}"
+                        data-prompt-position="topLeft:0"
                 />
                 <label for="user-email">Adres e-mail</label>
                 @error('form_email')
@@ -56,6 +59,7 @@
                         placeholder="Telefon"
                         name="form_phone"
                         value="{{ old('form_phone') }}"
+                        data-prompt-position="topLeft:0"
                 />
                 <label for="user-tel">Telefon</label>
                 @error('form_phone')
@@ -72,6 +76,7 @@
                               id="user-message"
                               style="height: 100px"
                               name="form_message"
+                              data-prompt-position="topLeft:0"
                       >{{ old('form_message') }}</textarea>
                 <label for="user-message">Wiadomość</label>
                 @error('form_message')
@@ -91,11 +96,11 @@
         <div class="col-12">
             <div class="form-check text-start pt-3 @error('rule_'.$r->id) is-invalid @enderror">
                 <input
-                        class="form-check-input"
-                        type="checkbox @if($r->required === 1) validate[required] @endif"
-                        value=""
+                        class="form-check-input @if($r->required === 1) validate[required] @endif"
+                        type="checkbox"
                         id="rule_{{$r->id}}"
                         name="rule_{{$r->id}}"
+                        data-prompt-position="topLeft:0"
                 />
                 <label class="form-check-label small fw-medium" for="rule_{{$r->id}}">{!! $r->text !!}</label>
                 @error('rule_'.$r->id)
@@ -104,9 +109,10 @@
             </div>
         </div>
     @endforeach
+    <input type="hidden" name="page_name" value="{{ $page_name }}">
     <div class="col-12 text-center text-sm-start">
         <script type="text/javascript">
-            document.write("<button data-btn-submit=\"\" type=\"submit\" class=\"btn btn-main mt-5 btn-submit\" disabled>WYŚLIJ <img class=\"ps-4\" src=\"{{ asset('images/arrow-right.svg') }}\" height=\"15.644\" alt=\"Wyślij formularz\"/></button>");
+            document.write("<button data-btn-submit=\"\" type=\"submit\" class=\"btn btn-main mt-5 btn-submit\">WYŚLIJ <img class=\"ps-4\" src=\"{{ asset('images/arrow-right.svg') }}\" height=\"15.644\" alt=\"Wyślij formularz\"/></button>");
         </script>
         <noscript>Do poprawnego działania, Java musi być włączona.</noscript>
     </div>

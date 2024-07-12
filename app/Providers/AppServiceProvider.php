@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Client;
 use App\Models\InvestmentArticles;
 use App\Models\InvestmentPage;
 use App\Models\RodoRules;
+use App\Observers\ClientObserver;
 use App\Observers\InvestmentArticleObserver;
 use App\Observers\InvestmentPageObserver;
 use Illuminate\Support\Facades\Blade;
@@ -115,5 +117,7 @@ class AppServiceProvider extends ServiceProvider
         Investment::observe(InvestmentObserver::class);
         InvestmentPage::observe(InvestmentPageObserver::class);
         InvestmentArticles::observe(InvestmentArticleObserver::class);
+
+        Client::observe(ClientObserver::class);
     }
 }

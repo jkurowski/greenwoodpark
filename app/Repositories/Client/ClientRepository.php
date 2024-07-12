@@ -7,6 +7,7 @@ use App\Models\ClientMessageArgument;
 use App\Models\ClientRules;
 use App\Models\Property;
 use App\Repositories\BaseRepository;
+use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\DataTables;
 
 class ClientRepository extends BaseRepository implements ClientRepositoryInterface
@@ -53,49 +54,96 @@ class ClientRepository extends BaseRepository implements ClientRepositoryInterfa
             ->get(['id', 'user_id', 'name', 'description', 'file', 'mime', 'size', 'created_at', 'updated_at']);
     }
 
-    public function createClient($attributes, $property = null)
+    public function createClient($attributes, $property = null, $status = 1)
     {
-        $utm_array = array_filter($attributes->cookie());
-        unset($utm_array['XSRF-TOKEN'], $utm_array['laravel_session']);
+        Log::info('Call createClient');
 
-        $client = $this->model->updateOrCreate(
-            ['mail' => $attributes['form_email']],
-            [
-                'phone' => $attributes['form_phone'] ?? NULL,
-                'name' => $attributes['form_name'],
-                'updated_at' => now()
-            ]
-        );
+        if (isset($attributes['cookie']) && is_array($attributes['cookie'])) {
+            $utm_array = array_filter($attributes->cookie());
+            unset($utm_array['XSRF-TOKEN'], $utm_array['laravel_session']);
+        }
 
-        if($client->id){
+        Log::info('Request: ' . $attributes['form_email']);
+        Log::info('Request: ' . $attributes['form_phone']);
+        Log::info('Request: ' . $attributes['form_name']);
+        Log::info('Request: ' . $status);
 
-            $source = strtok($attributes->headers->get('referer'), '?');
+        try {
+            // Additional logging before updateOrCreate
+            Log::info('Attempting to updateOrCreate client');
 
-            $msg = new ClientMessage;
-            $msg->client_id = $client->id;
-            $msg->message = $attributes['form_message'];
-            $msg->ip = $attributes->ip();
-            $msg->source = $source;
+//            $client = $this->model->updateOrCreate(
+//                ['mail' => $attributes['email']],
+//                [
+//                    'phone' => $attributes['phone'] ?? NULL,
+//                    'name' => $attributes['name'],
+//                    'status' => $status,
+//                    'updated_at' => now()
+//                ]
+//            );
 
-            if($property){
-                $msg->investment = $property->investment_id;
-                $msg->building = $property->building_id;
-                $msg->floor = $property->floor_id;
-                $msg->property = $property->name;
-                $msg->rooms = $property->rooms;
-                $msg->area = $property->area;
+            // Find the record by email or create a new instance
+            $client = $this->model->firstOrNew(['mail' => $attributes['form_email']]);
+
+// Check if the client already exists
+            if ($client->exists) {
+                // Client exists, update attributes
+                $client->phone = $attributes['form_phone'] ?? null;
+                $client->name = $attributes['form_name'];
+                $client->status = $status;
+                $client->updated_at = now();
+
+                // Save and trigger the 'updated' event
+                $client->save();
+            } else {
+                // Client does not exist, set attributes
+                $client->phone = $attributes['form_phone'] ?? null;
+                $client->name = $attributes['form_name'];
+                $client->status = $status;
+                $client->created_at = now(); // Optional: set created_at manually if needed
+                $client->updated_at = now();
+
+                // Save and trigger the 'created' event
+                $client->save();
+            }
+
+            if ($client->wasRecentlyCreated) {
+                Log::info('Client was created: ' . $client->id);
+            } else {
+                Log::info('Client was updated: ' . $client->id);
+            }
+
+        } catch (\Exception $e) {
+            Log::error('Error during updateOrCreate: ' . $e->getMessage());
+        }
+
+        if(isset($attributes['form_message']) && $client->id){
+
+            //$source = strtok($attributes->headers->get('referer'), '?');
+
+            $msg = ClientMessage::create([
+                'client_id' => $client->id,
+                'message' => $attributes['form_message'],
+                'ip' => $attributes->ip(),
+                'source' => $attributes['form_page'],
+            ]);
+
+            if ($property) {
+                $propertyMappings = [
+                    'investment_id' => $property->investment_id,
+                    'building_id' => $property->building_id,
+                    'floor_id' => $property->floor_id,
+                    'property_id' => $property->id,
+                    'rooms' => $property->rooms,
+                    'area' => $property->area,
+                ];
+
+                $arguments = array_merge($propertyMappings, $utm_array);
+                $jsonArguments = json_encode($arguments);
+                $msg->arguments = $jsonArguments;
             }
 
             $msg->save();
-
-            foreach($utm_array as $key => $item) {
-                $cma = new ClientMessageArgument();
-                $cma->argument = str_replace('dp_', '', $key);
-                $cma->value = $item;
-                $cma->msg_id = $msg->id;
-                $cma->save();
-            }
-
         }
 
         return $client;
