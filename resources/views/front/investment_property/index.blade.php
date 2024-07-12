@@ -20,7 +20,7 @@
                                 <a href="{{ route('front.developro.investment.building', ['buildingSlug' => $building->slug]) }}">{{$building->name}}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                <a href="{{route('front.developro.investment.floor', [$building->slug, $floor, Str::slug($floor->name)])}}">{{$investment->floor->name}}</a>
+                                <a href="{{route('front.developro.investment.floor', [$building->slug, $property->floor, Str::slug($property->floor->name)])}}">{{$property->floor->name}}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 {{$property->name}}
@@ -35,40 +35,44 @@
         <!-- Apartment Card -->
         <section class="apartment">
             <div class="container">
-                <div
-                        class="d-flex flex-column gap-5 flex-sm-row justify-content-between align-items-center margin-wrapper-smallest margin-wrapper-smallest-bottom-sm"
-                >
-                    <a href="#" class="btn btn-main-inverted">
-                        <img
-                                class="pe-4 disable"
-                                src="{{ asset('images/arrow_left.svg') }}"
-                                height="15"
-                                alt="strzałka"
-                        />
-
+                <div class="d-flex flex-column gap-5 flex-sm-row justify-content-between align-items-center margin-wrapper-smallest margin-wrapper-smallest-bottom-sm">
+                    @if($prev)
+                    <a href="{{ route('front.developro.investment.property', [
+                                                        $prev->building->slug,
+                                                        Str::slug($prev->floor->name),
+                                                        $prev,
+                                                        Str::slug($prev->name),
+                                                        floorLevel($prev->floor->number, true),
+                                                        number2RoomsName($prev->rooms, true),
+                                                        round(floatval($prev->area), 2).'-m2'
+                                                    ]) }}" class="btn btn-main-inverted">
+                        <img class="pe-4 disable" src="{{ asset('images/arrow_left.svg') }}" height="15" alt="strzałka"/>
                         poprzednie
                     </a>
-                    <a
-                            href="#"
-                            class="text-uppercase text-black link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover link-primary fs-5"
-                    >plan piętra</a
-                    >
-                    <a href="#" class="btn btn-main">
+                    @endif
+                    <a href="{{route('front.developro.investment.floor', [$property->building->slug, $property->floor, Str::slug($property->floor->name)])}}" class="text-uppercase text-black link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover link-primary fs-5"
+                    >plan piętra</a>
+                    @if($next)
+                    <a href="{{ route('front.developro.investment.property', [
+                                                        $next->building->slug,
+                                                        Str::slug($next->floor->name),
+                                                        $next,
+                                                        Str::slug($next->name),
+                                                        floorLevel($next->floor->number, true),
+                                                        number2RoomsName($next->rooms, true),
+                                                        round(floatval($next->area), 2).'-m2'
+                                                    ]) }}" class="btn btn-main">
                         następne
                         <img class="ps-4" src="{{ asset('images/arrow-right.svg') }}" height="15.644" alt="strzałka" height="15.644" alt="strzałka"/>
                     </a>
+                    @endif
                 </div>
-                <div
-                        class="container order-2 margin-wrapper-xxs margin-wrapper-sm-xl"
-                >
+                <div class="container order-2 margin-wrapper-xxs margin-wrapper-sm-xl">
                     <div class="row about">
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-md-5 mb-5 mb-sm-0">
-                                    <article
-                                            class="about-common d-flex flex-column justify-content-between h-100"
-                                            data-aos="fade-up"
-                                    >
+                                    <article class="about-common d-flex flex-column justify-content-between h-100" data-aos="fade-up">
                                         <div class="d-flex flex-column gap-5">
                                             <div>
                                                 <!-- ICON on to of a header title  -->
@@ -87,34 +91,23 @@
                                                     <span> {{$property->number}} </span>
                                                 </h2>
                                                 <!-- SUBTITLE -->
-                                                <span class="subtitle-1 text-danger">SPRZEDANE</span>
+                                                {!! roomPageStatusBadge($property->status) !!}
                                             </div>
                                             <div class="d-flex flex-column gap-2 w-75">
                                                 <div class="d-flex justify-content-between">
                                                     <span>pokoje:</span>
-                                                    <span> 2</span>
+                                                    <span> {{$property->rooms}}</span>
                                                 </div>
                                                 <div class="d-flex justify-content-between">
                                                     <span>metraż:</span>
-                                                    <span> 43,23 m<sup>2</sup></span>
+                                                    <span> {{$property->area}} m<sup>2</sup></span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
-                                                class="row mt-5 align-items-sm-center flex-column flex-sm-row"
-                                        >
-                                            <a
-                                                    href="#contact"
-                                                    class="btn btn-main w-fit-content col-6 order-1"
-                                            >
+                                        <div class="row mt-5 align-items-sm-center flex-column flex-sm-row">
+                                            <a href="#contact" class="btn btn-main w-fit-content col-6 order-1">
                                                 ZAPYTAJ O MIESZKANIE
-                                                <img
-                                                        class="ps-4"
-                                                        src="{{ asset('images/arrow-right.svg') }}"
-                                                        height="15.644"
-                                                        alt="strzałka"
-                                                        height="15"
-                                                />
+                                                <img class="ps-4" src="{{ asset('images/arrow-right.svg') }}" height="15.644" alt="strzałka" height="15"/>
                                             </a>
                                             @if($property->file_pdf)
                                             <a class="col order-0 order-lg-3 pb-4 pb-lg-0 text-black link-offset-2 link-underline link-underline-opacity-0 ms-auto link-underline-opacity-100-hover" href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}">POBIERZ KARTĘ .PDF</a>
@@ -126,12 +119,9 @@
                                     @if ($property->file)
                                         <a href="{{ asset('/investment/property/' . $property->file) }}" class="swipebox">
                                             <picture>
-                                                <source type="image/webp"
-                                                        srcset="{{ asset('/investment/property/thumbs/webp/' . $property->file_webp) }}">
-                                                <source type="image/jpeg"
-                                                        srcset="{{ asset('/investment/property/thumbs/' . $property->file) }}">
-                                                <img src="{{ asset('/investment/property/thumbs/' . $property->file) }}"
-                                                     alt="{{ $property->name }}" class="w-100">
+                                                <source type="image/webp" srcset="{{ asset('/investment/property/thumbs/webp/' . $property->file_webp) }}">
+                                                <source type="image/jpeg" srcset="{{ asset('/investment/property/thumbs/' . $property->file) }}">
+                                                <img src="{{ asset('/investment/property/thumbs/' . $property->file) }}" alt="{{ $property->name }}" class="w-100">
                                             </picture>
                                         </a>
                                     @endif
