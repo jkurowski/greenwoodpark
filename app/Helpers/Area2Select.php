@@ -7,7 +7,7 @@ if (! function_exists('area2Select')) {
         $html = '';
         foreach ($var as $pozycja) {
             $html .= '<option value="'.$pozycja.'"';
-            if (request()->input('area') == $pozycja) {
+            if (request()->input('s_metry') == $pozycja) {
                 $html .= ' selected';
             }
             $html .= '>';
