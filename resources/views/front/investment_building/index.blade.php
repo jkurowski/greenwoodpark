@@ -49,24 +49,15 @@
                 <div class="row">
                     <div class="px-0 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
                         <form class="apartments-form">
-                            <select
-                                    name=""
-                                    id=""
-                                    class="form-select apartments-form-select"
-                                    aria-label="Pokoje"
-                            >
+                            <select name="" id="" class="form-select apartments-form-select" aria-label="Pokoje" >
                                 <option selected>pokoje</option>
                                 <option value="1">1 pokój</option>
                                 <option value="2">2 pokoje</option>
                                 <option value="3">3 pokoje</option>
                                 <option value="4">4 pokoje</option>
                             </select>
-                            <select
-                                    name=""
-                                    id=""
-                                    class="form-select apartments-form-select"
-                                    aria-label="Metraż"
-                            >
+
+                            <select name="" id="" class="form-select apartments-form-select" aria-label="Metraż">
                                 <option selected>Metraż</option>
                                 <option value="1">1 Metraż</option>
                                 <option value="2">2 Metraże</option>
@@ -75,49 +66,23 @@
                             </select>
                             <!-- To handle this dropdown change JS in main.js file -->
                             <div class="dropdown dropdown-checkbox">
-                                <button
-                                        class="form-select apartments-form-select text-start"
-                                        type="button"
-                                        id="multiSelectDropdown"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                >
-                                    Udogodnienia
-                                </button>
-                                <ul
-                                        class="dropdown-menu"
-                                        aria-labelledby="multiSelectDropdown"
-                                >
+                                <button class="form-select apartments-form-select text-start" type="button" id="multiSelectDropdown" data-bs-toggle="dropdown" aria-expanded="false">Udogodnienia</button>
+                                <ul class="dropdown-menu" aria-labelledby="multiSelectDropdown">
                                     <li>
-                                        <label>
-                                            <input type="checkbox" value="Balkon" />
-                                            Balkon
-                                        </label>
+                                        <label><input type="checkbox" value="Balkon" />Balkon</label>
                                     </li>
                                     <li>
-                                        <label>
-                                            <input type="checkbox" value="Ogrod" />
-                                            Ogród
-                                        </label>
+                                        <label><input type="checkbox" value="Ogrod" />Ogród</label>
                                     </li>
                                     <li>
-                                        <label>
-                                            <input type="checkbox" value="Loggia" />
-                                            Loggia
-                                        </label>
+                                        <label><input type="checkbox" value="Loggia" />Loggia</label>
                                     </li>
                                     <li>
-                                        <label>
-                                            <input type="checkbox" value="Taras" />
-                                            Taras
-                                        </label>
+                                        <label><input type="checkbox" value="Taras" />Taras</label>
                                     </li>
                                 </ul>
                             </div>
-                            <button
-                                    class="btn btn-casual d-flex align-items-center gap-2"
-                                    type="button"
-                            >
+                            <button class="btn btn-casual d-flex align-items-center gap-2" type="button">
                                 Szukaj<img src="{{ asset('images/search.svg') }}" />
                             </button>
                         </form>
@@ -252,977 +217,100 @@
 
                 <div class="row">
                     <div class="col-12 col-xl-10 offset-xl-1">
-                        <!-- GRID ROWS -->
-
-                        <ul
-                                class="row apartments-grid gy-4 gx-lg-0 mt-4 mt-sm-0 justify-content-lg-start"
-                                id="grid-rows"
-                        >
+                        <ul class="row apartments-grid gy-4 gx-lg-0 mt-4 mt-sm-0 justify-content-lg-start" id="grid-rows">
                             <!-- DOSTĘPNE  -->
-                            <li
-                                    class="col-12 box"
-                                    data-aos="fade-right"
-                                    data-aos-delay="100"
-                                    data-aos-offset="-120"
-                            >
-                                <span class="text-success text-uppercase">dostępne</span>
-                                <div
-                                        class="d-flex justify-content-center align-items-start gap-3 gap-lg-6"
-                                >
-                    <span class="text-uppercase">
-                      Mieszkanie <br />
-                      A1.08
-                    </span>
-                                    <a
-                                            href="/img/apartments/project-small.png"
-                                            class="glightbox"
-                                    >
-                                        <img
-                                                src="/img/apartments/project-small.png"
-                                                srcset="
-                          /img/apartments/project-small.png    1x,
-                          /img/apartments/project-small@2x.png 2x
-                        "
-                                                decoding="async"
-                                                loading="lazy"
-                                                width="83"
-                                                height="59"
-                                                alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <div
-                                        class="d-flex justify-content-around gap-3 gap-lg-6 text-capitalize"
-                                >
-                                    <span> pokoje 2 </span>
-                                    <span class="line">&nbsp;</span>
-                                    <span> metraż: 43,24m<sup>2</sup> </span>
-                                </div>
-                                <a href="/mieszkanie.html" class="btn btn-main">
-                                    zobacz
-                                    <img
-                                            class="ps-4"
-                                            src="{{ asset('images/arrow-right.svg') }}"
-                                            height="15.644"
-                                            alt="strzałka w prawo"
-                                    />
-                                </a>
-                            </li>
-                            <li
-                                    class="col-12 box"
-                                    data-aos="fade-right"
-                                    data-aos-delay="100"
-                                    data-aos-offset="-120"
-                            >
-                                <span class="text-success text-uppercase">dostępne</span>
-                                <div
-                                        class="d-flex justify-content-around align-items-center gap-3 gap-lg-6"
-                                >
-                    <span class="text-uppercase">
-                      Mieszkanie <br />
-                      A1.08
-                    </span>
-                                    <a
-                                            href="/img/apartments/project-small.png"
-                                            class="glightbox"
-                                    >
-                                        <img
-                                                src="/img/apartments/project-small.png"
-                                                srcset="
-                          /img/apartments/project-small.png    1x,
-                          /img/apartments/project-small@2x.png 2x
-                        "
-                                                decoding="async"
-                                                loading="lazy"
-                                                width="83"
-                                                height="59"
-                                                alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <div
-                                        class="d-flex justify-content-around gap-3 gap-lg-6 text-capitalize"
-                                >
-                                    <span> pokoje 2 </span>
-                                    <span class="line">&nbsp;</span>
-                                    <span> metraż: 43,24m<sup>2</sup> </span>
-                                </div>
-                                <a href="/mieszkanie.html" class="btn btn-main">
-                                    zobacz
-                                    <img
-                                            class="ps-4"
-                                            src="{{ asset('images/arrow-right.svg') }}"
-                                            height="15.644"
-                                            alt="strzałka w prawo"
-                                    />
-                                </a>
-                            </li>
-                            <!-- SPRZEDANE  -->
+                            @foreach($properties as $p)
+                                <li class="col-12 box" data-aos="fade-right" data-aos-delay="100" data-aos-offset="-120">
 
-                            <li
-                                    class="col-12 box"
-                                    data-aos="fade-right"
-                                    data-aos-delay="100"
-                                    data-aos-offset="-120"
-                            >
-                                <span class="text-danger text-uppercase">SPRZEDANE</span>
-                                <div
-                                        class="d-flex justify-content-around align-items-center gap-3 gap-lg-6"
-                                >
-                    <span class="text-uppercase">
-                      Mieszkanie <br />
-                      A1.08
-                    </span>
-                                    <a
-                                            href="/img/apartments/project-small.png"
-                                            class="glightbox"
-                                    >
-                                        <img
-                                                src="/img/apartments/project-small.png"
-                                                srcset="
-                          /img/apartments/project-small.png    1x,
-                          /img/apartments/project-small@2x.png 2x
-                        "
-                                                decoding="async"
-                                                loading="lazy"
-                                                width="83"
-                                                height="59"
-                                                alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <div
-                                        class="d-flex justify-content-around gap-3 gap-lg-6 text-capitalize"
-                                >
-                                    <span> pokoje 2 </span>
-                                    <span class="line">&nbsp;</span>
-                                    <span> metraż: 43,24m<sup>2</sup> </span>
-                                </div>
-                                <a href="/mieszkanie.html" class="btn btn-main">
-                                    zobacz
-                                    <img
-                                            class="ps-4"
-                                            src="{{ asset('images/arrow-right.svg') }}"
-                                            height="15.644"
-                                            alt="strzałka w prawo"
-                                    />
-                                </a>
-                            </li>
-                            <li
-                                    class="col-12 box"
-                                    data-aos="fade-right"
-                                    data-aos-delay="100"
-                                    data-aos-offset="-120"
-                            >
-                                <span class="text-danger text-uppercase">SPRZEDANE</span>
-                                <div
-                                        class="d-flex justify-content-around align-items-center gap-3 gap-lg-6"
-                                >
-                    <span class="text-uppercase">
-                      Mieszkanie <br />
-                      A1.08
-                    </span>
-                                    <a
-                                            href="/img/apartments/project-small.png"
-                                            class="glightbox"
-                                    >
-                                        <img
-                                                src="/img/apartments/project-small.png"
-                                                srcset="
-                          /img/apartments/project-small.png    1x,
-                          /img/apartments/project-small@2x.png 2x
-                        "
-                                                decoding="async"
-                                                loading="lazy"
-                                                width="83"
-                                                height="59"
-                                                alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <div
-                                        class="d-flex justify-content-around gap-3 gap-lg-6 text-capitalize"
-                                >
-                                    <span> pokoje 2 </span>
-                                    <span class="line">&nbsp;</span>
-                                    <span> metraż: 43,24m<sup>2</sup> </span>
-                                </div>
-                                <a href="/mieszkanie.html" class="btn btn-main">
-                                    zobacz
-                                    <img
-                                            class="ps-4"
-                                            src="{{ asset('images/arrow-right.svg') }}"
-                                            height="15.644"
-                                            alt="strzałka w prawo"
-                                    />
-                                </a>
-                            </li>
-                            <!-- REZERWACJA  -->
-                            <li
-                                    class="col-12 box"
-                                    data-aos="fade-right"
-                                    data-aos-delay="100"
-                                    data-aos-offset="-120"
-                            >
-                                <span class="text-warning text-uppercase">REZERWACJA</span>
-                                <div
-                                        class="d-flex justify-content-around align-items-center gap-3 gap-lg-6"
-                                >
-                    <span class="text-uppercase">
-                      Mieszkanie <br />
-                      A1.08
-                    </span>
-                                    <a
-                                            href="/img/apartments/project-small.png"
-                                            class="glightbox"
-                                    >
-                                        <img
-                                                src="/img/apartments/project-small.png"
-                                                srcset="
-                          /img/apartments/project-small.png    1x,
-                          /img/apartments/project-small@2x.png 2x
-                        "
-                                                decoding="async"
-                                                loading="lazy"
-                                                width="83"
-                                                height="59"
-                                                alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <div
-                                        class="d-flex justify-content-around gap-3 gap-lg-6 text-capitalize"
-                                >
-                                    <span> pokoje 2 </span>
-                                    <span class="line">&nbsp;</span>
-                                    <span> metraż: 43,24m<sup>2</sup> </span>
-                                </div>
-                                <a href="/mieszkanie.html" class="btn btn-main">
-                                    zobacz
-                                    <img
-                                            class="ps-4"
-                                            src="{{ asset('images/arrow-right.svg') }}"
-                                            height="15.644"
-                                            alt="strzałka w prawo"
-                                    />
-                                </a>
-                            </li>
-                            <li
-                                    class="col-12 box"
-                                    data-aos="fade-right"
-                                    data-aos-delay="100"
-                                    data-aos-offset="-120"
-                            >
-                                <span class="text-danger text-uppercase">SPRZEDANE</span>
-                                <div
-                                        class="d-flex justify-content-around align-items-center gap-3 gap-lg-6"
-                                >
-                    <span class="text-uppercase">
-                      Mieszkanie <br />
-                      A1.08
-                    </span>
-                                    <a
-                                            href="/img/apartments/project-small.png"
-                                            class="glightbox"
-                                    >
-                                        <img
-                                                src="/img/apartments/project-small.png"
-                                                srcset="
-                          /img/apartments/project-small.png    1x,
-                          /img/apartments/project-small@2x.png 2x
-                        "
-                                                decoding="async"
-                                                loading="lazy"
-                                                width="83"
-                                                height="59"
-                                                alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <div
-                                        class="d-flex justify-content-around gap-3 gap-lg-6 text-capitalize"
-                                >
-                                    <span> pokoje 2 </span>
-                                    <span class="line">&nbsp;</span>
-                                    <span> metraż: 43,24m<sup>2</sup> </span>
-                                </div>
-                                <a href="/mieszkanie.html" class="btn btn-main">
-                                    zobacz
-                                    <img
-                                            class="ps-4"
-                                            src="{{ asset('images/arrow-right.svg') }}"
-                                            height="15.644"
-                                            alt="strzałka w prawo"
-                                    />
-                                </a>
-                            </li>
-                            <li
-                                    class="col-12 box"
-                                    data-aos="fade-right"
-                                    data-aos-delay="100"
-                                    data-aos-offset="-120"
-                            >
-                                <span class="text-success text-uppercase">DOSTĘPNE</span>
-                                <div
-                                        class="d-flex justify-content-around align-items-center gap-3 gap-lg-6"
-                                >
-                    <span class="text-uppercase">
-                      Mieszkanie <br />
-                      A1.08
-                    </span>
-                                    <a
-                                            href="/img/apartments/project-small.png"
-                                            class="glightbox"
-                                    >
-                                        <img
-                                                src="/img/apartments/project-small.png"
-                                                srcset="
-                          /img/apartments/project-small.png    1x,
-                          /img/apartments/project-small@2x.png 2x
-                        "
-                                                decoding="async"
-                                                loading="lazy"
-                                                width="83"
-                                                height="59"
-                                                alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <div
-                                        class="d-flex justify-content-around gap-3 gap-lg-6 text-capitalize"
-                                >
-                                    <span> pokoje 2 </span>
-                                    <span class="line">&nbsp;</span>
-                                    <span> metraż: 43,24m<sup>2</sup> </span>
-                                </div>
-                                <a href="/mieszkanie.html" class="btn btn-main">
-                                    zobacz
-                                    <img
-                                            class="ps-4"
-                                            src="{{ asset('images/arrow-right.svg') }}"
-                                            height="15.644"
-                                            alt="strzałka w prawo"
-                                    />
-                                </a>
-                            </li>
-                            <li
-                                    class="col-12 box"
-                                    data-aos="fade-right"
-                                    data-aos-delay="100"
-                                    data-aos-offset="-120"
-                            >
-                                <span class="text-warning text-uppercase">REZERWACJA</span>
-                                <div
-                                        class="d-flex justify-content-around align-items-center gap-3 gap-lg-6"
-                                >
-                    <span class="text-uppercase">
-                      Mieszkanie <br />
-                      A1.08
-                    </span>
-                                    <a
-                                            href="/img/apartments/project-small.png"
-                                            class="glightbox"
-                                    >
-                                        <img
-                                                src="/img/apartments/project-small.png"
-                                                srcset="
-                          /img/apartments/project-small.png    1x,
-                          /img/apartments/project-small@2x.png 2x
-                        "
-                                                decoding="async"
-                                                loading="lazy"
-                                                width="83"
-                                                height="59"
-                                                alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <div
-                                        class="d-flex justify-content-around gap-3 gap-lg-6 text-capitalize"
-                                >
-                                    <span> pokoje 2 </span>
-                                    <span class="line">&nbsp;</span>
-                                    <span> metraż: 43,24m<sup>2</sup> </span>
-                                </div>
-                                <a href="/mieszkanie.html" class="btn btn-main">
-                                    zobacz
-                                    <img
-                                            class="ps-4"
-                                            src="{{ asset('images/arrow-right.svg') }}"
-                                            height="15.644"
-                                            alt="strzałka w prawo"
-                                    />
-                                </a>
-                            </li>
-                            <li
-                                    class="col-12 box"
-                                    data-aos="fade-right"
-                                    data-aos-delay="100"
-                                    data-aos-offset="-120"
-                            >
-                                <span class="text-danger text-uppercase">SPRZEDANE</span>
-                                <div
-                                        class="d-flex justify-content-around align-items-center gap-3 gap-lg-6"
-                                >
-                    <span class="text-uppercase">
-                      Mieszkanie <br />
-                      A1.08
-                    </span>
-                                    <a
-                                            href="/img/apartments/project-small.png"
-                                            class="glightbox"
-                                    >
-                                        <img
-                                                src="/img/apartments/project-small.png"
-                                                srcset="
-                          /img/apartments/project-small.png    1x,
-                          /img/apartments/project-small@2x.png 2x
-                        "
-                                                decoding="async"
-                                                loading="lazy"
-                                                width="83"
-                                                height="59"
-                                                alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <div
-                                        class="d-flex justify-content-around gap-3 gap-lg-6 text-capitalize"
-                                >
-                                    <span> pokoje 2 </span>
-                                    <span class="line">&nbsp;</span>
-                                    <span> metraż: 43,24m<sup>2</sup> </span>
-                                </div>
-                                <a href="/mieszkanie.html" class="btn btn-main">
-                                    zobacz
-                                    <img
-                                            class="ps-4"
-                                            src="{{ asset('images/arrow-right.svg') }}"
-                                            height="15.644"
-                                            alt="strzałka w prawo"
-                                    />
-                                </a>
-                            </li>
-                            <li
-                                    class="col-12 box"
-                                    data-aos="fade-right"
-                                    data-aos-delay="100"
-                                    data-aos-offset="-120"
-                            >
-                                <span class="text-success text-uppercase">dostępne</span>
-                                <div
-                                        class="d-flex justify-content-around align-items-center gap-3 gap-lg-6"
-                                >
-                    <span class="text-uppercase">
-                      Mieszkanie <br />
-                      A1.08
-                    </span>
-                                    <a
-                                            href="/img/apartments/project-small.png"
-                                            class="glightbox"
-                                    >
-                                        <img
-                                                src="/img/apartments/project-small.png"
-                                                srcset="
-                          /img/apartments/project-small.png    1x,
-                          /img/apartments/project-small@2x.png 2x
-                        "
-                                                decoding="async"
-                                                loading="lazy"
-                                                width="83"
-                                                height="59"
-                                                alt=""
-                                        />
-                                    </a>
-                                </div>
-                                <div
-                                        class="d-flex justify-content-around gap-3 gap-lg-6 text-capitalize"
-                                >
-                                    <span> pokoje 2 </span>
-                                    <span class="line">&nbsp;</span>
-                                    <span> metraż: 43,24m<sup>2</sup> </span>
-                                </div>
-                                <a href="/mieszkanie.html" class="btn btn-main">
-                                    zobacz
-                                    <img
-                                            class="ps-4"
-                                            src="{{ asset('images/arrow-right.svg') }}"
-                                            height="15.644"
-                                            alt="strzałka w prawo"
-                                    />
-                                </a>
-                            </li>
+                                    {!! roomStatusBadge($p->status) !!}
+
+                                    <div class="d-flex justify-content-center align-items-start gap-3 gap-lg-6">
+
+                                        <span class="text-uppercase">{{ $p->name_list }} <br />{{ $p->number }}</span>
+
+                                        <a href="{{ route('front.developro.investment.property', [
+                                                        $p->building->slug,
+                                                        Str::slug($p->floor->name),
+                                                        $p,
+                                                        Str::slug($p->name),
+                                                        floorLevel($p->floor->number, true),
+                                                        number2RoomsName($p->rooms, true),
+                                                        round(floatval($p->area), 2).'-m2'
+                                                    ]) }}">
+                                            @if($p->file)
+                                                <picture>
+                                                    <source type="image/webp" srcset="/investment/property/list/webp/{{$p->file_webp}}">
+                                                    <source type="image/jpeg" srcset="/investment/property/list/{{$p->file}}">
+                                                    <img src="/investment/property/list/{{$p->file}}" alt="{{$p->name}}" loading="lazy" decoding="async" width="83" height="58">
+                                                </picture>
+                                            @endif
+                                        </a>
+                                    </div>
+
+                                    <div class="d-flex justify-content-around gap-3 gap-lg-6 text-capitalize">
+                                        <span> pokoje {{ $p->rooms }}</span>
+                                        <span class="line">&nbsp;</span>
+                                        <span> metraż: {{ $p->area }}m<sup>2</sup></span>
+                                    </div>
+
+                                    <a href="{{ route('front.developro.investment.property', [
+                                                        $p->building->slug,
+                                                        Str::slug($p->floor->name),
+                                                        $p,
+                                                        Str::slug($p->name),
+                                                        floorLevel($p->floor->number, true),
+                                                        number2RoomsName($p->rooms, true),
+                                                        round(floatval($p->area), 2).'-m2'
+                                                    ]) }}" class="btn btn-main">zobacz <img class="ps-4" src="{{ asset('images/arrow-right.svg') }}" height="15.644" alt="strzałka w prawo"/></a>
+                                </li>
+                            @endforeach
                         </ul>
                         <!-- GRID TAILS -->
-                        <ul
-                                class="row apartments-grid-tails gy-4 mt-4 mt-sm-0 invisible"
-                                id="grid-tails"
-                        >
-                            <!-- DOSTĘPNE  -->
-                            <li class="col-12 col-sm-6 col-lg-4">
-                                <div
-                                        class="box"
-                                        data-aos="fade-right"
-                                        data-aos-delay="100"
-                                        data-aos-offset="-120"
-                                >
-                                    <span class="text-success text-uppercase">dostępne</span>
-                                    <div
-                                            class="d-flex justify-content-center align-items-start gap-3"
-                                    >
-                      <span class="text-uppercase">
-                        Mieszkanie <br />
-                        A1.08
-                      </span>
-                                        <a
-                                                href="/img/apartments/project-small.png"
-                                                class="glightbox"
-                                        >
-                                            <img
-                                                    src="/img/apartments/project-small.png"
-                                                    srcset="
-                            /img/apartments/project-small.png    1x,
-                            /img/apartments/project-small@2x.png 2x
-                          "
-                                                    decoding="async"
-                                                    loading="lazy"
-                                                    width="83"
-                                                    height="59"
-                                                    alt=""
-                                            />
-                                        </a>
-                                    </div>
-                                    <div
-                                            class="d-flex justify-content-center gap-3 text-capitalize"
-                                    >
-                                        <span> pokoje 2 </span>
-                                        <span class="line">&nbsp;</span>
-                                        <span> metraż: 43,24m<sup>2</sup> </span>
-                                    </div>
-                                    <a href="/mieszkanie.html" class="btn btn-main">
-                                        zobacz
-                                        <img
-                                                class="ps-4"
-                                                src="{{ asset('images/arrow-right.svg') }}"
-                                                height="15.644"
-                                                alt="strzałka w prawo"
-                                        />
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="col-12 col-sm-6 col-lg-4">
-                                <div
-                                        class="box"
-                                        data-aos="fade-right"
-                                        data-aos-delay="200"
-                                        data-aos-offset="-120"
-                                >
-                                    <span class="text-success text-uppercase">dostępne</span>
-                                    <div
-                                            class="d-flex justify-content-around align-items-center gap-3"
-                                    >
-                      <span class="text-uppercase">
-                        Mieszkanie <br />
-                        A1.08
-                      </span>
-                                        <a
-                                                href="/img/apartments/project-small.png"
-                                                class="glightbox"
-                                        >
-                                            <img
-                                                    src="/img/apartments/project-small.png"
-                                                    srcset="
-                            /img/apartments/project-small.png    1x,
-                            /img/apartments/project-small@2x.png 2x
-                          "
-                                                    decoding="async"
-                                                    loading="lazy"
-                                                    width="83"
-                                                    height="59"
-                                                    alt=""
-                                            />
-                                        </a>
-                                    </div>
-                                    <div
-                                            class="d-flex justify-content-around gap-3 text-capitalize"
-                                    >
-                                        <span> pokoje 2 </span>
-                                        <span class="line">&nbsp;</span>
-                                        <span> metraż: 43,24m<sup>2</sup> </span>
-                                    </div>
-                                    <a href="/mieszkanie.html" class="btn btn-main">
-                                        zobacz
-                                        <img
-                                                class="ps-4"
-                                                src="{{ asset('images/arrow-right.svg') }}"
-                                                height="15.644"
-                                                alt="strzałka w prawo"
-                                        />
-                                    </a>
-                                </div>
-                            </li>
+                        <ul class="row apartments-grid-tails gy-4 mt-4 mt-sm-0 invisible" id="grid-tails">
+                            @foreach($properties as $p)
+                                <li class="col-12 col-sm-6 col-lg-4">
+                                    <div class="box" data-aos="fade-right" data-aos-delay="100" data-aos-offset="-120">
+                                        {!! roomStatusBadge($p->status) !!}
+                                        <div class="d-flex justify-content-center align-items-start gap-3">
+                                            <span class="text-uppercase">{{ $p->name_list }} <br />{{ $p->number }}</span>
+                                            <a href="{{ route('front.developro.investment.property', [
+                                                        $p->building->slug,
+                                                        Str::slug($p->floor->name),
+                                                        $p,
+                                                        Str::slug($p->name),
+                                                        floorLevel($p->floor->number, true),
+                                                        number2RoomsName($p->rooms, true),
+                                                        round(floatval($p->area), 2).'-m2'
+                                                    ]) }}">
+                                                @if($p->file)
+                                                    <picture>
+                                                        <source type="image/webp" srcset="/investment/property/list/webp/{{$p->file_webp}}">
+                                                        <source type="image/jpeg" srcset="/investment/property/list/{{$p->file}}">
+                                                        <img src="/investment/property/list/{{$p->file}}" alt="{{$p->name}}" loading="lazy" decoding="async" width="83" height="58">
+                                                    </picture>
+                                                @endif
+                                            </a>
+                                        </div>
 
-                            <!-- SPRZEDANE  -->
-                            <li class="col-12 col-sm-6 col-lg-4">
-                                <div
-                                        class="box"
-                                        data-aos="fade-right"
-                                        data-aos-delay="300"
-                                        data-aos-offset="-120"
-                                >
-                                    <span class="text-danger text-uppercase">SPRZEDANE</span>
-                                    <div
-                                            class="d-flex justify-content-around align-items-center gap-3"
-                                    >
-                      <span class="text-uppercase">
-                        Mieszkanie <br />
-                        A1.08
-                      </span>
-                                        <a
-                                                href="/img/apartments/project-small.png"
-                                                class="glightbox"
-                                        >
-                                            <img
-                                                    src="/img/apartments/project-small.png"
-                                                    srcset="
-                            /img/apartments/project-small.png    1x,
-                            /img/apartments/project-small@2x.png 2x
-                          "
-                                                    decoding="async"
-                                                    loading="lazy"
-                                                    width="83"
-                                                    height="59"
-                                                    alt=""
-                                            />
-                                        </a>
-                                    </div>
-                                    <div
-                                            class="d-flex justify-content-around gap-3 text-capitalize"
-                                    >
-                                        <span> pokoje 2 </span>
-                                        <span class="line">&nbsp;</span>
-                                        <span> metraż: 43,24m<sup>2</sup> </span>
-                                    </div>
-                                    <a href="/mieszkanie.html" class="btn btn-main">
-                                        zobacz
-                                        <img
-                                                class="ps-4"
-                                                src="{{ asset('images/arrow-right.svg') }}"
-                                                height="15.644"
-                                                alt="strzałka w prawo"
-                                        />
-                                    </a>
-                                </div>
-                            </li>
+                                        <div class="d-flex justify-content-center gap-3 text-capitalize">
+                                            <span> pokoje {{ $p->rooms }} </span>
+                                            <span class="line">&nbsp;</span>
+                                            <span> metraż: {{ $p->area }}m<sup>2</sup> </span>
+                                        </div>
 
-                            <li class="col-12 col-sm-6 col-lg-4">
-                                <div
-                                        class="box"
-                                        data-aos="fade-right"
-                                        data-aos-delay="100"
-                                        data-aos-offset="-120"
-                                >
-                                    <span class="text-danger text-uppercase">SPRZEDANE</span>
-                                    <div
-                                            class="d-flex justify-content-around align-items-center gap-3"
-                                    >
-                      <span class="text-uppercase">
-                        Mieszkanie <br />
-                        A1.08
-                      </span>
-                                        <a
-                                                href="/img/apartments/project-small.png"
-                                                class="glightbox"
-                                        >
-                                            <img
-                                                    src="/img/apartments/project-small.png"
-                                                    srcset="
-                            /img/apartments/project-small.png    1x,
-                            /img/apartments/project-small@2x.png 2x
-                          "
-                                                    decoding="async"
-                                                    loading="lazy"
-                                                    width="83"
-                                                    height="59"
-                                                    alt=""
-                                            />
+                                        <a href="{{ route('front.developro.investment.property', [
+                                                        $p->building->slug,
+                                                        Str::slug($p->floor->name),
+                                                        $p,
+                                                        Str::slug($p->name),
+                                                        floorLevel($p->floor->number, true),
+                                                        number2RoomsName($p->rooms, true),
+                                                        round(floatval($p->area), 2).'-m2'
+                                                    ]) }}" class="btn btn-main"> zobacz <img class="ps-4" src="{{ asset('images/arrow-right.svg') }}" height="15.644" alt="Zobacz mieszkanie {{ $p->number }}" />
                                         </a>
                                     </div>
-                                    <div
-                                            class="d-flex justify-content-around gap-3 text-capitalize"
-                                    >
-                                        <span> pokoje 2 </span>
-                                        <span class="line">&nbsp;</span>
-                                        <span> metraż: 43,24m<sup>2</sup> </span>
-                                    </div>
-                                    <a href="/mieszkanie.html" class="btn btn-main">
-                                        zobacz
-                                        <img
-                                                class="ps-4"
-                                                src="{{ asset('images/arrow-right.svg') }}"
-                                                height="15.644"
-                                                alt="strzałka w prawo"
-                                        />
-                                    </a>
-                                </div>
-                            </li>
-
-                            <!-- REZERWACJA  -->
-                            <li class="col-12 col-sm-6 col-lg-4">
-                                <div
-                                        class="box"
-                                        data-aos="fade-right"
-                                        data-aos-delay="200"
-                                        data-aos-offset="-120"
-                                >
-                                    <span class="text-warning text-uppercase">REZERWACJA</span>
-                                    <div
-                                            class="d-flex justify-content-around align-items-center gap-3"
-                                    >
-                      <span class="text-uppercase">
-                        Mieszkanie <br />
-                        A1.08
-                      </span>
-                                        <a
-                                                href="/img/apartments/project-small.png"
-                                                class="glightbox"
-                                        >
-                                            <img
-                                                    src="/img/apartments/project-small.png"
-                                                    srcset="
-                            /img/apartments/project-small.png    1x,
-                            /img/apartments/project-small@2x.png 2x
-                          "
-                                                    decoding="async"
-                                                    loading="lazy"
-                                                    width="83"
-                                                    height="59"
-                                                    alt=""
-                                            />
-                                        </a>
-                                    </div>
-                                    <div
-                                            class="d-flex justify-content-around gap-3 text-capitalize"
-                                    >
-                                        <span> pokoje 2 </span>
-                                        <span class="line">&nbsp;</span>
-                                        <span> metraż: 43,24m<sup>2</sup> </span>
-                                    </div>
-                                    <a href="/mieszkanie.html" class="btn btn-main">
-                                        zobacz
-                                        <img
-                                                class="ps-4"
-                                                src="{{ asset('images/arrow-right.svg') }}"
-                                                height="15.644"
-                                                alt="strzałka w prawo"
-                                        />
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="col-12 col-sm-6 col-lg-4">
-                                <div
-                                        class="box"
-                                        data-aos="fade-right"
-                                        data-aos-delay="300"
-                                        data-aos-offset="-120"
-                                >
-                                    <span class="text-danger text-uppercase">SPRZEDANE</span>
-                                    <div
-                                            class="d-flex justify-content-around align-items-center gap-3"
-                                    >
-                      <span class="text-uppercase">
-                        Mieszkanie <br />
-                        A1.08
-                      </span>
-                                        <a
-                                                href="/img/apartments/project-small.png"
-                                                class="glightbox"
-                                        >
-                                            <img
-                                                    src="/img/apartments/project-small.png"
-                                                    srcset="
-                            /img/apartments/project-small.png    1x,
-                            /img/apartments/project-small@2x.png 2x
-                          "
-                                                    decoding="async"
-                                                    loading="lazy"
-                                                    width="83"
-                                                    height="59"
-                                                    alt=""
-                                            />
-                                        </a>
-                                    </div>
-                                    <div
-                                            class="d-flex justify-content-around gap-3 text-capitalize"
-                                    >
-                                        <span> pokoje 2 </span>
-                                        <span class="line">&nbsp;</span>
-                                        <span> metraż: 43,24m<sup>2</sup> </span>
-                                    </div>
-                                    <a href="/mieszkanie.html" class="btn btn-main">
-                                        zobacz
-                                        <img
-                                                class="ps-4"
-                                                src="{{ asset('images/arrow-right.svg') }}"
-                                                height="15.644"
-                                                alt="strzałka w prawo"
-                                        />
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="col-12 col-sm-6 col-lg-4">
-                                <div
-                                        class="box"
-                                        data-aos="fade-right"
-                                        data-aos-delay="100"
-                                        data-aos-offset="-120"
-                                >
-                                    <span class="text-success text-uppercase">DOSTĘPNE</span>
-                                    <div
-                                            class="d-flex justify-content-around align-items-center gap-3"
-                                    >
-                      <span class="text-uppercase">
-                        Mieszkanie <br />
-                        A1.08
-                      </span>
-                                        <a
-                                                href="/img/apartments/project-small.png"
-                                                class="glightbox"
-                                        >
-                                            <img
-                                                    src="/img/apartments/project-small.png"
-                                                    srcset="
-                            /img/apartments/project-small.png    1x,
-                            /img/apartments/project-small@2x.png 2x
-                          "
-                                                    decoding="async"
-                                                    loading="lazy"
-                                                    width="83"
-                                                    height="59"
-                                                    alt=""
-                                            />
-                                        </a>
-                                    </div>
-                                    <div
-                                            class="d-flex justify-content-around gap-3 text-capitalize"
-                                    >
-                                        <span> pokoje 2 </span>
-                                        <span class="line">&nbsp;</span>
-                                        <span> metraż: 43,24m<sup>2</sup> </span>
-                                    </div>
-                                    <a href="/mieszkanie.html" class="btn btn-main">
-                                        zobacz
-                                        <img
-                                                class="ps-4"
-                                                src="{{ asset('images/arrow-right.svg') }}"
-                                                height="15.644"
-                                                alt="strzałka w prawo"
-                                        />
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="col-12 col-sm-6 col-lg-4">
-                                <div
-                                        class="box"
-                                        data-aos="fade-right"
-                                        data-aos-delay="200"
-                                        data-aos-offset="-120"
-                                >
-                                    <span class="text-warning text-uppercase">REZERWACJA</span>
-                                    <div
-                                            class="d-flex justify-content-around align-items-center gap-3"
-                                    >
-                      <span class="text-uppercase">
-                        Mieszkanie <br />
-                        A1.08
-                      </span>
-                                        <a
-                                                href="/img/apartments/project-small.png"
-                                                class="glightbox"
-                                        >
-                                            <img
-                                                    src="/img/apartments/project-small.png"
-                                                    srcset="
-                            /img/apartments/project-small.png    1x,
-                            /img/apartments/project-small@2x.png 2x
-                          "
-                                                    decoding="async"
-                                                    loading="lazy"
-                                                    width="83"
-                                                    height="59"
-                                                    alt=""
-                                            />
-                                        </a>
-                                    </div>
-                                    <div
-                                            class="d-flex justify-content-around gap-3 text-capitalize"
-                                    >
-                                        <span> pokoje 2 </span>
-                                        <span class="line">&nbsp;</span>
-                                        <span> metraż: 43,24m<sup>2</sup> </span>
-                                    </div>
-                                    <a href="/mieszkanie.html" class="btn btn-main">
-                                        zobacz
-                                        <img
-                                                class="ps-4"
-                                                src="{{ asset('images/arrow-right.svg') }}"
-                                                height="15.644"
-                                                alt="strzałka w prawo"
-                                        />
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="col-12 col-sm-6 col-lg-4">
-                                <div
-                                        class="box"
-                                        data-aos="fade-right"
-                                        data-aos-delay="300"
-                                        data-aos-offset="-120"
-                                >
-                                    <span class="text-danger text-uppercase">SPRZEDANE</span>
-                                    <div
-                                            class="d-flex justify-content-around align-items-center gap-3"
-                                    >
-                      <span class="text-uppercase">
-                        Mieszkanie <br />
-                        A1.08
-                      </span>
-                                        <a
-                                                href="/img/apartments/project-small.png"
-                                                class="glightbox"
-                                        >
-                                            <img
-                                                    src="/img/apartments/project-small.png"
-                                                    srcset="
-                            /img/apartments/project-small.png    1x,
-                            /img/apartments/project-small@2x.png 2x
-                          "
-                                                    decoding="async"
-                                                    loading="lazy"
-                                                    width="83"
-                                                    height="59"
-                                                    alt=""
-                                            />
-                                        </a>
-                                    </div>
-                                    <div
-                                            class="d-flex justify-content-around gap-3 text-capitalize"
-                                    >
-                                        <span> pokoje 2 </span>
-                                        <span class="line">&nbsp;</span>
-                                        <span> metraż: 43,24m<sup>2</sup> </span>
-                                    </div>
-                                    <a href="/mieszkanie.html" class="btn btn-main">
-                                        zobacz
-                                        <img
-                                                class="ps-4"
-                                                src="{{ asset('images/arrow-right.svg') }}"
-                                                height="15.644"
-                                                alt="strzałka w prawo"
-                                        />
-                                    </a>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

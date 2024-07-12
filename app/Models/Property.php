@@ -117,6 +117,11 @@ class Property extends Model
         return $this->belongsTo(Floor::class);
     }
 
+    public function building()
+    {
+        return $this->belongsTo(Building::class);
+    }
+
     public function investment()
     {
         return $this->belongsTo(Investment::class);
