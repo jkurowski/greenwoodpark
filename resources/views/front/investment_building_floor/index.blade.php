@@ -400,3 +400,4 @@
     <script src="{{ asset('/js/plan/floor.js') }}" charset="utf-8"></script>
     <link href="{{ asset('/css/developro.min.css') }}" rel="stylesheet">
 @endpush
+
