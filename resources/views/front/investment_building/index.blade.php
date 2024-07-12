@@ -49,20 +49,27 @@
                 <div class="row">
                     <div class="px-0 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
                         <form class="apartments-form">
-                            <select name="" id="" class="form-select apartments-form-select" aria-label="Pokoje" >
-                                <option selected>pokoje</option>
-                                <option value="1">1 pokój</option>
-                                <option value="2">2 pokoje</option>
-                                <option value="3">3 pokoje</option>
-                                <option value="4">4 pokoje</option>
+                            <select
+                                    name="s_pokoje"
+                                    id=""
+                                    class="form-select apartments-form-select"
+                                    aria-label="Pokoje"
+                            >
+                                <option value="">pokoje</option>
+                                <option value="1" @if(request()->input('s_pokoje') == 1) selected @endif>1 pokój</option>
+                                <option value="2" @if(request()->input('s_pokoje') == 2) selected @endif>2 pokoje</option>
+                                <option value="3" @if(request()->input('s_pokoje') == 3) selected @endif>3 pokoje</option>
+                                <option value="4" @if(request()->input('s_pokoje') == 4) selected @endif>4 pokoje</option>
                             </select>
 
-                            <select name="" id="" class="form-select apartments-form-select" aria-label="Metraż">
-                                <option selected>Metraż</option>
-                                <option value="1">1 Metraż</option>
-                                <option value="2">2 Metraże</option>
-                                <option value="3">3 Metraże</option>
-                                <option value="4">4 Metraże</option>
+                            <select
+                                    name="s_metry"
+                                    id=""
+                                    class="form-select apartments-form-select"
+                                    aria-label="Metraż"
+                            >
+                                <option value="">Metraż</option>
+                                {!! area2Select($investment->area_range) !!}
                             </select>
                             <!-- To handle this dropdown change JS in main.js file -->
                             <div class="dropdown dropdown-checkbox">
@@ -82,7 +89,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <button class="btn btn-casual d-flex align-items-center gap-2" type="button">
+                            <button class="btn btn-casual d-flex align-items-center gap-2" type="submit">
                                 Szukaj<img src="{{ asset('images/search.svg') }}" />
                             </button>
                         </form>

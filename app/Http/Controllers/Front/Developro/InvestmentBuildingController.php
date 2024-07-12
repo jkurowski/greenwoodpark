@@ -30,11 +30,17 @@ class InvestmentBuildingController extends Controller
             'buildingRooms' => function($query) use ($building, $request)
             {
                 $query->where('properties.building_id', $building->id);
-                if ($request->input('rooms')) {
-                    $query->where('rooms', $request->input('rooms'));
+                if ($request->input('s_pokoje')) {
+                    $query->where('rooms', $request->input('s_pokoje'));
                 }
                 if ($request->input('status')) {
                     $query->where('status', $request->input('status'));
+                }
+                if ($request->input('s_metry')) {
+                    $area_param = explode('-', $request->input('s_metry'));
+                    $min = $area_param[0];
+                    $max = $area_param[1];
+                    $query->whereBetween('area', [$min, $max]);
                 }
                 if ($request->input('sort')) {
                     $order_param = explode(':', $request->input('sort'));

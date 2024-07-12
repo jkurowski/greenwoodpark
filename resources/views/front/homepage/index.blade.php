@@ -109,30 +109,32 @@
                                 class="about--form"
                                 data-aos="fade-left"
                                 data-aos-delay="200"
+                                method="get"
+                                action="{{ route('front.developro.investment.index') }}"
                         >
                             <select
-                                    name=""
+                                    name="s_pokoje"
                                     id=""
                                     class="form-select about--form-input"
                                     aria-label="Pokoje"
                             >
-                                <option selected>pokoje</option>
+                                <option selected value="">pokoje</option>
                                 <option value="1">1 pokój</option>
                                 <option value="2">2 pokoje</option>
                                 <option value="3">3 pokoje</option>
                                 <option value="4">4 pokoje</option>
                             </select>
                             <select
-                                    name=""
+                                    name="s_metry"
                                     id=""
                                     class="form-select about--form-input"
                                     aria-label="Metraż"
                             >
-                                <option selected>Metraż</option>
-                                <option value="1">1 Metraż</option>
-                                <option value="2">2 Metraże</option>
-                                <option value="3">3 Metraże</option>
-                                <option value="4">4 Metraże</option>
+                                <option value="">Metraż</option>
+                                <option value="29-42">29-42 m²</option>
+                                <option value="43-58">43-58 m²</option>
+                                <option value="59-68">59-68 m²</option>
+                                <option value="69-79">69-79 m²</option>
                             </select>
                             <!-- To handle this dropdown change JS in main.js file -->
                             <div class="dropdown dropdown-checkbox">
@@ -178,7 +180,7 @@
 
                             <button
                                     class="btn btn-casual d-flex align-items-center gap-2"
-                                    type="button"
+                                    type="submit"
                             >
                                 Szukaj<img src="{{ asset('images/search.svg') }}" alt="" />
                             </button>
