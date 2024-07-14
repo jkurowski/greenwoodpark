@@ -125,34 +125,20 @@
                                 >
                                     Udogodnienia
                                 </button>
-                                <ul
-                                        class="dropdown-menu"
-                                        aria-labelledby="multiSelectDropdown"
-                                >
+                                <ul class="dropdown-menu" aria-labelledby="multiSelectDropdown">
                                     <li>
-                                        <label>
-                                            <input type="checkbox" value="Balkon" />
-                                            Balkon
-                                        </label>
+                                        <label><input type="checkbox" value="1"/> Balkon</label>
                                     </li>
                                     <li>
-                                        <label>
-                                            <input type="checkbox" value="Ogrod" />
-                                            Ogród
-                                        </label>
+                                        <label><input type="checkbox" value="2"/> Ogród</label>
                                     </li>
                                     <li>
-                                        <label>
-                                            <input type="checkbox" value="Loggia" />
-                                            Loggia
-                                        </label>
+                                        <label><input type="checkbox" value="3"/> Loggia</label>
                                     </li>
                                     <li>
-                                        <label>
-                                            <input type="checkbox" value="Taras" />
-                                            Taras
-                                        </label>
+                                        <label><input type="checkbox" value="4"/> Taras</label>
                                     </li>
+                                    <input type="hidden" id="s_dodatkowe" name="s_dodatkowe" />
                                 </ul>
                             </div>
                             <button

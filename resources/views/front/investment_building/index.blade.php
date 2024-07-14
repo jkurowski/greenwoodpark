@@ -76,18 +76,19 @@
                                 <button class="form-select apartments-form-select text-start" type="button" id="multiSelectDropdown" data-bs-toggle="dropdown" aria-expanded="false">Udogodnienia</button>
                                 <ul class="dropdown-menu" aria-labelledby="multiSelectDropdown">
                                     <li>
-                                        <label><input type="checkbox" value="Balkon" />Balkon</label>
+                                        <label><input type="checkbox" value="1"/> Balkon</label>
                                     </li>
                                     <li>
-                                        <label><input type="checkbox" value="Ogrod" />Ogród</label>
+                                        <label><input type="checkbox" value="2"/> Ogród</label>
                                     </li>
                                     <li>
-                                        <label><input type="checkbox" value="Loggia" />Loggia</label>
+                                        <label><input type="checkbox" value="3"/> Loggia</label>
                                     </li>
                                     <li>
-                                        <label><input type="checkbox" value="Taras" />Taras</label>
+                                        <label><input type="checkbox" value="4"/> Taras</label>
                                     </li>
                                 </ul>
+                                <input type="hidden" id="s_dodatkowe" name="s_dodatkowe" />
                             </div>
                             <button class="btn btn-casual d-flex align-items-center gap-2" type="submit">
                                 Szukaj<img src="{{ asset('images/search.svg') }}" />

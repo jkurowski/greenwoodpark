@@ -102,6 +102,30 @@
                                                     <span>metraż:</span>
                                                     <span> {{$property->area}} m<sup>2</sup></span>
                                                 </div>
+                                                @if($property->balcony_area)
+                                                <div class="d-flex justify-content-between">
+                                                    <span>balkon:</span>
+                                                    <span> {{$property->balcony_area}} m<sup>2</sup></span>
+                                                </div>
+                                                @endif
+                                                @if($property->garden_area)
+                                                    <div class="d-flex justify-content-between">
+                                                        <span>ogródek:</span>
+                                                        <span> {{$property->garden_area}} m<sup>2</sup></span>
+                                                    </div>
+                                                @endif
+                                                @if($property->loggia_area)
+                                                    <div class="d-flex justify-content-between">
+                                                        <span>loggia:</span>
+                                                        <span> {{$property->loggia_area}} m<sup>2</sup></span>
+                                                    </div>
+                                                @endif
+                                                @if($property->terrace_area)
+                                                    <div class="d-flex justify-content-between">
+                                                        <span>taras:</span>
+                                                        <span> {{$property->terrace_area}} m<sup>2</sup></span>
+                                                    </div>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="row mt-5 align-items-sm-center flex-column flex-sm-row">

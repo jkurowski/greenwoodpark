@@ -24,34 +24,54 @@ if (window.AOS !== undefined) {
 //
 //
 
-const chBoxes = document.querySelectorAll(
-  '.dropdown-menu input[type="checkbox"]'
-);
-const dpBtn = document.getElementById("multiSelectDropdown");
-let mySelectedListItems = [];
+document.addEventListener("DOMContentLoaded", function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const sDodatkowe = urlParams.get('s_dodatkowe');
+  const chBoxes = document.querySelectorAll('.dropdown-menu input[type="checkbox"]');
+  const dpBtn = document.getElementById("multiSelectDropdown");
+  const hiddenInput = document.getElementById("s_dodatkowe");
+  let mySelectedListItems = [];
 
-function handleCB() {
-  mySelectedListItems = [];
-  let mySelectedListItemsText = "";
+  function handleCB() {
+    mySelectedListItems = [];
+    let mySelectedLabels = [];
 
-  chBoxes.forEach((checkbox) => {
-    if (checkbox.checked) {
-      mySelectedListItems.push(checkbox.value);
-      mySelectedListItemsText += checkbox.value + ", ";
-    }
-  });
+    chBoxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        mySelectedListItems.push(checkbox.value);
+        mySelectedLabels.push(checkbox.parentElement.textContent.trim());
+      }
+    });
 
-  dpBtn.innerText =
-    mySelectedListItems.length > 0
-      ? mySelectedListItemsText.slice(0, -2)
-      : "Udogodnienia";
-}
+    dpBtn.innerText =
+        mySelectedLabels.length > 0
+            ? mySelectedLabels.join(", ")
+            : "Udogodnienia";
 
-if (chBoxes && dpBtn) {
-  chBoxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", handleCB);
-  });
-}
+    hiddenInput.value = mySelectedListItems.join(",");
+  }
+
+  // Initialize checkboxes based on s_dodatkowe parameter
+  if (sDodatkowe) {
+    const selectedAmenities = sDodatkowe.split(',');
+    selectedAmenities.forEach(value => {
+      const checkbox = document.querySelector(`input[type="checkbox"][value="${value}"]`);
+      if (checkbox) {
+        checkbox.checked = true;
+      }
+    });
+  }
+
+  // Initialize the dropdown button text and hidden input with the current selection
+  handleCB();
+
+  // Add event listeners to checkboxes
+  if (chBoxes && dpBtn) {
+    chBoxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", handleCB);
+    });
+  }
+});
 
 //
 //
