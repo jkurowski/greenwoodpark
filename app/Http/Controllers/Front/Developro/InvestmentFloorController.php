@@ -62,8 +62,8 @@ class InvestmentFloorController extends Controller
         return view('front.investment_building_floor.index', [
             'investment' => $investment_room,
             'properties' => $investment->floorRooms,
-            'next_floor' => $floor->findNext($investment->id, null, $floor->position),
-            'prev_floor' => $floor->findPrev($investment->id, null, $floor->position),
+            'next_floor' => $floor->findNext($investment->id, $building->id, $floor->position),
+            'prev_floor' => $floor->findPrev($investment->id, $building->id, $floor->position),
             'uniqueRooms' => $this->repository->getUniqueRooms($investment_room->properties),
             'building' => $building,
             'page' => $page
