@@ -503,9 +503,17 @@
                             </div>
                             <!-- PARAGRAPH -->
                             <div class="d-flex flex-column gap-2">
-                                <p class="fw-bolder">Inwestycja położona będzie przy ul. Orlej 12 w dzielnicy Nowe Miasto w Zgierzu, w najbliższym sąsiedztwie znajdują się: szkoły podstawowe, szkoły średnie oraz przedszkole. Ogromnym autem tej lokalizacji są liczne punkty aktywności sportowej takie jak; boisko, hala sportowa czy lodowisko.</p>
-                                <p>Blisko osiedla znajduje się przystanek tramwajowy, z którego co 20 minut odjeżdża tramwaj do Łodzi, z jednego z przystanków w 5 minut dojdziemy do Manufaktury.</p>
-                                <p> Dziesięciominutowym spacerem dojdziemy do stacji PKP Zgierz, skąd co godzinę odjeżdżają pociągi do Warszawy Centralnej, a co 45 minut na dworzec Łódź Fabryczna.</p>
+                                <p class="fw-bolder">
+                                    Nasza inwestycja to synonim komfortu i nowoczesności.
+                                    Tworzymy przestrzenie, które łączą w sobie wysoką jakość
+                                    wykonania z estetycznym designem.
+                                </p>
+                                <p>
+                                    Dzięki zastosowaniu najnowszych technologii i materiałów,
+                                    nasze apartamenty są nie tylko piękne, ale także
+                                    funkcjonalne i trwałe. Nasz zespół dba o każdy detal, aby
+                                    zapewnić Ci wygodę i bezpieczeństwo na najwyższym poziomie.
+                                </p>
                             </div>
                         </div>
 

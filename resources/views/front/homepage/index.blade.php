@@ -266,21 +266,16 @@
                             <!-- PARAGRAPH -->
                             <div class="d-flex flex-column gap-2">
                                 <p class="fw-bolder">
-                                    Inwestycja położona będzie przy ul. Orlej 12 w dzielnicy
-                                    Nowe Miasto w Zgierzu, w najbliższym sąsiedztwie znajdują
-                                    się: szkoły podstawowe, szkoły średnie oraz przedszkole.
-                                    Ogromnym autem tej lokalizacji są liczne punkty aktywności
-                                    sportowej takie jak; boisko, hala sportowa czy lodowisko.
+                                    Oferujemy nowoczesne apartamenty, które spełnią oczekiwania
+                                    nawet najbardziej wymagających klientów.
                                 </p>
                                 <p class="">
-                                    Blisko osiedla znajduje się przystanek tramwajowy, z którego
-                                    co 20 minut odjeżdża tramwaj do Łodzi, z jednego z
-                                    przystanków w 5 minut dojdziemy do Manufaktury.
-                                </p>
-                                <p>
-                                    Dziesięciominutowym spacerem dojdziemy do stacji PKP Zgierz,
-                                    skąd co godzinę odjeżdżają pociągi do Warszawy Centralnej, a
-                                    co 45 minut na dworzec Łódź Fabryczna.
+                                    Nasze projekty charakteryzują się innowacyjnymi
+                                    rozwiązaniami architektonicznymi, które gwarantują wygodę i
+                                    komfort na co dzień. Zlokalizowane w atrakcyjnej
+                                    lokalizacji, nasze apartamenty łączą w sobie bliskość natury
+                                    z dostępem do miejskich udogodnień. Wybierając nasze
+                                    mieszkania, inwestujesz w jakość i nowoczesny styl życia.
                                 </p>
                             </div>
                         </div>
