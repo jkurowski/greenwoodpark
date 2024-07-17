@@ -44,6 +44,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/slick.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
     <link href="{{ asset('/css/style.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/glightbox.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
 
@@ -68,7 +69,6 @@
     @endauth
 
     <!-- Styles -->
-    <link href="{{ asset('/css/slick.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
     <link href="{{ asset('/css/animations.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/leaflet.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
     <link href="{{ asset('/css/aos.min.css') }}" rel="stylesheet" media="screen and (min-width: 768px)">
