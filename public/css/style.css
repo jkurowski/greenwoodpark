@@ -14386,12 +14386,12 @@ body {
   justify-content: center;
   align-items: center;
 }
-.location-map #map {
+.location-map #map, #map2 {
   width: 100%;
   height: 80%;
 }
 @media (max-width: 991.98px) {
-  .location-map #map {
+  .location-map #map, #map2 {
     height: max(200px, 15.625vw);
   }
 }

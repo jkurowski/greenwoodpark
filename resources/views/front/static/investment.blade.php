@@ -146,7 +146,7 @@
                         <div class="slider-box">
                             <div class="slick-slider-map">
                                 <div>
-                                    <div class="map-place">
+                                    <div class="map-place" data-group="1">
                                         <img
                                                 src="{{ asset('images/map-slider/clinic.svg') }}"
                                                 width="63"
@@ -159,7 +159,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="map-place">
+                                    <div class="map-place" data-group="2">
                                         <img
                                                 src="{{ asset('images/map-slider/city-hall.svg') }}"
                                                 width="63"
@@ -172,7 +172,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="map-place">
+                                    <div class="map-place" data-group="3">
                                         <img
                                                 src="{{ asset('images/map-slider/park.svg') }}"
                                                 width="63"
@@ -186,7 +186,7 @@
                                 </div>
 
                                 <div>
-                                    <div class="map-place">
+                                    <div class="map-place" data-group="4">
                                         <img
                                                 src="{{ asset('images/map-slider/mall.svg') }}"
                                                 width="63"
@@ -199,20 +199,20 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="map-place">
+                                    <div class="map-place" data-group="5">
                                         <img
                                                 src="{{ asset('images/map-slider/kindergarten.png') }}"
                                                 width="63"
                                                 height="63"
                                                 decoding="async"
                                                 loading="lazy"
-                                                alt="PRZEDSZKOLE PUBLICZNE"
+                                                alt="EDUKACJA"
                                         />
-                                        <span>PRZEDSZKOLE PUBLICZNE</span>
+                                        <span>EDUKACJA</span>
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="map-place">
+                                    <div class="map-place" data-group="6">
                                         <img
                                                 src="{{ asset('images/map-slider/sports-hall.svg') }}"
                                                 width="63"
@@ -221,11 +221,11 @@
                                                 loading="lazy"
                                                 alt="HALA SPORTOWA"
                                         />
-                                        <span>HALA SPORTOWA</span>
+                                        <span>SPORT</span>
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="map-place">
+                                    <div class="map-place" data-group="7">
                                         <img
                                                 src="{{ asset('images/map-slider/pkp-station.svg') }}"
                                                 width="63"
@@ -237,24 +237,11 @@
                                         <span>DWORZEC PKP</span>
                                     </div>
                                 </div>
-                                <div>
-                                    <div class="map-place">
-                                        <img
-                                                src="{{ asset('images/map-slider/kindergarten.png') }}"
-                                                width="63"
-                                                height="63"
-                                                decoding="async"
-                                                loading="lazy"
-                                                alt="PRZEDSZKOLE PUBLICZNE"
-                                        />
-                                        <span>PRZEDSZKOLE PUBLICZNE</span>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-8 offset-xl-1 map-container">
-                        <div id="map"></div>
+                        <div id="map2"></div>
                     </div>
                 </div>
             </div>
@@ -539,3 +526,107 @@
         <!-- END -> QUESTIONS CARD -->
     </main>
 @endsection
+@push('scripts')
+    <style>
+        .leaflet-marker-icon {
+            border-radius: 50%;
+        }
+    </style>
+    <script src="{{ asset('/js/leaflet2.min.js') }}" charset="utf-8"></script>
+    <link href="{{ asset('/css/leaflet.min.css') }}" rel="stylesheet">
+    <script>
+        const tileLayer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+        });
+
+        const icons = [];
+        for (let i = 0; i <= 7; i++) {
+            if(i === 0){
+                icons[i] = L.icon({
+                    iconUrl: `{{ asset('images/mapicons/${i}.png') }}`,
+                    shadowUrl: '',
+                    iconAnchor: [36, 86]
+                });
+            } else {
+                icons[i] = L.icon({
+                    iconUrl: `{{ asset('images/mapicons/${i}.png') }}`,
+                    shadowUrl: '',
+                    iconSize: [40, 40],
+                    iconAnchor: [20, 32]
+                });
+            }
+        }
+
+        const markers = [];
+        markers.push(L.marker([51.85109819957367, 19.418445297865162], {icon: icons[0]}).bindPopup('Inwestycja'));
+
+        @foreach($markers as $m)
+        markers.push(L.marker([{{ $m->lat }}, {{ $m->lng }}], {icon: icons[{{ $m->group_id }}]}).bindPopup('{{ $m->name }}'));
+        @endforeach
+
+        const featureGroup = L.featureGroup(markers);
+
+        const mapDiv = document.getElementById("map2");
+        let maps = new L.Map(mapDiv, {
+            center: [0, 0],
+            zoom: 0,
+            layers: [tileLayer, featureGroup]
+        });
+
+        maps.fitBounds(featureGroup.getBounds(), {
+            padding: [50, 50]
+        });
+
+        maps.on('popupclose', function () {
+            maps.fitBounds(featureGroup.getBounds(), {
+                padding: [50, 50]
+            });
+        });
+
+        function debounce(func) {
+            let timer;
+            return function (event) {
+                if (timer) clearTimeout(timer);
+                timer = setTimeout(func, 100, event);
+            };
+        }
+
+        window.addEventListener("resize", debounce(function (e) {
+            maps.fitBounds(featureGroup.getBounds(), {
+                padding: [50, 50]
+            });
+        }));
+
+        const alwaysIncludedMarker = L.marker([51.85109819957367, 19.418445297865162], {icon: icons[0]}).bindPopup('Inwestycja');
+
+        // Function to filter markers
+        function filterMarkers(group) {
+            featureGroup.clearLayers();
+            featureGroup.addLayer(alwaysIncludedMarker);
+            markers.forEach(marker => {
+                if (group === null || marker.options.icon.options.iconUrl.includes(`/${group}.png`)) {
+                    featureGroup.addLayer(marker);
+                }
+            });
+            maps.fitBounds(featureGroup.getBounds(), {
+                padding: [50, 50]
+            });
+        }
+
+        // Add click event listeners to the divs
+        document.querySelectorAll('.map-place').forEach(div => {
+            div.addEventListener('click', function() {
+                const group = this.getAttribute('data-group');
+                filterMarkers(group);
+            });
+        });
+
+        // Optionally add a reset button to show all markers
+        const resetButton = document.getElementById('resetButton');
+        if (resetButton) {
+            resetButton.addEventListener('click', function() {
+                filterMarkers(null);
+            });
+        }
+    </script>
+@endpush

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front\Static;
 use App\Http\Controllers\Controller;
 use App\Models\Inline;
 use App\Models\Investment;
+use App\Models\Map;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,8 @@ class IndexController extends Controller
     public function investment()
     {
         $page = Page::find(2);
-        return view('front.static.investment', compact('page'));
+        $markers = Map::all();
+        return view('front.static.investment', compact('page', 'markers'));
     }
 
     public function amenities()

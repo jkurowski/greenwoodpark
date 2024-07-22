@@ -33,7 +33,8 @@ Route::group([
         'user' => 'User\IndexController',
         'role' => 'Role\IndexController',
         'greylist' => 'Greylist\IndexController',
-        'box'=> 'Box\IndexController'
+        'box'=> 'Box\IndexController',
+        'map'=> 'Map\IndexController'
     ]);
 
     Route::get('dictionary/{slug}/{locale}/edit', 'Dictionary\IndexController@edit')->name('dictionary.edit');

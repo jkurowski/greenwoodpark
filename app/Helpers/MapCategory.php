@@ -5,23 +5,21 @@ if (! function_exists('mapCategory')) {
     {
         switch ($number) {
             case '1':
-                return "Przedszkola i szkoły podstawowe";
+                return "PRZYCHODNIA";
             case '2':
-                return "Transport publiczny";
+                return "URZĄD MIASTA";
             case '3':
-                return "Wylot na Autostradę A1";
+                return "PARK MIEJSKI I PARK LINOWY";
             case '4':
-                return "Tereny rekreacyjne, place zabaw, parki rowerowe";
+                return "CENTRUM HANDLOWE";
             case '5':
-                return "Gastronomia";
+                return "EDUKACJA";
             case '6':
-                return "Przychodnie publicznych i prywatne";
+                return "SPORT";
             case '7':
-                return "Apteki";
+                return "DWORZEC PKP";
             case '8':
-                return "Kościoły";
-            case '9':
-                return "Markety, sklepy, drogerie";
+                return "SZKOŁA PODSTAWOWA";
         }
     }
 }
