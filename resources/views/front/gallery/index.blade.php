@@ -136,57 +136,15 @@
         <section class="gallery margin-wrapper-xs">
             <div class="container">
                 <div class="d-flex flex-column gap-5 align-items-start">
-                    <div
-                            class="nav nav-pills nav-btn-container"
-                            id="v-pills-tab"
-                            role="tablist"
-                            aria-orientation="horizontal"
-                    >
-                        <button
-                                class="active tab"
-                                id="v-pills-visual-tab"
-                                data-bs-toggle="pill"
-                                data-bs-target="#v-pills-visual"
-                                type="button"
-                                role="tab"
-                                aria-controls="v-pills-visual"
-                                aria-selected="true"
-                        >
-                            WIZUALIZACJE
-                        </button>
-                        <button
-                                class="tab"
-                                id="v-pills-interior-tab"
-                                data-bs-toggle="pill"
-                                data-bs-target="#v-pills-interior"
-                                type="button"
-                                role="tab"
-                                aria-controls="v-pills-interior"
-                                aria-selected="false"
-                        >
-                            WNĘTRZA
-                        </button>
-                        <button
-                                class="tab"
-                                id="v-pills-area-tab"
-                                data-bs-toggle="pill"
-                                data-bs-target="#v-pills-area"
-                                type="button"
-                                role="tab"
-                                aria-controls="v-pills-area"
-                                aria-selected="false"
-                        >
-                            OKOLICA
-                        </button>
+                    <div class="nav nav-pills nav-btn-container" id="v-pills-tab" role="tablist" aria-orientation="horizontal">
+                        <button class="active tab" id="v-pills-visual-tab" data-bs-toggle="pill" data-bs-target="#v-pills-visual" type="button" role="tab" aria-controls="v-pills-visual" aria-selected="true">WIZUALIZACJE</button>
+
+                        <button class="tab" id="v-pills-interior-tab" data-bs-toggle="pill" data-bs-target="#v-pills-interior" type="button" role="tab" aria-controls="v-pills-interior" aria-selected="false">WNĘTRZA</button>
+
+                        <button class="tab" id="v-pills-area-tab" data-bs-toggle="pill" data-bs-target="#v-pills-area" type="button" role="tab" aria-controls="v-pills-area" aria-selected="false">ZDJĘCIA Z BUDOWY</button>
                     </div>
                     <div class="tab-content" id="v-pills-tabContent">
-                        <div
-                                class="tab-pane fade show active gallery"
-                                id="v-pills-visual"
-                                role="tabpanel"
-                                aria-labelledby="v-pills-home-tab"
-                                tabindex="0"
-                        >
+                        <div class="tab-pane fade show active gallery" id="v-pills-visual" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
                             <div class="gallery-grid">
                                 <div class="row gx-4 gy-4" id="gallery">
                                     <div class="col-md-8">
@@ -360,13 +318,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div
-                                class="tab-pane fade gallery"
-                                id="v-pills-interior"
-                                role="tabpanel"
-                                aria-labelledby="v-pills-interior-tab"
-                                tabindex="0"
-                        >
+                        <div class="tab-pane fade gallery" id="v-pills-interior" role="tabpanel" aria-labelledby="v-pills-interior-tab" tabindex="0">
                             <div class="gallery-grid">
                                 <div class="row gx-4 gy-4" id="gallery">
                                     <div class="col-md-8">
@@ -540,179 +492,29 @@
                                 </div>
                             </div>
                         </div>
-                        <div
-                                class="tab-pane fade gallery"
-                                id="v-pills-area"
-                                role="tabpanel"
-                                aria-labelledby="v-pills-area-tab"
-                                tabindex="0"
-                        >
+                        <div class="tab-pane fade gallery" id="v-pills-area" role="tabpanel" aria-labelledby="v-pills-area-tab" tabindex="0">
                             <div class="gallery-grid">
                                 <div class="row gx-4 gy-4" id="gallery">
-                                    <div class="col-md-8">
-                                        <div class="row gx-4 gy-4">
-                                            <!-- 1 - TOP -->
-                                            <a
-                                                    href="{{ asset('images/gallery-grid/nowe-miasto-2.png') }}"
-                                                    class="glightbox"
-                                            >
-                                                <picture>
-                                                    <source
-                                                            srcset="{{ asset('images/gallery-grid/nowe-miasto-2.webp') }}"
-                                                            media="(max-width: 992px)"
-                                                    />
-                                                    <source
-                                                            srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.webp') }}"
-                                                            media="(min-width: 992px)"
-                                                    />
-                                                    <source
-                                                            srcset="{{ asset('images/gallery-grid/nowe-miasto-2.png') }}"
-                                                            media="(max-width: 992px)"
-                                                    />
-                                                    <source
-                                                            srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}"
-                                                            media="(min-width: 992px)"
-                                                    />
-                                                    <img
-                                                            src="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}"
-                                                            alt="Galeria Apartamentów Nowe Miasto"
-                                                            width="3276"
-                                                            height="1966"
-                                                    />
-                                                </picture>
-                                            </a>
-                                            <div class="col-6">
-                                                <!-- 1 LEFT BOTTOM -->
-                                                <a
-                                                        href="{{ asset('images/gallery-grid/gallery-kids.png') }}"
-                                                        class="glightbox"
-                                                >
-                                                    <picture>
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-kids.webp') }}"
-                                                                media="(max-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-kids@2x.webp') }}"
-                                                                media="(min-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-kids.png') }}"
-                                                                media="(max-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-kids@2x.png') }}"
-                                                                media="(min-width: 992px)"
-                                                        />
-                                                        <img
-                                                                src="{{ asset('images/gallery-grid/gallery-kids@2x.png') }}"
-                                                                alt="Galeria Apartamentów Nowe Miasto"
-                                                                width="3276"
-                                                                height="1966"
-                                                        />
-                                                    </picture>
+                                    <div class="col-12">
+                                        <div class="row gx-4 gy-4 justify-content-center">
+                                            <div class="col-4">
+                                                <a href="{{ asset('uploads/gallery/big_1.jpg') }}" class="glightbox">
+                                                    <img src="{{ asset('uploads/gallery/thumb_1.jpg') }}" alt="">
                                                 </a>
                                             </div>
-                                            <div class="col-6">
-                                                <!-- 2 LEFT BOTTOM -->
-                                                <a
-                                                        href="{{ asset('images/gallery-grid/galeria-hero.png') }}"
-                                                        class="glightbox"
-                                                >
-                                                    <picture>
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/galeria-hero.webp') }}"
-                                                                media="(max-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/galeria-hero@2x.webp') }}"
-                                                                media="(min-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/galeria-hero.png') }}"
-                                                                media="(max-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/galeria-hero@2x.png') }}"
-                                                                media="(min-width: 992px)"
-                                                        />
-                                                        <img
-                                                                src="{{ asset('images/gallery-grid/galeria-hero@2x.png') }}"
-                                                                alt="Galeria Apartamentów Nowe Miasto"
-                                                                width="3276"
-                                                                height="1966"
-                                                        />
-                                                    </picture>
+                                            <div class="col-4">
+                                                <a href="{{ asset('uploads/gallery/big_2.jpg') }}" class="glightbox">
+                                                    <img src="{{ asset('uploads/gallery/thumb_2.jpg') }}" alt="">
                                                 </a>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="row gy-4">
-                                            <div class="col-12">
-                                                <!-- 1 TOP RIGHT -->
-                                                <a
-                                                        href="{{ asset('images/gallery-grid/o-inwestycji-1.png') }}"
-                                                        class="glightbox"
-                                                >
-                                                    <picture>
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/o-inwestycji-1.webp') }}"
-                                                                media="(max-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/o-inwestycji-1@2x.webp') }}"
-                                                                media="(min-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/o-inwestycji-1.png') }}"
-                                                                media="(max-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/o-inwestycji-1@2x.png') }}"
-                                                                media="(min-width: 992px)"
-                                                        />
-                                                        <img
-                                                                src="{{ asset('images/gallery-grid/o-inwestycji-1@2x.png') }}"
-                                                                width="3276"
-                                                                height="1966"
-                                                                alt="Nowe miasto"
-                                                                class="grid-img"
-                                                        />
-                                                    </picture>
+                                            <div class="col-4">
+                                                <a href="{{ asset('uploads/gallery/big_3.jpg') }}" class="glightbox">
+                                                    <img src="{{ asset('uploads/gallery/thumb_3.jpg') }}" alt="">
                                                 </a>
                                             </div>
-                                            <div class="col-12">
-                                                <!-- 1 BOTTOM RIGHT -->
-                                                <a
-                                                        href="{{ asset('images/gallery-grid/gallery-2-right.png') }}"
-                                                        class="glightbox"
-                                                >
-                                                    <picture>
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-2-right.webp') }}"
-                                                                media="(max-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-2-right@2x.webp') }}"
-                                                                media="(min-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-2-right.png') }}"
-                                                                media="(max-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-2-right@2x.png') }}"
-                                                                media="(min-width: 992px)"
-                                                        />
-                                                        <img
-                                                                src="{{ asset('images/gallery-grid/gallery-2-right@2x.png') }}"
-                                                                width="3276"
-                                                                height="1966"
-                                                                alt="Nowe miasto"
-                                                                class="grid-img-2"
-                                                        />
-                                                    </picture>
+                                            <div class="col-4">
+                                                <a href="{{ asset('uploads/gallery/big_4.jpg') }}" class="glightbox">
+                                                    <img src="{{ asset('uploads/gallery/thumb_4.jpg') }}" alt="">
                                                 </a>
                                             </div>
                                         </div>
