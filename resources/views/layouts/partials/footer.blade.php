@@ -68,7 +68,7 @@
                         <a
                                 class="nav-link"
                                 href="mailto:sprzedaz@madeydevelopment.pl"
-                                aria-label="skontaktuj się z nami"
+                                aria-label="skontaktuj się z nami" target="_blank"
                         ><img src="{{ asset('images/email.svg') }}" />sprzedaz@madeydevelopment.pl</a
                         >
                     </li>
@@ -83,7 +83,7 @@
                 <p class="footer-title pb-4 mb-0">SOCIAL MEDIA</p>
                 <ul class="list-unstyled footer-icons">
                     <li class="nav-item pb-3">
-                        <a href="https://www.instagram.com/" aria-label="instagram">
+                        <a href="https://www.instagram.com/" target="_blank" aria-label="instagram">
                             <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="29"
@@ -148,7 +148,7 @@
                         </a>
                     </li>
                     <li class="nav-item pb-3">
-                        <a href="https://www.facebook.com/" aria-label="facebook">
+                        <a href="https://www.facebook.com/" target="_blank" aria-label="facebook">
                             <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="29"
