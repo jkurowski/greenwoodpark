@@ -102,6 +102,13 @@
             </div>
         </div>
     @endif
+    <script>
+        const lightbox = GLightbox({
+            touchNavigation: true,
+            loop: true,
+            autoplayVideos: true,
+        });
+    </script>
     <script type="text/javascript">
         $(document).ready(function() {
             @if (settings()->get('popup_exit_status') == 1)
