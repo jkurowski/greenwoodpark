@@ -48,6 +48,11 @@
                         <!-- SUBTITLE -->
                         <span class="subtitle-1">Apartamenty Nowe miasto</span>
                     </div>
+
+                    <div class="col-12 mt-5 text-center">
+                        <p style="font-size: 26px;color: red"><b>W dniach od 05.08.2024 do 09.08.2024 biuro sprzedaży będzie zamknięte.</b></p>
+                    </div>
+
                     <div class="col-12 col-lg-5 offset-lg-1 col-xxl-5 offset-xxl-1">
                         <div class="box">
                             <span>napisz</span>
