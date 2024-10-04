@@ -498,22 +498,22 @@
                                     <div class="col-12">
                                         <div class="row gx-4 gy-4 justify-content-center">
                                             <div class="col-4">
-                                                <a href="{{ asset('uploads/gallery/big_1.jpg') }}" class="glightbox">
+                                                <a href="{{ asset('uploads/gallery/big_1.jpg') }}" class="glightbox" data-gallery="gallery3">
                                                     <img src="{{ asset('uploads/gallery/thumb_1.jpg') }}" alt="">
                                                 </a>
                                             </div>
                                             <div class="col-4">
-                                                <a href="{{ asset('uploads/gallery/big_2.jpg') }}" class="glightbox">
+                                                <a href="{{ asset('uploads/gallery/big_2.jpg') }}" class="glightbox" data-gallery="gallery3">
                                                     <img src="{{ asset('uploads/gallery/thumb_2.jpg') }}" alt="">
                                                 </a>
                                             </div>
                                             <div class="col-4">
-                                                <a href="{{ asset('uploads/gallery/big_3.jpg') }}" class="glightbox">
+                                                <a href="{{ asset('uploads/gallery/big_3.jpg') }}" class="glightbox" data-gallery="gallery3">
                                                     <img src="{{ asset('uploads/gallery/thumb_3.jpg') }}" alt="">
                                                 </a>
                                             </div>
                                             <div class="col-4">
-                                                <a href="{{ asset('uploads/gallery/big_4.jpg') }}" class="glightbox">
+                                                <a href="{{ asset('uploads/gallery/big_4.jpg') }}" class="glightbox" data-gallery="gallery3">
                                                     <img src="{{ asset('uploads/gallery/thumb_4.jpg') }}" alt="">
                                                 </a>
                                             </div>

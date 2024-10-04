@@ -49,7 +49,7 @@
                         <span class="subtitle-1">Apartamenty Nowe miasto</span>
                     </div>
 
-                    <div class="col-12 mt-5 text-center">
+                    <div class="col-12 mt-5 text-center d-none">
                         <p style="font-size: 26px;color: red"><b>W dniach od 05.08.2024 do 09.08.2024 biuro sprzedaży będzie zamknięte.</b></p>
                     </div>
 

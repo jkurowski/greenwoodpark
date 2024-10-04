@@ -83,7 +83,7 @@
                 <p class="footer-title pb-4 mb-0">SOCIAL MEDIA</p>
                 <ul class="list-unstyled footer-icons">
                     <li class="nav-item pb-3">
-                        <a href="https://www.instagram.com/" target="_blank" aria-label="instagram">
+                        <a href="https://www.instagram.com/madeydevelopment/" target="_blank" aria-label="instagram">
                             <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="29"
@@ -148,7 +148,7 @@
                         </a>
                     </li>
                     <li class="nav-item pb-3">
-                        <a href="https://www.facebook.com/" target="_blank" aria-label="facebook">
+                        <a href="https://www.facebook.com/MadeyDevelopment" target="_blank" aria-label="facebook">
                             <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="29"
