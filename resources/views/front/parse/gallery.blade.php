@@ -2,9 +2,9 @@
 <div id="photos-list" class="container">
     <div class="row d-flex justify-content-center">
         @foreach ($list as $p)
-        <div class="col-4">
+        <div class="col-4 mt-4">
             <div class="col-gallery-thumb">
-                <a href="/uploads/gallery/images/{{$p->file}}" class="swipebox" rel="gallery-1" title="">
+                <a href="/uploads/gallery/images/{{$p->file}}" class="glightbox" data-gallery="gallery3">
                     <picture>
                         <source type="image/webp" srcset="{{asset('uploads/gallery/images/thumbs/webp/'.$p->file_webp) }}">
                         <source type="image/jpeg" srcset="{{asset('uploads/gallery/images/thumbs/'.$p->file) }}">

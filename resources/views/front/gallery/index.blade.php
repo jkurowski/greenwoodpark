@@ -517,6 +517,8 @@
                                                     <img src="{{ asset('uploads/gallery/thumb_4.jpg') }}" alt="">
                                                 </a>
                                             </div>
+
+                                            {!! parse_text('[galeria=gallery]1[/galeria]') !!}
                                         </div>
                                     </div>
                                 </div>
