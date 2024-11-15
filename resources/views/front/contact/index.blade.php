@@ -27,7 +27,7 @@
 
         <section class="margin-wrapper-smallest">
             <div class="container contact">
-                <div class="row gy-3 gy-lg-0">
+                <div class="row gy-3 gy-lg-0 justify-content-center">
                     <div
                             class="col-12 text-center mb-5 justify-content-center"
                             data-aos="fade-up"
@@ -56,21 +56,27 @@
                     <div class="col-12 col-lg-5 offset-lg-1 col-xxl-5 offset-xxl-1">
                         <div class="box">
                             <span>napisz</span>
-                            <a
-                                    class="nav-link contact-page-link"
-                                    href="mailto:sprzedaz@madeydevelopment.pl"
-                            ><img src="{{ asset('images/email.svg') }}" alt="" />
-                                sprzedaz@madeydevelopment.pl
-                            </a>
+                            <a class="nav-link contact-page-link" href="mailto:sprzedaz@madeydevelopment.pl"><img src="{{ asset('images/email.svg') }}" alt="" />sprzedaz@madeydevelopment.pl</a>
                         </div>
                     </div>
                     <div class="col-12 col-lg-5 col-xxl-5">
                         <div class="box">
                             <span>ZADZWOŃ</span>
-
-                            <a class="nav-link" href="tel:+48576117119"
-                            ><img src="{{ asset('images/phone.svg') }}" />+48 576 117 119</a
-                            >
+                            <a class="nav-link" href="tel:+48576117119"><img src="{{ asset('images/phone.svg') }}" />+48 576 117 119</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-5 col-xxl-5 mt-4">
+                        <div class="box">
+                            <span>Godziny pracy</span>
+                            <ul class="list-unstyled mb-0 w-100">
+                                <li class="border-bottom p-1">Poniedziałek<span class="float-end">9:00 - 17:00</span></li>
+                                <li class="border-bottom p-1">Wtorek<span class="float-end">9:00 - 17:00</span></li>
+                                <li class="border-bottom p-1">Środa<span class="float-end">9:00 - 17:00</span></li>
+                                <li class="border-bottom p-1">Czwartek<span class="float-end">9:00 - 17:00</span></li>
+                                <li class="border-bottom p-1">Piątek<span class="float-end">9:00 - 17:00</span></li>
+                                <li class="border-bottom p-1">Sobota<span class="float-end"><span class="text-danger">Nieczynne</span></span></li>
+                                <li class="p-1">Niedziela<span class="float-end"><span class="text-danger">Nieczynne</span></span></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
