@@ -76,23 +76,23 @@
                         <!-- MAIN IMAGE -->
                         <picture>
                             <source
-                                    srcset="{{ asset('images/gallery-grid/about.webp') }}"
+                                    srcset="{{ asset('images/gallery-grid/about-new.webp') }}"
                                     media="(max-width: 992px)"
                             />
                             <source
-                                    srcset="{{ asset('images/gallery-grid/about@2x.webp') }}"
+                                    srcset="{{ asset('images/gallery-grid/about-new@2x.webp') }}"
                                     media="(min-width: 992px)"
                             />
                             <source
-                                    srcset="{{ asset('images/gallery-grid/about.png') }}"
+                                    srcset="{{ asset('images/gallery-grid/about-new.png') }}"
                                     media="(max-width: 992px)"
                             />
                             <source
-                                    srcset="{{ asset('images/gallery-grid/about@2x.png') }}"
+                                    srcset="{{ asset('images/gallery-grid/about-new@2x.png') }}"
                                     media="(min-width: 992px)"
                             />
                             <img
-                                    src="{{ asset('images/gallery-grid/about@2x.png') }}"
+                                    src="{{ asset('images/gallery-grid/about-new@2x.png') }}"
                                     class="img-fluid position-absolute-md calc-hero-sizing about--img"
                                     loading="eager"
                                     decoding="async"
@@ -834,7 +834,7 @@
                                     zabaw.
                                 </p>
                                 <p>
-                                    W ramach pierwszego etapu zostanie realizowany
+                                    W ramach inwestycji zostanie realizowany
                                     pięciokondygnacyjny, dwuklatkowy budynek B. Każde mieszkanie
                                     będzie posiadać obszerny balkon lub taras, a do lokali
                                     parterowych zaprojektowano ogródki.

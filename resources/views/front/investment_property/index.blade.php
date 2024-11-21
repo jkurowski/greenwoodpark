@@ -35,7 +35,7 @@
         <!-- Apartment Card -->
         <section class="apartment">
             <div class="container">
-                <div class="d-flex flex-column gap-5 flex-sm-row justify-content-between align-items-center margin-wrapper-smallest margin-wrapper-smallest-bottom-sm">
+                <div id="property-nav" class="d-flex gap-3 gap-sm-5 flex-sm-row justify-content-between align-items-center margin-wrapper-smallest margin-wrapper-smallest-bottom-sm">
                     @if($prev)
                     <a href="{{ route('front.developro.investment.property', [
                                                         $prev->building->slug,
@@ -269,7 +269,7 @@
                                 data-aos-delay="200"
                                 data-aos-offset="120"
                         >
-                            <a href="/apartamenty" class="ap-card-link">
+                            <a href="/apartamenty?s_pokoje=1" class="ap-card-link">
                                 <div class="ap-card" data-order="1">
                                     <div class="box">
                                         <div class="type">1-pokojowe</div>
@@ -302,7 +302,7 @@
                                 data-aos-delay="400"
                                 data-aos-offset="120"
                         >
-                            <a href="/apartamenty" class="ap-card-link">
+                            <a href="/apartamenty?s_pokoje=2" class="ap-card-link">
                                 <div class="ap-card" data-order="2">
                                     <div class="box">
                                         <div class="type">2-pokojowe</div>
@@ -335,7 +335,7 @@
                                 data-aos-delay="600"
                                 data-aos-offset="120"
                         >
-                            <a href="/apartamenty" class="ap-card-link">
+                            <a href="/apartamenty?s_pokoje=3" class="ap-card-link">
                                 <div class="ap-card" data-order="3">
                                     <div class="box">
                                         <div class="type">3-pokojowe</div>
@@ -368,7 +368,7 @@
                                 data-aos-delay="800"
                                 data-aos-offset="120"
                         >
-                            <a href="/apartamenty" class="ap-card-link">
+                            <a href="/apartamenty?s_pokoje=4" class="ap-card-link">
                                 <div class="ap-card" data-order="4">
                                     <div class="box">
                                         <div class="type">4-pokojowe</div>
