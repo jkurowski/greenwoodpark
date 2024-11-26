@@ -228,7 +228,6 @@ if (slickMap) {
         slidesToScroll: 2,
         vertical: false,
         touchMove: true,
-        arrows: false,
         prevArrow:
           '<button type="button" class="slick-prev"><img src="../images/map-slider/arrow_up.svg" width="25" height="25" /></button>',
         nextArrow:
@@ -237,15 +236,15 @@ if (slickMap) {
           {
             breakpoint: 768,
             settings: {
-              slidesToShow: 2.77,
+              slidesToShow: 2,
               slidesToScroll: 2,
             },
           },
           {
             breakpoint: 576,
             settings: {
-              slidesToShow: 2.33,
-              slidesToScroll: 2,
+              slidesToShow: 1,
+              slidesToScroll: 1,
             },
           },
         ],

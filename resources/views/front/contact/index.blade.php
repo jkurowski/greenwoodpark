@@ -52,21 +52,22 @@
                     <div class="col-12 mt-5 text-center d-none">
                         <p style="font-size: 26px;color: red"><b>W dniach od 05.08.2024 do 09.08.2024 biuro sprzedaży będzie zamknięte.</b></p>
                     </div>
-
-                    <div class="col-12 col-lg-5 offset-lg-1 col-xxl-5 offset-xxl-1">
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
                         <div class="box">
                             <span>napisz</span>
                             <a class="nav-link contact-page-link" href="mailto:sprzedaz@madeydevelopment.pl"><img src="{{ asset('images/email.svg') }}" alt="" />sprzedaz@madeydevelopment.pl</a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-5 col-xxl-5">
-                        <div class="box">
+
                             <span>ZADZWOŃ</span>
                             <a class="nav-link" href="tel:+48576117119"><img src="{{ asset('images/phone.svg') }}" />+48 576 117 119</a>
+
+                            <span>WhatsApp</span>
+                            <a class="nav-link" href="https://wa.me/48576117119" target="_blank"><img src="{{ asset('images/whatsup.png') }}" width="29" height="29" />+48 576 117 119</a>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-5 col-xxl-5 mt-4">
-                        <div class="box">
+                    <div class="col-12 col-md-6">
+                        <div class="box h-100">
                             <span>Godziny pracy</span>
                             <ul class="list-unstyled mb-0 w-100">
                                 <li class="border-bottom p-1">Poniedziałek<span class="float-end">9:00 - 17:00</span></li>
