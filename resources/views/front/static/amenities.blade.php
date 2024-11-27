@@ -297,30 +297,15 @@
                             data-aos-offset="120"
                     >
                         <!-- COPY IMAGES IN THE SAME ORDER TO slick-slider-about-nav  -->
-                        <div
-                                class="slick-slider-about-l slick-slider-about-left"
-                                dir="rtl"
-                        >
+                        <div class="slick-slider-about-l slick-slider-about-left" dir="rtl">
                             <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/rope-park.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/rope-park@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/rope-park.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/rope-park@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
+                                <source srcset="{{ asset('images/gallery-grid/rope-park.webp') }}" media="(max-width: 992px)"/>
+                                <source srcset="{{ asset('images/gallery-grid/rope-park@2x.webp') }}" media="(min-width: 992px)"/>
+                                <source srcset="{{ asset('images/gallery-grid/rope-park.png') }}" media="(max-width: 992px)"/>
+                                <source srcset="{{ asset('images/gallery-grid/rope-park@2x.png') }}" media="(min-width: 992px)"/>
                                 <img
                                         src="{{ asset('images/gallery-grid/rope-park@2x.png') }}"
-                                        alt="Partk linowy"
+                                        alt="Park linowy"
                                         width="672"
                                         height="489"
                                         loading="lazy"
@@ -352,54 +337,16 @@
                                 />
                             </picture>
                             <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/rope-park.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/rope-park@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/rope-park.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/rope-park@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <img
-                                        src="{{ asset('images/gallery-grid/rope-park@2x.png') }}"
-                                        alt="Partk linowy"
-                                        width="672"
-                                        height="489"
-                                        loading="lazy"
-                                />
+                                <img src="{{ asset('images/okolica/miejsce-do-spaceru-park.jpg') }}" alt="Spacerujący ludzie w parku" width="640" height="490" loading="lazy"/>
                             </picture>
                             <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/forest.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/forest@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/forest.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/forest@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <img
-                                        src="{{ asset('images/gallery-grid/forest@2x.png') }}"
-                                        alt="Las"
-                                        width="670"
-                                        height="462"
-                                        loading="lazy"
-                                />
+                                <img src="{{ asset('images/okolica/rodzina.jpg') }}" alt="Szczęśliwa rodzina przed domem" width="640" height="490" loading="lazy"/>
+                            </picture>
+                            <picture>
+                                <img src="{{ asset('images/okolica/sciezki-rowerowe.jpg') }}" alt="Rodzinna wycieczka rowerowa" width="640" height="490" loading="lazy"/>
+                            </picture>
+                            <picture>
+                                <img src="{{ asset('images/okolica/park-linowy.jpg') }}" alt="Park linowy dla najmłodszych" width="640" height="490" loading="lazy"/>
                             </picture>
                         </div>
                         <!-- HERE -->
@@ -458,54 +405,16 @@
                                 />
                             </picture>
                             <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/rope-park.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/rope-park@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/rope-park.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/rope-park@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <img
-                                        src="{{ asset('images/gallery-grid/rope-park@2x.png') }}"
-                                        alt="Partk linowy"
-                                        width="672"
-                                        height="489"
-                                        loading="lazy"
-                                />
+                                <img src="{{ asset('images/okolica/miejsce-do-spaceru-park.jpg') }}" alt="Spacerujący ludzie w parku" width="640" height="490" loading="lazy"/>
                             </picture>
                             <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/forest.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/forest@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/forest.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/forest@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <img
-                                        src="{{ asset('images/gallery-grid/forest@2x.png') }}"
-                                        alt="Las"
-                                        width="670"
-                                        height="462"
-                                        loading="lazy"
-                                />
+                                <img src="{{ asset('images/okolica/rodzina.jpg') }}" alt="Szczęśliwa rodzina przed domem" width="640" height="490" loading="lazy"/>
+                            </picture>
+                            <picture>
+                                <img src="{{ asset('images/okolica/sciezki-rowerowe.jpg') }}" alt="Rodzinna wycieczka rowerowa" width="640" height="490" loading="lazy"/>
+                            </picture>
+                            <picture>
+                                <img src="{{ asset('images/okolica/park-linowy.jpg') }}" alt="Park linowy dla najmłodszych" width="640" height="490" loading="lazy"/>
                             </picture>
                         </div>
                     </div>
