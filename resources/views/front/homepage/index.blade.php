@@ -400,24 +400,8 @@
                                 />
                             </picture>
                             <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/about.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/about@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/about.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/about@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
                                 <img
-                                        src="{{ asset('images/gallery-grid/about@2x.png') }}"
+                                        src="{{ asset('images/wizualizacja-inwestycji-1.jpg') }}"
                                         width="2124"
                                         height="1380"
                                         loading="lazy"
@@ -452,24 +436,8 @@
                                 />
                             </picture>
                             <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/about.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/about@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/about.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/about@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
                                 <img
-                                        src="{{ asset('images/gallery-grid/about@2x.png') }}"
+                                        src="{{ asset('images/wizualizacja-inwestycji-1.jpg') }}"
                                         width="2124"
                                         height="1380"
                                         loading="lazy"
