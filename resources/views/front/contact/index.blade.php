@@ -70,12 +70,12 @@
                         <div class="box h-100">
                             <span>Godziny pracy</span>
                             <ul class="list-unstyled mb-0 w-100">
-                                <li class="border-bottom p-1">Poniedziałek<span class="float-end">9:00 - 17:00</span></li>
-                                <li class="border-bottom p-1">Wtorek<span class="float-end">9:00 - 17:00</span></li>
-                                <li class="border-bottom p-1">Środa<span class="float-end">9:00 - 17:00</span></li>
-                                <li class="border-bottom p-1">Czwartek<span class="float-end">9:00 - 17:00</span></li>
-                                <li class="border-bottom p-1">Piątek<span class="float-end">9:00 - 17:00</span></li>
-                                <li class="border-bottom p-1">Sobota<span class="float-end"><span class="text-danger">Nieczynne</span></span></li>
+                                <li class="border-bottom p-1">Poniedziałek<span class="float-end">8:00 - 19:00</span></li>
+                                <li class="border-bottom p-1">Wtorek<span class="float-end">8:00 - 19:00</span></li>
+                                <li class="border-bottom p-1">Środa<span class="float-end">8:00 - 19:00</span></li>
+                                <li class="border-bottom p-1">Czwartek<span class="float-end">8:00 - 19:00</span></li>
+                                <li class="border-bottom p-1">Piątek<span class="float-end">9:00 - 18:00</span></li>
+                                <li class="border-bottom p-1">Sobota<span class="float-end">9:00 - 15:00</span></li>
                                 <li class="p-1">Niedziela<span class="float-end"><span class="text-danger">Nieczynne</span></span></li>
                             </ul>
                         </div>
