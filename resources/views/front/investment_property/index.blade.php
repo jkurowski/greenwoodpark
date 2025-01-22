@@ -134,9 +134,12 @@
                                                 <img class="ps-4" src="{{ asset('images/arrow-right.svg') }}" height="15.644" alt="strzałka" height="15"/>
                                             </a>
                                         </div>
-                                        <div class="row mt-3 align-items-sm-center flex-column flex-sm-row">
+                                        <div class="row mt-4 align-items-sm-center flex-column flex-sm-row">
                                             @if($property->file_pdf)
                                                 <a class="col order-0 order-lg-3 pb-4 pb-lg-0 text-black link-offset-2 link-underline link-underline-opacity-0 ms-auto link-underline-opacity-100-hover" href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" target="_blank">POBIERZ KARTĘ .PDF</a>
+                                            @endif
+                                            @if($property->file_3d)
+                                                <a class="col order-0 order-lg-3 pb-4 pb-lg-0 text-black link-offset-2 link-underline link-underline-opacity-0 ms-auto link-underline-opacity-100-hover" href="{{ asset('/investment/property/pdf/'.$property->file_3d) }}" target="_blank">POBIERZ KARTĘ 3D</a>
                                             @endif
                                         </div>
                                     </article>
