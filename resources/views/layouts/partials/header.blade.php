@@ -5,17 +5,11 @@
             <div class="info-container">
                 <div class="info-container__email info-container__box">
                     <span>Napisz do nas</span>
-                    <a
-                            href="mailto:sprzedaz@madeydevelopment.pl"
-                            aria-label="skontaktuj się"
-                    >sprzedaz@madeydevelopment.pl</a
-                    >
+                    <a href="mailto:sprzedaz@madeydevelopment.pl" aria-label="skontaktuj się">sprzedaz@madeydevelopment.pl</a>
                 </div>
                 <div class="info-container__phone info-container__box">
                     <span>Zadzwoń do nas</span>
-                    <a href="tel:+48576117119" aria-label="Zadzwoń"
-                    >+48 576 117 119</a
-                    >
+                    <a href="tel:+48576117119" aria-label="Zadzwoń">+48 576 117 119</a>
                 </div>
             </div>
 
@@ -92,7 +86,7 @@
                     <li class="nav-item mt-3 text-uppercase d-flex justify-content-between li-hidden">
                         <div class="info-container__phone info-container__box">
                             <span>Zadzwoń do nas</span>
-                            <a href="tel:+48504470477" aria-label="kontakt telefoniczny">+48 504 470 477</a>
+                            <a href="tel:+48576117119" aria-label="kontakt telefoniczny">+48 576 117 119</a>
                         </div>
                     </li>
                 </ul>
