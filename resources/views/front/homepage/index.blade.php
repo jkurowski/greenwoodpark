@@ -75,31 +75,16 @@
                     <div class="col-12 pt-main pb-0 px-0 ps-md-5">
                         <!-- MAIN IMAGE -->
                         <picture>
-                            <source
-                                    srcset="{{ asset('images/gallery-grid/about-new.webp') }}"
-                                    media="(max-width: 992px)"
-                            />
-                            <source
-                                    srcset="{{ asset('images/gallery-grid/about-new@2x.webp') }}"
-                                    media="(min-width: 992px)"
-                            />
-                            <source
-                                    srcset="{{ asset('images/gallery-grid/about-new.png') }}"
-                                    media="(max-width: 992px)"
-                            />
-                            <source
-                                    srcset="{{ asset('images/gallery-grid/about-new@2x.png') }}"
-                                    media="(min-width: 992px)"
-                            />
+                            <source srcset="{{ asset('images/wizualizacja-inwestycji-mobile.jpg') }}" media="(max-width: 1366px)"/>
                             <img
-                                    src="{{ asset('images/gallery-grid/about-new@2x.png') }}"
+                                    src="{{ asset('images/wizualizacja-inwestycji.jpg') }}"
                                     class="img-fluid position-absolute-md calc-hero-sizing about--img"
                                     loading="eager"
                                     decoding="async"
-                                    width="2124"
-                                    height="1380"
+                                    width="1420"
+                                    height="920"
                                     data-aos="fade-left"
-                                    alt=""
+                                    alt="Wizualizacja inwestycji Zgierz w Nowym Mieście"
                             />
                         </picture>
                     </div>

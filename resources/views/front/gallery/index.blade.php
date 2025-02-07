@@ -181,32 +181,13 @@
                                             </a>
                                             <div class="col-6">
                                                 <!-- 1 LEFT BOTTOM -->
-                                                <a
-                                                        href="{{ asset('images/gallery-grid/gallery-kids.png') }}"
-                                                        class="glightbox"
-                                                >
+                                                <a href="{{ asset('images/wizualizacja-inwestycji.jpg') }}" class="glightbox">
                                                     <picture>
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-kids.webp') }}"
-                                                                media="(max-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-kids@2x.webp') }}"
-                                                                media="(min-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-kids.png') }}"
-                                                                media="(max-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-kids@2x.png') }}"
-                                                                media="(min-width: 992px)"
-                                                        />
                                                         <img
-                                                                src="{{ asset('images/gallery-grid/gallery-kids@2x.png') }}"
+                                                                src="{{ asset('images/wizualizacja-inwestycji-gallery.jpg') }}"
                                                                 alt="Galeria Apartamentów Nowe Miasto"
-                                                                width="3276"
-                                                                height="1966"
+                                                                width="780"
+                                                                height="505"
                                                         />
                                                     </picture>
                                                 </a>
