@@ -112,7 +112,12 @@
     <input type="hidden" name="page_name" value="{{ $page_name }}">
     <div class="col-12 text-center text-sm-start">
         <script type="text/javascript">
+            @if(config('services.recaptcha.v3_site_key') && config('services.recaptcha.v3_secret_key'))
+            document.write("<button data-sitekey=\"{{ config('services.recaptcha.v3_site_key') }}\" data-callback=\"onRecaptchaSuccess\" data-action=\"submitContact\" type=\"submit\" class=\"btn btn-main mt-5 btn-submit g-recaptcha\">WYŚLIJ <img class=\"ps-4\" src=\"{{ asset('images/arrow-right.svg') }}\" height=\"15.644\" alt=\"Wyślij formularz\"/></button>");
+            @else
             document.write("<button data-btn-submit=\"\" type=\"submit\" class=\"btn btn-main mt-5 btn-submit\">WYŚLIJ <img class=\"ps-4\" src=\"{{ asset('images/arrow-right.svg') }}\" height=\"15.644\" alt=\"Wyślij formularz\"/></button>");
+            @endif
+
         </script>
         <noscript>Do poprawnego działania, Java musi być włączona.</noscript>
     </div>
@@ -121,14 +126,26 @@
 @push('scripts')
     <script src="{{ asset('js/validation.js') }}" charset="utf-8"></script>
     <script src="{{ asset('js/pl.js') }}" charset="utf-8"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $(".validateForm").validationEngine({
                 validateNonVisibleFields: true,
                 updatePromptsPosition:true,
-                promptPosition : "topRight:-137px"
+                promptPosition : "topRight:-137px",
+                autoPositionUpdate: false
             });
         });
+
+        function onRecaptchaSuccess(token) {
+            $(".validateForm").validationEngine('updatePromptsPosition');
+            const isValid = $(".validateForm").validationEngine('validate');
+            if (isValid) {
+                $("#contact-form").submit();
+            } else {
+                grecaptcha.reset();
+            }
+        }
         @if (session('success') || session('warning') || $errors->any())
         $(window).load(function() {
             const aboveHeight = $('header').outerHeight();
