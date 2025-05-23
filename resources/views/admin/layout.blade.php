@@ -68,6 +68,13 @@
                                 </span> Galeria</a>
                         </li>
 
+                        <li {{ Request::routeIs('admin.article.*') ? 'class=active' : '' }}>
+                            <a href="{{ route('admin.article.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span> Aktualności</a>
+                        </li>
+
                         <li {{ Request::routeIs('admin.map.*') ? 'class=active' : '' }}>
                             <a href="{{ route('admin.map.index') }}">
                                 <span class="menu-bullet">
