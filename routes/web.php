@@ -39,7 +39,11 @@ Route::middleware(['restrictIp'])->group(function () {
 
 //Route::group(['namespace' => 'Front', 'prefix' => '{locale?}', 'where' => ['locale' => '(?!admin)*[a-z]{2}'],], function() {
 Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'front.'], function () {
+
     Route::get('/', 'IndexController@index')->name('index');
+    Route::get('/aktualnosci', 'ArticleController@index')->name('article.index');
+    Route::get('/aktualnosci/{slug}', 'ArticleController@show')->name('article.show');
+
 
     // Static pages
     Route::get(

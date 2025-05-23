@@ -37,8 +37,6 @@ class ArticleObserver
      */
     public function saving(Article $article)
     {
-        if(app()->getLocale() == 'pl') {
-            $article->slug = Str::slug($article->title);
-        }
+        $article->slug = Str::slug($article->title);
     }
 }

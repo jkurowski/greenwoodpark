@@ -29,6 +29,7 @@ class ArticleFormRequest extends FormRequest
             'content_entry' => 'required|string|min:5',
             'content' => '',
             'status' => 'boolean',
+            'posted_at' => 'required',
             'file_alt' => '',
             'meta_title' => '',
             'meta_description' => '',

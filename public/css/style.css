@@ -14792,3 +14792,18 @@ body {
 .form-floating .formError {
   margin-top: -15px !important;
 }
+
+.news-list-item article {
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-radius: 0;
+}
+.news-list-item:last-child article {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border: 0;
+}
+.news-list-item a {
+    text-decoration: none;
+}

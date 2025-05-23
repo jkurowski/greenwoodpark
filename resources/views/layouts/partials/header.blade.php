@@ -58,7 +58,7 @@
             <!-- Links -->
 
             <div class="collapse navbar-collapse justify-content-end bg-white position-relative" id="navbarNav">
-                <ul class="navbar-nav fw-light py-4 py-xl-0 gap-2 gap-xl-4 align-items-xxl-center">
+                <ul class="navbar-nav fw-light py-4 py-xl-0 gap-2 gap-xxl-4 align-items-xxl-center">
                     <li class="nav-item text-uppercase">
                         <a class="nav-link link-anim @if($page->slug == 'o-inwestycji') active @endif" href="/o-inwestycji">O inwestycji</a>
                     </li>
@@ -73,6 +73,9 @@
                     </li>
                     <li class="nav-item text-uppercase">
                         <a class="nav-link link-anim @if($page->slug == 'inwestor') active @endif" href="/inwestor">Inwestor</a>
+                    </li>
+                    <li class="nav-item text-uppercase">
+                        <a class="nav-link link-anim @if($page->slug == 'aktualnosci') active @endif" href="/aktualnosci">Aktualności</a>
                     </li>
                     <li class="nav-item text-uppercase">
                         <a class="nav-link link-anim @if($page->slug == 'kontakt') active @endif" href="/kontakt">KONTAKT</a>
