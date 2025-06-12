@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel='preload' as='style' href="{{ asset('/css/bootstrap.min.css') }}">
-    <link rel='preload' as='style' href="{{ asset('/css/style.min.css') }}">
+    <link rel='preload' as='style' href="{{ asset('/css/style.min.css') }}?v=12062025>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
