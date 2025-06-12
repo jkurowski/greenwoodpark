@@ -14807,3 +14807,23 @@ body {
 .news-list-item a {
     text-decoration: none;
 }
+
+.col-gallery-thumb {}
+.col-gallery-thumb img, .col-gallery-thumb a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.col-gallery-thumb img {
+    border:2px solid white;
+    transition: all 0.1s;
+    -webkit-box-shadow: 0px 8px 20px 0 rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0px 8px 20px 0 rgba(0, 0, 0, 0);
+    box-shadow: 0px 8px 20px 0 rgba(0, 0, 0, 0);
+}
+.col-gallery-thumb:hover img {
+    -webkit-box-shadow: 0px 8px 20px -7px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 8px 20px -7px rgba(0, 0, 0, 1);
+    box-shadow: 0px 8px 20px -7px rgba(0, 0, 0, 1);
+}

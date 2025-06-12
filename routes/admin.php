@@ -25,6 +25,9 @@ Route::group([
 
     Route::get('user/datatable', 'User\IndexController@datatable')->name('user.datatable');
 
+    // Gallery
+    Route::get('ajaxGetGalleries', 'Gallery\IndexController@ajaxGetGalleries')->name('ajaxGetGalleries');
+
     Route::resources([
         'dictionary' => 'Dictionary\IndexController',
         'page' => 'Page\IndexController',
