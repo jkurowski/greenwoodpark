@@ -264,30 +264,14 @@
                                             <div class="col-12">
                                                 <!-- 1 BOTTOM RIGHT -->
                                                 <a
-                                                        href="{{ asset('images/gallery-grid/gallery-2-right.png') }}"
+                                                        href="{{ asset('images/gallery-grid/gallery-2-right-new-big.jpg') }}"
                                                         class="glightbox"
                                                 >
                                                     <picture>
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-2-right.webp') }}"
-                                                                media="(max-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-2-right@2x.webp') }}"
-                                                                media="(min-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-2-right.png') }}"
-                                                                media="(max-width: 992px)"
-                                                        />
-                                                        <source
-                                                                srcset="{{ asset('images/gallery-grid/gallery-2-right@2x.png') }}"
-                                                                media="(min-width: 992px)"
-                                                        />
                                                         <img
-                                                                src="{{ asset('images/gallery-grid/gallery-2-right@2x.png') }}"
-                                                                width="3276"
-                                                                height="1966"
+                                                                src="{{ asset('images/gallery-grid/gallery-2-right-new.jpg') }}"
+                                                                width="900"
+                                                                height="540"
                                                                 alt="Nowe miasto"
                                                                 class="grid-img-2"
                                                         />
