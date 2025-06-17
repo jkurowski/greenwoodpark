@@ -30,9 +30,14 @@ class ContactFormRequest extends FormRequest
             'form_email' => 'required|email:rfc',
             'form_message' => 'required',
             'form_phone' => 'required',
-            'rule_1' => 'required',
             'g-recaptcha-response' => ['required', new ReCaptchaV3()]
         ];
+
+        foreach ($this->all() as $key => $value) {
+            if (str_starts_with($key, 'rule_')) {
+                $rules[$key] = 'required';
+            }
+        }
 
         return $rules;
     }

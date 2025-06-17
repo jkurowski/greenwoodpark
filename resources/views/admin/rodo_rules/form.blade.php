@@ -23,6 +23,7 @@
                                         @include('form-elements.html-select', ['label' => 'Status', 'name' => 'status', 'selected' => $entry->status, 'select' => ['1' => 'Pokaż na liście', '0' => 'Ukryj na liście']])
                                         @include('form-elements.html-select', ['label' => 'Wymagane', 'name' => 'required', 'selected' => $entry->required, 'select' => ['1' => 'Tak', '0' => 'Nie']])
                                         @include('form-elements.html-input-text', ['label' => 'Nazwa regułki', 'name' => 'title', 'value' => $entry->title, 'required' => 1])
+                                        @include('form-elements.html-input-text', ['label' => 'Nazwa regułki VOX', 'name' => 'title_vox', 'value' => $entry->title_vox, 'required' => 1])
                                         @include('form-elements.html-input-text', ['label' => 'Czas trwania regułki', 'name' => 'time', 'value' => $entry->time, 'required' => 1])
                                         @include('form-elements.textarea', ['label' => 'Treść regułki', 'name' => 'text', 'value' => $entry->text, 'rows' => 11, 'class' => 'tinymce'])
                                     </div>

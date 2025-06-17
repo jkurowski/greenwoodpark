@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactFormRequest;
 
 use App\Mail\ChatSend;
+use App\Mail\VoxContactMail;
 use App\Models\Inline;
 use App\Models\Page;
+use App\Models\RodoRules;
 use App\Repositories\Client\ClientRepository;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -68,6 +70,9 @@ class ContactController extends Controller
                     \Illuminate\Support\Facades\Cookie::queue(Cookie::forget($name));
                 }
             }
+
+            $this->sendToVox($request->validated());
+
         } catch (\Throwable $exception) {
             Log::channel('email')->error('Email sending failed', [
                 'message' => $exception->getMessage(),
@@ -80,5 +85,62 @@ class ContactController extends Controller
             'success',
             'Twoja wiadomość została wysłana.'
         );
+    }
+
+    private function sendToVox(array $validated)
+    {
+        $recipient = env('VOX_MAIL');
+        Log::info('sendToVox called');
+
+        $emailData = $this->mapDataToVoxEmailView($validated);
+        Log::info('Mapped Email Data');
+
+        if (empty($emailData)) {
+            Log::error('Email data is empty! Not sending email.');
+            return;
+        }
+
+        $voxContactMail = new VoxContactMail($emailData);
+        Mail::to($recipient)->send($voxContactMail);
+    }
+
+    private function mapDataToVoxEmailView(array $validated)
+    {
+
+        $schema = [
+            "investment_name" => 'Apartamenty Nowe Miasto',
+            "name" => $validated['form_name'] ?? null,
+            "email" => $validated['form_email'] ?? null,
+            "phone" => $validated['form_phone'] ?? null,
+            "area_from" => $validated['area-min'] ?? null,
+            "area_to" => $validated['area-max'] ?? null,
+            "city" => $validated['city'] ?? null,
+            "message" => $validated['form_message'] ?? null,
+            "agreements" => []
+        ];
+
+        $schema['agreements'] = $this->getAgreements($validated);
+        return $schema;
+    }
+
+    private function getAgreements(array $validated): array
+    {
+        $rules = [];
+
+        foreach ($validated as $key => $value) {
+            if (preg_match('/^rule_(\d+)$/', $key, $matches) && $value) {
+                $ruleId = (int) $matches[1];
+                $rule = RodoRules::find($ruleId);
+
+                if ($rule) {
+                    $rules[] = [
+                        'title' => $rule->title_vox,
+                        'description' => strip_tags($rule->text),
+                    ];
+                }
+            }
+        }
+
+        return $rules;
     }
 }
