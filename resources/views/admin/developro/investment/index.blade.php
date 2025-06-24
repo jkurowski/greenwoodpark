@@ -44,9 +44,17 @@
                             <td><span class="badge inwest-list-status-{{ $p->status }}">{{ investmentStatus($p->status) }}</span></td>
                             <td>{{ investmentType($p->type) }}</td>
                             <td>{{ $p->updated_at }}</td>
-                            <td class="option-120">
+                            <td class="option-120 text-end">
                                 <div class="btn-group">
-                                    <a href="{{route('admin.developro.investment.events', $p)}}" class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top" data-bs-title="Pokaż kalendarz"><i class="fe-calendar"></i></a>
+                                    @if($p->vox_url)
+                                        <a href="{{route('admin.developro.vox.index', $p)}}"
+                                           class="btn action-button me-1"
+                                           data-bs-toggle="tooltip"
+                                           data-placement="top"
+                                           data-bs-title="Aktualizacja VOX">
+                                            <i class="fe-download-cloud" aria-hidden="true"></i>
+                                        </a>
+                                    @endif
 
                                     <a href="{{route('admin.developro.investment.log', $p)}}" class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top" data-bs-title="Pokaż aktywność"><i class="fe-activity"></i></a>
 

@@ -27,6 +27,7 @@ class Investment extends Model
         'type',
         'status',
         'developro',
+        'vox_url',
         'name',
         'slug',
         'address',

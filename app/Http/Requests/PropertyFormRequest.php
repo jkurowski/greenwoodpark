@@ -49,6 +49,7 @@ class PropertyFormRequest extends FormRequest
                 Rule::exists('investments', 'id'), // Check if investment with the specified id exists
             ],
             'floor_id' => '',
+            'vox_id' => '',
             'status' => 'required',
             'name' => 'required|string|max:255',
             'name_list' => 'string|max:255',

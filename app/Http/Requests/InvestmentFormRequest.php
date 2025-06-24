@@ -33,6 +33,7 @@ class InvestmentFormRequest extends FormRequest
             'developro' => 'boolean',
             'marker' => 'boolean',
             'contact_form_text' => '',
+            'vox_url' => '',
             'address' => '',
             'city' => '',
             'date_start' => '',

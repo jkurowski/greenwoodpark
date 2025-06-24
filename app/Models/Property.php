@@ -22,6 +22,7 @@ class Property extends Model
         'investment_id',
         'building_id',
         'floor_id',
+        'vox_id',
         'status',
         'name',
         'name_list',

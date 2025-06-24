@@ -117,6 +117,9 @@ Route::group([
             'investment' => 'Investment\IndexController'
         ]);
 
+        // VOX
+        Route::get('{investment}/vox', 'Import\VoxController@index')->name('vox.index');
+
         Route::group(['prefix' => '/investment', 'as' => 'investment.'], function () {
             Route::resources([
                 '{investment}/page' => 'Page\IndexController',

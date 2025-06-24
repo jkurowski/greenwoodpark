@@ -135,8 +135,20 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
-
+                                <div class="row w-100 form-group">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                @include('form-elements.html-input-text', [
+                                                    'label' => 'Numer ID VOX',
+                                                    'name' => 'vox_id',
+                                                    'value' => $entry->vox_id
+                                                ])
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="row w-100 form-group">

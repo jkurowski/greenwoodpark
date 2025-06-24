@@ -24,6 +24,16 @@
                 <div class="card-body control-col12">
 
                     <div class="row w-100 mb-4">
+                        <div class="col-12">
+                            @include('form-elements.html-input-text', [
+                                'label' => 'Link do integracji z VOX',
+                                'name' => 'vox_url',
+                                'value' => $entry->vox_url
+                            ])
+                        </div>
+                    </div>
+
+                    <div class="row w-100 mb-4">
                         <div class="col-4">
                             @include('form-elements.html-select', [
                                 'label' => 'Typ inwestycji',
