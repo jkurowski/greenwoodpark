@@ -51,6 +51,7 @@ Route::group([
             '/' => 'Dashboard\IndexController',
             'seo' => 'Dashboard\SeoController',
             'social' => 'Dashboard\SocialController',
+            'contact' => 'Dashboard\ContactController',
             'popup' => 'Dashboard\PopupController'
         ]);
     });

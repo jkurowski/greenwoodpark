@@ -16,6 +16,7 @@
                 <a class="nav-link {{ Request::routeIs('admin.settings.social.index') ? ' active' : '' }}" href="{{ route('admin.settings.social.index') }}"><span class="fe-hash"></span> Social Media</a>
                 <a class="nav-link {{ Request::routeIs('admin.log.*') ? 'active' : '' }}" href="{{route('admin.log.index')}}"><span class="fe-hard-drive"></span> Logi PA</a>
                 <a class="nav-link {{ Request::routeIs('admin.settings.popup.index') ? 'active' : '' }}" href="{{route('admin.settings.popup.index')}}"><span class="fe-airplay"></span> Baner na start</a>
+                <a class="nav-link {{ Request::routeIs('admin.settings.contact.index') ? 'active' : '' }}" href="{{route('admin.settings.contact.index')}}"><span class="fe-airplay"></span> Godziny pracy</a>
             </nav>
         </div>
         <div class="card mt-3">
