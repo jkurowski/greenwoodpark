@@ -192,7 +192,6 @@
             <div class="col-12 col-md-8 text-center small">
                 <p>Niniejsze przedsięwzięcie deweloperskie, zgodnie z przepisami przejściowymi ustawy z dnia 21 maja 2025 r. o zmianie ustawy o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym, nie jest jeszcze objęte obowiązkiem prezentowania szczegółowych cen ofertowych. Obowiązki informacyjne w tym zostaną w pełni wdrożone najpóźniej do dnia 11 września
                     2025 r.</p>
-                <p class="mb-0">Informujemy, że ta inwestycja nie jest jeszcze objęta obowiązkiem publikacji szczegółowych cen ofertowych, zgodnie z przepisami przejściowymi Ustawy o jawności cen (ustawa z dnia 21 maja 2025 r. o zmianie ustawy o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym). Wszystkie wymagane informacje zostaną udostępnione na naszej stronie najpóźniej do 11 września 2025 r.</p>
             </div>
         </div>
     </div>
