@@ -75,7 +75,15 @@
                     <div class="col-12 pt-main pb-0 px-0 ps-md-5">
                         <!-- MAIN IMAGE -->
                         <picture>
+                            <source srcset="{{ asset('images/wizualizacja-inwestycji.webp') }}"
+                                    type="image/webp" />
+
+                            <source srcset="{{ asset('images/wizualizacja-inwestycji-mobile.webp') }}"
+                                    media="(max-width: 1366px)"
+                                    type="image/webp" />
+
                             <source srcset="{{ asset('images/wizualizacja-inwestycji-mobile.jpg') }}" media="(max-width: 1366px)"/>
+
                             <img
                                     src="{{ asset('images/wizualizacja-inwestycji.jpg') }}"
                                     class="img-fluid position-absolute-md calc-hero-sizing about--img"
@@ -310,6 +318,9 @@
                                 />
                             </picture>
                             <picture>
+                                <source srcset="{{ asset('images/wizualizacja-inwestycji-1.webp') }}"
+                                        type="image/webp" />
+
                                 <img
                                         src="{{ asset('images/wizualizacja-inwestycji-1.jpg') }}"
                                         width="2124"
