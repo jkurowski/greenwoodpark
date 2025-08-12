@@ -35,11 +35,11 @@
                     <div class="col-12">
                         <picture>
                             <!-- WebP version -->
-                            <source srcset="{{ asset('/investment/plan/194312_apartamenty-nowe-miasto.webp') }}" type="image/webp">
+                            <source srcset="{{ asset('/public/investment/plan/194312_apartamenty-nowe-miasto.webp') }}" type="image/webp">
 
                             <!-- JPEG fallback -->
                             <img
-                                src="{{ asset('/investment/plan/194312_apartamenty-nowe-miasto.jpg') }}"
+                                src="{{ asset('/public/investment/plan/194312_apartamenty-nowe-miasto.jpg') }}"
                                 alt="{{$investment->name}}"
                                 id="invesmentplan"
                                 usemap="#invesmentplan"
