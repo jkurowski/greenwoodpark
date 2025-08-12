@@ -36,6 +36,7 @@
                         <picture>
                             <!-- WebP version -->
                             <source srcset="{{ asset('/public/investment/plan/194312_apartamenty-nowe-miasto.webp') }}" type="image/webp">
+                            <source srcset="{{ asset('/public/investment/plan/194312_apartamenty-nowe-miasto.jpg') }}">
 
                             <!-- JPEG fallback -->
                             <img
