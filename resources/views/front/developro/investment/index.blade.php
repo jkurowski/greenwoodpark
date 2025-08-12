@@ -33,7 +33,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <img src="{{ asset('/investment/plan/194312_apartamenty-nowe-miasto.webp') }}" alt="{{$investment->name}}" id="invesmentplan" usemap="#invesmentplan">
+                        <img src="{{ asset('/investment/plan/webp/194312_apartamenty-nowe-miasto.webp') }}" alt="{{$investment->name}}" id="invesmentplan" usemap="#invesmentplan">
                         <map name="invesmentplan">
                             @if($investment->buildings)
                                 @foreach($investment->buildings as $building)
