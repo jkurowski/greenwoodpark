@@ -33,20 +33,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <picture>
-                            <!-- WebP version -->
-                            <source srcset="{{ asset('/public/investment/plan/194312_apartamenty-nowe-miasto.webp') }}" type="image/webp">
-                            <source srcset="{{ asset('/public/investment/plan/194312_apartamenty-nowe-miasto.jpg') }}">
-
-                            <!-- JPEG fallback -->
-                            <img
-                                src="{{ asset('/public/investment/plan/194312_apartamenty-nowe-miasto.jpg') }}"
-                                alt="{{$investment->name}}"
-                                id="invesmentplan"
-                                usemap="#invesmentplan"
-                            >
-                        </picture>
-
+                        <img src="{{ asset('/investment/plan/194312_apartamenty-nowe-miasto.webp') }}" alt="{{$investment->name}}" id="invesmentplan" usemap="#invesmentplan">
                         <map name="invesmentplan">
                             @if($investment->buildings)
                                 @foreach($investment->buildings as $building)
