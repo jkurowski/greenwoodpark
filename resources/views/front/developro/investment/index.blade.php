@@ -44,7 +44,6 @@
                                 alt="{{$investment->name}}"
                                 id="invesmentplan"
                                 usemap="#invesmentplan"
-                                class="w-100"
                             >
                         </picture>
 
