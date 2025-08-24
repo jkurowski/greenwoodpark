@@ -116,7 +116,7 @@ class RealEstateParser
             'direction' => (string) $realEstate->direction,
             'active' => (string) $realEstate->dont_send_to_www,
             'promotion' => [
-                'is_promoted' => $realEstate->promotion,
+                'is_promoted' => (bool) $realEstate->promotion,
                 'price' => (string) $realEstate->promotion_price,
                 'date_from' => (string) $realEstate->promotion_date_from,
                 'date_to' => (string) $realEstate->promotion_date_to,
@@ -128,7 +128,6 @@ class RealEstateParser
                 'view360' => (string) $realEstate->view360,
             ],
             'date_modified' => (string) $realEstate->date_modified,
-            'price_change_history' => (string) $realEstate->price_change_history,
         ];
     }
 }
