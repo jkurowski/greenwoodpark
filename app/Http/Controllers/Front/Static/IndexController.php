@@ -11,10 +11,10 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function investor()
+    public function lokalizacja()
     {
         $page = Page::find(1);
-        return view('front.static.investor', compact('page'));
+        return view('front.static.lokalizacja', compact('page'));
     }
 
     public function investment()

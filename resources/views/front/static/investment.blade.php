@@ -5,628 +5,210 @@
 @section('seo_description', $page->meta_description)
 
 @section('content')
-    <main class="my-3 my-lg-5">
-        <!-- Breadcrumb -->
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="/">Strona główna</a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                                O inwestycji
-                            </li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+    <main class="main" id="page-mieszkania">
+
+        <div class="breadcrumb wrapper">
+            <a href="/">Strona główna</a>
+            <a href="/o-inwestycji/">O inwestycji</a>
         </div>
-        <!-- END -> Breadcrumb -->
 
-        <!-- Section About with slider -->
-        <section class="margin-wrapper-smallest-invest">
-            <div class="container">
-                <div class="row">
-                    <article class="col-12 col-lg-5 pb-5">
-                        <div class="d-flex flex-column gap-5">
-                            <div>
-                                <!-- ICON on to of a header title  -->
-                                <img src="{{ asset('images/logo-small.svg') }}" alt="Apartamenty Nowe Miasto logo" width="54" height="33" class="img-fluid about--icon hidden-first" loading="lazy" decoding="async" data-aos="fade-right" />
-                                <!-- HEADER -->
-                                <h1 class="text-uppercase header-1 fs-xl-3 px-0 mx-0" data-aos="fade-up">O INWESTYCJI</h1>
-                                <!-- SUBTITLE -->
-                                <span class="text-uppercase subtitle-1" data-aos="fade-right" data-aos-delay="300">Nowe miasto</span>
+        <section class="text-img">
+
+            <img src="{{ asset('images/decor-03.png') }}" alt="" class="decor-03 decor--right decor--top" />
+
+            <div class="wrapper">
+
+                <div class="text-img__content">
+                    <h2 class="text-img__title scroll-animation">Greenwood Park</h2>
+                    <h3 class="text-img__subtitle scroll-animation">zamieszkaj tak, jak zawsze marzyłeś</h3>
+                    <div class="text-img__description scroll-animation delay-2">
+                        <p>LWyobraź sobie codzienność w otoczeniu zieleni, ciszy i spokoju, zaledwie kilkanaście minut od centrum
+                            Warszawy. Greenwood Park to wyjątkowa inwestycja w Starej Miłosnej, stworzona dla osób, które chcą łączyć
+                            bliskość natury z komfortem miejskiego życia.</p>
+                        <p>Elegancka architektura, kameralny charakter i sąsiedztwo Mazowieckiego Parku Krajobrazowego sprawiają, że
+                            Greenwood Park to miejsce, gdzie odpoczywasz od zgiełku miasta, nie rezygnując z jego wygód. Starannie
+                            zaprojektowana zieleń, przestrzenie wspólne sprzyjające spotkaniom i relaksowi, a także bezpieczny plac zabaw
+                            dla najmłodszych – to wszystko czeka na przyszłych mieszkańców.</p>
+                    </div>
+                    <div class="text-img__icons scroll-animation delay-3">
+                        <div class="icon">
+                            <div class="icon__wrapper">
+                                <img src="{{ asset('images/icons/construction.svg') }}" alt="" class="icon__img">
                             </div>
-                            <!-- PARAGRAPH -->
-                            <div class="d-flex flex-column gap-2" data-aos="fade-up" data-aos-delay="100">
-                                <p class="fw-bolder">Inwestycja położona będzie przy ul. Orlej 12 w dzielnicy Nowe Miasto w Zgierzu, w najbliższym sąsiedztwie znajdują się: szkoły podstawowe, szkoły średnie oraz przedszkole. Ogromnym autem tej lokalizacji są liczne punkty aktywności sportowej takie jak; boisko, hala sportowa czy lodowisko.</p>
-                                <p class="">Blisko osiedla znajduje się przystanek tramwajowy, z którego co 20 minut odjeżdża tramwaj do Łodzi, z jednego z przystanków w 5 minut dojdziemy do Manufaktury.</p>
-                                <p>Dziesięciominutowym spacerem dojdziemy do stacji PKP Zgierz, skąd co godzinę odjeżdżają pociągi do Warszawy Centralnej, a co 45 minut na dworzec Łódź Fabryczna.</p>
+                            <span class="icon__text">Nowoczesne projekty<br>mieszkaniowo-usługowe</span>
+                        </div>
+                        <div class="icon">
+                            <div class="icon__wrapper">
+                                <img src="{{ asset('images/icons/map.svg') }}" alt="" class="icon__img">
                             </div>
-                        </div>
-
-                        <a href="/apartamenty" class="btn btn-main mt-4" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-220">DOSTĘPNE MIESZKANIA <img class="ps-4" src="{{ asset('images/arrow-right.svg') }}" height="15.644" alt="strzałka" /> </a>
-                    </article>
-
-                    <div class="col-lg-6 offset-lg-1 position-relative align-self-lg-center slider-container" data-aos="fade-left" data-aos-delay="400">
-                        <!-- COPY IMAGES IN THE SAME ORDER TO slick-slider-about-nav  -->
-                        <!-- MAKE FIRST IMG LOADING EAGER -->
-                        <div class="slick-slider-about slick-slider-about-right">
-                            <picture>
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1.webp') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1@2x.webp') }}" media="(min-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1.png') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1@2x.png') }}" media="(min-width: 992px)" />
-                                <img src="{{ asset('images/gallery-grid/o-inwestycji-1@2x.png') }}" width="3276" height="1966" alt="Nowe miasto" />
-                            </picture>
-                            <picture>
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2.webp') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.webp') }}" media="(min-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2.png') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}" media="(min-width: 992px)" />
-                                <img src="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}" width="3276" height="1966" loading="lazy" decoding="async" alt="Nowe miasto 2" />
-                            </picture>
-                            <picture>
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1.webp') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1@2x.webp') }}" media="(min-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1.png') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1@2x.png') }}" media="(min-width: 992px)" />
-                                <img src="{{ asset('images/gallery-grid/o-inwestycji-1@2x.png') }}" width="3276" height="1966" alt="Nowe miasto" />
-                            </picture>
-                            <picture>
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2.webp') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.webp') }}" media="(min-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2.png') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}" media="(min-width: 992px)" />
-                                <img src="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}" width="3276" height="1966" loading="lazy" decoding="async" alt="Nowe miasto 2" />
-                            </picture>
-                        </div>
-                        <!-- HERE -->
-                        <div class="slick-slider-about-nav slick-slider-about-nav-right">
-                            <picture>
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1.webp') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1@2x.webp') }}" media="(min-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1.png') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1@2x.png') }}" media="(min-width: 992px)" />
-                                <img src="{{ asset('images/gallery-grid/o-inwestycji-1@2x.png') }}" width="3276" height="1966" alt="Nowe miasto" />
-                            </picture>
-                            <picture>
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2.webp') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.webp') }}" media="(min-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2.png') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}" media="(min-width: 992px)" />
-                                <img src="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}" width="3276" height="1966" loading="lazy" decoding="async" alt="Nowe miasto 2" />
-                            </picture>
-                            <picture>
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1.webp') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1@2x.webp') }}" media="(min-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1.png') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/o-inwestycji-1@2x.png') }}" media="(min-width: 992px)" />
-                                <img src="{{ asset('images/gallery-grid/o-inwestycji-1@2x.png') }}" width="3276" height="1966" alt="Nowe miasto" />
-                            </picture>
-                            <picture>
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2.webp') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.webp') }}" media="(min-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2.png') }}" media="(max-width: 992px)" />
-                                <source srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}" media="(min-width: 992px)" />
-                                <img src="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}" width="3276" height="1966" loading="lazy" decoding="async" alt="Nowe miasto 2" />
-                            </picture>
+                            <span class="icon__text">Zaufana spółka działająca<br>na krajowym rynku</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- END -> Section About with slider -->
 
-        <!-- Section Map -->
-        <section class="margin-wrapper-xs">
-            <div class="location-map px-0 container-lg">
-                <div class="row gy-5">
-                    <div class="col-12 text-center">
-                        <!-- ICON on to of a header title  -->
-                        <img
-                                src="{{ asset('images/logo-small.svg') }}"
-                                alt="Apartamenty Nowe Miasto logo"
-                                width="54"
-                                height="33"
-                                class="img-fluid about--icon hidden-first"
-                                loading="lazy"
-                                decoding="async"
-                                data-aos="fade-right"
-                        />
-                        <!-- HEADER -->
-                        <h2 class="header-1 fs-xl-3 px-0 mx-0">LOKALIZACJA</h2>
-
-                        <!-- SUBTITLE -->
-                        <span class="subtitle-1">APARTAMENTY NOWE MIASTO</span>
-                    </div>
-                    <div class="col-lg-4 col-xl-3">
-                        <div class="slider-box">
-                            <div class="slick-slider-map">
-                                <div>
-                                    <div class="map-place" data-group="1">
-                                        <img
-                                                src="{{ asset('images/map-slider/clinic.svg') }}"
-                                                width="63"
-                                                height="63"
-                                                decoding="async"
-                                                loading="lazy"
-                                                alt="PRZYCHODNIA"
-                                        />
-                                        <span>PRZYCHODNIA</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="map-place" data-group="2">
-                                        <img
-                                                src="{{ asset('images/map-slider/city-hall.svg') }}"
-                                                width="63"
-                                                height="63"
-                                                decoding="async"
-                                                loading="lazy"
-                                                alt="URZĄD MIASTA"
-                                        />
-                                        <span>URZĄD MIASTA</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="map-place" data-group="3">
-                                        <img
-                                                src="{{ asset('images/map-slider/park.svg') }}"
-                                                width="63"
-                                                height="63"
-                                                decoding="async"
-                                                loading="lazy"
-                                                alt="PARK MIEJSKI I PARK LINOWY"
-                                        />
-                                        <span>PARK MIEJSKI I PARK LINOWY</span>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="map-place" data-group="4">
-                                        <img
-                                                src="{{ asset('images/map-slider/mall.svg') }}"
-                                                width="63"
-                                                height="63"
-                                                decoding="async"
-                                                loading="lazy"
-                                                alt="CENTRUM HANDLOWE"
-                                        />
-                                        <span>CENTRUM HANDLOWE</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="map-place" data-group="5">
-                                        <img
-                                                src="{{ asset('images/map-slider/kindergarten.png') }}"
-                                                width="63"
-                                                height="63"
-                                                decoding="async"
-                                                loading="lazy"
-                                                alt="EDUKACJA"
-                                        />
-                                        <span>EDUKACJA</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="map-place" data-group="6">
-                                        <img
-                                                src="{{ asset('images/map-slider/sports-hall.svg') }}"
-                                                width="63"
-                                                height="63"
-                                                decoding="async"
-                                                loading="lazy"
-                                                alt="HALA SPORTOWA"
-                                        />
-                                        <span>SPORT</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="map-place" data-group="7">
-                                        <img
-                                                src="{{ asset('images/map-slider/pkp-station.svg') }}"
-                                                width="63"
-                                                height="63"
-                                                decoding="async"
-                                                loading="lazy"
-                                                alt="DWORZEC PKP"
-                                        />
-                                        <span>DWORZEC PKP</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 offset-xl-1 map-container">
-                        <div id="map2"></div>
+                <div class="text-img__image scroll-animation delay-3">
+                    <div class="text-img__image-inner">
+                        <img src="{{ asset('images/photos/photo-12.jpg') }}" alt="GREENWOOD PARK" class="text-img__img">
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- END -> Section Map -->
 
-        <!-- Section About with slider - LEFT -->
-        <section class="margin-wrapper-smallest">
-            <div class="container">
-                <div class="row about-slider-l">
-                    <div
-                            class="col-lg-6 order-1 position-relative align-self-lg-center slider-container position-relative"
-                            data-aos="fade-right"
-                            data-aos-delay="200"
-                    >
-                        <!-- COPY IMAGES IN THE SAME ORDER TO slick-slider-about-nav  -->
-                        <div
-                                class="slick-slider-about-l slick-slider-about-left"
-                                dir="rtl"
-                        >
-                            <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <img
-                                        src="{{ asset('images/gallery-grid/wizualizacja-wejscia@2x.png') }}"
-                                        width="672"
-                                        height="489"
-                                        loading="lazy"
-                                        decoding="async"
-                                        alt="wizualizacja wejscia"
-                                />
-                            </picture>
-                            <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <img
-                                        src="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}"
-                                        width="3276"
-                                        height="1966"
-                                        loading="lazy"
-                                        decoding="async"
-                                        alt="Nowe miasto 2"
-                                />
-                            </picture>
-                            <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <img
-                                        src="{{ asset('images/gallery-grid/wizualizacja-wejscia@2x.png') }}"
-                                        width="672"
-                                        height="489"
-                                        loading="lazy"
-                                        decoding="async"
-                                        alt="wizualizacja wejscia"
-                                />
-                            </picture>
-                            <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <img
-                                        src="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}"
-                                        width="3276"
-                                        height="1966"
-                                        loading="lazy"
-                                        decoding="async"
-                                        alt="Nowe miasto 2"
-                                />
-                            </picture>
-                        </div>
-                        <!-- HERE -->
-                        <div
-                                class="slick-slider-about-nav-l slick-slider-about-nav-left"
-                                dir="rtl"
-                        >
-                            <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <img
-                                        src="{{ asset('images/gallery-grid/wizualizacja-wejscia@2x.png') }}"
-                                        width="672"
-                                        height="489"
-                                        loading="lazy"
-                                        decoding="async"
-                                        alt="wizualizacja wejscia"
-                                />
-                            </picture>
-                            <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <img
-                                        src="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}"
-                                        width="3276"
-                                        height="1966"
-                                        loading="lazy"
-                                        decoding="async"
-                                        alt="Nowe miasto 2"
-                                />
-                            </picture>
-                            <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/wizualizacja-wejscia@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <img
-                                        src="{{ asset('images/gallery-grid/wizualizacja-wejscia@2x.png') }}"
-                                        width="672"
-                                        height="489"
-                                        loading="lazy"
-                                        decoding="async"
-                                        alt="wizualizacja wejscia"
-                                />
-                            </picture>
-                            <picture>
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2.webp') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.webp') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2.png') }}"
-                                        media="(max-width: 992px)"
-                                />
-                                <source
-                                        srcset="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}"
-                                        media="(min-width: 992px)"
-                                />
-                                <img
-                                        src="{{ asset('images/gallery-grid/nowe-miasto-2@2x.png') }}"
-                                        width="3276"
-                                        height="1966"
-                                        loading="lazy"
-                                        decoding="async"
-                                        alt="Nowe miasto 2"
-                                />
-                            </picture>
-                        </div>
+            </div>
+
+        </section>  <section class="text-img text-img--multiple">
+
+            <div class="wrapper">
+
+                <div class="text-img__content">
+                    <h2 class="text-img__title scroll-animation">NOWOCZESNE OSIEDLE<br>W SERCU WESOŁEJ</h2>
+                    <div class="text-img__description scroll-animation delay-2">
+                        <p>Zaprojektowane tak, by łączyć funkcjonalność z estetyką. Przemyślane układy mieszkań, wysoka jakość
+                            materiałów i dbałość o detale gwarantują codzienny komfort oraz trwałość na lata. Całość uzupełniają
+                            przestrzenie rekreacyjne i przyjazne otoczenie, które podkreślają unikalny charakter inwestycji.
+                            To nie tylko idealne miejsce do zamieszkania – to również doskonała i dochodowa inwestycja w dynamicznie
+                            rozwijającej się części Warszawy.</p>
                     </div>
-                    <article class="order-0 order-lg-2 col-12 col-lg-5 offset-lg-1 pb-5 mt-0 mt-sm-3 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-                        <div class="d-flex flex-column gap-5">
-                            <div>
-                                <!-- ICON on to of a header title  -->
-                                <img src="{{ asset('images/logo-small.svg') }}" alt="Apartamenty Nowe Miasto logo" width="54" height="33" class="img-fluid about--icon" loading="lazy" decoding="async"/>
-                                <!-- HEADER -->
-                                <h3 class="text-uppercase header-1 fs-xl-3 px-0 mx-0">O INWESTYCJI</h3>
-                                <!-- SUBTITLE -->
-                                <span class="text-uppercase subtitle-1">APARTAMENTY NOWE MIASTO</span>
+                </div>
+
+                <div class="text-img__image scroll-animation delay-3">
+                    <div class="text-img__image-inner">
+                        <img src="{{ asset('images/photos/photo-13.jpg') }}" alt="GREENWOOD PARK" class="text-img__img">
+                        <img src="{{ asset('images/photos/photo-14.jpg') }}" alt="GREENWOOD PARK" class="text-img__img">
+                        <img src="{{ asset('images/photos/photo-15.jpg') }}" alt="GREENWOOD PARK" class="text-img__img">
+                        <img src="{{ asset('images/photos/photo-16.jpg') }}" alt="GREENWOOD PARK" class="text-img__img">
+                    </div>
+                </div>
+
+            </div>
+
+        </section>  <section class="text-img text-img--left">
+
+            <img src="{{ asset('images/decor-03.png') }}" alt="" class="decor-03 decor--left decor--top" />
+
+            <div class="wrapper">
+
+                <div class="text-img__content">
+                    <h2 class="text-img__title scroll-animation">Jakość i precyzja<br>na każdym etapie realizacji</h2>
+                    <div class="text-img__description scroll-animation delay-2">
+                        <p>Projektując i realizując budowę inwestycji GREENWOOD PARK największy nacisk kładziemy na najwyższą jakość
+                            materiałów i wykonania.</p>
+                        <p>Naszym celem jest budowanie mieszkań z myślą o najbardziej wymagających klientach. Do realizacji inwestycji
+                            zastosowano starannie dobrane materiały wysokiej klasy oraz nowoczesne technologie.</p>
+                        <p>Każde mieszkanie oferowane w inwestycji w Wesołej zostało zaprojektowane i realizowane jest z ogromną
+                            precyzją i dbałością o każdy detal. Dzięki temu inwestycja łączy walory estetyczne z funkcjonalnością, tworząc
+                            komfortową przestrzeń do życia na lata.</p>
+                        <p><strong>Greenwood Park to więcej niż mieszkanie – to styl życia w harmonii z naturą, nowoczesnością i
+                                pewnością dobrze podjętej decyzji.</strong></p>
+                    </div>
+                </div>
+
+                <div class="text-img__image scroll-animation delay-3">
+                    <div class="text-img__image-inner slider slider--with-bar">
+                        <img src="{{ asset('images/photos/photo-17.jpg') }}" alt="GREENWOOD PARK" class="text-img__img">
+                    </div>
+                </div>
+
+            </div>
+
+        </section>  <section class="text-img">
+
+            <img src="{{ asset('images/decor-03.png') }}" alt="" class="decor-03 decor--right decor--bottom" />
+
+            <div class="wrapper">
+
+                <div class="text-img__content">
+                    <h2 class="text-img__title scroll-animation">DBAMY O BEZPIECZEŃSTWO NASZYCH KLIENTÓW</h2>
+                    <div class="text-img__description scroll-animation delay-2">
+                        <p>Kupując mieszkanie w Miasteczku GREENWOOD przy ul. Jeździeckiej w Warszawie – Wesoła, otrzymasz od nas
+                            profesjonalne wsparcie na każdym etapie zakupu – od wyboru lokalu, przez cały okres realizacji inwestycji, aż
+                            po przekazanie kluczy i późniejszy kontakt posprzedażowy. Inwestycja realizowana jest zgodnie z przepisami
+                            Ustawy Deweloperskiej i pod pełnym nadzorem wykwalifikowanego banku – Millennium Bank S.A., który prowadzi
+                            mieszkaniowy rachunek powierniczy.</p>
+                        <p><b>Sprawdzeni wykonawcy i doświadczenie w realizacji</b></p>
+                        <ul>
+                            <li>Generalny Wykonawca I etapu: Unibep S.A.</li>
+                            <li>Generalny Wykonawca II etapu: F.B.I. Tasbud</li>
+                            <li>Zarządzanie i nadzór nad inwestycją: Reacon Sp. z o.o.</li>
+                        </ul>
+                        <p>Zespół doświadczonych specjalistów oraz sprawdzeni partnerzy zapewniają najwyższy standard realizacji – tak,
+                            by każda nieruchomość spełniała oczekiwania najbardziej wymagających klientów.</p>
+                        <p><b>Zamieszkaj w zielonej części Warszawy – Białołęka czeka na Ciebie.</b> Nowoczesne osiedle Greenwood
+                            powstało przy ul. Jeździeckiej, Warszawa – Wesoła, w jednej z najbardziej rozwijających się i przyjaznych do
+                            życia dzielnic stolicy. Kameralne sąsiedztwo, świetna komunikacja i pełna infrastruktura – wszystko, czego
+                            potrzebujesz na co dzień.</p>
+                    </div>
+                </div>
+
+                <div class="text-img__image scroll-animation delay-3">
+                    <div class="text-img__image-inner">
+                        <img src="{{ asset('images/photos/photo-18.jpg') }}" alt="GREENWOOD PARK" class="text-img__img">
+                    </div>
+                </div>
+
+            </div>
+
+        </section>  <section class="contact-form">
+
+            <h2 class="contact-form__title scroll-animation">Skontaktuj<br>się z nami</h2>
+
+            <div class="wrapper--medium contact-form__wrapper">
+
+                <div class="contact-form__image scroll-animation delay-2">
+                    <img src="{{ asset('images/photos/photo-19.jpg') }}" alt="" class="contact-form__img" />
+                </div>
+
+                <div class="contact-form__content scroll-animation">
+                    <h3 class="contact-form__form-title">Formularz kontaktowy</h3>
+                    <form class="form" action="">
+                        <div class="input input--text">
+                            <label for="name">Imię</label>
+                            <input type="text" id="name" name="name" />
+                        </div>
+                        <div class="input input--text">
+                            <label for="email">Adres e-mail</label>
+                            <input type="email" id="email" name="email" />
+                        </div>
+                        <div class="input input--text">
+                            <label for="phone">Telefon</label>
+                            <input type="text" id="phone" name="phone" />
+                        </div>
+                        <div class="input input--textarea">
+                            <label for="message">Wiadomość</label>
+                            <textarea id="message" name="message"
+                                      placeholder="Proszę o więcej szczegółów dotyczących mieszkania nr... oraz propozycję terminu spotkania"></textarea>
+                        </div>
+                        <div class="form__agreements">
+                            <div class="input input--checkbox">
+                                <input type="checkbox" id="privacy" name="privacy" />
+                                <label for="privacy">Wyrażam zgodę na przetwarzanie przez Greenwood II sp. z o.o. z siedzibą przy ul.
+                                    Henryka Dembińskiego 13, 01-644 w Warszawie, moich danych osobowych zawartych w niniejszym formularzu w
+                                    celu umożliwienia kontaktu oraz przekazywania materiałów marketingowych i promocyjnych dotyczących
+                                    inwestycji realizowanych przez Spółkę.</label>
                             </div>
-                            <!-- PARAGRAPH -->
-                            <div class="d-flex flex-column gap-2">
-                                <p class="fw-bolder">
-                                    Nasza inwestycja to synonim komfortu i nowoczesności.
-                                    Tworzymy przestrzenie, które łączą w sobie wysoką jakość
-                                    wykonania z estetycznym designem.
-                                </p>
-                                <p>
-                                    Dzięki zastosowaniu najnowszych technologii i materiałów,
-                                    nasze apartamenty są nie tylko piękne, ale także
-                                    funkcjonalne i trwałe. Nasz zespół dba o każdy detal, aby
-                                    zapewnić Ci wygodę i bezpieczeństwo na najwyższym poziomie.
-                                </p>
+                            <div class="input input--checkbox">
+                                <input type="checkbox" id="privacy-2" name="privacy-2" />
+                                <label for="privacy-2">Wyrażam zgodę na otrzymywanie od Greenwood II sp. z o.o. drogą elektroniczną na
+                                    wskazany przeze mnie adres e-mail informacji handlowej dotyczących produktów oferowanych przez Greenwood
+                                    II sp. z o.o. w rozumieniu art. 10 ust. 1 Ustawy z dnia 18 lipca 2002 roku o świadczeniu usług drogą
+                                    elektroniczną.</label>
+                            </div>
+                            <div class="input input--checkbox">
+                                <input type="checkbox" id="privacy-3" name="privacy-3" />
+                                <label for="privacy-3">Wyrażam zgodę na otrzymywanie od Greenwood II sp. z o.o. drogą elektroniczną na
+                                    wskazany przeze mnie adres e-mail informacji handlowej dotyczących produktów oferowanych przez Greenwood
+                                    II sp. z o.o. w rozumieniu art. 10 ust. 1 Ustawy z dnia 18 lipca 2002 roku o świadczeniu usług drogą
+                                    elektroniczną.</label>
                             </div>
                         </div>
 
-                        <a href="/apartamenty" class="btn btn-main mt-4">
-                            DOSTĘPNE MIESZKANIA
-                            <img class="ps-4" src="{{ asset('images/arrow-right.svg') }}" height="15.644" alt="strzałka" />
-                        </a>
-                    </article>
+                        <button type="submit" class="btn btn--primary form__submit">Wyślij</button>
+                    </form>
                 </div>
-            </div>
-        </section>
-        <!-- END -> Section About with slider - LEFT -->
 
-        <!-- QUESTIONS CARD -->
-        <section class="question-card-section margin-wrapper-xs-card-2">
-            <!-- <img src="{{ asset('images/fence-horizontal.svg') }}" class="left" alt="" srcset="" /> -->
-            <div class="left-anim">
-                <img src="{{ asset('images/anim/fence.svg') }}" width="138.43" height="54.423" class="fence" alt="" />
-                <img src="{{ asset('images/anim/Rectangle.svg') }}" class="rect bounce-7-anim" width="96.61" height="53.458" alt="" />
             </div>
-            @include('front.shared.contact')
+
         </section>
-        <!-- END -> QUESTIONS CARD -->
     </main>
 @endsection
 @push('scripts')
-    <style>
-        .leaflet-marker-icon {
-            border-radius: 50%;
-        }
-    </style>
-    <script src="{{ asset('/js/leaflet2.min.js') }}" charset="utf-8"></script>
-    <link href="{{ asset('/css/leaflet.min.css') }}" rel="stylesheet">
-    <script>
-        const tileLayer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-        });
 
-        const icons = [];
-        for (let i = 0; i <= 7; i++) {
-            if(i === 0){
-                icons[i] = L.icon({
-                    iconUrl: `{{ asset('images/mapicons/${i}.png') }}`,
-                    shadowUrl: '',
-                    iconAnchor: [36, 86]
-                });
-            } else {
-                icons[i] = L.icon({
-                    iconUrl: `{{ asset('images/mapicons/${i}.png') }}`,
-                    shadowUrl: '',
-                    iconSize: [40, 40],
-                    iconAnchor: [20, 32]
-                });
-            }
-        }
-
-        const markers = [];
-        markers.push(L.marker([51.85109819957367, 19.418445297865162], {icon: icons[0]}).bindPopup('Inwestycja'));
-
-        @foreach($markers as $m)
-        markers.push(L.marker([{{ $m->lat }}, {{ $m->lng }}], {icon: icons[{{ $m->group_id }}]}).bindPopup('{{ $m->name }}'));
-        @endforeach
-
-        const featureGroup = L.featureGroup(markers);
-
-        const mapDiv = document.getElementById("map2");
-        let maps = new L.Map(mapDiv, {
-            center: [0, 0],
-            zoom: 0,
-            layers: [tileLayer, featureGroup]
-        });
-
-        maps.fitBounds(featureGroup.getBounds(), {
-            padding: [50, 50]
-        });
-
-        maps.on('popupclose', function () {
-            maps.fitBounds(featureGroup.getBounds(), {
-                padding: [50, 50]
-            });
-        });
-
-        function debounce(func) {
-            let timer;
-            return function (event) {
-                if (timer) clearTimeout(timer);
-                timer = setTimeout(func, 100, event);
-            };
-        }
-
-        window.addEventListener("resize", debounce(function (e) {
-            maps.fitBounds(featureGroup.getBounds(), {
-                padding: [50, 50]
-            });
-        }));
-
-        const alwaysIncludedMarker = L.marker([51.85109819957367, 19.418445297865162], {icon: icons[0]}).bindPopup('Inwestycja');
-
-        // Function to filter markers
-        function filterMarkers(group) {
-            featureGroup.clearLayers();
-            featureGroup.addLayer(alwaysIncludedMarker);
-            markers.forEach(marker => {
-                if (group === null || marker.options.icon.options.iconUrl.includes(`/${group}.png`)) {
-                    featureGroup.addLayer(marker);
-                }
-            });
-            maps.fitBounds(featureGroup.getBounds(), {
-                padding: [50, 50]
-            });
-        }
-
-        // Add click event listeners to the divs
-        document.querySelectorAll('.map-place').forEach(div => {
-            div.addEventListener('click', function() {
-                const group = this.getAttribute('data-group');
-                filterMarkers(group);
-            });
-        });
-
-        // Optionally add a reset button to show all markers
-        const resetButton = document.getElementById('resetButton');
-        if (resetButton) {
-            resetButton.addEventListener('click', function() {
-                filterMarkers(null);
-            });
-        }
-    </script>
 @endpush

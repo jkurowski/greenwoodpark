@@ -37,19 +37,12 @@
     <link rel="DNS-prefetch" href="//fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel='preload' as='style' href="{{ asset('/css/bootstrap.min.css') }}">
-    <link rel='preload' as='style' href="{{ asset('/css/style.min.css') }}?v=12062025">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Styles -->
-    <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/slick.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
     <link href="{{ asset('/css/style.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/glightbox.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
 
+    <link rel='preload' as='style' href="{{ asset('/css/style.min.css') }}">
     @stack('style')
-
 </head>
 
 <body class="{{ !empty($body_class) ? $body_class : '' }}" data-lazy-background="{{ asset('images/kreski-tlo.png') }}"
@@ -68,23 +61,8 @@
         @include('layouts.partials.inline')
     @endauth
 
-    <!-- Styles -->
-    <link href="{{ asset('/css/animations.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/leaflet.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="{{ asset('/css/aos.min.css') }}" rel="stylesheet" media="screen and (min-width: 768px)">
-
-
     <!-- jQuery -->
-
     <script src="{{ asset('/js/jquery.min.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/slick.min.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}" charset="utf-8"></script>
-    @if($page->slug <> 'o-inwestycji')
-    <script src="{{ asset('/js/leaflet.js') }}" charset="utf-8"></script>
-    @endif
-    <script src="{{ asset('/js/aos.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/main.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/glightbox.min.js') }}" charset="utf-8"></script>
 
     @stack('scripts')
 
@@ -102,13 +80,6 @@
             </div>
         </div>
     @endif
-    <script>
-        const lightbox = GLightbox({
-            touchNavigation: true,
-            loop: true,
-            autoplayVideos: true,
-        });
-    </script>
     <script type="text/javascript">
         $(document).ready(function() {
             @if (settings()->get('popup_exit_status') == 1)
@@ -129,9 +100,7 @@
             @endif
         });
     </script>
-
     {!! settings()->get('scripts_beforebody') !!}
-
 </body>
 
 </html>

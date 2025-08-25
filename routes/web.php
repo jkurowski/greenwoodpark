@@ -62,9 +62,9 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
     )->name('contact.property');
 
     Route::get(
-        'inwestor',
-        'Static\IndexController@investor'
-    )->name('investor');
+        'lokalizacja',
+        'Static\IndexController@lokalizacja'
+    )->name('lokalizacja');
 
     Route::get(
         'o-inwestycji',

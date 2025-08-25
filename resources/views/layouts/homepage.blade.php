@@ -24,9 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Styles -->
-    <link href="{{ asset('/css/slick.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/aos.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/style.min.css') }}" rel="stylesheet">
 
     @stack('style')
 </head>
@@ -42,11 +40,6 @@
 
     <!-- jQuery -->
     <script src="{{ asset('/js/jquery.min.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/slick.min.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/aos.js') }}" charset="utf-8"></script>
-
-    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/main.js') }}" charset="utf-8"></script>
 
     <script src="{{ asset('js/validation.js') }}" charset="utf-8"></script>
     <script src="{{ asset('js/pl.js') }}" charset="utf-8"></script>

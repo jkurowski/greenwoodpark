@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="54.143" viewBox="0 0 64 54.143">
+  <g id="_25-location" data-name="25-location" transform="translate(0 -1.857)">
+    <path id="Path_4378" data-name="Path 4378" d="M21,19h2" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4379" data-name="Path 4379" d="M58,19h3a2,2,0,0,1,2,2V53a2,2,0,0,1-2,2H3a2,2,0,0,1-2-2V21a2,2,0,0,1,2-2H19" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4380" data-name="Path 4380" d="M37,19h4" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4381" data-name="Path 4381" d="M18,27H46V47H18Z" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4382" data-name="Path 4382" d="M38,27l-8,8-8-8" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4383" data-name="Path 4383" d="M18,29l9,9-9,9" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4384" data-name="Path 4384" d="M24,47,35,36,46,47" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4385" data-name="Path 4385" d="M46,39l-7-7,5-5" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4386" data-name="Path 4386" d="M51.4,22.643c0-4.714,5.6-6.286,5.6-11.786a8,8,0,0,0-16,0c0,5.5,5.6,7.072,5.6,11.786a2.4,2.4,0,0,0,4.8,0Z" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <circle id="Ellipse_109" data-name="Ellipse 109" cx="3" cy="3" r="3" transform="translate(46 8)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <circle id="Ellipse_110" data-name="Ellipse 110" cx="4" cy="4" r="4" transform="translate(26 15)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4387" data-name="Path 4387" d="M30,23v7" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4388" data-name="Path 4388" d="M30,12V6" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4389" data-name="Path 4389" d="M33,13l4-4" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4390" data-name="Path 4390" d="M27,13,23,9" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4391" data-name="Path 4391" d="M55,51h4V47" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4392" data-name="Path 4392" d="M59,45V43" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_4393" data-name="Path 4393" d="M1,44l3-2V32L1,30" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>
