@@ -7,8 +7,10 @@ use App\Http\Controllers\Controller;
 //CMS
 use App\Http\Requests\PropertyFormRequest;
 use App\Models\PropertyPriceComponent;
+use App\Models\PropertyProperty;
 use App\Repositories\PropertyRepository;
 use App\Services\PropertyService;
+use Illuminate\Http\Request;
 
 use App\Models\Floor;
 use App\Models\Investment;
