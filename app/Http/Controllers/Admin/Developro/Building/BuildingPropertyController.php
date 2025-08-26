@@ -9,6 +9,7 @@ use App\Models\Floor;
 use App\Models\Investment;
 use App\Models\Property;
 use App\Models\PropertyPriceComponent;
+use App\Models\PropertyProperty;
 use App\Repositories\PropertyRepository;
 use App\Services\PropertyService;
 use Illuminate\Support\Facades\Session;
@@ -121,6 +122,21 @@ class BuildingPropertyController extends Controller
 
     public function edit(Investment $investment, Building $building, Floor $floor, Property $property)
     {
+        // Przynalezne
+        $isRelated = PropertyProperty::where('related_property_id', $property->id)->exists();
+        $related = $property->relatedProperties;
+        $allOthers = Property::with(
+        //'building',
+            'floor'
+        )
+            ->where('investment_id', $investment->id)
+            ->where('id', '<>', $property->id)
+            ->where('status', 1)
+            ->where('type', '!=', 1)
+            //->whereNull('client_id')
+            ->get();
+
+
         $priceComponents = PropertyPriceComponent::all();
 
         return view('admin.developro.investment_building_property.form', [
@@ -130,7 +146,10 @@ class BuildingPropertyController extends Controller
             'building' => $building,
             'investment' => $investment,
             'entry' => $property,
-            'priceComponents' => $priceComponents
+            'priceComponents' => $priceComponents,
+            'isRelated' => $isRelated,
+            'related' => $related,
+            'others' => $allOthers->pluck('name', 'id'),
         ]);
     }
 
