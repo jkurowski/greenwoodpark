@@ -146,16 +146,6 @@
                     </div>
 
                     <div class="row w-100 mb-4">
-                        @include('form-elements.html-input-file', [
-                            'label' => 'Miniaturka',
-                            'sublabel' => '(wymiary: '.config('images.investment.thumb_width').'px / '.config('images.investment.thumb_height').'px)',
-                            'name' => 'file',
-                            'file' => $entry->file_thumb,
-                            'file_preview' => config('images.investment.preview_file_path')
-                            ])
-                    </div>
-
-                    <div class="row w-100 mb-4">
                         @include('form-elements.html-input-file-pdf', [
                             'label' => 'Prospekt informacyjny',
                             'name' => 'file_brochure',
@@ -163,13 +153,6 @@
                             'file_preview' => config('images.investment.brochure_file_path')
                         ])
                     </div>
-
-                    <div class="row w-100 mb-4">
-                        <div class="col-12">
-                            @include('form-elements.html-input-text', ['label' => 'Galerie', 'sublabel'=> 'Wpisz numery id galerii, oddzielając je przecinkami, bez spacji.', 'name' => 'galleries', 'value' => $entry->galleries])
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
