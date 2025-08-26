@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 //CMS
 use App\Http\Requests\PropertyFormRequest;
+use App\Models\PropertyPriceComponent;
 use App\Repositories\PropertyRepository;
 use App\Services\PropertyService;
 
@@ -56,11 +57,15 @@ class PropertyController extends Controller
 
     public function create(Investment $investment, Floor $floor)
     {
+        $priceComponents = PropertyPriceComponent::all();
+
         return view('admin.developro.investment_property.form', [
             'cardTitle' => 'Dodaj powierzchnię',
             'backButton' => route('admin.developro.investment.properties.index', [$investment, $floor]),
             'floor' => $floor,
             'investment' => $investment,
+            'related' => collect(),
+            'priceComponents' => $priceComponents
         ])->with('entry', Property::make());
     }
 
@@ -71,6 +76,23 @@ class PropertyController extends Controller
             'investment_id' => $investment->id,
             'floor_id' => $floor->id
         ]));
+
+        $types = $request->input('price-component-type', []);
+        $categories = $request->input('price-component-category', []);
+        $values = $request->input('price-component-value', []);
+        $values_m2 = $request->input('price-component-m2-value', []);
+
+        $data = [];
+
+        foreach ($types as $index => $componentId) {
+            $data[$componentId] = [
+                'category' => $categories[$index],
+                'value' => $values[$index],
+                'value_m2' => $values_m2[$index],
+            ];
+        }
+
+        $property->priceComponents()->sync($data);
 
         if ($request->hasFile('file')) {
             $this->service->upload($request->name, $request->file('file'), $property);
@@ -89,12 +111,15 @@ class PropertyController extends Controller
 
     public function edit(Investment $investment, Floor $floor, Property $property)
     {
+        $priceComponents = PropertyPriceComponent::all();
+
         return view('admin.developro.investment_property.form', [
             'cardTitle' => 'Edytuj powierzchnię',
             'backButton' => route('admin.developro.investment.properties.index', [$investment, $floor]),
             'floor' => $floor,
             'investment' => $investment,
-            'entry' => $property
+            'entry' => $property,
+            'priceComponents' => $priceComponents
         ]);
     }
 
@@ -131,5 +156,48 @@ class PropertyController extends Controller
             $result[$type] = $properties;
         }
         return response()->json($result);
+    }
+
+    public function storerelated(Request $request, $investmentId, $floorId, $propertyId)
+    {
+        $request->validate([
+            'related_property_id' => 'required|exists:properties,id',
+        ]);
+
+        $related_id = $request->input('related_property_id');
+
+        $isRelated = PropertyProperty::where('related_property_id', $related_id)->exists();
+        $related_property = Property::findOrFail($related_id);
+
+        if ($isRelated) {
+            return getRelatedType($related_property->type);
+        }
+
+        $property = Property::findOrFail($propertyId);
+        $property->relatedProperties()->attach($related_id);
+
+        // Return a response
+        return view('admin.developro.investment_shared.related', ['property' => $related_property]);
+    }
+
+    public function removerelated(Request $request, $investmentId, $floorId, $propertyId)
+    {
+        // Validate the input
+        $request->validate([
+            'related_id' => 'required|exists:properties,id',
+        ]);
+
+        $relatedId = $request->input('related_id');
+
+        $property = Property::findOrFail($propertyId);
+        $isRelated = $property->relatedProperties()->where('related_property_id', $relatedId)->exists();
+
+        if ($isRelated) {
+            $property->relatedProperties()->detach($relatedId, ['client_id' => null]);
+
+            return response()->json([
+                'status' => 'removed'
+            ]);
+        }
     }
 }

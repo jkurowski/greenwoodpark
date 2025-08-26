@@ -135,6 +135,91 @@
                                     </div>
                                 </div>
 
+                                @if(Route::is('admin.developro.investment.building.floor.properties.edit'))
+                                    <!-- Przynalezne -->
+                                    <div class="row w-100 form-group">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-12" id="statusAlertPlaceholder"></div>
+                                                <div class="col-12">
+                                                    <h2>Przynależne powierzchnie</h2>
+                                                    @if($isRelated)
+                                                        <div class="alert alert-danger">Ta powierzchnia jest powiązana z inną.</div>
+                                                    @endif
+                                                    <table class="table">
+                                                        <tbody id="added">
+                                                        @forelse($related ?? [] as $r)
+                                                            <tr>
+                                                                <td class="pe-0 text-center">
+                                                                    <input type="checkbox" class="checkbox" name="property[]" id="{{ $r->id }}" value="{{ $r->id }}" style="display: none;">
+                                                                    <span data-property="{{ $r->id }}" class="remove-related"><i class="las la-trash-alt"></i></span>
+                                                                </td>
+                                                                <td><b>{{ $r->name }}</b></td>
+                                                                <td class="text-center"><b>{{ $r->getLocation() }}</b></td>
+                                                                <td class="text-center">Pow.: <b>{{ $r->area }}</b></td>
+                                                                <td class="text-center">
+                                                                    @if($r->price_brutto)
+                                                                        Cena: <b>@money($r->price_brutto)</b>
+                                                                    @endif
+                                                                </td>
+                                                                <td>
+                                                                    <span class="badge room-list-status-{{ $r->status }}">{{ roomStatus($r->status) }}</span>
+                                                                </td>
+                                                            </tr>
+                                                        @empty
+                                                            <tr><td colspan="6" class="text-center">Brak powierzchni powiązanych</td></tr>
+                                                        @endforelse
+                                                        </tbody>
+                                                    </table>
+                                                    <form id="related">
+                                                        <div class="input-group mb-3">
+                                                            <select class="form-select select-related selecpicker-noborder p-0" name="" id="related_property_id" aria-describedby="button-addon" data-live-search="true" data-size="5">
+                                                                <option value="">Wybierz</option>
+                                                                @foreach($others as $id => $name)
+                                                                    <option value="{{ $id }}">{{ $name }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                            <button class="btn btn-outline-secondary" type="button" id="button-addon">Dodaj</button>
+                                                        </div>
+                                                    </form>
+                                                    <div id="liveAlertPlaceholder"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row w-100 form-group">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h2>Przynależne powierzchnie do wyboru przez klienta</h2>
+                                                </div>
+                                            </div>
+                                            <div class="row input-radio-group">
+                                                <div class="col-12">
+                                                    @include('form-elements.html-input-radio', [
+                                                    'name' => 'visitor_related_type',
+                                                    'label' => '',
+                                                    'value' => $entry->visitor_related_type,
+                                                    'options' => [
+                                                        '1' => 'Brak wyboru',
+                                                        '2' => 'Wszystkie',
+                                                        '3' => 'Tylko wybrane'
+                                                    ],
+                                                    'required' => true,
+                                                ])
+                                                </div>
+                                                <div class="col-12 d-none" id="visitorRelated">
+                                                    @include('form-elements.html-select-multiple', ['label' => 'Wybierz powierzchnie dodatkowe', 'name' => 'visitor_related_ids', 'selected' => $entry->visitorRelatedProperties->pluck('id')->toArray(), 'select' => $visitor_others,
+                                                        'liveSearch' => true
+                                                    ])
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End-Przynalezne -->
+                                @endif
+
                                 <div class="row w-100 form-group">
                                     <div class="container">
                                         <div class="row">
@@ -183,8 +268,68 @@
 
                                 </div>
                                 <div class="row w-100 form-group">
-                                    @include('form-elements.input-text', ['label' => 'Cena', 'sublabel'=> 'Tylko liczby', 'name' => 'price', 'value' => $entry->price])
+                                    @include('form-elements.input-text', ['label' => 'Cena brutto', 'sublabel'=> 'Tylko liczby. Użyj kropki jako separatora dziesiętnego', 'name' => 'price_brutto', 'value' => $entry->price_brutto])
+                                    @include('form-elements.html-select', [
+                                        'label' => 'Stawka VAT',
+                                        'name' => 'vat',
+                                        'selected' => $entry->vat,
+                                        'select' => [
+                                            '8' => '8%',
+                                            '23' => '23%',
+                                            '0' => '0%'
+                                    ]])
                                 </div>
+
+                                <div class="row w-100 form-group">
+                                    <button id="add-price-component"
+                                            class="btn btn-primary mt-2"
+                                            type="button"
+                                            data-price-components='@json($priceComponents)'>
+                                        Dodaj dodatkowy składnik ceny
+                                    </button>
+                                    <div id="price-components">
+                                        @foreach(($entry->priceComponents ?? []) as $index => $component)
+                                            <div class="row price-component mb-3" data-price-component-id="{{ $component->id }}">
+                                                <div class="col-4">
+                                                    <label class="control-label">Typ składnika ceny mieszkania:</label>
+                                                    <select class="form-select" name="price-component-type[]">
+                                                        @foreach($priceComponents as $pc)
+                                                            <option value="{{ $pc->id }}" {{ $pc->id == $component->id ? 'selected' : '' }}>
+                                                                {{ $pc->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="col-3">
+                                                    <label class="control-label">Rodzaj składnika ceny:</label>
+                                                    <select class="form-select" name="price-component-category[]">
+                                                        <option value="1" {{ $component->pivot->category == 1 ? 'selected' : '' }}>Obowiązkowy</option>
+                                                        <option value="2" {{ $component->pivot->category == 2 ? 'selected' : '' }}>Opcjonalny</option>
+                                                        <option value="3" {{ $component->pivot->category == 3 ? 'selected' : '' }}>Zmienny</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-2">
+                                                    <label class="control-label">Cena za m2 w PLN:</label>
+                                                    <input class="form-control" name="price-component-m2-value[]" type="text" value="{{ $component->pivot->value_m2 }}">
+                                                </div>
+                                                <div class="col-2">
+                                                    <label class="control-label">Cena całkowita w PLN:</label>
+                                                    <input class="form-control" name="price-component-value[]" type="text" value="{{ $component->pivot->value }}">
+                                                </div>
+                                                <div class="col-1 text-end">
+                                                    <label class="control-label d-block">&nbsp;</label>
+                                                    <button class="btn action-button w-100" type="button"><i class="fe-trash-2"></i></button>
+                                                </div>
+                                                @error('price-component-m2-value.' . $index)
+                                                <div class="col-12">
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                </div>
+                                                @enderror
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+
                                 <div class="row w-100 form-group">
                                     @include('form-elements.input-text', ['label' => 'Ogródek', 'sublabel'=> 'Pow. w m<sup>2</sup>, tylko liczby', 'name' => 'garden_area', 'value' => $entry->garden_area])
                                 </div>
@@ -265,4 +410,5 @@
         @endif
     });
 </script>
+<script>const addButton=document.getElementById("add-price-component"),priceComponents=JSON.parse(addButton.dataset.priceComponents);addButton.addEventListener("click",()=>{const e=Math.floor(1e3*Math.random()),t=priceComponents.map(e=>`<option value="${e.id}">${e.name}</option>`).join("");document.getElementById("price-components").insertAdjacentHTML("beforeend",`<div class="row price-component mb-3" data-price-component-id="${e}"><div class="col-4"><label class="control-label">Typ składnika ceny mieszkania:</label><select class="form-select" name="price-component-type[]">${t}</select></div><div class="col-3"><label class="control-label">Rodzaj składnika ceny:</label><select class="form-select" name="price-component-category[]"><option value="1">Obowiązkowy</option><option value="2">Opcjonalny</option><option value="3">Zmienny</option></select></div><div class="col-2"><label class="control-label">Cena za m² w PLN:</label><input class="form-control" name="price-component-m2-value[]" type="text" autocomplete="off"></div><div class="col-2"><label class="control-label">Cena całkowita w PLN:</label><input class="form-control" name="price-component-value[]" type="text" autocomplete="off"></div><div class="col-1 text-end"><label class="control-label d-block">&nbsp;</label><button class="btn action-button w-100" type="button"><i class="fe-trash-2"></i></button></div></div>`)}),document.addEventListener("click",function(e){if(e.target.closest(".action-button")){const t=e.target.closest(".price-component");t&&t.remove()}}),document.addEventListener("input",function(e){const t=document.getElementById("form_area"),o=parseFloat(t.value.replace(",","."));if(!(isNaN(o)||o<=0)){if(e.target.matches('input[name="price-component-value[]"]')){const t=n(e.target.value),a=e.target.closest(".row.price-component");if(!a)return;const c=a.querySelector('input[name="price-component-m2-value[]"]');if(!c)return;const l=t/o;c.value=l>0?l.toFixed(2):""}if(e.target.matches('input[name="price-component-m2-value[]"]')){const t=n(e.target.value),a=e.target.closest(".row.price-component");if(!a)return;const c=a.querySelector('input[name="price-component-value[]"]');if(!c)return;const l=t*o;c.value=l>0?l.toFixed(2):""}}function n(e){return parseFloat(e.replace(",","."))||0}});</script>
 @endpush

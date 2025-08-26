@@ -33,6 +33,8 @@ class Property extends Model
         'area',
         'price',
         'price_brutto',
+        'price_30',
+        'vat',
         'additional',
         'garden_area',
         'garden_area_2',
@@ -55,7 +57,9 @@ class Property extends Model
         'meta_title',
         'meta_description',
         'views',
-        'active'
+        'active',
+        'visitor_related_type',
+        'highlighted',
     ];
 
     /**
@@ -135,5 +139,36 @@ class Property extends Model
     {
         $investmentSlug = $this->investment->slug ?? '';
         return "/inwestycje/i/{$investmentSlug}/pietro/{$this->floor_id}/m/{$this->id}";
+    }
+
+    public function visitorRelatedProperties()
+    {
+        return $this->belongsToMany(Property::class, 'property_visitor_related', 'property_id', 'related_property_id');
+    }
+
+    public function relatedProperties()
+    {
+        return $this->belongsToMany(Property::class, 'property_property', 'property_id', 'related_property_id');
+    }
+
+    public function getLocation(): string
+    {
+        $buildingName = $this->building ? $this->building->name : null;
+        $floorName = $this->floor ? $this->floor->name : null;
+
+        if ($buildingName && $floorName) {
+            return "{$buildingName} - {$floorName}";
+        } elseif ($floorName) {
+            return "{$floorName}";
+        }
+
+        return 'Brak lokalizacji'; // Fallback if no building or floor is set
+    }
+
+    public function priceComponents()
+    {
+        return $this->belongsToMany(PropertyPriceComponent::class, 'property_price_component_property')
+            ->withPivot('value', 'value_m2', 'category')
+            ->withTimestamps();
     }
 }

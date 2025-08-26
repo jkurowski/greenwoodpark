@@ -23,8 +23,7 @@ class InvestmentService
 
         $name = date('His').'_'.Str::slug($title).'.' . $file->getClientOriginalExtension();
         $name_webp = date('His') . '_' . Str::slug($title) . '.webp';
-
-        $file->storeAs('thumbs', $name, 'investment_uploads');
+        $file->move(public_path('investment/thumbs'), $name);
 
         $filepath = public_path('investment/thumbs/' . $name);
         Image::make($filepath)
@@ -50,7 +49,7 @@ class InvestmentService
         }
 
         $name = date('His').'_logo-'.Str::slug($title).'.' . $file->getClientOriginalExtension();
-        $file->storeAs('logo', $name, 'investment_uploads');
+        $file->move(public_path('investment/logo'), $name);
 
         $filepath = public_path('investment/logo/' . $name);
         Image::make($filepath)
@@ -72,7 +71,7 @@ class InvestmentService
         }
 
         $name = date('His').'_header-'.Str::slug($title).'.' . $file->getClientOriginalExtension();
-        $file->storeAs('header', $name, 'investment_uploads');
+        $file->move(public_path('investment/header'), $name);
 
         $filepath = public_path('investment/header/' . $name);
         Image::make($filepath)
@@ -97,7 +96,7 @@ class InvestmentService
         $name = date('His') . '_' . Str::slug($model->name) . '.' . $file->getClientOriginalExtension();
         $name_webp = date('His') . '_' . Str::slug($model->name) . '.webp';
 
-        $file->storeAs('plan', $name, 'investment_uploads');
+        $file->move(public_path('investment/plan'), $name);
 
         $filepath = public_path('investment/plan/' . $name);
         Image::make($filepath)->resize(
@@ -116,5 +115,24 @@ class InvestmentService
             ['file' => $name],
             ['file_webp' => $name_webp]
         );
+    }
+
+    public function uploadBrochure(string $title, UploadedFile $file, object $model, bool $delete = false)
+    {
+        if ($delete && !empty($model->file_brochure)) {
+            $brochurePath = public_path('investment/brochure/' . $model->file_brochure);
+
+            if (File::exists($brochurePath) && File::isFile($brochurePath)) {
+                File::delete($brochurePath);
+            }
+        }
+
+        $name = date('His') . '_' . Str::slug($title) . '.' . $file->getClientOriginalExtension();
+
+        // Save file to public/investment/brochure
+        $file->move(public_path('investment/brochure'), $name);
+
+        // Update model
+        $model->update(['file_brochure' => $name]);
     }
 }

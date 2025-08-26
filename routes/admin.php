@@ -115,7 +115,10 @@ Route::group([
     Route::group(['namespace' => 'Developro', 'prefix' => '/developro', 'as' => 'developro.'], function () {
 
         Route::resources([
-            'investment' => 'Investment\IndexController'
+            'investment' => 'Investment\IndexController',
+            'property-price-components' => 'PropertyPrice\IndexController',
+            'investment-company' => 'Company\IndexController',
+            'investment-sale-point' => 'Investment\SalePointController',
         ]);
 
         Route::get('properties/import', 'Import\IndexController@index')->name('import.index');
@@ -136,8 +139,13 @@ Route::group([
                 '{investment}/buildings' => 'Building\BuildingController',
                 '{investment}/building.floors' => 'Building\BuildingFloorController',
                 '{investment}/building.floor.properties' => 'Building\BuildingPropertyController',
-                '{investment}/property/{property}/message' => 'Property\InboxController'
+                '{investment}/property/{property}/message' => 'Property\InboxController',
+                '{investment}/floor/{floor}/others' => 'Property\OthersController',
+                '{investment}/building.floor.others' => 'Building\BuildingOthersController',
             ]);
+
+            Route::post('{investment}/{floor}/{property}/related', 'Property\PropertyController@storerelated')->name('related.store');
+            Route::post('{investment}/{floor}/{property}/remove-related', 'Property\PropertyController@removerelated')->name('related.remove');
 
             Route::get('{investment}/log', 'Investment\IndexController@log')->name('log');
             Route::get('{investment}/datatable', 'Investment\IndexController@datatable')->name('log.datatable');
