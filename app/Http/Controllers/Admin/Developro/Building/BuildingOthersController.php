@@ -97,20 +97,6 @@ class BuildingOthersController extends Controller
             $this->service->uploadPdf($request->name, $request->file('file_pdf'), $other, true);
         }
 
-        // Dispatch the EndPropertyPromotion job if the promotion end date is set
-        if ($request->filled('promotion_end_date') && $request->highlighted == 1) {
-//            $promotionEndDate = $request->input('promotion_end_date');
-//            $delay = now()->diffInSeconds($promotionEndDate, false);
-//
-//            if ($delay > 0) {  // Only dispatch if the end date is in the future
-//                EndPropertyPromotion::dispatch($property)->delay($delay);
-//            }
-            $delay = now()->addSeconds(3600);  // Delay for 1 minute for testing
-            EndPropertyPromotion::dispatch($property->id)->delay($delay);
-        }
-
-        $this->investmentRepository->sendMessageToInvestmentSupervisors($investment, 'Zmiana parametrów: '.$other->name);
-
         return redirect()->route('admin.developro.investment.building.floor.properties.index', [$investment, $building, $floor])->with('success', 'Powierzchnia zaktualizowana');
     }
 
