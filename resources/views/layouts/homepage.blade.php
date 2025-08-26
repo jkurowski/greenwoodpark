@@ -24,7 +24,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Styles -->
-    <link href="{{ asset('/css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/styles.min.css') }}" rel="stylesheet">
+
+    <link rel='preload' as='style' href="{{ asset('/css/styles.min.css') }}">
 
     @stack('style')
 </head>
@@ -40,7 +42,8 @@
 
     <!-- jQuery -->
     <script src="{{ asset('/js/jquery.min.js') }}" charset="utf-8"></script>
-
+    <script src="{{ asset('/js/slick.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/bundle.min.js') }}" charset="utf-8"></script>
     <script src="{{ asset('js/validation.js') }}" charset="utf-8"></script>
     <script src="{{ asset('js/pl.js') }}" charset="utf-8"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
