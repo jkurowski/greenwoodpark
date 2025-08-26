@@ -118,6 +118,8 @@ Route::group([
             'investment' => 'Investment\IndexController'
         ]);
 
+        Route::get('properties/import', 'Import\IndexController@index')->name('import.index');
+
         // VOX
         Route::get('{investment}/vox', 'Import\VoxController@index')->name('vox.index');
 

@@ -83,7 +83,7 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
     // DeveloPro
     Route::group(['namespace' => 'Developro', 'as' => 'developro.'], function () {
         // Pan
-        Route::get('/apartamenty', 'InvestmentController@index')->name('investment.index');
+        Route::get('/mieszkania', 'InvestmentController@index')->name('investment.index');
 
         Route::get('/properties/filter', 'InvestmentPropertyController@filter')->name('investment.property.filter');
 

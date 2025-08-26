@@ -57,12 +57,9 @@
         @include('layouts.partials.footer')
     </div>
 
-    @auth
-        @include('layouts.partials.inline')
-    @endauth
-
     <!-- jQuery -->
     <script src="{{ asset('/js/jquery.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/bundle.min.js') }}" charset="utf-8"></script>
 
     @stack('scripts')
 
