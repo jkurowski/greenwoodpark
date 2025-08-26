@@ -187,36 +187,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="row w-100 form-group">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <h2>Przynależne powierzchnie do wyboru przez klienta</h2>
-                                                </div>
-                                            </div>
-                                            <div class="row input-radio-group">
-                                                <div class="col-12">
-                                                    @include('form-elements.html-input-radio', [
-                                                    'name' => 'visitor_related_type',
-                                                    'label' => '',
-                                                    'value' => $entry->visitor_related_type,
-                                                    'options' => [
-                                                        '1' => 'Brak wyboru',
-                                                        '2' => 'Wszystkie',
-                                                        '3' => 'Tylko wybrane'
-                                                    ],
-                                                    'required' => true,
-                                                ])
-                                                </div>
-                                                <div class="col-12 d-none" id="visitorRelated">
-                                                    @include('form-elements.html-select-multiple', ['label' => 'Wybierz powierzchnie dodatkowe', 'name' => 'visitor_related_ids', 'selected' => $entry->visitorRelatedProperties->pluck('id')->toArray(), 'select' => $visitor_others,
-                                                        'liveSearch' => true
-                                                    ])
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <!-- End-Przynalezne -->
                                 @endif
 
