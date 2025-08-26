@@ -23,7 +23,7 @@ class BuildingService
 
         $name = date('His') . '_' . Str::slug($title) . '.' . $file->getClientOriginalExtension();
         $name_webp = date('His') . '_' . Str::slug($title) . '.webp';
-        $file->storeAs('building', $name, 'investment_uploads');
+        $file->move(public_path('investment/building'), $name);
 
         $filepath = public_path('investment/building/' . $name);
         $file_list_path_webp = public_path('investment/building/webp/' . $name_webp);

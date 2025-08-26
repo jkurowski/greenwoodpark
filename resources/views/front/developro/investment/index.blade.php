@@ -147,11 +147,9 @@
                                 <picture>
                                     <source type="image/webp" srcset="/investment/property/list/webp/{{$p->file_webp}}">
                                     <source type="image/jpeg" srcset="/investment/property/list/{{$p->file}}">
-                                    <img src="/investment/property/list/{{$p->file}}" alt="{{$p->name}}" class="panel__img">
+                                    <img src="/investment/property/list/{{$p->file}}" alt="{{$p->name}}" class="panel__img object-position-center">
                                 </picture>
                             @endif
-
-                            <img src="{{ asset('images/plans/plan-04.jpg') }}" alt="" class="panel__img">
                             <div class="panel__data">
                                 <p>Powierzchnia:<br><span>{{ $p->area }} m<sup>2</sup></span></p>
                                 <p>Pokoje:<br><span>{{ $p->rooms }}</span></p>

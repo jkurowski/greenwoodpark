@@ -37,7 +37,7 @@ class PropertyService
 
         $name = date('His').'_'.Str::slug($title).'.' . $file->getClientOriginalExtension();
         $name_webp = date('His').'_'.Str::slug($title).'.webp';
-        $file->storeAs('property', $name, 'investment_uploads');
+        $file->move(public_path('investment/property'), $name);
 
         // Property card image
         $file_path = public_path('investment/property/' . $name);
@@ -83,7 +83,7 @@ class PropertyService
         }
 
         $name = date('His').'_'.Str::slug($title).'.' . $file->getClientOriginalExtension();
-        $file->storeAs('property/pdf', $name, 'investment_uploads');
+        $file->move(public_path('investment/property/pdf'), $name);
         $model->update(['file_pdf' => $name]);
     }
 
@@ -97,7 +97,7 @@ class PropertyService
         }
 
         $name = date('His').'_3d_'.Str::slug($title).'.' . $file->getClientOriginalExtension();
-        $file->storeAs('property/pdf', $name, 'investment_uploads');
+        $file->move(public_path('investment/property/pdf'), $name);
         $model->update(['file_3d' => $name]);
     }
 }

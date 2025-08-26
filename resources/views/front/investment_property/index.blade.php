@@ -1,447 +1,219 @@
-@extends('layouts.page', ['body_class' => 'investments'])
+@extends('layouts.page', ['body_class' => 'completed-page'])
 
-@section('meta_title', $page->title  .' - '. $building->name .' - '. $investment->floor->name .' - '. $property->name)
-@section('seo_description', $page->meta_description)
+{{--@section('meta_title', $page->title)--}}
+{{--@section('seo_title', $page->meta_title)--}}
+{{--@section('seo_description', $page->meta_description)--}}
+
 @section('content')
-    <main class="my-5">
-        <!-- Breadcrumb -->
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="/">Strona główna</a>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a href="/apartamenty">Apartamenty</a>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a href="{{ route('front.developro.investment.building', ['buildingSlug' => $building->slug]) }}">{{$building->name}}</a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                                <a href="{{route('front.developro.investment.floor', [$building->slug, $property->floor, Str::slug($property->floor->name)])}}">{{$property->floor->name}}</a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                                {{$property->name}}
-                            </li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+    <main class="main" id="page-mieszkania">
+
+        <div class="breadcrumb wrapper">
+            <a href="/">Strona główna</a>
+            <a href="/mieszkania/">Mieszkania</a>
         </div>
-        <!-- END -> Breadcrumb -->
 
-        <!-- Apartment Card -->
         <section class="apartment">
-            <div class="container">
-                <div id="property-nav" class="d-flex gap-3 gap-sm-5 flex-sm-row justify-content-between align-items-center margin-wrapper-smallest margin-wrapper-smallest-bottom-sm">
-                    @if($prev)
-                    <a href="{{ route('front.developro.investment.property', [
-                                                        $prev->building->slug,
-                                                        Str::slug($prev->floor->name),
-                                                        $prev,
-                                                        Str::slug($prev->name),
-                                                        floorLevel($prev->floor->number, true),
-                                                        number2RoomsName($prev->rooms, true),
-                                                        round(floatval($prev->area), 2).'-m2'
-                                                    ]) }}" class="btn btn-main-inverted">
-                        <img class="pe-4 disable" src="{{ asset('images/arrow_left.svg') }}" height="15" alt="strzałka"/>
-                        poprzednie
-                    </a>
+            <div class="wrapper">
+
+                <div class="apartment__top-bar scroll-animation">
+                    <a class="with-arrow with-arrow--left" href="#">Poprzednie</a>
+                    <a href="/mieszkania/">Wróć do planu</a>
+                    <a class="with-arrow" href="#">Następne</a>
+                </div>
+
+                <div class="wrapper--small">
+                    <div class="apartment__content scroll-animation delay-2">
+
+
+                        <h2 class="apartment__name">{{ $property->name }}</h2>
+
+                        <table class="apartment__data">
+                            <tbody>
+                            <tr>
+                                <th>Status:</th>
+                                <td><span class="status available">Dostępne</span></td>
+                            </tr>
+                            <tr>
+                                <th>Cena:</th>
+                                <td>{{ $property->price_brutto }} zł</td>
+                            </tr>
+                            <tr>
+                                <th>Powierzchnia:</th>
+                                <td>{{ $property->area }} m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <th>Cena garażu pojednyczego:</th>
+                                <td>od 000000 zł</td>
+                            </tr>
+                            <tr>
+                                <th>Piętro:</th>
+                                <td>{{ $property->floor->number }}</td>
+                            </tr>
+                            <tr>
+                                <th>Cena garażu rodzinnego:</th>
+                                <td>od 000000 zł</td>
+                            </tr>
+                            <tr>
+                                <th>Lorem ipsum:</th>
+                                </th>
+                                <td>Lorem ipsum</td>
+                            </tr>
+                            <tr>
+                                <th>Lorem ipsum:</th>
+                                <td>Lorem ipsum</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <div>
+                            <a class="apartment__history-btn cta-link" href="#">Historia zmian ceny</a>
+                        </div>
+
+                        <div class="apartment__buttons">
+                            <a class="cta-link" href="#">Pobierz prospekt informacyjny</a>
+                            <a class="cta-link" href="#">Pobierz kartę apartamentu</a>
+                            <a class="btn btn--primary" href="#">Umów spotkanie</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>  <section class="contact-form">
+
+            <div class="wrapper--medium contact-form__wrapper">
+
+                <div class="contact-form__image scroll-animation delay-2">
+                    @if($property->file)
+                        <picture>
+                            <source type="image/webp" srcset="/investment/property/webp/{{$property->file_webp}}">
+                            <source type="image/jpeg" srcset="/investment/property/{{$property->file}}">
+                            <img src="/investment/property/{{$property->file}}" alt="{{$property->name}}" class="contact-form__img">
+                        </picture>
                     @endif
-                    <a href="{{route('front.developro.investment.floor', [$property->building->slug, $property->floor, Str::slug($property->floor->name)])}}" class="text-uppercase text-black link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover link-primary fs-5"
-                    >plan piętra</a>
-                    @if($next)
-                    <a href="{{ route('front.developro.investment.property', [
-                                                        $next->building->slug,
-                                                        Str::slug($next->floor->name),
-                                                        $next,
-                                                        Str::slug($next->name),
-                                                        floorLevel($next->floor->number, true),
-                                                        number2RoomsName($next->rooms, true),
-                                                        round(floatval($next->area), 2).'-m2'
-                                                    ]) }}" class="btn btn-main">
-                        następne
-                        <img class="ps-4" src="{{ asset('images/arrow-right.svg') }}" height="15.644" alt="strzałka" height="15.644" alt="strzałka"/>
-                    </a>
-                    @endif
                 </div>
-                <div class="container order-2 margin-wrapper-xxs margin-wrapper-sm-xl">
-                    <div class="row about">
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-md-5 mb-5 mb-sm-0">
-                                    <article class="about-common d-flex flex-column justify-content-between h-100" data-aos="fade-up">
-                                        <div class="d-flex flex-column gap-5">
-                                            <div>
-                                                <!-- ICON on to of a header title  -->
-                                                <img
-                                                        src="{{ asset('images/logo-small.svg') }}"
-                                                        alt="Apartamenty Nowe Miasto logo"
-                                                        width="54"
-                                                        height="33"
-                                                        class="img-fluid about--icon"
-                                                        loading="lazy"
-                                                        decoding="async"
-                                                />
-                                                <!-- TITLE -->
-                                                <h2 class="header-1 px-0 mx-0">
-                                                    {{$property->name_list}}
-                                                    <span> {{$property->number}} </span>
-                                                </h2>
-                                                <!-- SUBTITLE -->
-                                                {!! roomPageStatusBadge($property->status) !!}
-                                            </div>
-                                            <div class="d-flex flex-column gap-2 w-75">
-                                                <div class="d-flex justify-content-between">
-                                                    <span>pokoje:</span>
-                                                    <span> {{$property->rooms}}</span>
-                                                </div>
-                                                <div class="d-flex justify-content-between">
-                                                    <span>metraż:</span>
-                                                    <span> {{$property->area}} m<sup>2</sup></span>
-                                                </div>
-                                                @if($property->balcony_area)
-                                                <div class="d-flex justify-content-between">
-                                                    <span>balkon:</span>
-                                                    <span> {{$property->balcony_area}} m<sup>2</sup></span>
-                                                </div>
-                                                @endif
-                                                @if($property->garden_area)
-                                                    <div class="d-flex justify-content-between">
-                                                        <span>ogródek:</span>
-                                                        <span> {{$property->garden_area}} m<sup>2</sup></span>
-                                                    </div>
-                                                @endif
-                                                @if($property->loggia_area)
-                                                    <div class="d-flex justify-content-between">
-                                                        <span>loggia:</span>
-                                                        <span> {{$property->loggia_area}} m<sup>2</sup></span>
-                                                    </div>
-                                                @endif
-                                                @if($property->terrace_area)
-                                                    <div class="d-flex justify-content-between">
-                                                        <span>taras:</span>
-                                                        <span> {{$property->terrace_area}} m<sup>2</sup></span>
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="row mt-5 align-items-sm-center flex-column flex-sm-row">
-                                            <a href="#contact" class="btn btn-main w-fit-content col-6 order-1">
-                                                ZAPYTAJ O MIESZKANIE
-                                                <img class="ps-4" src="{{ asset('images/arrow-right.svg') }}" height="15.644" alt="strzałka" height="15"/>
-                                            </a>
-                                        </div>
-                                        <div class="row mt-4 align-items-sm-center flex-column flex-sm-row">
-                                            @if($property->file_pdf)
-                                                <a class="col order-0 order-lg-3 pb-4 pb-lg-0 text-black link-offset-2 link-underline link-underline-opacity-0 ms-auto link-underline-opacity-100-hover" href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" target="_blank">POBIERZ KARTĘ .PDF</a>
-                                            @endif
-                                            @if($property->file_3d)
-                                                <a class="col order-0 order-lg-3 pb-4 pb-lg-0 text-black link-offset-2 link-underline link-underline-opacity-0 ms-auto link-underline-opacity-100-hover" href="{{ asset('/investment/property/pdf/'.$property->file_3d) }}" target="_blank">POBIERZ KARTĘ 3D</a>
-                                            @endif
-                                        </div>
-                                    </article>
-                                </div>
-                                <div class="col-md-6 offset-md-1 position-relative about-common--img-box pt-0 pt-sm-5 pt-xl-0">
-                                    @if ($property->file)
-                                        <a href="{{ asset('/investment/property/' . $property->file) }}" class="swipebox">
-                                            <picture>
-                                                <source type="image/webp" srcset="{{ asset('/investment/property/thumbs/webp/' . $property->file_webp) }}">
-                                                <source type="image/jpeg" srcset="{{ asset('/investment/property/thumbs/' . $property->file) }}">
-                                                <img src="{{ asset('/investment/property/thumbs/' . $property->file) }}" alt="{{ $property->name }}" class="w-100">
-                                            </picture>
-                                        </a>
-                                    @endif
-                                </div>
+
+                <div class="contact-form__content scroll-animation">
+                    <h3 class="contact-form__form-title">Formularz kontaktowy</h3>
+                    <form class="form" action="">
+                        <div class="input input--text">
+                            <label for="name">Imię</label>
+                            <input type="text" id="name" name="name" />
+                        </div>
+                        <div class="input input--text">
+                            <label for="email">Adres e-mail</label>
+                            <input type="email" id="email" name="email" />
+                        </div>
+                        <div class="input input--text">
+                            <label for="phone">Telefon</label>
+                            <input type="text" id="phone" name="phone" />
+                        </div>
+                        <div class="input input--textarea">
+                            <label for="message">Wiadomość</label>
+                            <textarea id="message" name="message"
+                                      placeholder="Proszę o więcej szczegółów dotyczących mieszkania nr... oraz propozycję terminu spotkania"></textarea>
+                        </div>
+                        <div class="form__agreements">
+                            <div class="input input--checkbox">
+                                <input type="checkbox" id="privacy" name="privacy" />
+                                <label for="privacy">Wyrażam zgodę na przetwarzanie przez Greenwood II sp. z o.o. z siedzibą przy ul.
+                                    Henryka Dembińskiego 13, 01-644 w Warszawie, moich danych osobowych zawartych w niniejszym formularzu w
+                                    celu umożliwienia kontaktu oraz przekazywania materiałów marketingowych i promocyjnych dotyczących
+                                    inwestycji realizowanych przez Spółkę.</label>
+                            </div>
+                            <div class="input input--checkbox">
+                                <input type="checkbox" id="privacy-2" name="privacy-2" />
+                                <label for="privacy-2">Wyrażam zgodę na otrzymywanie od Greenwood II sp. z o.o. drogą elektroniczną na
+                                    wskazany przeze mnie adres e-mail informacji handlowej dotyczących produktów oferowanych przez Greenwood
+                                    II sp. z o.o. w rozumieniu art. 10 ust. 1 Ustawy z dnia 18 lipca 2002 roku o świadczeniu usług drogą
+                                    elektroniczną.</label>
+                            </div>
+                            <div class="input input--checkbox">
+                                <input type="checkbox" id="privacy-3" name="privacy-3" />
+                                <label for="privacy-3">Wyrażam zgodę na otrzymywanie od Greenwood II sp. z o.o. drogą elektroniczną na
+                                    wskazany przeze mnie adres e-mail informacji handlowej dotyczących produktów oferowanych przez Greenwood
+                                    II sp. z o.o. w rozumieniu art. 10 ust. 1 Ustawy z dnia 18 lipca 2002 roku o świadczeniu usług drogą
+                                    elektroniczną.</label>
                             </div>
                         </div>
+
+                        <button type="submit" class="btn btn--primary form__submit">Wyślij</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </section>  <section class="similar">
+
+            <img src="{{ asset('images/decor-03.png') }}" alt="" class="decor-03 decor--left decor--top" />
+
+            <div class="wrapper--small">
+                <h2 class="similar__title scroll-animation">Podobne<br>mieszkania</h2>
+            </div>
+
+            <div class="similar__content scroll-animation delay-3">
+                <div class="similar__items slider slider--thin slider--with-bar">
+                    @foreach($similar as $p)
+                        <div class="panel {!! roomStatusList($p->status) !!}">
+                            <h3 class="panel__name">{{ $p->name }}</h3>
+                            <div class="panel__status">{!! roomStatusBadge($p->status) !!}</div>
+                            @if($p->file)
+                                <picture>
+                                    <source type="image/webp" srcset="/investment/property/list/webp/{{$p->file_webp}}">
+                                    <source type="image/jpeg" srcset="/investment/property/list/{{$p->file}}">
+                                    <img src="/investment/property/list/{{$p->file}}" alt="{{$p->name}}" class="panel__img object-position-center">
+                                </picture>
+                            @endif
+                            <div class="panel__data">
+                                <p>Powierzchnia:<br><span>{{ $p->area }} m<sup>2</sup></span></p>
+                                <p>Pokoje:<br><span>{{ $p->rooms }}</span></p>
+                                <p>Piętro:<br><span>{{ $p->floor->number }}</span></p>
+                                <p>Cena<br><span>od {{ $p->price_brutto }} zł</span></p>
+                            </div>
+                            <a href="{{ route('front.developro.investment.property', [
+                                                        $p->building->slug,
+                                                        Str::slug($p->floor->name),
+                                                        $p,
+                                                        Str::slug($p->name),
+                                                        floorLevel($p->floor->number, true),
+                                                        number2RoomsName($p->rooms, true),
+                                                        round(floatval($p->area), 2).'-m2'
+                                                    ]) }}" class="panel__btn btn btn--primary">Zobacz więcej</a>
+                        </div>
+                    @endforeach
+                </div>
+
+                <div class="wrapper slider__pagination-wrapper scroll-animation delay-4">
+                    <div class="similar__pagination pagination-bar">
+                        <div class="pagination-bar__progress">
+                            <div class="pagination-bar__progress-bar"></div>
+                        </div>
+                        <div class="pagination-bar__buttons"></div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- END -> Apartment Card -->
-
-        <!-- CONTACT FORM COMMON -->
-        <section class="margin-wrapper-xs" id="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <img
-                                src="{{ asset('images/fence-horizontal.svg') }}"
-                                width="169"
-                                height="72"
-                                alt=""
-                                class="apartments--fence-horizontal"
-                                loading="lazy"
-                                decoding="async"
-                                data-aos="fade-up"
-                                data-aos-offset="120"
-                                data-aos-delay="100"
-                        />
-                        <!-- ICON on to of a header title  -->
-                        <img
-                                src="{{ asset('images/logo-small.svg') }}"
-                                alt="Apartamenty Nowe Miasto logo"
-                                width="54"
-                                height="33"
-                                class="img-fluid about--icon"
-                                loading="lazy"
-                                decoding="async"
-                                data-aos="fade-up"
-                                data-aos-offset="120"
-                                data-aos-delay="100"
-                        />
-                        <!-- HEADER -->
-                        <h1
-                                class="header-1 px-0 mx-0"
-                                data-aos="fade-left"
-                                data-aos-delay="200"
-                                data-aos-offset="120"
-                        >
-                            Kontakt
-                        </h1>
-
-                        <!-- SUBTITLE -->
-                        <span
-                                class="subtitle-1"
-                                data-aos="fade-left"
-                                data-aos-delay="500"
-                                data-aos-offset="120"
-                        >Apartamenty Nowe miasto</span
-                        >
-
-                        <!-- PARAGRAPH -->
-                        <div
-                                class="row pt-4"
-                                data-aos="fade-left"
-                                data-aos-delay="400"
-                                data-aos-offset="120"
-                        >
-                            <div class="col col-lg-6 offset-lg-3">
-                                <p class="fw-medium">
-                                    Jeżeli masz jakiekolwiek pytania dotyczące naszych nowych
-                                    apartamentów, z przyjemnością pomożemy. Nasz zespół jest
-                                    gotowy, aby dostarczyć wszelkie potrzebne informacje i
-                                    rozwiać Twoje wątpliwości.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-lg-6 offset-lg-3">
-                        @include('front.contact.form', ['page_name' => $property->name])
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- END -> CONTACT FORM  COMMON -->
-
-        <!-- APARMENT TYPES -->
-
-        <section class="margin-wrapper-xs position-relative">
-            <div class="container">
-                <div class="ap-types">
-                    <div class="row mb-4">
-                        <div class="col-12">
-                            <div>
-                                <!-- ICON on to of a header title  -->
-                                <img
-                                        src="{{ asset('images/logo-small.svg') }}"
-                                        alt="Apartamenty Nowe Miasto logo"
-                                        width="54"
-                                        height="33"
-                                        class="img-fluid about--icon"
-                                        loading="lazy"
-                                        decoding="async"
-                                />
-                                <!-- HEADER -->
-                                <h3 class="text-uppercase header-1 fs-xl-3 px-0 mx-0">
-                                    SPRAWDŹ INNE <br />
-                                    TYPY MIESZKAŃ
-                                </h3>
-                                <!-- SUBTITLE -->
-                                <span class="text-uppercase subtitle-1"
-                                >APARTAMENTY NOWE MIASTO</span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row gy-3 gx-lg-3 gx-xl-4">
-                        <div
-                                class="col-6 col-md-6 col-lg-3"
-                                data-aos="fade-right"
-                                data-aos-delay="200"
-                                data-aos-offset="120"
-                        >
-                            <a href="/apartamenty?s_pokoje=1" class="ap-card-link">
-                                <div class="ap-card" data-order="1">
-                                    <div class="box">
-                                        <div class="type">1-pokojowe</div>
-                                        <div class="squares">29 m<sup>2</sup></div>
-                                    </div>
-                                    <div class="btn-container">
-                                        <button class="btn btn-main btn-main-white" type="button">
-                                            <span class="pe-0 pe-sm-4"> sprawdź </span>
-                                            <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="15.644"
-                                                    height="15.644"
-                                                    viewBox="0 0 15.644 15.644"
-                                            >
-                                                <path
-                                                        id="arrow_downward_FILL0_wght100_GRAD0_opsz48"
-                                                        d="M7.5,0V14.418L.467,7.355,0,7.822l7.822,7.822,7.822-7.822-.467-.467L8.143,14.418V0Z"
-                                                        transform="translate(0 15.644) rotate(-90)"
-                                                        fill="#fff"
-                                                />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div
-                                class="col-6 col-md-6 col-lg-3"
-                                data-aos="fade-right"
-                                data-aos-delay="400"
-                                data-aos-offset="120"
-                        >
-                            <a href="/apartamenty?s_pokoje=2" class="ap-card-link">
-                                <div class="ap-card" data-order="2">
-                                    <div class="box">
-                                        <div class="type">2-pokojowe</div>
-                                        <div class="squares">32-47 m<sup>2</sup></div>
-                                    </div>
-                                    <div class="btn-container">
-                                        <button class="btn btn-main btn-main-white" type="button">
-                                            <span class="pe-0 pe-sm-4"> sprawdź </span>
-                                            <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="15.644"
-                                                    height="15.644"
-                                                    viewBox="0 0 15.644 15.644"
-                                            >
-                                                <path
-                                                        id="arrow_downward_FILL0_wght100_GRAD0_opsz48"
-                                                        d="M7.5,0V14.418L.467,7.355,0,7.822l7.822,7.822,7.822-7.822-.467-.467L8.143,14.418V0Z"
-                                                        transform="translate(0 15.644) rotate(-90)"
-                                                        fill="#fff"
-                                                />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div
-                                class="col-6 col-md-6 col-lg-3"
-                                data-aos="fade-right"
-                                data-aos-delay="600"
-                                data-aos-offset="120"
-                        >
-                            <a href="/apartamenty?s_pokoje=3" class="ap-card-link">
-                                <div class="ap-card" data-order="3">
-                                    <div class="box">
-                                        <div class="type">3-pokojowe</div>
-                                        <div class="squares">50-68 m<sup>2</sup></div>
-                                    </div>
-                                    <div class="btn-container">
-                                        <button class="btn btn-main btn-main-white" type="button">
-                                            <span class="pe-0 pe-sm-4"> sprawdź </span>
-                                            <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="15.644"
-                                                    height="15.644"
-                                                    viewBox="0 0 15.644 15.644"
-                                            >
-                                                <path
-                                                        id="arrow_downward_FILL0_wght100_GRAD0_opsz48"
-                                                        d="M7.5,0V14.418L.467,7.355,0,7.822l7.822,7.822,7.822-7.822-.467-.467L8.143,14.418V0Z"
-                                                        transform="translate(0 15.644) rotate(-90)"
-                                                        fill="#fff"
-                                                />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div
-                                class="col-6 col-md-6 col-lg-3"
-                                data-aos="fade-right"
-                                data-aos-delay="800"
-                                data-aos-offset="120"
-                        >
-                            <a href="/apartamenty?s_pokoje=4" class="ap-card-link">
-                                <div class="ap-card" data-order="4">
-                                    <div class="box">
-                                        <div class="type">4-pokojowe</div>
-                                        <div class="squares">61-78 m<sup>2</sup></div>
-                                    </div>
-                                    <div class="btn-container">
-                                        <button class="btn btn-main btn-main-white" type="button">
-                                            <span class="pe-0 pe-sm-4"> sprawdź </span>
-                                            <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="15.644"
-                                                    height="15.644"
-                                                    viewBox="0 0 15.644 15.644"
-                                            >
-                                                <path
-                                                        id="arrow_downward_FILL0_wght100_GRAD0_opsz48"
-                                                        d="M7.5,0V14.418L.467,7.355,0,7.822l7.822,7.822,7.822-7.822-.467-.467L8.143,14.418V0Z"
-                                                        transform="translate(0 15.644) rotate(-90)"
-                                                        fill="#fff"
-                                                />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row text-center mt-5">
-                        <div class="col-12 col-sm-6 offset-sm-3">
-                            <a class="cta-link" href="/apartamenty">
-                                zobacz wszystkie
-                                <img
-                                        class="ps-4"
-                                        src="{{ asset('images/arrow-right.svg') }}"
-                                        height="15.644"
-                                        alt="strzałka"
-                                />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="anim-bounce-box-2">
-                <div class="bounce"></div>
-            </div>
-        </section>
-        <!-- END -> APARMENT TYPES -->
     </main>
 @endsection
-
 @push('scripts')
     <script src="{{ asset('/js/validation.js') }}" charset="utf-8"></script>
     <script src="{{ asset('/js/pl.js') }}" charset="utf-8"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function(){
             $(".validateForm").validationEngine({
                 validateNonVisibleFields: true,
-                updatePromptsPosition: true,
-                promptPosition: "topRight:-137px"
+                updatePromptsPosition:true,
+                promptPosition : "topRight:-137px"
             });
         });
-        @if (session('success') || session('warning'))
+        @if (session('success')||session('warning'))
         $(window).load(function() {
             const aboveHeight = $('header').outerHeight();
             $('html, body').stop().animate({
-                scrollTop: $('.alert').offset().top - aboveHeight
+                scrollTop: $('.alert').offset().top-aboveHeight
             }, 1500, 'easeInOutExpo');
         });
         @endif
     </script>
 @endpush
+
