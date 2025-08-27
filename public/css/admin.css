@@ -156,6 +156,51 @@ p {
     }
 }
 
+/* Przynalezne
+================================================== */
+#selectedOffer {
+    border-bottom: 2px solid #b6dfb9;
+}
+
+#selectedOffer tr {
+    background: #f8fff9;
+}
+
+#selectedOffer .pe-0 span {
+    background: #00acc1;
+    width: 30px;
+    display: flex;
+    height: 30px;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#selectedOffer .pe-0 span i {
+    font-size: 20px;
+    color: white;
+}
+
+#added {border-bottom: 1px solid #dee2e6}
+#added tr {background: #f8fff9;}
+#added .pe-0 span {
+    background: #00acc1;
+    width: 30px;
+    display: flex;
+    height: 30px;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+#added .pe-0 span i {
+    font-size: 20px;
+    color: white;
+}
+
+
 /* Regex list
 ================================================== */
 .regex-list {
