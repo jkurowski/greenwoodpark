@@ -19,13 +19,11 @@
                 @if($building->file)
                     <img src="{{ asset('/investment/building/'.$building->file) }}" alt="{{$building->name}}" id="invesmentplan" usemap="#invesmentplan" class="image__img scroll-animation delay-1 rounded-7">
                     <map name="invesmentplan">
-                        <map name="invesmentplan">
-                            @foreach($investment->buildingFloors as $floor)
-                                @if($floor->html)
-                                    <area shape="poly" href="{{route('front.developro.investment.floor', [$building->slug, $floor, Str::slug($floor->name)])}}" data-item="{{$floor->id}}" title="{{$floor->name}}" alt="floor-{{$floor->id}}" data-floornumber="{{$floor->id}}" data-floortype="{{$floor->type}}" coords="{{cords($floor->html)}}">
-                                @endif
-                            @endforeach
-                        </map>
+                        @foreach($investment->buildingFloors as $floor)
+                            @if($floor->html)
+                                <area shape="poly" href="{{route('front.developro.investment.floor', [$building->slug, $floor, Str::slug($floor->name)])}}" data-item="{{$floor->id}}" title="{{$floor->name}}" alt="floor-{{$floor->id}}" data-floornumber="{{$floor->id}}" data-floortype="{{$floor->type}}" coords="{{cords($floor->html)}}">
+                            @endif
+                        @endforeach
                     </map>
                 @endif
             </div>
