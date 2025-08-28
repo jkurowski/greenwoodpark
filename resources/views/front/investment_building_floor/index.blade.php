@@ -68,7 +68,7 @@
         </section>
         <section class="searcher-section">
             <div class="wrapper--small">
-
+                @if($investment->floor->search_form)
                 <div class="searcher scroll-animation delay-2">
                     <h3 class="searcher__title">Wyszukiwarka mieszkań</h3>
                     <form class="searcher__form">
@@ -155,7 +155,7 @@
                         </div>
                     </form>
                 </div>
-
+                @endif
                 <div class="searcher__display-filters scroll-animation">
                     <button class="filter__display--block">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">

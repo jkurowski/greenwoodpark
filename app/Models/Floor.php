@@ -27,7 +27,8 @@ class Floor extends Model
         'file_webp',
         'meta_title',
         'meta_description',
-        'active'
+        'active',
+        'search_form'
     ];
 
     public function properties()

@@ -28,6 +28,7 @@ class FloorFormRequest extends FormRequest
             'cords' => '',
             'html' => '',
             'active' => 'boolean',
+            'search_form' => 'boolean',
             'type' => 'integer',
             'name' => 'required|string|max:255',
             'meta_title' => '',

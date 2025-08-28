@@ -52,6 +52,11 @@
                                 '0' => 'Nie'
                                 ]
                             ])
+                            @include('form-elements.html-select', ['label' => 'Pokaż wyszukiwarkę', 'name' => 'search_form', 'selected' => $entry->search_form, 'select' => [
+                                '1' => 'Tak',
+                                '0' => 'Nie'
+                                ]
+                            ])
                             @include('form-elements.html-select', [
                                 'label' => 'Typ piętra',
                                 'name' => 'type',
