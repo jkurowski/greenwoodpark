@@ -1,11 +1,9 @@
 <footer class="footer">
     <div class="wrapper">
-
         <div class="footer__left">
             <img src="{{ asset('images/logos/logo-white.svg') }}" alt="" class="footer__logo">
             <div class="footer__description">
-                Znamy naszych klientów i wiemy, że mają różnorodne potrzeby. Dlatego Greenwood Park zaprojektowaliśmy w taki
-                sposób, aby każdy znalazł mieszkanie idealne dla siebie.
+                Znamy naszych klientów i wiemy, że mają różnorodne potrzeby. Dlatego Greenwood Park zaprojektowaliśmy w taki sposób, aby każdy znalazł mieszkanie idealne dla siebie.
             </div>
         </div>
 
@@ -24,11 +22,10 @@
             <nav class="footer__nav footer__contact">
                 <h4>Kontakt</h4>
                 <p>Biuro sprzedaży</p>
-                <a href="tel:+48606292908">123 456 789</a>
+                <a href="tel:+48606292908">606 292 908</a>
                 <a href="mailto: biuro@greenwoodpark.pl">biuro@greenwoodpark.pl</a>
                 <p>ul. Jeździecka 20</p>
             </nav>
         </div>
-
     </div>
 </footer>

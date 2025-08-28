@@ -1,30 +1,55 @@
 @extends('layouts.page', ['body_class' => 'completed-page'])
 
-{{--@section('meta_title', $page->title)--}}
-{{--@section('seo_title', $page->meta_title)--}}
-{{--@section('seo_description', $page->meta_description)--}}
+@section('meta_title', $page->title .' - '. $building->name . ' - ' . $investment->floor->name . ' - ' . $property->name)
+@section('seo_title', $page->meta_title)
+@section('seo_description', $page->meta_description)
 
 @section('content')
     <main class="main" id="page-mieszkania">
 
         <div class="breadcrumb wrapper">
-            <a href="/">Strona główna</a>
             <a href="/mieszkania/">Mieszkania</a>
+            <a href="{{ route('front.developro.building', [$building, 'buildingSlug' => $building->slug]) }}">{{ $building->name }}</a>
+            <a href="{{route('front.developro.investment.floor', [$building->slug, $investment->floor, Str::slug($investment->floor->name)])}}">{{ $investment->floor->name }}</a>
         </div>
 
         <section class="apartment">
             <div class="wrapper">
-
-                <div class="apartment__top-bar scroll-animation">
-                    <a class="with-arrow with-arrow--left" href="#">Poprzednie</a>
-                    <a href="/mieszkania/">Wróć do planu</a>
-                    <a class="with-arrow" href="#">Następne</a>
-                </div>
-
                 <div class="wrapper--small">
+                    <div class="container-fluid p-0 floor-nav">
+                        <div class="row mb-5">
+                            <div class="col-4">
+                                @if($prev)
+                                    <a href="{{ route('front.developro.investment.property', [
+                                                        $building->slug,
+                                                        Str::slug($prev->floor->name),
+                                                        $prev,
+                                                        Str::slug($prev->name),
+                                                        floorLevel($prev->floor->number, true),
+                                                        number2RoomsName($prev->rooms, true),
+                                                        round(floatval($prev->area), 2).'-m2'
+                                                    ]) }}" class="btn btn--primary">{{$prev->name}}</a>
+                                @endif
+                            </div>
+                            <div class="col-4 text-center">
+                                <a href="{{route('front.developro.investment.floor', [$building->slug, $property->floor, Str::slug($property->floor->name)])}}" class="btn btn--primary">Plan piętra</a>
+                            </div>
+                            <div class="col-4 text-end">
+                                @if($next)
+                                    <a href="{{ route('front.developro.investment.property', [
+                                                        $building->slug,
+                                                        Str::slug($next->floor->name),
+                                                        $next,
+                                                        Str::slug($next->name),
+                                                        floorLevel($next->floor->number, true),
+                                                        number2RoomsName($next->rooms, true),
+                                                        round(floatval($next->area), 2).'-m2'
+                                                    ]) }}" class="btn btn--primary">{{$next->name}}</a>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                     <div class="apartment__content scroll-animation delay-2">
-
-
                         <h2 class="apartment__name">{{ $property->name }}</h2>
 
                         <table class="apartment__data">
@@ -41,7 +66,7 @@
                                 <th>Powierzchnia:</th>
                                 <td>{{ $property->area }} m<sup>2</sup></td>
                             </tr>
-                            <tr>
+                            <tr style="display:none;">
                                 <th>Cena garażu pojednyczego:</th>
                                 <td>od 000000 zł</td>
                             </tr>
@@ -49,40 +74,41 @@
                                 <th>Piętro:</th>
                                 <td>{{ $property->floor->number }}</td>
                             </tr>
-                            <tr>
+                            <tr style="display:none;">
                                 <th>Cena garażu rodzinnego:</th>
                                 <td>od 000000 zł</td>
                             </tr>
-                            <tr>
+                            <tr style="display:none;">
                                 <th>Lorem ipsum:</th>
                                 </th>
                                 <td>Lorem ipsum</td>
                             </tr>
-                            <tr>
+                            <tr style="display:none;">
                                 <th>Lorem ipsum:</th>
                                 <td>Lorem ipsum</td>
                             </tr>
                             </tbody>
                         </table>
 
-                        <div>
+                        <div style="display:none;">
                             <a class="apartment__history-btn cta-link" href="#">Historia zmian ceny</a>
                         </div>
 
                         <div class="apartment__buttons">
-                            <a class="cta-link" href="#">Pobierz prospekt informacyjny</a>
-                            <a class="cta-link" href="#">Pobierz kartę apartamentu</a>
-                            <a class="btn btn--primary" href="#">Umów spotkanie</a>
+                            <a class="cta-link" style="display:none;" href="#">Pobierz prospekt informacyjny</a>
+                            @if($property->file_pdf)
+                                <a class="cta-link" href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" target="_blank">Pobierz kartę apartamentu</a>
+                            @endif
+                            <a class="btn btn--primary" href="#contactForm">Umów spotkanie</a>
                         </div>
                     </div>
 
                 </div>
 
             </div>
-        </section>  <section class="contact-form">
-
+        </section>
+        <section class="contact-form">
             <div class="wrapper--medium contact-form__wrapper">
-
                 <div class="contact-form__image scroll-animation delay-2">
                     @if($property->file)
                         <picture>
@@ -95,7 +121,7 @@
 
                 <div class="contact-form__content scroll-animation">
                     <h3 class="contact-form__form-title">Formularz kontaktowy</h3>
-                    <form class="form" action="">
+                    <form id="contactForm" class="form" action="">
                         <div class="input input--text">
                             <label for="name">Imię</label>
                             <input type="text" id="name" name="name" />

@@ -1,8 +1,8 @@
 @extends('layouts.page', ['body_class' => 'completed-page'])
 
-{{--@section('meta_title', $page->title)--}}
-{{--@section('seo_title', $page->meta_title)--}}
-{{--@section('seo_description', $page->meta_description)--}}
+@section('meta_title', $page->title .' - '. $building->name . ' - ' . $investment->floor->name)
+@section('seo_title', $page->meta_title)
+@section('seo_description', $page->meta_description)
 
 @section('content')
     <main class="main" id="page-mieszkania">
@@ -10,7 +10,8 @@
         <div class="breadcrumb wrapper mb-0">
             <a href="/">Strona główna</a>
             <a href="/mieszkania/">Mieszkania</a>
-            <a href="#">{{ $building->name }}</a>
+            <a href="{{ route('front.developro.building', [$building, 'buildingSlug' => $building->slug]) }}">{{ $building->name }}</a>
+            <a href="{{route('front.developro.investment.floor', [$building->slug, $investment->floor, Str::slug($investment->floor->name)])}}">{{ $investment->floor->name }}</a>
         </div>
 
         <section class="image mt-3">

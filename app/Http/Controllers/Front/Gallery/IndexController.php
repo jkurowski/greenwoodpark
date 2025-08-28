@@ -13,7 +13,7 @@ class IndexController extends Controller
     {
         return view('front.gallery.index', [
             'galleries' => Gallery::all(),
-            'page' => Page::where('id', 7)->first(),
+            'page' => Page::where('id', 3)->first(),
         ]);
     }
 }

@@ -19,7 +19,7 @@ class InvestmentPropertyController extends Controller
 
     public function __construct()
     {
-        $this->pageId = 6;
+        $this->pageId = 1;
     }
 
     ///{slug}/{property},{propertySlug},{propertyFloor},{propertyRooms},{propertyArea}

@@ -13,15 +13,14 @@ class IndexController extends Controller
 {
     public function lokalizacja()
     {
-        $page = Page::find(1);
+        $page = Page::find(4);
         return view('front.static.lokalizacja', compact('page'));
     }
 
     public function investment()
     {
         $page = Page::find(2);
-        $markers = Map::all();
-        return view('front.static.investment', compact('page', 'markers'));
+        return view('front.static.investment', compact('page'));
     }
 
     public function amenities()

@@ -94,12 +94,12 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
         Route::post('/{slug}/kontakt', 'Contact\IndexController@form')->name('investment.contact.form');
 
         // Building
-        Route::get('/apartamenty/{buildingSlug}', 'InvestmentBuildingController@index')->name('investment.building');
+        Route::get('/mieszkania/{buildingSlug}', 'InvestmentBuildingController@index')->name('investment.building');
 
         // Floor
-        Route::get('/apartamenty/{buildingSlug}/{floor},{floorSlug}', 'InvestmentFloorController@index')->name('investment.floor');
+        Route::get('/mieszkania/{buildingSlug}/{floor},{floorSlug}', 'InvestmentFloorController@index')->name('investment.floor');
 
         // Property
-        Route::get('/apartamenty/{buildingSlug}/{floorSlug}/{property},{propertySlug},{propertyFloor},{propertyRooms},{propertyArea}', 'InvestmentPropertyController@index')->name('investment.property');
+        Route::get('/mieszkania/{buildingSlug}/{floorSlug}/{property},{propertySlug},{propertyFloor},{propertyRooms},{propertyArea}', 'InvestmentPropertyController@index')->name('investment.property');
     });
 });
