@@ -21,10 +21,10 @@ class InvestmentBuildingController extends Controller
         $this->pageId = 6;
     }
 
-    public function index($buildingSlug, Request $request)
+    public function index($building, $buildingSlug, Request $request)
     {
         $investment = $this->repository->find(1);
-        $building = Building::whereSlug($buildingSlug)->first();
+        $building = Building::find($building);
 
         $investment_room = $investment->load(array(
             'buildingRooms' => function($query) use ($building, $request)

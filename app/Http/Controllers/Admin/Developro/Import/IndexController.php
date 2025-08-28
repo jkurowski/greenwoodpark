@@ -11,7 +11,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $importedData = Excel::toArray(new ExcelImportClass(), public_path('import.xls'));
+        $importedData = Excel::toArray(new ExcelImportClass(), public_path('komorki-xls.xls'));
 
         $count = 0;
 
@@ -26,56 +26,62 @@ class IndexController extends Controller
 
                 // Set building_id in property
                 $property->building_id = 3;
-                $property->floor_id = $this->floor($row['pietro']);
+                $property->floor_id = 9;
 
                 $property['status'] = 1;
-                $property['name'] = 'Mieszkanie '.$row['nr_powierzchni'];
-                $property['name_list'] = 'Mieszkanie';
+                $property['name'] = 'Komórka lokatorska nr '.$row['nr_powierzchni'];
+                $property['name_list'] = 'Komórka lokatorska';
                 $property['number'] = $row['nr_powierzchni'];
                 $property['number_order'] = $key + 1;
 
-                $property['rooms'] = $row['pokoje'];
-                $property['area'] = $row['metraz'];
+                //$property['rooms'] = $row['pokoje'];
+                $property['rooms'] = 0;
+
+                //$property['area'] = $row['metraz'];
+                $property['area'] = 0;
+
                 $property['price_brutto'] = (float) str_replace(' ', '', $row['cena_brutto']);
-                $property['type'] = 1;
+                $property['type'] = 2;
+
+                $property['vat'] = 8;
 
                 $property['garden_area']   = null;
                 $property['garden_area_2'] = null;
                 $property['balcony_area']  = null;
                 $property['terrace_area']  = null;
 
-                $types  = array_map('trim', explode(';', $row['powierzchnia_dodatkowa']));
-                $values = array_map('trim', explode(';', $row['powierzchnia_powierzchni_dodatkowej']));
+               //$types  = array_map('trim', explode(';', $row['powierzchnia_dodatkowa']));
+                //$values = array_map('trim', explode(';', $row['powierzchnia_powierzchni_dodatkowej']));
 
-                foreach ($types as $index => $type) {
-                    $value = isset($values[$index]) ? str_replace(',', '.', $values[$index]) : null;
-
-                    switch (mb_strtolower($type)) {
-                        case 'balkon':
-                            $property['balcony_area'] = (float) $value;
-                            break;
-
-                        case 'taras':
-                            $property['terrace_area'] = (float) $value;
-                            break;
-
-                        case 'ogród':
-                        case 'ogródek':
-                            if ($property['garden_area'] === null) {
-                                $property['garden_area'] = (float) $value;
-                            } else {
-                                $property['garden_area_2'] = (float) $value;
-                            }
-                            break;
-                    }
-                }
+//                foreach ($types as $index => $type) {
+//                    $value = isset($values[$index]) ? str_replace(',', '.', $values[$index]) : null;
+//
+//                    switch (mb_strtolower($type)) {
+//                        case 'balkon':
+//                            $property['balcony_area'] = (float) $value;
+//                            break;
+//
+//                        case 'taras':
+//                            $property['terrace_area'] = (float) $value;
+//                            break;
+//
+//                        case 'ogród':
+//                        case 'ogródek':
+//                            if ($property['garden_area'] === null) {
+//                                $property['garden_area'] = (float) $value;
+//                            } else {
+//                                $property['garden_area_2'] = (float) $value;
+//                            }
+//                            break;
+//                    }
+//                }
 //
 //                echo '<pre>';
 //                print_r($property->toArray());
 //                echo '</pre>';
 
                 $count++;
-                //$property->save();
+                $property->save();
                 }
             }
         }

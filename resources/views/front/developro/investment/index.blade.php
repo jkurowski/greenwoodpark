@@ -13,12 +13,22 @@
         </div>
 
         <section class="image">
-
-            <img src="{{ asset('images/decor-03.png') }}" alt="" class="decor-03 decor--right decor--top" />
-
             <div class="wrapper--small">
                 <h2 class="image__title scroll-animation">Greenwood Park</h2>
-                <img class="image__img scroll-animation delay-1" src="{{ asset('images/photos/photo-11.jpg') }}" alt="Greenwood Park">
+                <img src="{{ asset('/investment/plan/'.$investment->plan->file) }}" alt="Plan inwestycji {{$investment->name}}" id="invesmentplan" usemap="#invesmentplan" class="image__img scroll-animation delay-1 rounded-7">
+                <map name="invesmentplan">
+                    @if($investment->buildings)
+                        @foreach($investment->buildings as $building)
+                            <area
+                                shape="poly"
+                                href="{{route('front.developro.building', [$building, 'buildingSlug' => Str::slug($building->name)])}}"
+                                alt="{{$building->slug}}"
+                                title="{{$building->name}}"
+                                coords="@if($building->html) {{cords($building->html)}} @endif">
+                        @endforeach
+                    @endif
+                </map>
+
             </div>
         </section>  <section class="searcher-section">
             <div class="wrapper--small">
@@ -174,6 +184,6 @@
 @endsection
 @push('scripts')
     <script src="{{ asset('/js/plan/imagemapster.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/plan/plan.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/plan/plan.min.js') }}" charset="utf-8"></script>
     <link href="{{ asset('/css/developro.min.css') }}" rel="stylesheet">
 @endpush

@@ -547,8 +547,8 @@ AreaView = Backbone.View.extend({
     },
     contextAttributesSelected: {
         fillStyle: "rgba(0, 197, 221, 0.9)",
-        strokeStyle: "#000",
-        lineWidth: 1
+        strokeStyle: "rgba(0, 197, 221, 0)",
+        lineWidth: 0
     },
     setupContext: function(d) {
         var c = (this.model.get("selected")) ? this.contextAttributesSelected : this.contextAttributesUnselected;

@@ -1,6 +1,6 @@
 const resizeDelay = 200;
-const floorHoverColor = '947245';
-const floorHoverOpacity = 0.6;
+const floorHoverColor = 'fb9b00';
+const floorHoverOpacity = 0.8;
 
 function onWindowResize() {
     window.setTimeout(function () {
@@ -8,7 +8,6 @@ function onWindowResize() {
         $("#invesmentplan").mapster("resize",e);
     }, resizeDelay);
 }
-
 $(document).ready(function(){
     $('#invesmentplan').mapster({
         fillColor: floorHoverColor,
@@ -16,5 +15,4 @@ $(document).ready(function(){
         clickNavigate: true
     });
 });
-
 $(window).bind('resize', onWindowResize);

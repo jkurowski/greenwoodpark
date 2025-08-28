@@ -99,6 +99,9 @@ html {
 body.menu-open {
   overflow: hidden;
 }
+.rounded-7 {
+  border-radius: 7px;
+}
 section {
   width: 100%;
   max-width: 100%;
