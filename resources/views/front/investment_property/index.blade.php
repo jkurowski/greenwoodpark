@@ -7,13 +7,13 @@
 @section('content')
     <main class="main" id="page-mieszkania">
 
-        <div class="breadcrumb wrapper">
+        <div class="breadcrumb wrapper mb-0">
             <a href="/mieszkania/">Mieszkania</a>
             <a href="{{ route('front.developro.building', [$building, 'buildingSlug' => $building->slug]) }}">{{ $building->name }}</a>
             <a href="{{route('front.developro.investment.floor', [$building->slug, $investment->floor, Str::slug($investment->floor->name)])}}">{{ $investment->floor->name }}</a>
         </div>
 
-        <section class="apartment">
+        <section class="apartment mt-3">
             <div class="wrapper">
                 <div class="wrapper--small">
                     <div class="container-fluid p-0 floor-nav">
