@@ -7,14 +7,31 @@
 @section('content')
     <main class="main" id="page-mieszkania">
 
-        <div class="breadcrumb wrapper">
+        <div class="breadcrumb wrapper mb-0">
             <a href="/">Strona główna</a>
             <a href="/mieszkania/">Mieszkania</a>
             <a href="#">{{ $building->name }}</a>
         </div>
 
-        <section class="image">
+        <section class="image mt-3">
             <div class="wrapper--small">
+                <div class="container-fluid p-0 floor-nav">
+                    <div class="row mb-5">
+                        <div class="col-4">
+                            @if($prev_floor)
+                                <a href="{{route('front.developro.investment.floor', [$building->slug, $prev_floor, Str::slug($prev_floor->name)])}}" class="btn btn--primary">{{$prev_floor->name}}</a>
+                            @endif
+                        </div>
+                        <div class="col-4 text-center">
+                            <a href="{{ route('front.developro.building', [$building, 'buildingSlug' => $building->slug]) }}" class="btn btn--primary">Plan budynku</a>
+                        </div>
+                        <div class="col-4 text-end">
+                            @if($next_floor)
+                                <a href="{{route('front.developro.investment.floor', [$building->slug, $next_floor, Str::slug($next_floor->name)])}}" class="btn btn--primary">{{$next_floor->name}}</a>
+                            @endif
+                        </div>
+                    </div>
+                </div>
                 <h2 class="image__title scroll-animation">{{ $building->name }} - {{ $investment->floor->name }}</h2>
                 @if($investment->floor->file)
                     <img src="{{ asset('/investment/floor/'.$investment->floor->file) }}" alt="{{$investment->floor->name}}" id="invesmentplan" usemap="#invesmentplan">
@@ -48,7 +65,8 @@
                     </map>
                 @endif
             </div>
-        </section>  <section class="searcher-section">
+        </section>
+        <section class="searcher-section">
             <div class="wrapper--small">
 
                 <div class="searcher scroll-animation delay-2">

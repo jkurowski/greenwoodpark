@@ -1,8 +1,8 @@
 @extends('layouts.page', ['body_class' => 'about-page'])
 
-@section('meta_title', $page->title)
-@section('seo_title', $page->meta_title)
-@section('seo_description', $page->meta_description)
+{{--@section('meta_title', $page->title)--}}
+{{--@section('seo_title', $page->meta_title)--}}
+{{--@section('seo_description', $page->meta_description)--}}
 
 @section('content')
     <main class="main" id="page-mieszkania">

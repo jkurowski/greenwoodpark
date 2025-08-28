@@ -96,7 +96,6 @@
                                         elektroniczną.</label>
                                 </div>
                             </div>
-
                             <button type="submit" class="btn btn--primary form__submit">Wyślij</button>
                         </form>
                     </div>
