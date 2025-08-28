@@ -157,7 +157,7 @@
                 </div>
 
                 <div class="searcher__display-filters scroll-animation">
-                    <button class="filter__display--block active">
+                    <button class="filter__display--block">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">
                             <path
                                 d="M4.35,2A2.384,2.384,0,0,0,2,4.35v4.5A2.384,2.384,0,0,0,4.35,11.2h4.5A2.384,2.384,0,0,0,11.2,8.85V4.35A2.384,2.384,0,0,0,8.85,2ZM4,4.35A.389.389,0,0,1,4.35,4h4.5a.389.389,0,0,1,.35.35v4.5a.389.389,0,0,1-.35.35H4.35A.389.389,0,0,1,4,8.85Z"
@@ -174,7 +174,7 @@
                         </svg>
                     </button>
 
-                    <button class="filter__display--list">
+                    <button class="filter__display--list active">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18.789" viewBox="0 0 22 18.789">
                             <path d="M22,11H2a.9.9,0,1,0,0,1.789H22A.9.9,0,1,0,22,11Z" transform="translate(-1 -11)" />
                             <path d="M22,11H2a.9.9,0,1,0,0,1.789H22A.9.9,0,1,0,22,11Z" transform="translate(-1 6)" />
@@ -184,7 +184,7 @@
                     </button>
                 </div>
 
-                <div class="searcher__items searcher__items--block scroll-animation">
+                <div class="searcher__items searcher__items--block scroll-animation searcher__items--list">
                     @foreach($properties as $p)
                         <div class="panel {!! roomStatusList($p->status) !!}">
                             <h3 class="panel__name">{{ $p->name }}</h3>
