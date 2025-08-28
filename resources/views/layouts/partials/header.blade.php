@@ -12,7 +12,7 @@
             <nav class="header__nav">
                 <ul>
                     <li><a href="/">Strona główna</a></li>
-                    <li><a href="/mieszkania/">Mieszkania</a></li>
+                    <li @if($page->slug == 'mieszkania') class="active" @endif><a href="/mieszkania/">Mieszkania</a></li>
                     <li><a href="/o-inwestycji/">O inwestycji</a></li>
                     <li><a href="/galeria/">Galeria</a></li>
                     <li><a href="/lokalizacja/">Lokalizacja</a></li>
