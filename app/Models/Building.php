@@ -45,6 +45,18 @@ class Building extends Model
         'price_range'
     ];
 
+    public function findNext(int $investment, int $position)
+    {
+        $query = $this->where('investment_id', $investment)->where('id', '<', $position)->orderByDesc('id');
+        return $query->first();
+    }
+
+    public function findPrev(int $investment, int $position)
+    {
+        $query = $this->where('investment_id', $investment)->where('id', '>', $position)->orderBy('id');
+        return $query->first();
+    }
+
     /**
      * Get building floors
      * @return HasMany

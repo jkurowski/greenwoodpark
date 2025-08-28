@@ -7,14 +7,31 @@
 @section('content')
     <main class="main" id="page-mieszkania">
 
-        <div class="breadcrumb wrapper">
+        <div class="breadcrumb wrapper mb-0">
             <a href="/">Strona główna</a>
             <a href="/mieszkania/">Mieszkania</a>
             <a href="#">{{ $building->name }}</a>
         </div>
 
-        <section class="image">
+        <section class="image mt-3">
             <div class="wrapper--small">
+                <div class="container-fluid p-0 floor-nav">
+                    <div class="row mb-5">
+                        <div class="col-4">
+                            @if($prev_floor)
+                                <a href="{{route('front.developro.building', [$prev_floor, 'buildingSlug' => Str::slug($prev_floor->name)])}}" class="btn btn--primary">{{$prev_floor->name}}</a>
+                            @endif
+                        </div>
+                        <div class="col-4 text-center">
+                            <a href="/mieszkania/" class="btn btn--primary">Plan inwestycji</a>
+                        </div>
+                        <div class="col-4 text-end">
+                            @if($next_floor)
+                                <a href="{{route('front.developro.building', [$next_floor, 'buildingSlug' => Str::slug($next_floor->name)])}}" class="btn btn--primary">{{$next_floor->name}}</a>
+                            @endif
+                        </div>
+                    </div>
+                </div>
                 <h2 class="image__title scroll-animation">{{ $building->name }}</h2>
                 @if($building->file)
                     <img src="{{ asset('/investment/building/'.$building->file) }}" alt="{{$building->name}}" id="invesmentplan" usemap="#invesmentplan" class="image__img scroll-animation delay-1 rounded-7">
@@ -27,7 +44,8 @@
                     </map>
                 @endif
             </div>
-        </section>  <section class="searcher-section">
+        </section>
+        <section class="searcher-section">
             <div class="wrapper--small">
 
                 <div class="searcher scroll-animation delay-2">

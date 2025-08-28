@@ -81,7 +81,9 @@ class InvestmentBuildingController extends Controller
             'investment' => $investment_room,
             'building' => $building,
             'page' => $page,
-            'properties' => $investment->buildingRooms
+            'properties' => $investment->buildingRooms,
+            'next_floor' => $building->findNext($investment->id, $building->id),
+            'prev_floor' => $building->findPrev($investment->id, $building->id),
         ]);
     }
 

@@ -7,12 +7,12 @@
 @section('content')
     <main class="main" id="page-mieszkania">
 
-        <div class="breadcrumb wrapper">
+        <div class="breadcrumb wrapper mb-0">
             <a href="/">Strona główna</a>
             <a href="/mieszkania/">Mieszkania</a>
         </div>
 
-        <section class="image">
+        <section class="image mt-3">
             <div class="wrapper--small">
                 <h2 class="image__title scroll-animation">Greenwood Park</h2>
                 <img src="{{ asset('/investment/plan/'.$investment->plan->file) }}" alt="Plan inwestycji {{$investment->name}}" id="invesmentplan" usemap="#invesmentplan" class="image__img scroll-animation delay-1 rounded-7">
