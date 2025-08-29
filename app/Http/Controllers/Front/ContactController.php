@@ -52,6 +52,7 @@ class ContactController extends Controller
 
     function contact(ContactFormRequest $request, Recipient $recipient)
     {
+
         try {
             $client = $this->repository->createClient($request);
 
@@ -71,7 +72,7 @@ class ContactController extends Controller
                 }
             }
 
-            $this->sendToVox($request->validated());
+            //$this->sendToVox($request->validated());
 
         } catch (\Throwable $exception) {
             Log::channel('email')->error('Email sending failed', [

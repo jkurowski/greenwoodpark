@@ -1,16 +1,17 @@
 <div class="contact-form__content scroll-animation">
     <h3 class="contact-form__form-title">Formularz kontaktowy</h3>
+    @if (session('success'))
+        <div class="alert alert-success border-0">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if (session('warning'))
+        <div class="alert alert-warning border-0">
+            {{ session('warning') }}
+        </div>
+    @endif
     <form id="contact-form" autocomplete="off" class="form validateForm" action="{{ route('front.contact.form') }}" method="post">
-        @if (session('success'))
-            <div class="alert alert-success border-0">
-                {{ session('success') }}
-            </div>
-        @endif
-        @if (session('warning'))
-            <div class="alert alert-warning border-0">
-                {{ session('warning') }}
-            </div>
-        @endif
+        {{ csrf_field() }}
         <div class="input input--text">
             <label for="user-ename">Imię</label>
             <input
@@ -59,7 +60,7 @@
             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
             @enderror
         </div>
-        <div class="input input--textarea">
+        <div class="input input--textarea w-100">
             <label for="message">Wiadomość</label>
             <textarea
                 class="form-control validate[required] @error('form_message') is-invalid @enderror"
@@ -123,10 +124,10 @@
             }
         }
         @if (session('success') || session('warning') || $errors->any())
-        $(window).load(function() {
+        $(window).on('load', function() {
             const aboveHeight = $('header').outerHeight();
             $('html, body').stop().animate({
-                scrollTop: $('.validateForm').offset().top-aboveHeight
+                scrollTop: $('.validateForm').offset().top - aboveHeight
             }, 1500, 'easeInOutExpo');
         });
         @endif

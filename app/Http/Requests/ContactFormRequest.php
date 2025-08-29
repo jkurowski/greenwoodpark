@@ -30,7 +30,7 @@ class ContactFormRequest extends FormRequest
             'form_email' => 'required|email:rfc',
             'form_message' => 'required',
             'form_phone' => 'required',
-            'g-recaptcha-response' => ['required', new ReCaptchaV3()]
+            //'g-recaptcha-response' => ['required', new ReCaptchaV3()]
         ];
 
         foreach ($this->all() as $key => $value) {
