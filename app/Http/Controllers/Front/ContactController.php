@@ -39,11 +39,37 @@ class ContactController extends Controller
 
     function property(ContactFormRequest $request, $id)
     {
-        if(!$request->get('form_surname')) {
-            Property::find($id)->notify(new PropertyNotification($request));
-            Mail::to(settings()->get("page_email"))->send(new MailSend($request));
-            (new \App\Models\RodoClient)->saveOrCreate($request);
+        try {
+            $property = Property::find($id);
+
+            $client = $this->repository->createClient($request, $property);
+
+            $property->notify(new PropertyNotification($request, $property));
+
+            $emailsData = settings()->get("page_email");
+
+            if (!empty($emailsData)) {
+                Mail::to($emailsData)->send(new ChatSend($request, $client, $property));
+            } else {
+                Log::error('No valid emails found in settings()->get("page_email")');
+            }
+
+            // Clear cookies if mail is sent successfully
+            $cookie_name = 'dp_';
+            foreach ($_COOKIE as $name => $value) {
+                if (stripos($name, $cookie_name) === 0) {
+                    \Illuminate\Support\Facades\Cookie::queue(Cookie::forget($name));
+                }
+            }
+        } catch (\Throwable $exception) {
+            Log::channel('email')->error('Email sending failed', [
+                'message' => $exception->getMessage(),
+                'file' => $exception->getFile(),
+                'line' => $exception->getLine(),
+                'trace' => $exception->getTraceAsString(),
+            ]);
         }
+
         return redirect()->back()->with(
             'success',
             'Twoja wiadomość została wysłana. W najbliższym czasie skontaktujemy się z Państwem celem omówienia szczegółów!'
@@ -52,7 +78,6 @@ class ContactController extends Controller
 
     function contact(ContactFormRequest $request, Recipient $recipient)
     {
-
         try {
             $client = $this->repository->createClient($request);
 

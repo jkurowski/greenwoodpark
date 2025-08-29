@@ -3,7 +3,10 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notification;
+
+use App\Models\Property;
 
 class PropertyNotification extends Notification
 {
@@ -16,9 +19,10 @@ class PropertyNotification extends Notification
      *
      * @return void
      */
-    public function __construct($request)
+    public function __construct(Request $request, Property $property)
     {
         $this->request = $request;
+        $this->property = $property;
     }
 
     /**
@@ -42,10 +46,12 @@ class PropertyNotification extends Notification
     {
         return [
             'page_name' => $this->request->input('form_page'),
-            'form_name' => $this->request->input('form_name'),
-            'form_email' => $this->request->input('form_email'),
-            'form_message' => $this->request->input('form_message'),
-            'form_phone' => $this->request->input('form_phone'),
+            'form_name' => $this->request->input('name'),
+            'form_email' => $this->request->input('email'),
+            'form_message' => $this->request->input('message'),
+            'form_phone' => $this->request->input('phone'),
+            'property_id' => $this->property->id,
+            'investment_id' => $this->property->investment_id,
             'ip' => $this->request->ip(),
             'url' => $this->request->headers->get('referer')
         ];

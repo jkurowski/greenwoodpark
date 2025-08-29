@@ -121,49 +121,103 @@
 
                 <div class="contact-form__content scroll-animation">
                     <h3 class="contact-form__form-title">Formularz kontaktowy</h3>
-                    <form id="contactForm" class="form" action="">
+                    @if (session('success'))
+                        <div class="alert alert-success border-0">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    @if (session('warning'))
+                        <div class="alert alert-warning border-0">
+                            {{ session('warning') }}
+                        </div>
+                    @endif
+                    <form id="contact-form" autocomplete="off" class="form validateForm" action="{{ route('front.contact.property', $property->id) }}" method="post">
+                        {{ csrf_field() }}
                         <div class="input input--text">
-                            <label for="name">Imię</label>
-                            <input type="text" id="name" name="name" />
+                            <label for="user-ename">Imię</label>
+                            <input
+                                type="text"
+                                class="form-control validate[required] @error('form_name') is-invalid @enderror"
+                                id="user-ename"
+                                name="form_name"
+                                required=""
+                                value="{{ old('form_name') }}"
+                                data-prompt-position="topLeft:0"
+                            />
+
+                            @error('form_name')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                            @enderror
+
                         </div>
                         <div class="input input--text">
-                            <label for="email">Adres e-mail</label>
-                            <input type="email" id="email" name="email" />
-                        </div>
-                        <div class="input input--text">
-                            <label for="phone">Telefon</label>
-                            <input type="text" id="phone" name="phone" />
-                        </div>
-                        <div class="input input--textarea">
-                            <label for="message">Wiadomość</label>
-                            <textarea id="message" name="message"
-                                      placeholder="Proszę o więcej szczegółów dotyczących mieszkania nr... oraz propozycję terminu spotkania"></textarea>
-                        </div>
-                        <div class="form__agreements">
-                            <div class="input input--checkbox">
-                                <input type="checkbox" id="privacy" name="privacy" />
-                                <label for="privacy">Wyrażam zgodę na przetwarzanie przez Greenwood II sp. z o.o. z siedzibą przy ul.
-                                    Henryka Dembińskiego 13, 01-644 w Warszawie, moich danych osobowych zawartych w niniejszym formularzu w
-                                    celu umożliwienia kontaktu oraz przekazywania materiałów marketingowych i promocyjnych dotyczących
-                                    inwestycji realizowanych przez Spółkę.</label>
-                            </div>
-                            <div class="input input--checkbox">
-                                <input type="checkbox" id="privacy-2" name="privacy-2" />
-                                <label for="privacy-2">Wyrażam zgodę na otrzymywanie od Greenwood II sp. z o.o. drogą elektroniczną na
-                                    wskazany przeze mnie adres e-mail informacji handlowej dotyczących produktów oferowanych przez Greenwood
-                                    II sp. z o.o. w rozumieniu art. 10 ust. 1 Ustawy z dnia 18 lipca 2002 roku o świadczeniu usług drogą
-                                    elektroniczną.</label>
-                            </div>
-                            <div class="input input--checkbox">
-                                <input type="checkbox" id="privacy-3" name="privacy-3" />
-                                <label for="privacy-3">Wyrażam zgodę na otrzymywanie od Greenwood II sp. z o.o. drogą elektroniczną na
-                                    wskazany przeze mnie adres e-mail informacji handlowej dotyczących produktów oferowanych przez Greenwood
-                                    II sp. z o.o. w rozumieniu art. 10 ust. 1 Ustawy z dnia 18 lipca 2002 roku o świadczeniu usług drogą
-                                    elektroniczną.</label>
-                            </div>
+                            <label for="user-email">Adres e-mail</label>
+                            <input
+                                type="email"
+                                class="form-control validate[required] @error('form_email') is-invalid @enderror"
+                                id="user-email"
+                                name="form_email"
+                                required=""
+                                value="{{ old('form_email') }}"
+                                data-prompt-position="topLeft:0"
+                            />
+                            @error('form_email')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                            @enderror
                         </div>
 
-                        <button type="submit" class="btn btn--primary form__submit">Wyślij</button>
+                        <div class="input input--text">
+                            <label for="user-tel">Telefon</label>
+                            <input
+                                type="text"
+                                class="form-control validate[required] @error('form_phone') is-invalid @enderror"
+                                id="user-tel"
+                                name="form_phone"
+                                value="{{ old('form_phone') }}"
+                                data-prompt-position="topLeft:0"
+                            />
+
+                            @error('form_phone')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                            @enderror
+                        </div>
+                        <div class="input input--textarea w-100">
+                            <label for="message">Wiadomość</label>
+                            <textarea
+                                class="form-control validate[required] @error('form_message') is-invalid @enderror"
+                                id="message"
+                                name="form_message"
+                                data-prompt-position="topLeft:0"
+                            >{{ old('form_message') }}</textarea>
+
+                            @error('form_message')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                            @enderror
+                        </div>
+                        <div class="form__agreements">
+                            @foreach ($rules as $r)
+                                <div class="input input--checkbox">
+                                    <input
+                                        class="@if($r->required === 1) validate[required] @endif"
+                                        type="checkbox"
+                                        id="rule_{{$r->id}}"
+                                        name="rule_{{$r->id}}"
+                                        data-prompt-position="topLeft:0"
+                                    />
+                                    <label for="rule_{{$r->id}}">{!! strip_tags($r->text) !!}</label>
+                                </div>
+                            @endforeach
+                        </div>
+                        <input type="hidden" name="page_name" value="{{ $property->name }}">
+                        <script type="text/javascript">
+                            @if(config('services.recaptcha.v3_site_key') && config('services.recaptcha.v3_secret_key'))
+                            document.write("<button data-sitekey=\"{{ config('services.recaptcha.v3_site_key') }}\" data-callback=\"onRecaptchaSuccess\" data-action=\"submitContact\" type=\"submit\" class=\"btn btn--primary form__submit g-recaptcha\">WYŚLIJ</button>");
+                            @else
+                            document.write("<button data-btn-submit=\"\" type=\"submit\" class=\"btn btn--primary form__submit\">WYŚLIJ</button>");
+                            @endif
+
+                        </script>
+                        <noscript>Do poprawnego działania, Java musi być włączona.</noscript>
                     </form>
                 </div>
 
@@ -222,21 +276,33 @@
     </main>
 @endsection
 @push('scripts')
-    <script src="{{ asset('/js/validation.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/pl.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('js/validation.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('js/pl.js') }}" charset="utf-8"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $(".validateForm").validationEngine({
                 validateNonVisibleFields: true,
                 updatePromptsPosition:true,
-                promptPosition : "topRight:-137px"
+                promptPosition : "topRight:-137px",
+                autoPositionUpdate: false
             });
         });
-        @if (session('success')||session('warning'))
-        $(window).load(function() {
+
+        function onRecaptchaSuccess(token) {
+            $(".validateForm").validationEngine('updatePromptsPosition');
+            const isValid = $(".validateForm").validationEngine('validate');
+            if (isValid) {
+                $("#contact-form").submit();
+            } else {
+                grecaptcha.reset();
+            }
+        }
+        @if (session('success') || session('warning') || $errors->any())
+        $(window).on('load', function() {
             const aboveHeight = $('header').outerHeight();
             $('html, body').stop().animate({
-                scrollTop: $('.alert').offset().top-aboveHeight
+                scrollTop: $('.validateForm').offset().top - aboveHeight
             }, 1500, 'easeInOutExpo');
         });
         @endif

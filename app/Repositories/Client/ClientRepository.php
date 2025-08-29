@@ -58,10 +58,10 @@ class ClientRepository extends BaseRepository implements ClientRepositoryInterfa
     {
         Log::info('Call createClient');
 
-        if (isset($attributes['cookie']) && is_array($attributes['cookie'])) {
-            $utm_array = array_filter($attributes->cookie());
-            unset($utm_array['XSRF-TOKEN'], $utm_array['laravel_session']);
-        }
+//        if (isset($attributes['cookie']) && is_array($attributes['cookie'])) {
+//            $utm_array = array_filter($attributes->cookie());
+//            unset($utm_array['XSRF-TOKEN'], $utm_array['laravel_session']);
+//        }
 
         Log::info('Request: ' . $attributes['form_email']);
         Log::info('Request: ' . $attributes['form_phone']);
@@ -138,7 +138,7 @@ class ClientRepository extends BaseRepository implements ClientRepositoryInterfa
                     'area' => $property->area,
                 ];
 
-                $arguments = array_merge($propertyMappings, $utm_array);
+                $arguments = array_merge($propertyMappings);
                 $jsonArguments = json_encode($arguments);
                 $msg->arguments = $jsonArguments;
             }
