@@ -270,7 +270,7 @@
             </div>
 
             <div class="gallery-slider__button scroll-animation delay-2">
-                <a href="/galeria.html" class="btn btn--primary">Zobacz więcej</a>
+                <a href="/galeria/" class="btn btn--primary">Zobacz więcej</a>
             </div>
 
         </section>  <section class="contact-form">

@@ -22,14 +22,14 @@
                         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                     <div class="contact-data__icons scroll-animation delay-2">
                         <p>Biuro sprzedaży</p>
-                        <p><a href="tel: 123456789"><svg xmlns="http://www.w3.org/2000/svg" width="20.558" height="20.558" viewBox="0 0 20.558 20.558">
+                        <p><a href="tel:+48606292908"><svg xmlns="http://www.w3.org/2000/svg" width="20.558" height="20.558" viewBox="0 0 20.558 20.558">
                                     <g id="phone-call_2_" data-name="phone-call (2)" transform="translate(0)">
                                         <g id="Group_2452" data-name="Group 2452" transform="translate(0 0)">
                                             <path id="Path_13472" data-name="Path 13472" d="M17.546,3.009a10.279,10.279,0,1,0,3.012,7.267A10.279,10.279,0,0,0,17.546,3.009ZM15.567,14.318h0v0l-.521.517a2.741,2.741,0,0,1-2.587.74,9.108,9.108,0,0,1-2.645-1.185,12.221,12.221,0,0,1-2.087-1.682,12.315,12.315,0,0,1-1.559-1.891A9.593,9.593,0,0,1,5,8.443a2.741,2.741,0,0,1,.685-2.8l.61-.61a.435.435,0,0,1,.615,0h0L8.833,6.96a.435.435,0,0,1,0,.615h0L7.7,8.707a.922.922,0,0,0-.1,1.2,13.223,13.223,0,0,0,1.353,1.58,13.142,13.142,0,0,0,1.782,1.5.929.929,0,0,0,1.185-.1l1.093-1.11a.435.435,0,0,1,.615,0h0L15.565,13.7A.435.435,0,0,1,15.567,14.318Z" transform="translate(0 0)"/>
                                         </g>
                                     </g>
                                 </svg>
-                                123 456 789</a></p>
+                                606 292 908</a></p>
                         <p><a href="mailto:biuro@greenwoodpark.pl"><svg xmlns="http://www.w3.org/2000/svg" width="20.558" height="20.558" viewBox="0 0 20.558 20.558">
                                     <g id="Layer_2" data-name="Layer 2" transform="translate(0)">
                                         <g id="message" transform="translate(0)">
@@ -53,52 +53,7 @@
                         <img src="{{ asset('images/photos/photo-19.jpg') }}" alt="" class="contact-form__img" />
                     </div>
 
-                    <div class="contact-form__content scroll-animation">
-                        <h3 class="contact-form__form-title">Formularz kontaktowy</h3>
-                        <form class="form" action="">
-                            <div class="input input--text">
-                                <label for="name">Imię</label>
-                                <input type="text" id="name" name="name" />
-                            </div>
-                            <div class="input input--text">
-                                <label for="email">Adres e-mail</label>
-                                <input type="email" id="email" name="email" />
-                            </div>
-                            <div class="input input--text">
-                                <label for="phone">Telefon</label>
-                                <input type="text" id="phone" name="phone" />
-                            </div>
-                            <div class="input input--textarea">
-                                <label for="message">Wiadomość</label>
-                                <textarea id="message" name="message"
-                                          placeholder="Proszę o więcej szczegółów dotyczących mieszkania nr... oraz propozycję terminu spotkania"></textarea>
-                            </div>
-                            <div class="form__agreements">
-                                <div class="input input--checkbox">
-                                    <input type="checkbox" id="privacy" name="privacy" />
-                                    <label for="privacy">Wyrażam zgodę na przetwarzanie przez Greenwood II sp. z o.o. z siedzibą przy ul.
-                                        Henryka Dembińskiego 13, 01-644 w Warszawie, moich danych osobowych zawartych w niniejszym formularzu w
-                                        celu umożliwienia kontaktu oraz przekazywania materiałów marketingowych i promocyjnych dotyczących
-                                        inwestycji realizowanych przez Spółkę.</label>
-                                </div>
-                                <div class="input input--checkbox">
-                                    <input type="checkbox" id="privacy-2" name="privacy-2" />
-                                    <label for="privacy-2">Wyrażam zgodę na otrzymywanie od Greenwood II sp. z o.o. drogą elektroniczną na
-                                        wskazany przeze mnie adres e-mail informacji handlowej dotyczących produktów oferowanych przez Greenwood
-                                        II sp. z o.o. w rozumieniu art. 10 ust. 1 Ustawy z dnia 18 lipca 2002 roku o świadczeniu usług drogą
-                                        elektroniczną.</label>
-                                </div>
-                                <div class="input input--checkbox">
-                                    <input type="checkbox" id="privacy-3" name="privacy-3" />
-                                    <label for="privacy-3">Wyrażam zgodę na otrzymywanie od Greenwood II sp. z o.o. drogą elektroniczną na
-                                        wskazany przeze mnie adres e-mail informacji handlowej dotyczących produktów oferowanych przez Greenwood
-                                        II sp. z o.o. w rozumieniu art. 10 ust. 1 Ustawy z dnia 18 lipca 2002 roku o świadczeniu usług drogą
-                                        elektroniczną.</label>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn--primary form__submit">Wyślij</button>
-                        </form>
-                    </div>
+                    @include('front.contact.form', ['page_name' => 'Kontakt'])
 
                 </div>
 
