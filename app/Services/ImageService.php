@@ -32,7 +32,7 @@ class ImageService
         $name = date('His') . '_' . Str::slug($name_file) . '.' . $file->getClientOriginalExtension();
         $name_webp = date('His') . '_' . Str::slug($name_file) . '.webp';
 
-        $file->storeAs('gallery/images/', $name, 'public_uploads');
+        $file->move(public_path('uploads/gallery/images/'), $name);
 
         $filepath = public_path('uploads/gallery/images/' . $name);
         $filepath_webp = public_path('uploads/gallery/images/webp/' . $name_webp);

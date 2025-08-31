@@ -160,8 +160,8 @@ return [
     'gallery' => [
         'big_width' => 1360,
         'big_height' => 1020,
-        'thumb_width' => 760,
-        'thumb_height' => 570,
+        'thumb_width' => 800,
+        'thumb_height' => 506,
         'thumb_width_2' => 386,
         'thumb_height_2' => 217,
         'file_path' => 'uploads/gallery/images/',
