@@ -33,42 +33,23 @@ class InvestmentBuildingController extends Controller
                 if ($request->input('s_pokoje')) {
                     $query->where('rooms', $request->input('s_pokoje'));
                 }
-                if ($request->input('status')) {
-                    $query->where('status', $request->input('status'));
+
+                $floorNumber = $request->input('s_pietro');
+
+                if ($floorNumber !== null && $floorNumber !== '') {
+                    $query->whereHas('floor', function ($q) use ($floorNumber) {
+                        $q->where('number', $floorNumber);
+                    });
                 }
+
                 if ($request->input('s_metry')) {
                     $area_param = explode('-', $request->input('s_metry'));
                     $min = $area_param[0];
                     $max = $area_param[1];
                     $query->whereBetween('area', [$min, $max]);
                 }
-                if ($request->input('sort')) {
-                    $order_param = explode(':', $request->input('sort'));
-                    $column = $order_param[0];
-                    $direction = $order_param[1];
-                    $query->orderBy($column, $direction);
-                }
-                if ($request->input('s_dodatkowe')) {
-                    $amenities = explode(',', $request->input('s_dodatkowe'));
-                    $query->where(function ($subQuery) use ($amenities) {
-                        foreach ($amenities as $amenity) {
-                            switch ($amenity) {
-                                case '1':
-                                    $subQuery->whereNotNull('balcony_area');
-                                    break;
-                                case '2':
-                                    $subQuery->whereNotNull('garden_area');
-                                    break;
-                                case '3':
-                                    $subQuery->whereNotNull('loggia_area');
-                                    break;
-                                case '4':
-                                    $subQuery->whereNotNull('terrace_area');
-                                    break;
-                            }
-                        }
-                    });
-                }
+
+                $query->where('properties.type', 1);
             },
             'buildingFloors' => function($query) use ($building)
             {

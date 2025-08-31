@@ -30,9 +30,15 @@ class InvestmentController extends Controller
                 if ($request->input('s_pokoje')) {
                     $query->where('rooms', $request->input('s_pokoje'));
                 }
-                if ($request->input('s_pietro')) {
-                    $query->where('floor_id', $request->input('s_pietro'));
+
+                $floorNumber = $request->input('s_pietro');
+
+                if ($floorNumber !== null && $floorNumber !== '') {
+                    $query->whereHas('floor', function ($q) use ($floorNumber) {
+                        $q->where('number', $floorNumber);
+                    });
                 }
+
                 if ($request->input('s_metry')) {
                     $area_param = explode('-', $request->input('s_metry'));
                     $min = $area_param[0];
@@ -60,6 +66,8 @@ class InvestmentController extends Controller
                         }
                     });
                 }
+
+                $query->where('type', 1);
             },
             'properties.floor'
         ));

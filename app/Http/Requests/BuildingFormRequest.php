@@ -29,6 +29,7 @@ class BuildingFormRequest extends FormRequest
             'number' => 'required|string|max:255',
             'html' => 'nullable',
             'cords' => 'nullable',
+            'area_range' => '',
             'investment_id' => [
                 'required',
                 'integer',

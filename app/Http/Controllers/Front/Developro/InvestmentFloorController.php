@@ -44,33 +44,33 @@ class InvestmentFloorController extends Controller
                     $max = $area_param[1];
                     $query->whereBetween('area', [$min, $max]);
                 }
-                if ($request->input('sort')) {
-                    $order_param = explode(':', $request->input('sort'));
-                    $column = $order_param[0];
-                    $direction = $order_param[1];
-                    $query->orderBy($column, $direction);
-                }
-                if ($request->input('s_dodatkowe')) {
-                    $amenities = explode(',', $request->input('s_dodatkowe'));
-                    $query->where(function ($subQuery) use ($amenities) {
-                        foreach ($amenities as $amenity) {
-                            switch ($amenity) {
-                                case '1':
-                                    $subQuery->whereNotNull('balcony_area');
-                                    break;
-                                case '2':
-                                    $subQuery->whereNotNull('garden_area');
-                                    break;
-                                case '3':
-                                    $subQuery->whereNotNull('loggia_area');
-                                    break;
-                                case '4':
-                                    $subQuery->whereNotNull('terrace_area');
-                                    break;
-                            }
-                        }
-                    });
-                }
+//                if ($request->input('sort')) {
+//                    $order_param = explode(':', $request->input('sort'));
+//                    $column = $order_param[0];
+//                    $direction = $order_param[1];
+//                    $query->orderBy($column, $direction);
+//                }
+//                if ($request->input('s_dodatkowe')) {
+//                    $amenities = explode(',', $request->input('s_dodatkowe'));
+//                    $query->where(function ($subQuery) use ($amenities) {
+//                        foreach ($amenities as $amenity) {
+//                            switch ($amenity) {
+//                                case '1':
+//                                    $subQuery->whereNotNull('balcony_area');
+//                                    break;
+//                                case '2':
+//                                    $subQuery->whereNotNull('garden_area');
+//                                    break;
+//                                case '3':
+//                                    $subQuery->whereNotNull('loggia_area');
+//                                    break;
+//                                case '4':
+//                                    $subQuery->whereNotNull('terrace_area');
+//                                    break;
+//                            }
+//                        }
+//                    });
+//                }
             },
             'floor' => function($query) use ($floor)
             {
