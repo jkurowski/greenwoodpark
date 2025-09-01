@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\PropertyAreaTypes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -170,5 +171,64 @@ class Property extends Model
         return $this->belongsToMany(PropertyPriceComponent::class, 'property_price_component_property')
             ->withPivot('value', 'value_m2', 'category')
             ->withTimestamps();
+    }
+
+    // API
+
+    public function getRelatedTypesAttribute()
+    {
+        $types = $this->relatedProperties
+            ->pluck('type')
+            ->map(fn ($type) => PropertyAreaTypes::getStatusText($type) ?? 'X')
+            ->unique()
+            ->values();
+
+        return $types->isNotEmpty()
+            ? $types->implode(', ')
+            : 'X';
+    }
+
+    public function getRelatedNumbersAttribute()
+    {
+        $numbers = $this->relatedProperties
+            ->pluck('number')
+            ->filter()
+            ->values();
+
+        return $numbers->isNotEmpty()
+            ? $numbers->implode(', ')
+            : 'X';
+    }
+
+    public function getRelatedPricesAttribute()
+    {
+        $prices = $this->relatedProperties->map(function ($property) {
+            return ($property->type == 1 && $property->price_brutto)
+                ? $property->price_brutto
+                : null;
+        })->filter()->values();
+
+        return $prices->isNotEmpty()
+            ? $prices->implode(', ')
+            : 'X';
+    }
+
+    public function getTotalWithRelatedPriceAttribute()
+    {
+        if ($this->type != 1) {
+            return 'X';
+        }
+
+        return (float)$this->price_brutto
+            + $this->relatedProperties->sum(function ($prop) {
+                return (float)$prop->price_brutto;
+            });
+    }
+
+    public function getDisplayPriceAttribute()
+    {
+        return ($this->type == 1 && $this->price_brutto)
+            ? $this->price_brutto
+            : 'X';
     }
 }
