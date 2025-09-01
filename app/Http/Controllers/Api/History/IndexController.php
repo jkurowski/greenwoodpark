@@ -233,19 +233,25 @@ class IndexController extends Controller
                         : 'X',
 
                     //Data od której cena obowiązuje cena m2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego
-                    'X',
+                    ($property->type == 1)
+                        ? '01.09.2025'
+                        : 'X',
 
                     //Cena lokalu mieszkalnego lub domu jednorodzinnego będących przedmiotem umowy stanowiąca iloczyn ceny m2 oraz powierzchni [zł]
                     $property->display_price,
 
                     //Data od której cena obowiązuje cena lokalu mieszkalnego lub domu jednorodzinnego będących przedmiotem umowy stanowiąca iloczyn ceny m2 oraz powierzchni
-                    'X',
+                    ($property->type == 1)
+                        ? '01.09.2025'
+                        : 'X',
 
                     //Cena lokalu mieszkalnego lub domu jednorodzinnego uwzględniająca cenę lokalu stanowiącą iloczyn powierzchni oraz metrażu i innych składowych ceny, o których mowa w art. 19a ust. 1 pkt 1), 2) lub 3) [zł]
                     $property->total_with_related_price,
 
                     //Data od której obowiązuje cena lokalu mieszkalnego lub domu jednorodzinnego uwzględniająca cenę lokalu stanowiącą iloczyn powierzchni oraz metrażu i innych składowych ceny, o których mowa w art. 19a ust. 1 pkt 1), 2) lub 3)
-                    'X',
+                    ($property->type == 1)
+                        ? '01.09.2025'
+                        : 'X',
 
                     //Rodzaj części nieruchomości będących przedmiotem umowy (piwnice, garaże, komórki lokatorskie, strychy, miejsce postojowe)
                     ($property->type != 1)
@@ -263,7 +269,9 @@ class IndexController extends Controller
                         : 'X',
 
                     //Data od której obowiązuje cena części nieruchomości, będących przedmiotem umowy
-                    'X',
+                    ($property->type != 1)
+                        ? '01.09.2025'
+                        : 'X',
 
                     //Rodzaj pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali (piwnice, garaże, komórki lokatorskie, strychy, miejsce postojowe)
                     ($property->type == 1)
@@ -281,7 +289,9 @@ class IndexController extends Controller
                         : 'X',
 
                     //Data od której obowiązuje cena wyszczególnionych pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali
-                    'X',
+                    ($property->type == 1)
+                        ? '01.09.2025'
+                        : 'X',
 
                     //Wyszczególnienie praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego
                     'X',
@@ -303,7 +313,9 @@ class IndexController extends Controller
                         : 'X',
 
                     //Data od której obowiązuje cena wartości innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność
-                    'X',
+                    ($property->priceComponents->isNotEmpty())
+                        ? '01.09.2025'
+                        : 'X',
 
                     //Adres strony internetowej, pod którym dostępny jest prospekt informacyjny
                     isset($investment->file_brochure)
