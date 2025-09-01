@@ -11,12 +11,32 @@
 
             <nav class="header__nav">
                 <ul>
-                    <li><a href="/">Strona główna</a></li>
-                    <li @if($page->slug == 'mieszkania') class="active" @endif><a href="/mieszkania/">Mieszkania</a></li>
-                    <li><a href="/o-inwestycji/">O inwestycji</a></li>
-                    <li><a href="/galeria/">Galeria</a></li>
-                    <li><a href="/lokalizacja/">Lokalizacja</a></li>
-                    <li><a href="/kontakt/">Kontakt</a></li>
+                    <li>
+                        <a href="/">Strona główna</a>
+                    </li>
+                    <li @if($page->slug == 'mieszkania') class="active" @endif>
+                        <a href="/mieszkania/">Mieszkania</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="/komorki-lokatorskie/">Komórki lokatorskie</a>
+                            </li>
+                            <li>
+                                <a href="/miejsca-postojowe/">Miejsca postojowe</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li @if($page->slug == 'o-inwestycji') class="active" @endif>
+                        <a href="/o-inwestycji/">O inwestycji</a>
+                    </li>
+                    <li @if($page->slug == 'galeria') class="active" @endif>
+                        <a href="/galeria/">Galeria</a>
+                    </li>
+                    <li @if($page->slug == 'lokalizacja') class="active" @endif>
+                        <a href="/lokalizacja/">Lokalizacja</a>
+                    </li>
+                    <li @if($page->slug == 'kontakt') class="active" @endif>
+                        <a href="/kontakt/">Kontakt</a>
+                    </li>
                 </ul>
             </nav>
 

@@ -72,6 +72,16 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
     )->name('investment');
 
     Route::get(
+        'komorki-lokatorskie',
+        'Static\IndexController@komorki'
+    )->name('komorki');
+
+    Route::get(
+        'miejsca-postojowe',
+        'Static\IndexController@postojowe'
+    )->name('postojowe');
+
+    Route::get(
         'udogodnienia',
         'Static\IndexController@amenities'
     )->name('amenities');

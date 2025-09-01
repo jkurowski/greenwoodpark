@@ -62,9 +62,7 @@
                                                    ])
                                             </div>
                                             <div class="col-4 mb-4">
-                                                @include('form-elements.html-select', ['label' => 'Typ powierzchni', 'name' => 'type', 'selected' => $entry->type, 'select' => [
-                                                    '1' => 'Mieszkanie / Apartament',
-                                                    ]
+                                                @include('form-elements.html-select', ['label' => 'Typ powierzchni', 'name' => 'type', 'selected' => $entry->type, 'select' => \App\Helpers\PropertyAreaTypes::getAll()
                                                 ])
                                             </div>
                                             <div class="col-4 mb-4">

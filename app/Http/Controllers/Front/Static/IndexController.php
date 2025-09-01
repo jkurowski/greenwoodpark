@@ -7,6 +7,7 @@ use App\Models\Inline;
 use App\Models\Investment;
 use App\Models\Map;
 use App\Models\Page;
+use App\Models\Property;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -39,5 +40,17 @@ class IndexController extends Controller
     {
         $page = Page::find(5);
         return view('front.static.gallery', compact('page'));
+    }
+    public function komorki()
+    {
+        $page = Page::find(1);
+        $properties = Property::where('type', 2)->get();
+        return view('front.static.komorki', compact('page', 'properties'));
+    }
+    public function postojowe()
+    {
+        $page = Page::find(1);
+        $properties = Property::where('type', 3)->get();
+        return view('front.static.postojowe', compact('page', 'properties'));
     }
 }
