@@ -101,7 +101,7 @@
                             @if($property->file_pdf)
                                 <a class="cta-link" href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" target="_blank">Pobierz kartę apartamentu</a>
                             @endif
-                            <a class="btn btn--primary" href="#contactForm">Umów spotkanie</a>
+                            <a class="btn btn--primary" href="#contact-form">Umów spotkanie</a>
                         </div>
                     </div>
 
