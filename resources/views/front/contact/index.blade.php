@@ -18,8 +18,6 @@
 
                 <div class="contact__data">
                     <h2 class="contact-data__title scroll-animation">Kontakt</h2>
-                    <p class="contact-data__description scroll-animation delay-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                     <div class="contact-data__icons scroll-animation delay-2">
                         <p>Biuro sprzedaży</p>
                         <p><a href="tel:+48606292908"><svg xmlns="http://www.w3.org/2000/svg" width="20.558" height="20.558" viewBox="0 0 20.558 20.558">
