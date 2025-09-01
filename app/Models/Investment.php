@@ -220,6 +220,21 @@ class Investment extends Model
     }
 
     /**
+     * Get investment active properties
+     * @return HasMany
+     */
+    public function activeProperties(): HasMany
+    {
+        return $this->hasMany('App\Models\Property')
+            ->whereIn('status', [1, 2]);
+    }
+
+    public function company(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(InvestmentCompany::class);
+    }
+
+    /**
      * The "boot" method of the model.
      *
      * @return void
