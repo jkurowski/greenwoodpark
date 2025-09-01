@@ -91,11 +91,13 @@
                         </table>
 
                         <div style="display:none;">
-                            <a class="apartment__history-btn cta-link" href="#">Historia zmian ceny</a>
+                            <a class="apartment__history-btn cta-link" href="#contact-form">Historia zmian ceny</a>
                         </div>
 
                         <div class="apartment__buttons">
-                            <a class="cta-link" style="display:none;" href="#">Pobierz prospekt informacyjny</a>
+                            @if($investment->file_brochure)
+                            <a class="cta-link" target="_blank" href="{{ asset('/investment/brochure/'.$investment->file_brochure) }}">Pobierz prospekt informacyjny</a>
+                            @endif
                             @if($property->file_pdf)
                                 <a class="cta-link" href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" target="_blank">Pobierz kartę apartamentu</a>
                             @endif
