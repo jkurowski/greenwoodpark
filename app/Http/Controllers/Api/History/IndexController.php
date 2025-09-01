@@ -267,7 +267,7 @@ class IndexController extends Controller
 
                     //Rodzaj pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali (piwnice, garaże, komórki lokatorskie, strychy, miejsce postojowe)
                     ($property->type == 1)
-                        ? $property->related_numbers
+                        ? $property->related_types
                         : 'X',
 
                     //Oznaczenie pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali
@@ -504,17 +504,17 @@ class IndexController extends Controller
 
                 //Rodzaj pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali (piwnice, garaże, komórki lokatorskie, strychy, miejsce postojowe)
                 ($property->type == 1)
-                    ? ($property->related_types ?? 'X')
+                    ? $property->related_types
                     : 'X',
 
                 //Oznaczenie pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali
                 ($property->type == 1)
-                    ? ($property->related_numbers ?? 'X')
+                    ? $property->related_numbers
                     : 'X',
 
                 //Wyszczególnienie cen pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali [zł]
                 ($property->type == 1)
-                    ? ($property->related_prices ?? 'X')
+                    ? $property->related_prices
                     : 'X',
 
                 //Data od której obowiązuje cena wyszczególnionych pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali
