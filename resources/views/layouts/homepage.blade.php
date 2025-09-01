@@ -25,6 +25,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('/css/styles.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/modal.min.css') }}" rel="stylesheet">
 
     <link rel='preload' as='style' href="{{ asset('/css/styles.min.css') }}">
 
@@ -44,6 +45,7 @@
     <script src="{{ asset('/js/jquery.min.js') }}" charset="utf-8"></script>
     <script src="{{ asset('/js/slick.min.js') }}" charset="utf-8"></script>
     <script src="{{ asset('/js/bundle.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}" charset="utf-8"></script>
     <script src="{{ asset('js/validation.js') }}" charset="utf-8"></script>
     <script src="{{ asset('js/pl.js') }}" charset="utf-8"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
