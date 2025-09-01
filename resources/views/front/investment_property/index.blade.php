@@ -109,7 +109,8 @@
 
             </div>
         </section>
-        <section class="contact-form" id="contactForm">
+        <div id="contactForm"></div>
+        <section class="contact-form">
             <div class="wrapper--medium contact-form__wrapper">
                 <div class="contact-form__image scroll-animation delay-2">
                     @if($property->file)
