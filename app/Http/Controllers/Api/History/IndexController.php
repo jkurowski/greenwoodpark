@@ -504,7 +504,7 @@ class IndexController extends Controller
 
                 //Rodzaj pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali (piwnice, garaże, komórki lokatorskie, strychy, miejsce postojowe)
                 ($property->type == 1)
-                    ? ($property->related_types->implode(', ') ?? 'X')
+                    ? ($property->related_types ?? 'X')
                     : 'X',
 
                 //Oznaczenie pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali
