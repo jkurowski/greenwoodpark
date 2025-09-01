@@ -233,7 +233,10 @@ class Investment extends Model
     {
         return $this->belongsTo(InvestmentCompany::class);
     }
-
+    public function salePoint(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(InvestmentSalePoint::class);
+    }
     /**
      * The "boot" method of the model.
      *
