@@ -6,18 +6,12 @@
     <main class="main" id="page-home">
         <section class="hero">
             <div class="hero__slider slider--with-bar">
-
                 <div class="hero__slide">
                     <img src="{{ asset('images/photos/photo-02.jpg') }}" alt="" class="hero__image">
                 </div>
-
-                <div class="hero__slide">
-                    <img src="{{ asset('images/photos/photo-01.jpg') }}" alt="" class="hero__image">
-                </div>
-
             </div>
 
-            <div class="wrapper hero__pagination-wrapper scroll-animation delay-3">
+            <div class="wrapper hero__pagination-wrapper scroll-animation delay-3 d-none">
                 <div class="hero__pagination pagination-bar">
                     <div class="pagination-bar__progress">
                         <div class="pagination-bar__progress-bar"></div>
@@ -60,7 +54,7 @@
                 </svg>
 
                 <h2 class="hero__title scroll-animation">GREENWOOD PARK</h2>
-                <p class="hero__description scroll-animation delay-1">ul. Jeździecka 24, Warszawa - Wesoła</p>
+                <p class="hero__description scroll-animation delay-1">ul. Jeździecka 30, Warszawa - Wesoła</p>
                 <div class="searcher hero__searcher scroll-animation delay-2">
                     <h3 class="searcher__title">Wyszukiwarka mieszkań</h3>
                     <form id="searchForm" class="searcher__form" method="get" action="/mieszkania">
