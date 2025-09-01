@@ -128,12 +128,11 @@
                 </div>
 
                 <div class="text-img__image scroll-animation delay-3">
-                    <div class="text-img__image-inner slider slider--with-bar">
-                        <img src="{{ asset('images/photos/photo-01.jpg') }}" alt="GREENWOOD PARK" class="text-img__img">
-                        <img src="{{ asset('images/photos/photo-02.jpg') }}" alt="GREENWOOD PARK" class="text-img__img">
+                    <div class="text-img__image-inner">
+                        <img src="{{ asset('images/carousel/list/photo-01.jpg') }}" alt="">
                     </div>
 
-                    <div class="text-img__pagination-wrapper">
+                    <div class="text-img__pagination-wrapper d-none">
                         <div class="text-img__pagination pagination-bar">
                             <div class="pagination-bar__progress">
                                 <div class="pagination-bar__progress-bar"></div>
