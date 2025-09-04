@@ -22,7 +22,7 @@
                     <h2 class="text-img__title scroll-animation">Greenwood Park</h2>
                     <h3 class="text-img__subtitle scroll-animation">zamieszkaj tak, jak zawsze marzyłeś</h3>
                     <div class="text-img__description scroll-animation delay-2">
-                        <p>LWyobraź sobie codzienność w otoczeniu zieleni, ciszy i spokoju, zaledwie kilkanaście minut od centrum
+                        <p>Wyobraź sobie codzienność w otoczeniu zieleni, ciszy i spokoju, zaledwie kilkanaście minut od centrum
                             Warszawy. Greenwood Park to wyjątkowa inwestycja w Starej Miłosnej, stworzona dla osób, które chcą łączyć
                             bliskość natury z komfortem miejskiego życia.</p>
                         <p>Elegancka architektura, kameralny charakter i sąsiedztwo Mazowieckiego Parku Krajobrazowego sprawiają, że
@@ -129,12 +129,8 @@
                             <li>Generalny Wykonawca II etapu: F.B.I. Tasbud</li>
                             <li>Zarządzanie i nadzór nad inwestycją: Reacon Sp. z o.o.</li>
                         </ul>
-                        <p>Zespół doświadczonych specjalistów oraz sprawdzeni partnerzy zapewniają najwyższy standard realizacji – tak,
-                            by każda nieruchomość spełniała oczekiwania najbardziej wymagających klientów.</p>
-                        <p><b>Zamieszkaj w zielonej części Warszawy – Białołęka czeka na Ciebie.</b> Nowoczesne osiedle Greenwood
-                            powstało przy ul. Jeździeckiej, Warszawa – Wesoła, w jednej z najbardziej rozwijających się i przyjaznych do
-                            życia dzielnic stolicy. Kameralne sąsiedztwo, świetna komunikacja i pełna infrastruktura – wszystko, czego
-                            potrzebujesz na co dzień.</p>
+                        <p>Zespół doświadczonych specjalistów oraz sprawdzeni partnerzy zapewniają najwyższy standard realizacji – tak, by każda nieruchomość spełniała oczekiwania najbardziej wymagających klientów.</p>
+                        <p><b>Zamieszkaj w zielonej części Warszawy – Stara Miłosna czeka na Ciebie.</b> Nowoczesne osiedle Greenwood powstało przy ul. Jeździeckiej, Warszawa – Wesoła, w jednej z najbardziej rozwijających się i przyjaznych do życia dzielnic stolicy. Kameralne sąsiedztwo, świetna komunikacja i pełna infrastruktura – wszystko, czego potrzebujesz na co dzień.</p>
                     </div>
                 </div>
 
