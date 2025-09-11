@@ -16,7 +16,7 @@
             <div class="wrapper">
                 <div class="wrapper--small">
                     <h2 class="image__title scroll-animation visible">Miejsca postojowe</h2>
-                    <table>
+                    <table class="property-table">
                         <thead>
                         <tr>
                             <th>Budynek</th>

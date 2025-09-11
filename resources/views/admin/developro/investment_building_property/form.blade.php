@@ -232,21 +232,27 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row w-100 form-group">
 
-                                </div>
                                 <div class="row w-100 form-group">
-                                    @include('form-elements.input-text', ['label' => 'Cena brutto', 'sublabel'=> 'Tylko liczby. Użyj kropki jako separatora dziesiętnego', 'name' => 'price_brutto', 'value' => $entry->price_brutto])
-                                    @include('form-elements.html-select', [
-                                        'label' => 'Stawka VAT',
-                                        'name' => 'vat',
-                                        'selected' => $entry->vat,
-                                        'select' => [
-                                            '8' => '8%',
-                                            '23' => '23%',
-                                            '0' => '0%'
-                                    ]])
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                @include('form-elements.input-text', ['label' => 'Cena brutto', 'sublabel'=> 'Tylko liczby, separator jako kropka', 'name' => 'price_brutto', 'value' => $entry->price_brutto])
+                                            </div>
+                                            <div class="col-4">
+                                                @include('form-elements.html-select', ['label' => 'Promocja', 'sublabel'=> 'Czy mieszkanie jest w promocji', 'name' => 'highlighted', 'selected' => $entry->highlighted, 'select' => [
+                                                  '0' => 'Nie',
+                                                  '1' => 'Tak'
+                                                  ]
+                                                ])
+                                            </div>
+                                            <div class="col-4">
+                                                @include('form-elements.html-input-text', ['label' => 'Cena promocyjna', 'sublabel'=> 'Tylko liczby, separator jako kropka', 'name' => 'promotion_price', 'value' => $entry->promotion_price])
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
 
                                 <div class="row w-100 form-group">
                                     <button id="add-price-component"

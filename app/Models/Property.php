@@ -60,8 +60,38 @@ class Property extends Model
         'views',
         'active',
         'visitor_related_type',
+
+        // Historia ceny
         'highlighted',
+        'promotion_price',
     ];
+
+    // Historia ceny
+    public function priceHistory(): HasMany
+    {
+        return $this->hasMany(PropertyPrice::class)->orderBy('changed_at', 'desc');
+    }
+    public function getHasPriceHistoryAttribute(): bool
+    {
+        return $this->priceHistory()->exists();
+    }
+
+    public function getCurrentPriceDateAttribute()
+    {
+        // Jeśli typ nieruchomości nie jest 1 → X
+        if ($this->type != 1) {
+            return 'X';
+        }
+
+        // Pobranie najnowszej ceny (bez wywoływania relacji jako metody)
+        $latestPrice = $this->priceHistory()->first();
+
+        if (!$latestPrice || !$latestPrice->changed_at) {
+            return 'X';
+        }
+
+        return $latestPrice->changed_at->toDateString();
+    }
 
     /**
      * Get next property
@@ -219,16 +249,31 @@ class Property extends Model
             return 'X';
         }
 
-        return (float)$this->price_brutto
-            + $this->relatedProperties->sum(function ($prop) {
-                return (float)$prop->price_brutto;
-            });
+        // Cena głównej nieruchomości (uwzględnia promocję)
+        $mainPrice = ($this->highlighted == 1 && $this->promotion_price)
+            ? (float)$this->promotion_price
+            : (float)$this->price_brutto;
+
+        // Suma cen powiązanych nieruchomości (uwzględnia promocję)
+        $relatedTotal = $this->relatedProperties->sum(function ($prop) {
+            return ($prop->highlighted == 1 && $prop->promotion_price)
+                ? (float)$prop->promotion_price
+                : (float)$prop->price_brutto;
+        });
+
+        return $mainPrice + $relatedTotal;
     }
 
     public function getDisplayPriceAttribute()
     {
-        return ($this->type == 1 && $this->price_brutto)
-            ? $this->price_brutto
-            : 'X';
+        if ($this->type != 1) {
+            return 'X';
+        }
+
+        if ($this->highlighted == 1 && $this->promotion_price) {
+            return $this->promotion_price;
+        }
+
+        return $this->price_brutto ?? 'X';
     }
 }

@@ -56,45 +56,41 @@
                             <tbody>
                             <tr>
                                 <th>Status:</th>
-                                <td><span class="status available">Dostępne</span></td>
+                                <td>{!! roomStatusCard($property->status) !!}</td>
                             </tr>
                             <tr>
                                 <th>Cena:</th>
-                                <td>@money($property->price_brutto)
+                                @if($property->price_brutto && $property->status == 1)
+                                <td @if($property->promotion_price) class="old-price" @endif>@money($property->price_brutto)
                                     <br>
                                     <span style="font-weight: normal !important;font-size: 11px;color: black;font-family: 'regular',sans-serif;">@money($property->price_brutto / $property->area)/m<sup>2</sup></span>
                                 </td>
+                                @endif
+                                @if($property->promotion_price && $property->price_brutto && $property->highlighted && $property->status == 1)
+                                    <td class="promotion-price">@money($property->promotion_price)
+                                        <br>
+                                        <span style="font-weight: normal !important;font-size: 11px;color: black;font-family: 'regular',sans-serif;">@money($property->promotion_price / $property->area)/m<sup>2</sup></span>
+                                    </td>
+                                @endif
                             </tr>
                             <tr>
                                 <th>Powierzchnia:</th>
                                 <td>{{ $property->area }} m<sup>2</sup></td>
                             </tr>
-                            <tr style="display:none;">
-                                <th>Cena garażu pojednyczego:</th>
-                                <td>od 000000 zł</td>
-                            </tr>
                             <tr>
                                 <th>Piętro:</th>
                                 <td>{{ $property->floor->number }}</td>
                             </tr>
-                            <tr style="display:none;">
-                                <th>Cena garażu rodzinnego:</th>
-                                <td>od 000000 zł</td>
-                            </tr>
-                            <tr style="display:none;">
-                                <th>Lorem ipsum:</th>
-                                </th>
-                                <td>Lorem ipsum</td>
-                            </tr>
-                            <tr style="display:none;">
-                                <th>Lorem ipsum:</th>
-                                <td>Lorem ipsum</td>
-                            </tr>
                             </tbody>
                         </table>
 
-                        <div style="display:none;">
-                            <a class="apartment__history-btn cta-link" href="#contact-form">Historia zmian ceny</a>
+                        <div class="text-center">
+                            @if($property->has_price_history)
+                            <a class="apartment__history-btn cta-link btn-history" data-id="{{ $property->id }}" href="#">Historia zmian ceny</a>
+                            <div id="modalHistory"></div>
+                            @else
+                            <p class="apartment__history-btn cta-link">Cena nie zmieniła się od 11.09.2025 r.</p>
+                            @endif
                         </div>
 
                         <div class="apartment__buttons">
@@ -282,6 +278,9 @@
     </main>
 @endsection
 @push('scripts')
+    <link href="{{ asset('/css/modal.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/history.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/validation.js') }}" charset="utf-8"></script>
     <script src="{{ asset('js/pl.js') }}" charset="utf-8"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -312,6 +311,55 @@
             }, 1500, 'easeInOutExpo');
         });
         @endif
+
+        document.addEventListener('click', async function (e) {
+            // History Button
+            const btnHistory = e.target.closest('.btn-history');
+            if (btnHistory) {
+                e.preventDefault();
+
+                // Disable button to prevent double click
+                btnHistory.disabled = true;
+
+                const modalHolder = document.getElementById('modalHistory');
+                const dataId = btnHistory.dataset.id;
+                modalHolder.innerHTML = '';
+
+                try {
+                    const url = `/historia/${dataId}/`;
+
+                    const response = await fetch(url, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        }
+                    });
+
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        console.error('Błąd z backendu:', response.status, errorText);
+                        throw new Error(`Błąd sieci: ${response.status}`);
+                    }
+
+                    const html = await response.text();
+                    modalHolder.innerHTML = html;
+
+                    const modalElement = document.getElementById('portletModal');
+                    const bootstrapModal = new bootstrap.Modal(modalElement);
+                    bootstrapModal.show();
+
+                    modalElement.addEventListener('hidden.bs.modal', () => {
+                        modalHolder.innerHTML = '';
+                    }, { once: true });
+
+                } catch (error) {
+                    alert('Wystąpił błąd podczas ładowania historii.');
+                    console.error(error);
+                } finally {
+                    // Re-enable the button after request completes
+                    btnHistory.disabled = false;
+                }
+            }
+        });
     </script>
 @endpush
 

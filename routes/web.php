@@ -111,5 +111,12 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
 
         // Property
         Route::get('/mieszkania/{buildingSlug}/{floorSlug}/{property},{propertySlug},{propertyFloor},{propertyRooms},{propertyArea}', 'InvestmentPropertyController@index')->name('investment.property');
+
+
+        //Historia cen
+        Route::get('/historia/{property}', 'History\IndexController@show')->name('history');
+        Route::get('/przynalezne/{property}', 'History\IndexController@others')->name('others');
+        Route::get('/przynalezne/{property}/show', 'History\IndexController@other')->name('others.show');
+        Route::get('/przynalezne/{property}/table', 'History\IndexController@otherTable')->name('others.table');
     });
 });

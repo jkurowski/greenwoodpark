@@ -90,26 +90,26 @@
     cursor: pointer;
     pointer-events: initial;
 }
-table {
+table.property-table {
     width: 100%;
     border-spacing: 0;
 }
-table th {
+table.property-table th {
     background: linear-gradient(var(--green-dark) 0,var(--green) 100%);
     color: #fff;
     padding: 16px;
 }
-table td {
+table.property-table td {
     padding: 16px;
     border-bottom: 1px solid #d5d5d5;
 }
-table tr:hover td {
+table.property-table tr:hover td {
     background: #eee;
 }
-table td.center {
+table.property-table td.center {
     text-align: center;
 }
-table td span {
+table.property-table td span {
     display: inline-flex;
     color: white;
     line-height: normal;
@@ -118,14 +118,24 @@ table td span {
     width: 100%;
     justify-content: center;
 }
-table td span.room-list-status-1 {
+table.property-table td span.room-list-status-1 {
     background: green;
 }
-table td span.room-list-status-2 {
+table.property-table td span.room-list-status-2 {
     background: #4681bf;
 }
-table td span.room-list-status-3 {
+table.property-table td span.room-list-status-3 {
     background: #b34848;
+}
+.old-price {
+    text-decoration: line-through;
+    opacity: 0.3;
+}
+.promotion-price {
+    color: red;
+}
+.promotion-price span {
+    color: red !important;
 }
 @media (max-width: 1024px) {
     .header ul.submenu {
