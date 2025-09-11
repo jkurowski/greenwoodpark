@@ -146,7 +146,7 @@
                                 <p>Powierzchnia:<br><span>{{ $p->area }} m<sup>2</sup></span></p>
                                 <p>Pokoje:<br><span>{{ $p->rooms }}</span></p>
                                 <p>Piętro:<br><span>{{ $p->floor->number }}</span></p>
-                                <p>Cena<br><span>@money($p->price_brutto)</span></p>
+                                <p>Cena<br><span>@money($p->price_brutto)</span><br><span style="font-weight: normal !important;font-size: 11px;color: black;font-family: 'regular',sans-serif;">@money($p->price_brutto / $p->area)/m<sup>2</sup></span></p>
                             </div>
                             <a href="{{ route('front.developro.investment.property', [
                                                         $p->building->slug,
