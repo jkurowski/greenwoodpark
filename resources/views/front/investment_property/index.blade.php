@@ -60,7 +60,10 @@
                             </tr>
                             <tr>
                                 <th>Cena:</th>
-                                <td>{{ $property->price_brutto }} zł</td>
+                                <td>@money($property->price_brutto)
+                                    <br>
+                                    <span style="font-weight: normal !important;font-size: 11px;color: black;font-family: 'regular',sans-serif;">@money($property->price_brutto / $property->area)/m<sup>2</sup></span>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Powierzchnia:</th>
