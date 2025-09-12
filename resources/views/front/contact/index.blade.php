@@ -20,6 +20,7 @@
                     <h2 class="contact-data__title scroll-animation">Kontakt</h2>
                     <div class="contact-data__icons scroll-animation delay-2">
                         <p>Biuro sprzedaży</p>
+                        <p>Godziny otwarcia: Poniedziałek - Piątek: 10:00 - 18:00</p>
                         <p><a href="tel:+48606292908"><svg xmlns="http://www.w3.org/2000/svg" width="20.558" height="20.558" viewBox="0 0 20.558 20.558">
                                     <g id="phone-call_2_" data-name="phone-call (2)" transform="translate(0)">
                                         <g id="Group_2452" data-name="Group 2452" transform="translate(0 0)">

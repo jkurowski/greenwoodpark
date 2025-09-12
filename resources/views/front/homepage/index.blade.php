@@ -412,7 +412,7 @@
                     <h2 class="text-img__title scroll-animation">O inwestorze</h2>
                     <div class="text-img__description scroll-animation delay-2">
                         <div class="text-1">
-                            <p><strong>Greenwood Sp. z o. o.</strong>, to polska spółka deweloperska, która łączy doświadczenie branżowe z
+                            <p><strong>Greenwood II  Sp. z o. o.</strong>, to polska spółka deweloperska, która łączy doświadczenie branżowe z
                                 umiejętnością tworzenia przestrzeni sprzyjających codziennemu życiu. Zespół specjalistów z wieloletnim
                                 stażem
                                 w budownictwie realizuje projekty z dbałością o każdy detal – od etapu planowania po finalne przekazanie
