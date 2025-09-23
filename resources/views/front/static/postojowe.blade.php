@@ -16,6 +16,7 @@
             <div class="wrapper">
                 <div class="wrapper--small">
                     <h2 class="image__title scroll-animation visible">Miejsca postojowe</h2>
+                    <img src="{{ asset('images/garaz-plan.jpg') }}" alt="Plan garażu" class="mb-5">
                     <table class="property-table">
                         <thead>
                         <tr>

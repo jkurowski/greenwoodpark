@@ -16,6 +16,13 @@
             <div class="wrapper">
                 <div class="wrapper--small">
                     <h2 class="image__title scroll-animation visible">Komórki lokatorskie</h2>
+                    <h3 class="panel__name text-center m-0">Garaż</h3>
+                    <hr class="mt-4 mb-4">
+                    <img src="{{ asset('images/garaz-plan.jpg') }}" alt="Plan garażu" class="mb-5">
+                    <h3 class="panel__name text-center m-0">Parter</h3>
+                    <hr class="mt-4 mb-4">
+                    <img src="{{ asset('images/parter-plan.jpg') }}" alt="Plan parteru" class="mb-5">
+
                     <table class="property-table">
                         <thead>
                             <tr>
