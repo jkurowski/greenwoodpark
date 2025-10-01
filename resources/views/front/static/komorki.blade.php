@@ -26,7 +26,6 @@
                     <table class="property-table">
                         <thead>
                             <tr>
-                                <th>Budynek</th>
                                 <th>Nazwa</th>
                                 <th>Status</th>
                                 <th>Cena</th>
@@ -35,7 +34,6 @@
                         <tbody>
                             @foreach($properties as $p)
                             <tr>
-                                <td>{{ $p->building->name }}</td>
                                 <td>{{ $p->name }}</td>
                                 <td class="center">
                                     <span class="badge room-list-status-{{ $p->status }}">
