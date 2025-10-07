@@ -124,13 +124,8 @@
                             Ustawy Deweloperskiej i pod pełnym nadzorem wykwalifikowanego banku – Millennium Bank S.A., który prowadzi
                             mieszkaniowy rachunek powierniczy.</p>
                         <p><b>Sprawdzeni wykonawcy i doświadczenie w realizacji</b></p>
-                        <ul>
-                            <li>Generalny Wykonawca I etapu: Unibep S.A.</li>
-                            <li>Generalny Wykonawca II etapu: F.B.I. Tasbud</li>
-                            <li>Zarządzanie i nadzór nad inwestycją: Reacon Sp. z o.o.</li>
-                        </ul>
                         <p>Zespół doświadczonych specjalistów oraz sprawdzeni partnerzy zapewniają najwyższy standard realizacji – tak, by każda nieruchomość spełniała oczekiwania najbardziej wymagających klientów.</p>
-                        <p><b>Zamieszkaj w zielonej części Warszawy – Stara Miłosna czeka na Ciebie.</b> Nowoczesne osiedle Greenwood Park powstało przy ul. Jeździeckiej, Warszawa – Wesoła, w jednej z najbardziej rozwijających się i przyjaznych do życia dzielnic stolicy. Kameralne sąsiedztwo, świetna komunikacja i pełna infrastruktura – wszystko, czego potrzebujesz na co dzień.</p>
+                        <p><b>Zamieszkaj w zielonej części Warszawy – Stara Miłosna czeka na Ciebie.</b> Nowoczesne osiedle Greenwood Park powstaje przy ul. Jeździeckiej, Warszawa – Wesoła, w jednej z najbardziej rozwijających się i przyjaznych do życia dzielnic stolicy. Kameralne sąsiedztwo, świetna komunikacja i pełna infrastruktura – wszystko, czego potrzebujesz na co dzień.</p>
                     </div>
                 </div>
 

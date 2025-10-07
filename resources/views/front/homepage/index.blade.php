@@ -312,16 +312,11 @@
                         </p>
                         <p><strong>Atrakcje na wyciągnięcie ręki</strong></p>
                         <ul>
-                            <li>Park linowy w Starej Miłosnej – w bezpośrednim sąsiedztwie osiedla, z trasami dla dzieci i dorosłych,
-                                idealny na rodzinne popołudnia pełne ruchu i zabawy.</li>
-                            <li>Ścieżki rowerowe i spacerowe – dziesiątki kilometrów malowniczych tras, od krótkich spacerowych pętli po
-                                całodniowe wycieczki rowerowe, np. wokół Bagna Całowanie czy przez lasy celestynowsko-otwockie.</li>
-                            <li>Nordic walking i jogging w lesie – cisza, spokój i bezpośredni kontakt z naturą sprawiają, że codzienny
-                                trening staje się prawdziwą przyjemnością.</li>
-                            <li>Jazda konna – w sąsiedztwie inwestycji działa klub jeździecki, oferujący naukę i rekreację w unikalnej
-                                scenerii dawnego hipodromu.</li>
-                            <li>• Rezerwaty przyrody – unikalne torfowiska, bagna i leśne ostępy chroniące rzadkie gatunki roślin i
-                                zwierząt, idealne na weekendowe wyprawy z dziećmi.</li>
+                            <li>Park linowy w Starej Miłosnej – w bezpośrednim sąsiedztwie osiedla, z trasami dla dzieci i dorosłych, idealny na rodzinne popołudnia pełne ruchu i zabawy.</li>
+                            <li>Ścieżki rowerowe i spacerowe – dziesiątki kilometrów malowniczych tras, od krótkich spacerowych pętli po całodniowe wycieczki rowerowe, np. wokół Bagna Całowanie czy przez lasy celestynowsko-otwockie.</li>
+                            <li>Nordic walking i jogging w lesie – cisza, spokój i bezpośredni kontakt z naturą sprawiają, że codzienny trening staje się prawdziwą przyjemnością.</li>
+                            <li>Jazda konna – w sąsiedztwie inwestycji działa klub jeździecki, oferujący naukę i rekreację w unikalnej scenerii dawnego hipodromu.</li>
+                            <li>Rezerwaty przyrody – unikalne torfowiska, bagna i leśne ostępy chroniące rzadkie gatunki roślin i zwierząt, idealne na weekendowe wyprawy z dziećmi.</li>
                         </ul>
                     </div>
                 </div>
@@ -412,28 +407,14 @@
                     <h2 class="text-img__title scroll-animation">O inwestorze</h2>
                     <div class="text-img__description scroll-animation delay-2">
                         <div class="text-1">
-                            <p><strong>Greenwood II  Sp. z o. o.</strong>, to polska spółka deweloperska, która łączy doświadczenie branżowe z
-                                umiejętnością tworzenia przestrzeni sprzyjających codziennemu życiu. Zespół specjalistów z wieloletnim
-                                stażem
-                                w budownictwie realizuje projekty z dbałością o każdy detal – od etapu planowania po finalne przekazanie
-                                kluczy mieszkańcom.</p>
-                            <p>Działalność firmy rozpoczęła się od realizacji hotelu Narvil pod Warszawą, co pozwoliło zdobyć cenne
-                                doświadczenie w branży budowlanej i zarządzaniu inwestycjami na wysokim poziomie jakościowym. Następnie
-                                Spółka
-                                Greenwood rozpoczęła realizację projektów mieszkaniowych, a pierwszą, czteroetapową inwestycję było
-                                Miasteczko
-                                Greenwood na warszawskiej Białołęce. Osiedle charakteryzuje się nowoczesną, niską zabudową, komfortowymi
-                                układami mieszkań i dużymi przestrzeniami zielonymi, które tworzą kameralną i przyjazną atmosferę. Cały
-                                osiedle zaprojektowano z myślą o wygodzie i komforcie codziennego życia mieszkańców. </p>
+                            <p><b>Greenwood II Sp. z o. o.</b>, to polska spółka deweloperska, która łączy doświadczenie branżowe z umiejętnością tworzenia przestrzeni sprzyjających codziennemu życiu. Zespół specjalistów z wieloletnim stażem w budownictwie realizuje projekty z dbałością o każdy detal – od etapu planowania po finalne przekazanie kluczy mieszkańcom.</p>
+                            <p>Pierwszą ukończoną inwestycją naszej firmy było Miasteczko Greenwood. Czteroetapowe osiedle położone w zielonej części warszawskiej Białołęki wyróżnia się nowoczesną, niską zabudową oraz starannie przemyślanymi układami mieszkań, które zapewniają maksymalny komfort i funkcjonalność na co dzień.</p>
+                            <p>Jednym z największych atutów Miasteczka Greenwood są rozległe tereny zielone – alejki spacerowe, miejsca do wypoczynku i rekreacji oraz naturalna zieleń, które tworzą kameralną, przyjazną atmosferę. To przestrzeń, w której mieszkańcy mogą odetchnąć od miejskiego zgiełku, nie rezygnując z dogodnej lokalizacji i bliskości infrastruktury Warszawy.</p>
+                            <p>Osiedle zaprojektowano z myślą o wygodzie codziennego życia – od praktycznych rozwiązań architektonicznych, przez funkcjonalne mieszkania, po wspólne przestrzenie. Miasteczko Greenwood stało się miejscem, gdzie nowoczesny styl życia harmonijnie łączy się z bliskością natury.
                         </div>
 
                         <div class="text-2 hidden">
-                            <p>Wszystkie inwestycje Spółki Greenwood są realizowane zgodnie z wymogami Ustawy Deweloperskiej. Środki
-                                klientów są deponowane na mieszkaniowym rachunku powierniczym prowadzonym przez Bank Millennium, co
-                                gwarantuje
-                                pełne bezpieczeństwo zakupu i spokój inwestorów. Dzięki doświadczeniu zdobytemu przy Miasteczku Greenwood i
-                                hotelu Narvil pod Warszawą, firma zapewnia profesjonalną pomoc przy wyborze mieszkania oraz pełną obsługę
-                                podczas całego procesu realizacji inwestycji oraz po jej zakończeniu.</p>
+                            <p>Wszystkie inwestycje Spółki Greenwood są realizowane zgodnie z wymogami Ustawy Deweloperskiej. Środki klientów są deponowane na mieszkaniowym rachunku powierniczym prowadzonym przez Bank Millennium, gwarantuje to pełne bezpieczeństwo zakupu i spokój inwestorów. Dzięki doświadczeniu zdobytemu podczas realizacji czteroetapowego osiedla Miasteczko Greenwood, firma zapewnia profesjonalną pomoc przy wyborze mieszkania oraz pełną obsługę podczas całego procesu realizacji inwestycji oraz po jej zakończeniu.</p>
                         </div>
 
                         <button onclick="toggleText()" class="btn btn--primary">Więcej o nas</button>
