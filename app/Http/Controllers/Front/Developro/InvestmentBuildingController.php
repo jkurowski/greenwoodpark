@@ -30,6 +30,8 @@ class InvestmentBuildingController extends Controller
             'buildingRooms' => function($query) use ($building, $request)
             {
                 $query->where('properties.building_id', $building->id);
+                $query->orderBy('properties.highlighted', 'DESC')->orderBy('properties.number_order');
+
                 if ($request->input('s_pokoje')) {
                     $query->where('rooms', $request->input('s_pokoje'));
                 }
