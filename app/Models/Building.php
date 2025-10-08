@@ -81,7 +81,7 @@ class Building extends Model
      */
     public function properties(): HasMany
     {
-        return $this->hasMany('App\Models\Property');
+        return $this->hasMany('App\Models\Property')->orderBy('highlighted', 'DESC')->orderBy('number_order');
     }
 
     /**
