@@ -32,7 +32,6 @@ class InvestmentController extends Controller
                 }
 
                 $floorNumber = $request->input('s_pietro');
-
                 if ($floorNumber !== null && $floorNumber !== '') {
                     $query->whereHas('floor', function ($q) use ($floorNumber) {
                         $q->where('number', $floorNumber);
@@ -66,6 +65,8 @@ class InvestmentController extends Controller
                         }
                     });
                 }
+
+                $query->orderBy('highlighted', 'ASC');
 
                 $query->where('type', 1);
             },
