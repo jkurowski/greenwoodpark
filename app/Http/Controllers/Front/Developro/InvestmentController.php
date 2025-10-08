@@ -66,8 +66,6 @@ class InvestmentController extends Controller
                     });
                 }
 
-                $query->orderBy('highlighted', 'ASC');
-
                 $query->where('type', 1);
             },
             'properties.floor'
