@@ -113,6 +113,9 @@
                         <div class="panel {!! roomStatusList($p->status) !!}">
                             <h3 class="panel__name">{{ $p->name }}</h3>
                             <div class="panel__status">{!! roomStatusBadge($p->status) !!}</div>
+                            @if($p->price_brutto && $p->status == 1 && $p->highlighted)
+                                <div class="panel__status panel__status_promo me-2">PROMOCJA</div>
+                            @endif
                             @if($p->file)
                                 <picture>
                                     <source type="image/webp" srcset="/investment/property/list/webp/{{$p->file_webp}}">
@@ -124,7 +127,22 @@
                                 <p>Powierzchnia:<br><span>{{ $p->area }} m<sup>2</sup></span></p>
                                 <p>Pokoje:<br><span>{{ $p->rooms }}</span></p>
                                 <p>Piętro:<br><span>{{ $p->floor->number }}</span></p>
-                                <p>Cena<br><span>@money($p->price_brutto)</span><br><span style="font-weight: normal !important;font-size: 11px;color: black;font-family: 'regular',sans-serif;">@money($p->price_brutto / $p->area)/m<sup>2</sup></span></p>
+                                <p>Cena<br>
+                                    @if($p->price_brutto && $p->status == 1 && !$p->highlighted)
+                                        <span>@money($p->price_brutto)</span>
+                                        <br>
+                                        <span style="font-weight: normal !important;font-size: 11px;color: black;font-family: 'regular',sans-serif;">
+                                        @money($p->price_brutto / $p->area)/m<sup>2</sup>
+                                    </span>
+                                    @endif
+                                    @if($p->price_brutto && $p->status == 1 && $p->highlighted)
+                                        <span style="color: red">@money($p->promotion_price)</span>
+                                        <br>
+                                        <span style="font-weight: normal !important;font-size: 11px;color: red;font-family: 'regular',sans-serif;">
+                                        @money($p->promotion_price / $p->area)/m<sup>2</sup>
+                                    </span>
+                                    @endif
+                                </p>
                             </div>
                             <a href="{{ route('front.developro.investment.property', [
                                                         $p->building->slug,

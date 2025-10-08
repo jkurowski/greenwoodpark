@@ -132,9 +132,12 @@
 
                 <div class="searcher__items searcher__items--block scroll-animation searcher__items--list">
                     @foreach($properties as $p)
-                        <div class="panel {!! roomStatusList($p->status) !!}">
+                        <div class="panel {!! roomStatusList($p->status) !!} ">
                             <h3 class="panel__name">{{ $p->name }}</h3>
                             <div class="panel__status">{!! roomStatusBadge($p->status) !!}</div>
+                            @if($p->price_brutto && $p->status == 1 && $p->highlighted)
+                            <div class="panel__status panel__status_promo me-2">PROMOCJA</div>
+                            @endif
                             @if($p->file)
                                 <picture>
                                     <source type="image/webp" srcset="/investment/property/list/webp/{{$p->file_webp}}">
