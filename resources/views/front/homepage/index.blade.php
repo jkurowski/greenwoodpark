@@ -349,10 +349,9 @@
                             <div class="steps__description">
                                 <p>Zaprojektowane z myślą o komforcie mieszkańców Greenwood Park, wyróżniają się:</p>
                                 <ul>
-                                    <li>Funkcjonalnymi układami</li>
-                                    <li>Jasnymi wnętrzami</li>
-                                    <li>Komfortowymi ogródkami i balkonami</li>
-                                    <li>Wysokim standardem wykończenia</li>
+                                    <li><b>Zrównoważonym podejściem do budownictwa</b> – wykorzystujemy energooszczędne instalacje i rozwiązania sprzyjające naturze</li>
+                                    <li><b>Przemyślaną i komfortową przestrzenią</b> – dopracowanymi układami, jasnymi wnętrzami oraz wygodnymi ogródkami i balkonami</li>
+                                    <li><b>Wysokim standardem wykończenia</b> – zapewniającym elegancję i trwałość każdego detalu</li>
                                 </ul>
                             </div>
                         </div>
@@ -363,14 +362,14 @@
                         <div class="steps__content">
                             <h3 class="steps__name">
                                 <span class="steps__name-number">02</span>
-                                <span class="steps__name-text">Ogrodzone<br>osiedle</span>
+                                <span class="steps__name-text">W trosce o naturę<br>i codzienność e</span>
                             </h3>
                             <div class="steps__description">
-                                <p>Co zagwarantuje mieszkańcom poczucie bezpieczeństwa i prywatności. W starannie zaprojektowanych częściach wspólnych znajdą się:</p>
+                                <p>Rozwiązania proekologiczne i przyjazne środowisku, między innymi:</p>
                                 <ul>
-                                    <li>Zieleń na terenie osiedla – drzewa, krzewy i trawy ozdobne</li>
-                                    <li>Elementy małej architektury sprzyjające relaksowi i rekreacji</li>
-                                    <li>Nowoczesny plac zabaw</li>
+                                    <li><b>Zielone, funkcjonalne i przyjazne rodzinom</b> – starannie zaplanowana zieleń, elementy małej architektury oraz bezpieczny, nowoczesny plac zabaw łączą estetykę z komfortem życia codziennego</li>
+                                    <li><b>System szarej wody i linie kroplujące</b> – tworzą nowoczesny, ekologiczny układ nawadniania, który minimalizuje straty wody i wspiera równowagę środowiska</li>
+                                    <li><b>Zieleń ekstensywna na dachach</b> – naturalna izolacja, która chroni budynki przed przegrzewaniem, poprawia mikroklimat i wspiera retencję wody</li>
                                 </ul>
                             </div>
                         </div>
@@ -381,22 +380,19 @@
                         <div class="steps__content">
                             <h3 class="steps__name">
                                 <span class="steps__name-number">03</span>
-                                <span class="steps__name-text">Doskonała infrastruktura<br>w zasięgu ręki</span>
+                                <span class="steps__name-text">Bezpieczeństwo <br>i ochrona mieszkańców</span>
                             </h3>
                             <div class="steps__description">
-                                <p>Codzienne życie staje się prostsze. Mieszkańcy mają łatwy dostęp do:</p>
+                                <p>Spokój i bezpieczeństwo mieszkańców zapewnione przez inteligentne systemy oraz nowoczesne rozwiązania:</p>
                                 <ul>
-                                    <li>Komunikacji publicznej</li>
-                                    <li>Sklepów i usług</li>
-                                    <li>Placówek edukacyjnych</li>
-                                    <li>Rozrywek i rekreacji</li>
+                                    <li><b>Czujniki dymu w każdym lokalu</b> – detekcja zagrożenia pożarowego</li>
+                                    <li><b>Automatyczny system wykrywania pożaru w budynku</b> - nowoczesna technologia monitorująca cały budynek, wczesne ostrzeganie i automatyczne powiadamianie o zagrożeniu</li>
+                                    <li><b>Dwustopniowy system kontroli dostępu i całodobowy monitoring</b> – gwarancja bezpieczeństwa mieszkańców</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </section>
         <section class="text-img text-img--multiple">
