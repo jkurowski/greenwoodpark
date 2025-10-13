@@ -122,7 +122,7 @@
                             dzieci. Greenwood Park powstaje w jednej z najbardziej zielonych części Warszawy – w otulinie Mazowieckiego
                             Parku Krajobrazowego.</p>
                         <p>W ramach inwestycji powstanie 108 komfortowych mieszkań o zróżnicowanych układach i metrażach – od
-                            funkcjonalnych, 38-metrowych apartamentów dwupokojowych po przestronne, 81-metrowe mieszkania czteropokojowe.
+                            funkcjonalnych, 38-metrowych mieszkań dwupokojowych po przestronne, 81-metrowe apartamenty czteropokojowe.
                             Do dyspozycji mieszkańców przewidziano także nowoczesny garaż podziemny z 112 miejscami parkingowymi.</p>
                     </div>
                 </div>
