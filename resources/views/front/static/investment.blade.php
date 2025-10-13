@@ -30,7 +30,7 @@
                             zaprojektowana zieleń, przestrzenie wspólne sprzyjające spotkaniom i relaksowi, a także bezpieczny plac zabaw
                             dla najmłodszych – to wszystko czeka na przyszłych mieszkańców.</p>
                     </div>
-                    <div class="text-img__icons scroll-animation delay-3">
+                    <div class="text-img__icons scroll-animation delay-3 d-none">
                         <div class="icon">
                             <div class="icon__wrapper">
                                 <img src="{{ asset('images/icons/construction.svg') }}" alt="" class="icon__img">
