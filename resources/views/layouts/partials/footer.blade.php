@@ -16,6 +16,7 @@
                     <li><a href="/galeria/">Galeria</a></li>
                     <li><a href="/lokalizacja/">Lokalizacja</a></li>
                     <li><a href="/kontakt/">Kontakt</a></li>
+                    <li><a href="/polityka-prywatnosci/">Polityka Prywatności</a></li>
                 </ul>
             </nav>
 
