@@ -190,14 +190,14 @@
                             <div class="advantages__icon-wrapper icon__wrapper">
                                 <img src="{{ asset('images/icons/location.svg') }}" alt="" class="advantages__icon icon__img">
                             </div>
-                            <h3 class="advantages__subtitle">Kameralna zabudowa w doskonałej lokalizacji</h3>
+                            <h3 class="advantages__subtitle">Kameralna zabudowa<br>w doskonałej lokalizacji</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-2">
                             <div class="advantages__icon-wrapper icon__wrapper">
                                 <img src="{{ asset('images/icons/house.svg') }}" alt="" class="advantages__icon icon__img">
                             </div>
-                            <h3 class="advantages__subtitle">Mieszkania dopasowane do potrzeb</h3>
+                            <h3 class="advantages__subtitle">Mieszkania dopasowane<br>do potrzeb</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-4">
@@ -211,7 +211,7 @@
                             <div class="advantages__icon-wrapper icon__wrapper">
                                 <img src="{{ asset('images/icons/park.svg') }}" alt="" class="advantages__icon icon__img">
                             </div>
-                            <h3 class="advantages__subtitle">Komfort i bezpieczeństwo</h3>
+                            <h3 class="advantages__subtitle">Komfort<br>i bezpieczeństwo</h3>
                         </div>
 
                     </div>
@@ -227,7 +227,7 @@
                             <div class="advantages__icon-wrapper icon__wrapper">
                                 <img src="{{ asset('images/icons/rozwiazania-proekologiczne.svg') }}" alt="" class="advantages__icon icon__img">
                             </div>
-                            <h3 class="advantages__subtitle">Rozwiązania proekologiczne i przyjazne środowisku</h3>
+                            <h3 class="advantages__subtitle">Rozwiązania proekologiczne<br>i przyjazne środowisku</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-2">
