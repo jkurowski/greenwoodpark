@@ -190,28 +190,28 @@
                             <div class="advantages__icon-wrapper icon__wrapper">
                                 <img src="{{ asset('images/icons/location.svg') }}" alt="" class="advantages__icon icon__img">
                             </div>
-                            <h3 class="advantages__subtitle">Doskonała<br>lokalizacja</h3>
+                            <h3 class="advantages__subtitle">Kameralna zabudowa w doskonałej lokalizacji</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-2">
                             <div class="advantages__icon-wrapper icon__wrapper">
                                 <img src="{{ asset('images/icons/house.svg') }}" alt="" class="advantages__icon icon__img">
                             </div>
-                            <h3 class="advantages__subtitle">Kameralna<br>zabudowa</h3>
+                            <h3 class="advantages__subtitle">Mieszkania dopasowane do potrzeb</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-4">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/house.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/wysoki-standard.svg') }}" alt="" class="advantages__icon icon__img">
                             </div>
-                            <h3 class="advantages__subtitle">Mieszkania dopasowane<br>do potrzeb</h3>
+                            <h3 class="advantages__subtitle">Wysoki standard osiedla</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-1">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/gardening.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/park.svg') }}" alt="" class="advantages__icon icon__img">
                             </div>
-                            <h3 class="advantages__subtitle">Przestronne<br>balkony i&nbsp;ogródki</h3>
+                            <h3 class="advantages__subtitle">Komfort i bezpieczeństwo</h3>
                         </div>
 
                     </div>
@@ -225,30 +225,30 @@
 
                         <div class="advantages__item scroll-animation delay-5">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/education.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/rozwiazania-proekologiczne.svg') }}" alt="" class="advantages__icon icon__img">
                             </div>
-                            <h3 class="advantages__subtitle">Szkoły,&nbsp;przeszkola<br>i&nbsp;infrastruktura&nbsp;miejsca</h3>
+                            <h3 class="advantages__subtitle">Rozwiązania proekologiczne i przyjazne środowisku</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-2">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/recreation.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/education.svg') }}" alt="" class="advantages__icon icon__img">
                             </div>
-                            <h3 class="advantages__subtitle">Atrakcyjne<br>tereny&nbsp;rekreacyjne</h3>
+                            <h3 class="advantages__subtitle">Szkoły, przedszkola, infrastruktura miejska</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-3">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/motorway.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/recreation.svg') }}" alt="" class="advantages__icon icon__img">
                             </div>
-                            <h3 class="advantages__subtitle">Szybki&nbsp;dojazd<br>dzieki&nbsp;trasie&nbsp;S2</h3>
+                            <h3 class="advantages__subtitle">Atrakcyjne tereny rekreacyjne</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-4">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/park.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/motorway.svg') }}" alt="" class="advantages__icon icon__img">
                             </div>
-                            <h3 class="advantages__subtitle">Wygoda<br>i&nbsp;bezpieczeństwo</h3>
+                            <h3 class="advantages__subtitle">Szybki dojazd dzięki trasie S2 i S17</h3>
                         </div>
 
                     </div>
