@@ -32,6 +32,7 @@ class Property extends Model
         'type',
         'rooms',
         'area',
+        'area_search',
         'price',
         'price_brutto',
         'price_30',

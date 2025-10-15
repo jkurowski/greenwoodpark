@@ -205,7 +205,7 @@
                                 <div class="row w-100 form-group">
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 @include('form-elements.html-select', ['label' => 'Pokoje', 'name' => 'rooms', 'selected' => $entry->rooms, 'select' => [
                                                   '1' => '1',
                                                   '2' => '2',
@@ -216,10 +216,13 @@
                                                   ]
                                               ])
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 @include('form-elements.input-text', ['label' => 'Powierzchnia', 'name' => 'area', 'value' => $entry->area, 'required' => 1])
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-3">
+                                                @include('form-elements.input-text', ['label' => 'Powierzchnia (szukana)', 'name' => 'area_search', 'value' => $entry->area_search, 'required' => 1])
+                                            </div>
+                                            <div class="col-3">
                                                 @include('form-elements.html-select', [
                                                      'label' => 'Aneks / kuchnia',
                                                      'name' => 'kitchen type',
@@ -252,7 +255,6 @@
                                         </div>
                                     </div>
                                 </div>
-
 
                                 <div class="row w-100 form-group">
                                     <button id="add-price-component"
@@ -493,5 +495,16 @@
     </script>
 @endif
 
-<script>const addButton=document.getElementById("add-price-component"),priceComponents=JSON.parse(addButton.dataset.priceComponents);addButton.addEventListener("click",()=>{const e=Math.floor(1e3*Math.random()),t=priceComponents.map(e=>`<option value="${e.id}">${e.name}</option>`).join("");document.getElementById("price-components").insertAdjacentHTML("beforeend",`<div class="row price-component mb-3" data-price-component-id="${e}"><div class="col-4"><label class="control-label">Typ składnika ceny mieszkania:</label><select class="form-select" name="price-component-type[]">${t}</select></div><div class="col-3"><label class="control-label">Rodzaj składnika ceny:</label><select class="form-select" name="price-component-category[]"><option value="1">Obowiązkowy</option><option value="2">Opcjonalny</option><option value="3">Zmienny</option></select></div><div class="col-2"><label class="control-label">Cena za m² w PLN:</label><input class="form-control" name="price-component-m2-value[]" type="text" autocomplete="off"></div><div class="col-2"><label class="control-label">Cena całkowita w PLN:</label><input class="form-control" name="price-component-value[]" type="text" autocomplete="off"></div><div class="col-1 text-end"><label class="control-label d-block">&nbsp;</label><button class="btn action-button w-100" type="button"><i class="fe-trash-2"></i></button></div></div>`)}),document.addEventListener("click",function(e){if(e.target.closest(".action-button")){const t=e.target.closest(".price-component");t&&t.remove()}}),document.addEventListener("input",function(e){const t=document.getElementById("form_area"),o=parseFloat(t.value.replace(",","."));if(!(isNaN(o)||o<=0)){if(e.target.matches('input[name="price-component-value[]"]')){const t=n(e.target.value),a=e.target.closest(".row.price-component");if(!a)return;const c=a.querySelector('input[name="price-component-m2-value[]"]');if(!c)return;const l=t/o;c.value=l>0?l.toFixed(2):""}if(e.target.matches('input[name="price-component-m2-value[]"]')){const t=n(e.target.value),a=e.target.closest(".row.price-component");if(!a)return;const c=a.querySelector('input[name="price-component-value[]"]');if(!c)return;const l=t*o;c.value=l>0?l.toFixed(2):""}}function n(e){return parseFloat(e.replace(",","."))||0}});</script>
+<script>
+    function roundAreaValue() {
+        const areaInput = document.getElementById('form_area');
+        const areaSearchInput = document.getElementById('form_area_search');
+        const areaValue = parseFloat(areaInput.value);
+        if (!isNaN(areaValue)) {
+            areaSearchInput.value = Math.round(areaValue);
+        }
+    }
+    document.getElementById('form_area').addEventListener('input', roundAreaValue);
+    window.addEventListener('load', roundAreaValue);
+    const addButton=document.getElementById("add-price-component"),priceComponents=JSON.parse(addButton.dataset.priceComponents);addButton.addEventListener("click",()=>{const e=Math.floor(1e3*Math.random()),t=priceComponents.map(e=>`<option value="${e.id}">${e.name}</option>`).join("");document.getElementById("price-components").insertAdjacentHTML("beforeend",`<div class="row price-component mb-3" data-price-component-id="${e}"><div class="col-4"><label class="control-label">Typ składnika ceny mieszkania:</label><select class="form-select" name="price-component-type[]">${t}</select></div><div class="col-3"><label class="control-label">Rodzaj składnika ceny:</label><select class="form-select" name="price-component-category[]"><option value="1">Obowiązkowy</option><option value="2">Opcjonalny</option><option value="3">Zmienny</option></select></div><div class="col-2"><label class="control-label">Cena za m² w PLN:</label><input class="form-control" name="price-component-m2-value[]" type="text" autocomplete="off"></div><div class="col-2"><label class="control-label">Cena całkowita w PLN:</label><input class="form-control" name="price-component-value[]" type="text" autocomplete="off"></div><div class="col-1 text-end"><label class="control-label d-block">&nbsp;</label><button class="btn action-button w-100" type="button"><i class="fe-trash-2"></i></button></div></div>`)}),document.addEventListener("click",function(e){if(e.target.closest(".action-button")){const t=e.target.closest(".price-component");t&&t.remove()}}),document.addEventListener("input",function(e){const t=document.getElementById("form_area"),o=parseFloat(t.value.replace(",","."));if(!(isNaN(o)||o<=0)){if(e.target.matches('input[name="price-component-value[]"]')){const t=n(e.target.value),a=e.target.closest(".row.price-component");if(!a)return;const c=a.querySelector('input[name="price-component-m2-value[]"]');if(!c)return;const l=t/o;c.value=l>0?l.toFixed(2):""}if(e.target.matches('input[name="price-component-m2-value[]"]')){const t=n(e.target.value),a=e.target.closest(".row.price-component");if(!a)return;const c=a.querySelector('input[name="price-component-value[]"]');if(!c)return;const l=t*o;c.value=l>0?l.toFixed(2):""}}function n(e){return parseFloat(e.replace(",","."))||0}});</script>
 @endpush

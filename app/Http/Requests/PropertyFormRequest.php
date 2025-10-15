@@ -77,6 +77,7 @@ class PropertyFormRequest extends FormRequest
             'homepage' => '',
             'rooms' => 'required|integer',
             'area' => 'required|numeric|min:0',
+            'area_search' => '',
             'type' => 'required|integer',
             'additional' => '',
             'garden_area' => '',
