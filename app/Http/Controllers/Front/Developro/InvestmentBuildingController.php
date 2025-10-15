@@ -48,7 +48,7 @@ class InvestmentBuildingController extends Controller
                     $area_param = explode('-', $request->input('s_metry'));
                     $min = $area_param[0];
                     $max = $area_param[1];
-                    $query->whereBetween('area', [$min, $max]);
+                    $query->whereBetween('area_search', [$min, $max]);
                 }
 
                 $query->where('properties.type', 1);
