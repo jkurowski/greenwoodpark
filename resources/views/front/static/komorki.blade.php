@@ -40,7 +40,7 @@
                                         {{ roomStatus($p->status) }}
                                     </span>
                                 </td>
-                                <td class="center">{{ $p->price_brutto }} zł</td>
+                                <td class="center">@money($p->price_brutto)</td>
                             </tr>
                             @endforeach
                         </tbody>
