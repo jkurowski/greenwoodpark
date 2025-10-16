@@ -26,6 +26,7 @@
                 <a href="tel:+48606292908">606 292 908</a>
                 <a href="mailto: biuro@greenwoodpark.pl">biuro@greenwoodpark.pl</a>
                 <p>ul. Jeździecka 20</p>
+                <p>Poniedziałek - Piątek: 10:00 - 18:00</p>
             </nav>
         </div>
     </div>
