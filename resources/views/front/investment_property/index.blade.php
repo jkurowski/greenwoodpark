@@ -250,7 +250,7 @@
                                 <p>Powierzchnia:<br><span>{{ $p->area }} m<sup>2</sup></span></p>
                                 <p>Pokoje:<br><span>{{ $p->rooms }}</span></p>
                                 <p>Piętro:<br><span>{{ $p->floor->number }}</span></p>
-                                <p>Cena<br><span>@money($p->price_brutto) zł</span></p>
+                                <p>Cena<br><span>@money($p->price_brutto)</span></p>
                             </div>
                             <a href="{{ route('front.developro.investment.property', [
                                                         $p->building->slug,
