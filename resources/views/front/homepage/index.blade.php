@@ -362,7 +362,7 @@
                         <div class="steps__content">
                             <h3 class="steps__name">
                                 <span class="steps__name-number">02</span>
-                                <span class="steps__name-text">W trosce o naturę<br>i codzienność e</span>
+                                <span class="steps__name-text">W trosce o naturę<br>i codzienność</span>
                             </h3>
                             <div class="steps__description">
                                 <p>Rozwiązania proekologiczne i przyjazne środowisku, między innymi:</p>
