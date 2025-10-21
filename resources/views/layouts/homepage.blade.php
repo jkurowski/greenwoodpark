@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Styles -->
-    <link href="{{ asset('/css/styles.min.css') }}?v14102025" rel="stylesheet">
+    <link href="{{ asset('/css/styles.min.css') }}?v21102025" rel="stylesheet">
     <link href="{{ asset('/css/modal.min.css') }}" rel="stylesheet">
 
     <link rel='preload' as='style' href="{{ asset('/css/styles.min.css') }}">
