@@ -164,6 +164,6 @@
 @endsection
 @push('scripts')
     <script src="{{ asset('/js/plan/imagemapster.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('/js/plan/plan.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/plan/plan.min.js') }}?v=22102025" charset="utf-8"></script>
     <link href="{{ asset('/css/developro.min.css') }}" rel="stylesheet">
 @endpush

@@ -1,5 +1,5 @@
 const resizeDelay = 200;
-const floorHoverColor = 'fb9b00';
+const floorHoverColor = '439538';
 const floorHoverOpacity = 0.8;
 
 function onWindowResize() {
