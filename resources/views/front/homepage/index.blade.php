@@ -8,17 +8,17 @@
             <div class="hero__slider slider--with-bar">
                 <div class="hero__slide">
                     <picture>
-                        <source srcset="{{ asset('images/photos/photo-02-768.webp') }} 768w,
-                    {{ asset('images/photos/photo-02-1200.webp') }} 1200w,
-                    {{ asset('images/photos/photo-02-1920.webp') }} 1920w"
+                        <source srcset="{{ asset('images/photos/slider/photo-02-768.webp') }} 768w,
+                    {{ asset('images/photos/slider/photo-02-1200.webp') }} 1200w,
+                    {{ asset('images/photos/slider/photo-02-1920.webp') }} 1920w"
                                 sizes="100vw"
                                 type="image/webp">
-                        <source srcset="{{ asset('images/photos/photo-02-768.jpg') }} 768w,
-                    {{ asset('images/photos/photo-02-1200.jpg') }} 1200w,
-                    {{ asset('images/photos/photo-02-1920.jpg') }} 1920w"
+                        <source srcset="{{ asset('images/slider/photos/photo-02-768.jpg') }} 768w,
+                    {{ asset('images/photos/slider/photo-02-1200.jpg') }} 1200w,
+                    {{ asset('images/photos/slider/photo-02-1920.jpg') }} 1920w"
                                 sizes="100vw"
                                 type="image/jpeg">
-                        <img src="{{ asset('images/photos/photo-02-1200.jpg') }}"
+                        <img src="{{ asset('images/photos/slider/photo-02-1200.jpg') }}"
                              alt=""
                              class="hero__image"
                              width="1920"
