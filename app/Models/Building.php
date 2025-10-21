@@ -84,6 +84,13 @@ class Building extends Model
         return $this->hasMany('App\Models\Property')->orderBy('highlighted', 'DESC')->orderBy('number_order');
     }
 
+    public function activeProperties()
+    {
+        return $this->hasMany(Property::class)
+            ->where('status', 1)
+            ->where('type', 1);
+    }
+
     /**
      * The "boot" method of the model.
      *

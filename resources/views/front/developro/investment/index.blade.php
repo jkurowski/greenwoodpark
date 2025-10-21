@@ -23,7 +23,7 @@
                                 shape="poly"
                                 href="{{route('front.developro.building', [$building, 'buildingSlug' => Str::slug($building->name)])}}"
                                 alt="{{$building->slug}}"
-                                title="{{$building->name}}"
+                                title="<h3>{{$building->name}}</h3>Dostępne: <b>{{ $building->activeProperties->count() }}</b>"
                                 coords="@if($building->html) {{cords($building->html)}} @endif">
                         @endforeach
                     @endif
@@ -164,6 +164,7 @@
 @endsection
 @push('scripts')
     <script src="{{ asset('/js/plan/imagemapster.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/plan/tip.js') }}" charset="utf-8"></script>
     <script src="{{ asset('/js/plan/plan.min.js') }}?v=22102025" charset="utf-8"></script>
     <link href="{{ asset('/css/developro.min.css') }}" rel="stylesheet">
 @endpush

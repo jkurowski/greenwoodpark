@@ -14,5 +14,30 @@ $(document).ready(function(){
         fillOpacity: floorHoverOpacity,
         clickNavigate: true
     });
+
+    $('area[title]').each(function () {
+        const $this = $(this);
+        const clas = $this.attr('class');
+        $this.qtip({
+            content: $this.attr('title'),
+            position: {
+                my: 'bottom center',
+                at: 'bottom center',
+                target: 'mouse',
+                adjust: {x:0, y: -10}
+            },
+            style: {
+                classes: clas,
+                tip: {
+                    corner: true,
+                    mimic: false,
+                    width: 12,
+                    height: 8,
+                    border: true,
+                    offset: 0
+                }
+            },
+        });
+    });
 });
 $(window).bind('resize', onWindowResize);
