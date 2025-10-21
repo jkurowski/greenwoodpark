@@ -19,10 +19,12 @@
                                 sizes="100vw"
                                 type="image/jpeg">
                         <img src="{{ asset('images/photos/slider/photo-02-1200.jpg') }}"
-                             alt=""
+                             alt="Wizualizacja osiedla"
                              class="hero__image"
                              width="1920"
-                             height="1004">
+                             height="1004"
+                             fetchpriority="high"
+                        >
                     </picture>
                 </div>
             </div>
