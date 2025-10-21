@@ -172,26 +172,38 @@
                         <h3 class="apartment-templates__name">2-pokojowe</h3>
                         <div class="apartment-templates__content">
                             <p class="apartment-templates__price">Cena od <b>661468.50 zł</b></p>
-                            <img src="{{ asset('images/plans/plan-01.jpg') }}" alt="" class="apartment-templates__img">
+                            <picture>
+                                <source srcset="{{ asset('images/plans/webp/plan-01.webp') }}" type="image/webp">
+                                <img src="{{ asset('images/plans/plan-01.jpg') }}" alt="" class="apartment-templates__img" width="472" height="674">
+                            </picture>
                             <a href="/mieszkania?s_pokoje=2" class="apartment-templates__link btn btn--primary">Sprawdź</a>
                         </div>
                     </div>
+
                     <div class="apartment-templates__item">
                         <h3 class="apartment-templates__name">3-pokojowe</h3>
                         <div class="apartment-templates__content">
                             <p class="apartment-templates__price">Cena od <b>773019.45 zł</b></p>
-                            <img src="{{ asset('images/plans/plan-02.jpg') }}" alt="" class="apartment-templates__img">
+                            <picture>
+                                <source srcset="{{ asset('images/plans/webp/plan-02.webp') }}" type="image/webp">
+                                <img src="{{ asset('images/plans/plan-02.jpg') }}" alt="" class="apartment-templates__img" width="572" height="650">
+                            </picture>
                             <a href="/mieszkania?s_pokoje=3" class="apartment-templates__link btn btn--primary">Sprawdź</a>
                         </div>
                     </div>
+
                     <div class="apartment-templates__item">
                         <h3 class="apartment-templates__name">4-pokojowe</h3>
                         <div class="apartment-templates__content">
                             <p class="apartment-templates__price">Cena od <b>1080083.90 zł</b></p>
-                            <img src="{{ asset('images/plans/plan-03.jpg') }}" alt="" class="apartment-templates__img">
+                            <picture>
+                                <source srcset="{{ asset('images/plans/webp/plan-03.webp') }}" type="image/webp">
+                                <img src="{{ asset('images/plans/plan-03.jpg') }}" alt="" class="apartment-templates__img" width="472" height="674">
+                            </picture>
                             <a href="/mieszkania?s_pokoje=4" class="apartment-templates__link btn btn--primary">Sprawdź</a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>  <section class="advantages green-decor">
