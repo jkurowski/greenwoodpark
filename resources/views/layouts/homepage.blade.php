@@ -18,16 +18,31 @@
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
-    {{-- Prefetching --}}
-    <link rel="DNS-prefetch" href="//fonts.googleapis.com" />
+    {{-- Prefetching / preconnect --}}
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Styles -->
-    <link href="{{ asset('/css/styles.min.css') }}?v21102025" rel="stylesheet">
-    <link href="{{ asset('/css/modal.min.css') }}" rel="stylesheet">
+    <!-- Critical CSS (opcjonalnie minimalne style above-the-fold) -->
+    <style>
+        /* minimalny styl dla header/hero/slider */
+        .hero__slider, .hero__slide, .hero__image {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 
-    <link rel='preload' as='style' href="{{ asset('/css/styles.min.css') }}">
+    <!-- Asynchroniczne ładowanie głównego CSS -->
+    <link rel="preload" href="{{ asset('/css/styles.min.css') }}?v21102025" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('/css/styles.min.css') }}?v21102025">
+    </noscript>
+
+    <!-- Asynchroniczne ładowanie CSS dla modali -->
+    <link rel="preload" href="{{ asset('/css/modal.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('/css/modal.min.css') }}">
+    </noscript>
 
     @stack('style')
 </head>
