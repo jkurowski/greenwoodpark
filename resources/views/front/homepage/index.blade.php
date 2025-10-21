@@ -121,7 +121,7 @@
 
         </section>  <section class="text-img">
 
-            <img src="{{ asset('images/decor-03.png') }}" alt="" class="decor-03 decor--left decor--bottom" />
+            <img src="{{ asset('images/decor-03.png') }}" width="1152" height="716" alt="Tło strony" class="decor-03 decor--left decor--bottom" />
 
             <div class="wrapper">
 
@@ -145,7 +145,7 @@
 
                 <div class="text-img__image scroll-animation delay-3">
                     <div class="text-img__image-inner">
-                        <img src="{{ asset('images/carousel/list/photo-01.jpg') }}" alt="">
+                        <img src="{{ asset('images/carousel/list/photo-01.jpg') }}" width="812" height="424" alt="Wizualizacja Greenwood Park" class="text-img__image-img">
                     </div>
 
                     <div class="text-img__pagination-wrapper d-none">
@@ -157,7 +157,7 @@
                     </div>
 
                     <div class="text-img__logo">
-                        <img src="{{ asset('images/logos/logo-white.svg') }}" alt="GREENWOOD PARK" class="text-img__logo-img">
+                        <img src="{{ asset('images/logos/logo-white.svg') }}" width="155" height="118" alt="GREENWOOD PARK" class="text-img__logo-img">
                     </div>
                 </div>
 
@@ -174,7 +174,7 @@
                             <p class="apartment-templates__price">Cena od <b>661468.50 zł</b></p>
                             <picture>
                                 <source srcset="{{ asset('images/plans/webp/plan-01.webp') }}" type="image/webp">
-                                <img src="{{ asset('images/plans/plan-01.jpg') }}" alt="" class="apartment-templates__img" width="472" height="674">
+                                <img src="{{ asset('images/plans/plan-01.jpg') }}" alt="" class="apartment-templates__img" width="236" height="337">
                             </picture>
                             <a href="/mieszkania?s_pokoje=2" class="apartment-templates__link btn btn--primary">Sprawdź</a>
                         </div>
@@ -186,7 +186,7 @@
                             <p class="apartment-templates__price">Cena od <b>773019.45 zł</b></p>
                             <picture>
                                 <source srcset="{{ asset('images/plans/webp/plan-02.webp') }}" type="image/webp">
-                                <img src="{{ asset('images/plans/plan-02.jpg') }}" alt="" class="apartment-templates__img" width="572" height="650">
+                                <img src="{{ asset('images/plans/plan-02.jpg') }}" alt="" class="apartment-templates__img" width="297" height="337">
                             </picture>
                             <a href="/mieszkania?s_pokoje=3" class="apartment-templates__link btn btn--primary">Sprawdź</a>
                         </div>
@@ -198,7 +198,7 @@
                             <p class="apartment-templates__price">Cena od <b>1080083.90 zł</b></p>
                             <picture>
                                 <source srcset="{{ asset('images/plans/webp/plan-03.webp') }}" type="image/webp">
-                                <img src="{{ asset('images/plans/plan-03.jpg') }}" alt="" class="apartment-templates__img" width="472" height="674">
+                                <img src="{{ asset('images/plans/plan-03.jpg') }}" alt="" class="apartment-templates__img" width="236" height="337">
                             </picture>
                             <a href="/mieszkania?s_pokoje=4" class="apartment-templates__link btn btn--primary">Sprawdź</a>
                         </div>
@@ -216,28 +216,28 @@
 
                         <div class="advantages__item scroll-animation delay-3">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/location.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/location.svg') }}" width="61" height="61" alt="Ikonka" class="advantages__icon icon__img">
                             </div>
                             <h3 class="advantages__subtitle">Kameralna zabudowa<br>w doskonałej lokalizacji</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-2">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/house.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/house.svg') }}" width="61" height="61" alt="Ikonka" class="advantages__icon icon__img">
                             </div>
                             <h3 class="advantages__subtitle">Mieszkania dopasowane<br>do potrzeb</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-4">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/wysoki-standard.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/wysoki-standard.svg') }}" width="61" height="61" alt="Ikonka" class="advantages__icon icon__img">
                             </div>
                             <h3 class="advantages__subtitle">Wysoki standard osiedla</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-1">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/park.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/park.svg') }}" width="61" height="61" alt="Ikonka" class="advantages__icon icon__img">
                             </div>
                             <h3 class="advantages__subtitle">Komfort<br>i bezpieczeństwo</h3>
                         </div>
@@ -246,35 +246,35 @@
 
                     <div class="advantages__center">
                         <h2 class="advantages__title scroll-animation">Nasze atuty</h2>
-                        <img src="{{ asset('images/logos/logo-white.svg') }}" alt="" class="advantages__logo scroll-animation delay-1">
+                        <img src="{{ asset('images/logos/logo-white.svg') }}" alt="Logo" width="325" height="248" class="advantages__logo scroll-animation delay-1">
                     </div>
 
                     <div class="advantages__column advantages__column--right">
 
                         <div class="advantages__item scroll-animation delay-5">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/rozwiazania-proekologiczne.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/rozwiazania-proekologiczne.svg') }}" width="61" height="61" alt="Ikonka" class="advantages__icon icon__img">
                             </div>
                             <h3 class="advantages__subtitle">Rozwiązania proekologiczne<br>i przyjazne środowisku</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-2">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/education.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/education.svg') }}" width="61" height="61" alt="Ikonka" class="advantages__icon icon__img">
                             </div>
                             <h3 class="advantages__subtitle">Szkoły, przedszkola, infrastruktura miejska</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-3">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/recreation.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/recreation.svg') }}" width="61" height="61" alt="Ikonka" class="advantages__icon icon__img">
                             </div>
                             <h3 class="advantages__subtitle">Atrakcyjne tereny rekreacyjne</h3>
                         </div>
 
                         <div class="advantages__item scroll-animation delay-4">
                             <div class="advantages__icon-wrapper icon__wrapper">
-                                <img src="{{ asset('images/icons/motorway.svg') }}" alt="" class="advantages__icon icon__img">
+                                <img src="{{ asset('images/icons/motorway.svg') }}" width="61" height="61" alt="Ikonka" class="advantages__icon icon__img">
                             </div>
                             <h3 class="advantages__subtitle">Szybki dojazd dzięki trasie S2 i S17</h3>
                         </div>
@@ -363,7 +363,7 @@
 
         </section>  <section class="text-img">
 
-            <img src="{{ asset('images/decor-03.png') }}" alt="" class="decor-03 decor--right decor--bottom" />
+            <img src="{{ asset('images/decor-03.png') }}" width="1152" height="716" alt="Tło strony" class="decor-03 decor--right decor--bottom" />
 
             <div class="wrapper">
 
@@ -391,7 +391,7 @@
 
                 <div class="text-img__image scroll-animation delay-3">
                     <div class="text-img__image-inner">
-                        <img src="{{ asset('images/photos/photo-05.jpg') }}" alt="GREENWOOD PARK" class="text-img__img">
+                        <img src="{{ asset('images/photos/photo-05.jpg') }}" width="812" height="564" alt="GREENWOOD PARK" class="text-img__img">
                     </div>
                 </div>
 
@@ -399,7 +399,7 @@
 
         </section>  <section class="steps">
 
-            <img src="{{ asset('images/decor-03.png') }}" alt="" class="decor-03 decor--left decor--bottom" />
+            <img src="{{ asset('images/decor-03.png') }}" width="1152" height="716" alt="Tło strony" class="decor-03 decor--left decor--bottom" />
 
             <div class="wrapper--x-small">
 
@@ -408,7 +408,7 @@
                 <div class="steps__list">
 
                     <div class="steps__item scroll-animation">
-                        <img src="{{ asset('images/photos/photo-06.jpg') }}" alt="" class="steps__img">
+                        <img src="{{ asset('images/photos/photo-06.jpg') }}" width="536" height="339" alt="" class="steps__img">
                         <div class="steps__content">
                             <h3 class="steps__name">
                                 <span class="steps__name-number">01</span>
@@ -426,7 +426,7 @@
                     </div>
 
                     <div class="steps__item scroll-animation">
-                        <img src="{{ asset('images/photos/photo-03.jpg') }}" alt="" class="steps__img">
+                        <img src="{{ asset('images/photos/photo-03.jpg') }}" width="536" height="339" alt="" class="steps__img">
                         <div class="steps__content">
                             <h3 class="steps__name">
                                 <span class="steps__name-number">02</span>
@@ -444,7 +444,7 @@
                     </div>
 
                     <div class="steps__item scroll-animation">
-                        <img src="{{ asset('images/photos/photo-07.jpg') }}" alt="" class="steps__img">
+                        <img src="{{ asset('images/photos/photo-07.jpg') }}" width="536" height="339" alt="" class="steps__img">
                         <div class="steps__content">
                             <h3 class="steps__name">
                                 <span class="steps__name-number">03</span>

@@ -3,7 +3,7 @@
 
         <h1 class="header__logo">
             <a href="/">
-                <img src="{{ asset('images/logos/logo.svg') }}" alt="GREENWOOD PARK" class="header__logo-img">
+                <img src="{{ asset('images/logos/logo.svg') }}" alt="GREENWOOD PARK" class="header__logo-img" width="200" height="153">
             </a>
         </h1>
 
