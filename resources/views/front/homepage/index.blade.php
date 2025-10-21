@@ -281,20 +281,60 @@
             <div class="gallery-slider__slider slider slider--with-bar scroll-animation delay-1">
 
                 <button class="gallery-slider__slide" data-src="{{ asset('images/carousel/photo-01.jpg') }}">
-                    <img src="{{ asset('images/carousel/list/photo-01.jpg') }}" alt="" class="gallery-slider__image">
+                    <picture>
+                        <source srcset="{{ asset('images/carousel/list/webp/photo-01.webp') }}" type="image/webp">
+                        <img src="{{ asset('images/carousel/list/photo-01.jpg') }}"
+                             alt=""
+                             class="gallery-slider__image"
+                             width="1090"
+                             height="570">
+                    </picture>
                 </button>
+
                 <button class="gallery-slider__slide" data-src="{{ asset('images/carousel/photo-02.jpg') }}">
-                    <img src="{{ asset('images/carousel/list/photo-02.jpg') }}" alt="" class="gallery-slider__image">
+                    <picture>
+                        <source srcset="{{ asset('images/carousel/list/webp/photo-02.webp') }}" type="image/webp">
+                        <img src="{{ asset('images/carousel/list/photo-02.jpg') }}"
+                             alt=""
+                             class="gallery-slider__image"
+                             width="1090"
+                             height="570">
+                    </picture>
                 </button>
+
                 <button class="gallery-slider__slide" data-src="{{ asset('images/carousel/photo-03.jpg') }}">
-                    <img src="{{ asset('images/carousel/list/photo-03.jpg') }}" alt="" class="gallery-slider__image">
+                    <picture>
+                        <source srcset="{{ asset('images/carousel/list/webp/photo-03.webp') }}" type="image/webp">
+                        <img src="{{ asset('images/carousel/list/photo-03.jpg') }}"
+                             alt=""
+                             class="gallery-slider__image"
+                             width="1090"
+                             height="570">
+                    </picture>
                 </button>
+
                 <button class="gallery-slider__slide" data-src="{{ asset('images/carousel/photo-04.jpg') }}">
-                    <img src="{{ asset('images/carousel/list/photo-04.jpg') }}" alt="" class="gallery-slider__image">
+                    <picture>
+                        <source srcset="{{ asset('images/carousel/list/webp/photo-04.webp') }}" type="image/webp">
+                        <img src="{{ asset('images/carousel/list/photo-04.jpg') }}"
+                             alt=""
+                             class="gallery-slider__image"
+                             width="1090"
+                             height="570">
+                    </picture>
                 </button>
+
                 <button class="gallery-slider__slide" data-src="{{ asset('images/carousel/photo-05.jpg') }}">
-                    <img src="{{ asset('images/carousel/list/photo-05.jpg') }}" alt="" class="gallery-slider__image">
+                    <picture>
+                        <source srcset="{{ asset('images/carousel/list/webp/photo-05.webp') }}" type="image/webp">
+                        <img src="{{ asset('images/carousel/list/photo-05.jpg') }}"
+                             alt=""
+                             class="gallery-slider__image"
+                             width="1090"
+                             height="570">
+                    </picture>
                 </button>
+
             </div>
 
             <div class="wrapper gallery-slider__pagination-wrapper scroll-animation delay-3">
