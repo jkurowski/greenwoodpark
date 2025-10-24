@@ -37,7 +37,7 @@
                                 <td>
                                     {{ $p->name }}
                                     @if($p->additional)
-                                        <i style="font-size: 14px;font-style: normal;">↳ {{ $p->additional }}</i>
+                                        <br><i style="font-size: 14px;font-style: normal;">↳ {{ $p->additional }}</i>
                                     @endif
                                 </td>
                                 <td class="center">
