@@ -28,7 +28,12 @@
                         <tbody>
                         @foreach($properties as $p)
                             <tr>
-                                <td>{{ $p->name }}</td>
+                                <td>
+                                    {{ $p->name }}
+                                    @if($p->additional)
+                                        <i style="font-size: 14px;font-style: normal;">↳ {{ $p->additional }}</i>
+                                    @endif
+                                </td>
                                 <td class="center">
                                     <span class="badge room-list-status-{{ $p->status }}">
                                         {{ roomStatus($p->status) }}

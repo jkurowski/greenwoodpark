@@ -78,6 +78,7 @@
                                             <div class="col-6 mb-3">
                                                 @include('form-elements.html-select', [
                                                     'label' => 'Status',
+                                                    'sublabel' => 'Ustaw status powierzchni',
                                                     'name' => 'status',
                                                     'selected' => $entry->status,
                                                     'select' => [
@@ -89,18 +90,7 @@
                                             </div>
 
                                             <div class="col-6 mb-3">
-                                                @include('form-elements.html-select-multiple', [
-                                                    'label' => 'Atrybuty',
-                                                    'name' => 'additional',
-                                                    'selected' => json_decode($entry->additional),
-                                                    'select' => [
-                                                        '1' => 'Gotowe do odbioru',
-                                                        '2' => 'Atrakcyjny wygląd',
-                                                        '3' => 'Duży taras / balkon',
-                                                        '4' => 'Ogródek zewnętrzny',
-                                                        '5' => 'Dodatkowe WC',
-                                                        '6' => 'Osobna garderoba'
-                                                ]])
+                                                @include('form-elements.input-text', ['label' => 'Dodatkowa treść', 'sublabel'=> 'Dodatkowa treść na liście powierzchni', 'name' => 'additional', 'value' => $entry->additional])
                                             </div>
                                         </div>
                                     </div>

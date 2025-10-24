@@ -129,6 +129,9 @@
                                             <div class="col-3">
                                                 @include('form-elements.input-text', ['label' => 'Powierzchnia (szukana)', 'name' => 'area_search', 'value' => $entry->area_search, 'required' => 1])
                                             </div>
+                                            <div class="col-3">
+                                                @include('form-elements.input-text', ['label' => 'Dodatkowa treść', 'name' => 'additional', 'value' => $entry->additional])
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
