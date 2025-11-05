@@ -33,9 +33,9 @@
     </style>
 
     <!-- Asynchroniczne ładowanie głównego CSS -->
-    <link rel="preload" href="{{ asset('/css/styles.min.css') }}?v21102025" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{{ asset('/css/styles.min.css') }}?v05112025" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="{{ asset('/css/styles.min.css') }}?v21102025">
+        <link rel="stylesheet" href="{{ asset('/css/styles.min.css') }}?v05112025">
     </noscript>
 
     <!-- Asynchroniczne ładowanie CSS dla modali -->
