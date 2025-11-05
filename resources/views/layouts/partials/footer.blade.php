@@ -12,7 +12,6 @@
                 <h4>Menu</h4>
                 <ul>
                     <li><a href="/mieszkania/">Mieszkania</a></li>
-                    <li><a href="/o-inwestorze/">O inwestorze</a></li>
                     <li><a href="/galeria/">Galeria</a></li>
                     <li><a href="/lokalizacja/">Lokalizacja</a></li>
                     <li><a href="/kontakt/">Kontakt</a></li>
