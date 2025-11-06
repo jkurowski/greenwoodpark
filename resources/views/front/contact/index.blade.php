@@ -43,17 +43,19 @@
                                     d="M10.279,20.558A10.279,10.279,0,1,1,20.558,10.279,10.28,10.28,0,0,1,10.279,20.558Zm0-16.965A5.091,5.091,0,0,1,15.37,8.684c0,2.812-5.091,8.28-5.091,8.28S5.188,11.5,5.188,8.684A5.091,5.091,0,0,1,10.279,3.593Zm0,3.068A1.931,1.931,0,1,1,8.348,8.592,1.931,1.931,0,0,1,10.279,6.662Z"
                                     fill-rule="evenodd" />
                             </svg>ul. Jeździecka 20</p>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <img src="{{ asset('images/kontakt_2.jpg') }}" alt="Nasi sprzedawcy">
+                            </div>
+                            <div class="col-6">
+                                <img src="{{ asset('images/kontakt_1.jpg') }}" alt="Nasi sprzedawcy">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="contact__form">
-
-                    <div class="contact-form__image scroll-animation delay-2">
-                        <img src="{{ asset('images/photos/photo-19.jpg') }}" alt="" class="contact-form__img" />
-                    </div>
-
                     @include('front.contact.form', ['page_name' => 'Kontakt'])
-
                 </div>
 
             </div>

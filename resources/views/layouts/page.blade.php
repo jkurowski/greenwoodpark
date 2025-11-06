@@ -39,7 +39,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Styles -->
-    <link href="{{ asset('/css/styles.min.css') }}?v05112025b" rel="stylesheet">
+    <link href="{{ asset('/css/styles.min.css') }}?v06112025b" rel="stylesheet">
 
     <link rel='preload' as='style' href="{{ asset('/css/styles.min.css') }}">
     @stack('style')
