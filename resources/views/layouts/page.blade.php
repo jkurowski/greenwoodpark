@@ -98,7 +98,7 @@
             @endif
         });
     </script>
+    @stack('modals')
     {!! settings()->get('scripts_beforebody') !!}
 </body>
-
 </html>

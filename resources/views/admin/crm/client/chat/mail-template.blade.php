@@ -46,10 +46,10 @@
                             @endif
                             @if($request->form_message)
                                 <tr>
-                                    <td style="font-family:Arial;font-size:14px;padding:0 15px 15px;line-height:18px"><b>Treść wiadomości</b>:</td>
+                                    <td style="font-family:Arial;font-size:14px;padding:0 15px 15px;line-height:18px" colspan="2"><b>Treść wiadomości</b>:</td>
                                 </tr>
                                 <tr>
-                                    <td style="font-family:Arial;font-size:14px;padding:0 15px 15px;line-height:18px">{{ $request->form_message }}</td>
+                                    <td style="font-family:Arial;font-size:14px;padding:0 15px 15px;line-height:18px" colspan="2">{{ $request->form_message }}</td>
                                 </tr>
                             @endif
                             <tr>

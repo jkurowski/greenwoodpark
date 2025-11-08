@@ -144,7 +144,9 @@
                                     @endif
                                 </p>
                             </div>
-                            <a href="{{ route('front.developro.investment.property', [
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <a href="{{ route('front.developro.investment.property', [
                                                         $p->building->slug,
                                                         Str::slug($p->floor->name),
                                                         $p,
@@ -153,6 +155,11 @@
                                                         number2RoomsName($p->rooms, true),
                                                         round(floatval($p->area), 2).'-m2'
                                                     ]) }}" class="panel__btn btn btn--primary">Zobacz więcej</a>
+                                </div>
+                                <div class="col-12 col-sm-6 text-center text-sm-end mt-3 mt-sm-0">
+                                    <button class="btn btn-primary askForPrice" data-id="{{ $p->id }}">Zapytaj o rabat</button>
+                                </div>
+                            </div>
                         </div>
                     @empty
                         <p class="text-center w-100">Brak wyników, zmień parametry i spróbuj ponownie</p>
@@ -160,11 +167,21 @@
                 </div>
             </div>
         </section>
+        <div id="modalHandler"></div>
     </main>
 @endsection
 @push('scripts')
     <script src="{{ asset('/js/plan/imagemapster.js') }}" charset="utf-8"></script>
     <script src="{{ asset('/js/plan/tip.js') }}" charset="utf-8"></script>
     <script src="{{ asset('/js/plan/plan.min.js') }}?v=22102025" charset="utf-8"></script>
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/validation.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/pl.js') }}" charset="utf-8"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.v3_site_key') }}"></script>
+    <script src="{{ asset('/js/modal.js') }}" charset="utf-8"></script>
     <link href="{{ asset('/css/developro.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/modal.min.css') }}" rel="stylesheet">
+    <script>
+        const site_key = '{{ config('services.recaptcha.v3_site_key') }}';
+    </script>
 @endpush

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Front\Developro\DiscountInquiryController;
+use App\Http\Controllers\Front\Developro\ModalController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +46,8 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
     Route::get('/aktualnosci', 'ArticleController@index')->name('article.index');
     Route::get('/aktualnosci/{slug}', 'ArticleController@show')->name('article.show');
 
+    Route::get('/modal/property/{property}', [ModalController::class, 'propertyModal']);
+    Route::post('/modal/property/{property}', [ModalController::class, 'propertySendModal']);
 
     // Static pages
     Route::get(
