@@ -184,7 +184,7 @@
     flex: 0 0 auto;
     width: 100%;
 }
-.searcher__items--list .text-end {
+.searcher__items--list .text-sm-end {
     justify-content: start;
     margin-top: 8px;
 }
