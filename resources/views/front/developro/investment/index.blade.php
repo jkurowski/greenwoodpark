@@ -178,7 +178,7 @@
     <script src="{{ asset('/js/validation.min.js') }}" charset="utf-8"></script>
     <script src="{{ asset('/js/pl.js') }}" charset="utf-8"></script>
     <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.v3_site_key') }}"></script>
-    <script src="{{ asset('/js/modal.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/modal.min.js') }}" charset="utf-8"></script>
     <link href="{{ asset('/css/developro.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/modal.min.css') }}" rel="stylesheet">
     <script>

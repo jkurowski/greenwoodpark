@@ -29,14 +29,14 @@ document.addEventListener('click', function(event) {
                 if (sendBtn) {
                     sendBtn.addEventListener('click', (e) => {
                         e.preventDefault();
-                        console.log('[DEBUG] Kliknięto discountSendBtn ✅');
+                        //console.log('[DEBUG] Kliknięto discountSendBtn ✅');
 
                         // Walidacja formularza
                         const isValid = $(".validateForm").validationEngine('validate');
-                        console.log('[DEBUG] Form valid =', isValid);
+                        //console.log('[DEBUG] Form valid =', isValid);
 
                         if (!isValid) {
-                            console.warn('[DEBUG] Formularz niepoprawny, przerwano wysyłkę');
+                            //console.warn('[DEBUG] Formularz niepoprawny, przerwano wysyłkę');
                             return;
                         }
 
@@ -45,7 +45,7 @@ document.addEventListener('click', function(event) {
                             grecaptcha.ready(() => {
                                 grecaptcha.execute(site_key, { action: 'submitContact' })
                             .then(token => {
-                                    console.log('[DEBUG] reCAPTCHA token:', token);
+                                    //console.log('[DEBUG] reCAPTCHA token:', token);
 
                                     // Wysyłamy dane formularza AJAX-em
                                     const form = document.getElementById('modalForm');
@@ -55,7 +55,7 @@ document.addEventListener('click', function(event) {
                                     const propertyId = form.getAttribute('data-property');
                                     const url = `/modal/property/${propertyId}`;
 
-                                    console.log('[DEBUG] Wysyłam formularz AJAX-em do:', url);
+                                    //console.log('[DEBUG] Wysyłam formularz AJAX-em do:', url);
 
                                     fetch(url, {
                                         method: 'POST',
@@ -69,7 +69,7 @@ document.addEventListener('click', function(event) {
                                             return response.json();
                                         })
                                         .then(data => {
-                                            console.log('[DEBUG] Odpowiedź z serwera:', data);
+                                            //console.log('[DEBUG] Odpowiedź z serwera:', data);
 
                                             if (data.success) {
                                                 form.innerHTML = `<div><h3 class="text-success">Dziękujemy za wiadomość!</h3><p>Jesteś już o krok bliżej do swojego zakupu!</p><p>Postaramy się odpowiedzieć tak szybko jak to możliwe.</p><p>Jesteśmy w kontakcie.</p></div>`;
@@ -79,17 +79,17 @@ document.addEventListener('click', function(event) {
                                             }
                                         })
                                         .catch(err => {
-                                            console.error('[DEBUG] Błąd AJAX:', err);
+                                            //console.error('[DEBUG] Błąd AJAX:', err);
                                             alert('Nie udało się wysłać wiadomości.');
                                             grecaptcha.reset();
                                         });
                                 })
                                     .catch(err => {
-                                        console.error('[DEBUG] Błąd generowania tokenu reCAPTCHA:', err);
+                                        //console.error('[DEBUG] Błąd generowania tokenu reCAPTCHA:', err);
                                     });
                             });
                         } else {
-                            console.error('[DEBUG] reCAPTCHA niedostępna!');
+                            //console.error('[DEBUG] reCAPTCHA niedostępna!');
                         }
                     });
                 }
@@ -100,7 +100,7 @@ document.addEventListener('click', function(event) {
                 });
             })
             .catch(error => {
-                console.error('Błąd przy ładowaniu modala:', error);
+                //console.error('Błąd przy ładowaniu modala:', error);
                 alert('Coś poszło nie tak przy ładowaniu modala!');
             });
     }
@@ -114,16 +114,16 @@ function initializeValidation() {
         promptPosition: "topRight:-137px",
         autoPositionUpdate: false
     });
-    console.log('[DEBUG] Validation engine initialized');
+    //console.log('[DEBUG] Validation engine initialized');
 }
 
 function initializeRecaptcha() {
     if (typeof grecaptcha !== 'undefined' && grecaptcha.ready) {
         grecaptcha.ready(() => {
-            console.log('[DEBUG] grecaptcha ready');
+            //console.log('[DEBUG] grecaptcha ready');
             // możesz np. resetować token, jeśli jest taka potrzeba
         });
     } else {
-        console.warn('[DEBUG] grecaptcha not ready');
+        //console.warn('[DEBUG] grecaptcha not ready');
     }
 }

@@ -187,6 +187,7 @@
                 </div>
             </div>
         </section>
+        <div id="modalHandler"></div>
     </main>
 @endsection
 @push('scripts')
@@ -194,4 +195,14 @@
     <script src="{{ asset('/js/plan/tip.js') }}" charset="utf-8"></script>
     <script src="{{ asset('/js/plan/floor.js') }}" charset="utf-8"></script>
     <link href="{{ asset('/css/developro.min.css') }}" rel="stylesheet">
+
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/validation.min.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('/js/pl.js') }}" charset="utf-8"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.v3_site_key') }}"></script>
+    <script src="{{ asset('/js/modal.min.js') }}" charset="utf-8"></script>
+    <link href="{{ asset('/css/modal.min.css') }}" rel="stylesheet">
+    <script>
+        const site_key = '{{ config('services.recaptcha.v3_site_key') }}';
+    </script>
 @endpush
