@@ -180,7 +180,7 @@
     font-size: 18px;
 }
 
-.searcher__items--list .row .col-6 {
+.searcher__items--list .row .col-12.col-sm-6 {
     flex: 0 0 auto;
     width: 100%;
 }
