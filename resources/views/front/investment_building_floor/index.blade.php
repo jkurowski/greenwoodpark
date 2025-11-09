@@ -166,7 +166,9 @@
                                     @endif
                                 </p>
                             </div>
-                            <a href="{{ route('front.developro.investment.property', [
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <a href="{{ route('front.developro.investment.property', [
                                                         $p->building->slug,
                                                         Str::slug($p->floor->name),
                                                         $p,
@@ -175,6 +177,11 @@
                                                         number2RoomsName($p->rooms, true),
                                                         round(floatval($p->area), 2).'-m2'
                                                     ]) }}" class="panel__btn btn btn--primary">Zobacz więcej</a>
+                                </div>
+                                <div class="col-12 col-sm-6 text-center text-sm-end mt-3 mt-sm-0">
+                                    <button class="btn btn-primary askForPrice" data-id="{{ $p->id }}">Zapytaj o rabat</button>
+                                </div>
+                            </div>
                         </div>
                     @endforeach
                 </div>
