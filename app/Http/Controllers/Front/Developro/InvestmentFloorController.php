@@ -31,6 +31,7 @@ class InvestmentFloorController extends Controller
             'floorRooms' => function($query) use ($floor, $request)
             {
                 $query->where('properties.floor_id', $floor->id);
+                $query->where('properties.type', 1);
                 $query->orderBy('properties.highlighted', 'DESC')->orderBy('properties.number_order');
 
                 if ($request->input('s_pokoje')) {
