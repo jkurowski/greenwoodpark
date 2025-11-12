@@ -51,21 +51,21 @@
                         <div class="icon__wrapper">
                             <img src="{{ asset('images/icons/education-black.svg') }}" alt="" class="icon__img">
                         </div>
-                        <span class="icon__text">Szkoły<br>i przedszkola</span>
+                        <span class="icon__text">Szkoły <br>i przedszkola</span>
                     </div>
 
                     <div class="icon">
                         <div class="icon__wrapper">
                             <img src="{{ asset('images/icons/motorway-black.svg') }}" alt="" class="icon__img">
                         </div>
-                        <span class="icon__text">Bliskość<br>trasy S2</span>
+                        <span class="icon__text">Bliskość <br>trasy S2</span>
                     </div>
 
                     <div class="icon">
                         <div class="icon__wrapper">
                             <img src="{{ asset('images/icons/park-black.svg') }}" alt="" class="icon__img">
                         </div>
-                        <span class="icon__text">W otulinie Mazowieckiego<br>Parku Krajobrazowego</span>
+                        <span class="icon__text">W otulinie Mazowieckiego <br>Parku Krajobrazowego</span>
                     </div>
 
                 </div>
@@ -105,28 +105,28 @@
 
                         <div class="icon">
                             <div class="icon__wrapper">
-                                <img src="{{ asset('images/icons/walk-black.svg') }}" alt="" class="icon__img">
+                                <img src="{{ asset('images/icons/walk-black.svg') }}" alt="" class="icon__img icon__img--walk">
                             </div>
                             <span class="icon__text">Park linowy<i>1 minuta</i></span>
                         </div>
 
                         <div class="icon">
                             <div class="icon__wrapper">
-                                <img src="{{ asset('images/icons/walk-black.svg') }}" alt="" class="icon__img">
+                                <img src="{{ asset('images/icons/walk-black.svg') }}" alt="" class="icon__img icon__img--walk">
                             </div>
                             <span class="icon__text">Supermarket<i>2 minuty</i></span>
                         </div>
 
                         <div class="icon">
                             <div class="icon__wrapper">
-                                <img src="{{ asset('images/icons/walk-black.svg') }}" alt="" class="icon__img">
+                                <img src="{{ asset('images/icons/walk-black.svg') }}" alt="" class="icon__img icon__img--walk">
                             </div>
                             <span class="icon__text">Szkoła i przedszkole<i>2 minuty</i></span>
                         </div>
 
                         <div class="icon">
                             <div class="icon__wrapper">
-                                <img src="{{ asset('images/icons/walk-black.svg') }}" alt="" class="icon__img">
+                                <img src="{{ asset('images/icons/walk-black.svg') }}" alt="" class="icon__img icon__img--walk">
                             </div>
                             <span class="icon__text">Przystanek autobusowy<i>5 minut</i></span>
                         </div>
@@ -137,14 +137,14 @@
 
                         <div class="icon">
                             <div class="icon__wrapper">
-                                <img src="{{ asset('images/icons/walk-black.svg') }}" alt="" class="icon__img">
+                                <img src="{{ asset('images/icons/walk-black.svg') }}" alt="" class="icon__img icon__img--walk">
                             </div>
                             <span class="icon__text">Placówka medyczna<i>5 minut</i></span>
                         </div>
 
                         <div class="icon">
                             <div class="icon__wrapper">
-                                <img src="{{ asset('images/icons/walk-black.svg') }}" alt="" class="icon__img">
+                                <img src="{{ asset('images/icons/walk-black.svg') }}" alt="" class="icon__img icon__img--walk">
                             </div>
                             <span class="icon__text">Restauracje<i>2 minuty</i></span>
                         </div>
