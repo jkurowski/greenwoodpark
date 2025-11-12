@@ -180,6 +180,10 @@
     font-size: 18px;
 }
 
+.panel .panel__btn {
+    background: linear-gradient(#f2f2f2,#d7d7d7);
+}
+
 .searcher__items--list .row .col-12.col-sm-6 {
     flex: 0 0 auto;
     width: 100%;

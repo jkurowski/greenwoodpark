@@ -176,11 +176,11 @@
                                                         floorLevel($p->floor->number, true),
                                                         number2RoomsName($p->rooms, true),
                                                         round(floatval($p->area), 2).'-m2'
-                                                    ]) }}" class="panel__btn btn btn--primary">Zobacz więcej</a>
+                                                    ]) }}" class="panel__btn btn btn-primary">Zobacz więcej</a>
                                 </div>
                                 <div class="col-12 col-sm-6 text-center text-sm-end mt-3 mt-sm-0">
                                     @if($p->status == 1)
-                                    <button class="btn btn-primary askForPrice" data-id="{{ $p->id }}">Zapytaj o rabat</button>
+                                    <button class="panel__btn btn btn-primary askForPrice" data-id="{{ $p->id }}">Zapytaj o rabat</button>
                                     @endif
                                 </div>
                             </div>
