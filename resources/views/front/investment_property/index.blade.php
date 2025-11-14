@@ -62,7 +62,7 @@
                                 @endif
                             </div>
                             <div class="col-6 d-flex align-items-center justify-content-center">
-                                <div class="ps-5">
+                                <div class="w-100 ps-5">
                                     <h2 class="apartment__name">{{ $property->name }}</h2>
 
                                     <table class="apartment__data">
@@ -120,7 +120,7 @@
                                                     @endif
                                                 </div>
                                                 <div class="col-4">
-                                                    <a class="btn btn--primary" href="#contactForm">Umów spotkanie</a>
+                                                    <a class="btn btn--primary mw-100" href="#contactForm">Umów spotkanie</a>
                                                 </div>
                                             </div>
                                         </div>
