@@ -17,7 +17,7 @@
             <div class="wrapper">
                 <div class="container-fluid p-0 floor-nav">
                     <div class="row mb-5">
-                        <div class="col-4">
+                        <div class="col-12 col-md-4">
                             @if($prev)
                                 <a href="{{ route('front.developro.investment.property', [
                                                         $building->slug,
@@ -30,10 +30,10 @@
                                                     ]) }}" class="btn btn--primary">{{$prev->name}}</a>
                             @endif
                         </div>
-                        <div class="col-4 text-center">
+                        <div class="col-12 col-md-4 text-center">
                             <a href="{{route('front.developro.investment.floor', [$building->slug, $property->floor, Str::slug($property->floor->name)])}}" class="btn btn--primary">Plan piętra</a>
                         </div>
-                        <div class="col-4 text-end">
+                        <div class="col-12 col-md-4 text-end">
                             @if($next)
                                 <a href="{{ route('front.developro.investment.property', [
                                                         $building->slug,
@@ -52,7 +52,7 @@
                 <div class="apartment__content">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="order-2 order-lg-1 col-12 col-lg-6 mt-5 mt-lg-0">
                                 @if($property->file)
                                     <picture>
                                         <source type="image/webp" srcset="/investment/property/webp/{{$property->file_webp}}">
@@ -61,8 +61,8 @@
                                     </picture>
                                 @endif
                             </div>
-                            <div class="col-6 d-flex align-items-center justify-content-center">
-                                <div class="w-100 ps-5">
+                            <div class="order-1 order-lg-2 col-12 col-lg-6 d-flex align-items-center justify-content-center">
+                                <div class="w-100 ps-0 ps-lg-3 ps-xxl-5">
                                     <h2 class="apartment__name">{{ $property->name }}</h2>
 
                                     <table class="apartment__data">
@@ -107,19 +107,19 @@
                                     </div>
 
                                     <div class="apartment__buttons d-block">
-                                        <div class="container-fluid">
+                                        <div class="container-fluid p-0">
                                             <div class="row">
-                                                <div class="col-4 d-flex align-items-center">
+                                                <div class="col-12 col-md-4 d-flex align-items-center mb-4 mb-lg-0">
                                                     @if($investment->file_brochure)
                                                         <a class="cta-link" target="_blank" href="{{ asset('/investment/brochure/'.$investment->file_brochure) }}">Pobierz prospekt informacyjny</a>
                                                     @endif
                                                 </div>
-                                                <div class="col-4 d-flex align-items-center">
+                                                <div class="col-12 col-md-4 d-flex align-items-center mb-4 mb-lg-0">
                                                     @if($property->file_pdf)
                                                         <a class="cta-link" href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" target="_blank">Pobierz kartę apartamentu</a>
                                                     @endif
                                                 </div>
-                                                <div class="col-4">
+                                                <div class="col-12 col-md-4">
                                                     <a class="btn btn--primary mw-100" href="#contactForm">Umów spotkanie</a>
                                                 </div>
                                             </div>

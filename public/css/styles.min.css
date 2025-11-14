@@ -76,6 +76,10 @@
     .apartment-templates__title{
         margin-bottom:30px
     }
+
+    .apartment__data, .apartment__data tbody {
+        width: 100%;
+    }
 }
 @media (max-width:800px){
     .apartment-templates__name{
@@ -100,6 +104,11 @@
     .apartment-templates__img {
         width: 60%;
         margin: 0 auto 30px;
+    }
+
+    .apartment .floor-nav .btn {
+        width: 100% !important;
+        margin-top: 10px;
     }
 }
 
@@ -277,6 +286,9 @@
 
 .mw-100 {
     min-width: 100% !important;
+    text-align: center;
+}
+.cta-link {
     text-align: center;
 }
 
