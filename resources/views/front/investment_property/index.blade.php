@@ -15,12 +15,11 @@
 
         <section class="apartment mt-3">
             <div class="wrapper">
-                <div class="wrapper--small">
-                    <div class="container-fluid p-0 floor-nav">
-                        <div class="row mb-5">
-                            <div class="col-4">
-                                @if($prev)
-                                    <a href="{{ route('front.developro.investment.property', [
+                <div class="container-fluid p-0 floor-nav">
+                    <div class="row mb-5">
+                        <div class="col-4">
+                            @if($prev)
+                                <a href="{{ route('front.developro.investment.property', [
                                                         $building->slug,
                                                         Str::slug($prev->floor->name),
                                                         $prev,
@@ -29,14 +28,14 @@
                                                         number2RoomsName($prev->rooms, true),
                                                         round(floatval($prev->area), 2).'-m2'
                                                     ]) }}" class="btn btn--primary">{{$prev->name}}</a>
-                                @endif
-                            </div>
-                            <div class="col-4 text-center">
-                                <a href="{{route('front.developro.investment.floor', [$building->slug, $property->floor, Str::slug($property->floor->name)])}}" class="btn btn--primary">Plan piętra</a>
-                            </div>
-                            <div class="col-4 text-end">
-                                @if($next)
-                                    <a href="{{ route('front.developro.investment.property', [
+                            @endif
+                        </div>
+                        <div class="col-4 text-center">
+                            <a href="{{route('front.developro.investment.floor', [$building->slug, $property->floor, Str::slug($property->floor->name)])}}" class="btn btn--primary">Plan piętra</a>
+                        </div>
+                        <div class="col-4 text-end">
+                            @if($next)
+                                <a href="{{ route('front.developro.investment.property', [
                                                         $building->slug,
                                                         Str::slug($next->floor->name),
                                                         $next,
@@ -45,81 +44,98 @@
                                                         number2RoomsName($next->rooms, true),
                                                         round(floatval($next->area), 2).'-m2'
                                                     ]) }}" class="btn btn--primary">{{$next->name}}</a>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+                <div class="apartment__content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-6">
+                                @if($property->file)
+                                    <picture>
+                                        <source type="image/webp" srcset="/investment/property/webp/{{$property->file_webp}}">
+                                        <source type="image/jpeg" srcset="/investment/property/{{$property->file}}">
+                                        <img src="/investment/property/{{$property->file}}" alt="{{$property->name}}" class="contact-form__img">
+                                    </picture>
                                 @endif
+                            </div>
+                            <div class="col-6 d-flex align-items-center justify-content-center">
+                                <div>
+                                    <h2 class="apartment__name">{{ $property->name }}</h2>
+
+                                    <table class="apartment__data">
+                                        <tbody>
+                                        <tr>
+                                            <th>Status:</th>
+                                            <td>{!! roomStatusCard($property->status) !!}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Cena:</th>
+                                            @if($property->price_brutto && $property->status == 1)
+                                                <td @if($property->promotion_price) class="old-price" @endif>@money($property->price_brutto)
+                                                    <br>
+                                                    <span style="font-weight: normal !important;font-size: 11px;color: black;font-family: 'regular',sans-serif;">@money($property->price_brutto / $property->area)/m<sup>2</sup></span>
+                                                </td>
+                                            @endif
+                                            @if($property->promotion_price && $property->price_brutto && $property->highlighted && $property->status == 1)
+                                                <td class="promotion-price">@money($property->promotion_price)
+                                                    <br>
+                                                    <span style="font-weight: normal !important;font-size: 11px;color: black;font-family: 'regular',sans-serif;">@money($property->promotion_price / $property->area)/m<sup>2</sup></span>
+                                                </td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <th>Powierzchnia:</th>
+                                            <td>{{ $property->area }} m<sup>2</sup></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Piętro:</th>
+                                            <td>{{ $property->floor->number }}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="text-center">
+                                        @if($property->has_price_history)
+                                            <a class="apartment__history-btn cta-link btn-history" data-id="{{ $property->id }}" href="#">Historia zmian ceny</a>
+                                            <div id="modalHistory"></div>
+                                        @else
+                                            <p class="apartment__history-btn cta-link">Cena nie zmieniła się od 11.09.2025 r.</p>
+                                        @endif
+                                    </div>
+
+                                    <div class="apartment__buttons d-block">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-4 d-flex align-items-center">
+                                                    @if($investment->file_brochure)
+                                                        <a class="cta-link" target="_blank" href="{{ asset('/investment/brochure/'.$investment->file_brochure) }}">Pobierz prospekt informacyjny</a>
+                                                    @endif
+                                                </div>
+                                                <div class="col-4 d-flex align-items-center">
+                                                    @if($property->file_pdf)
+                                                        <a class="cta-link" href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" target="_blank">Pobierz kartę apartamentu</a>
+                                                    @endif
+                                                </div>
+                                                <div class="col-4">
+                                                    <a class="btn btn--primary" href="#contactForm">Umów spotkanie</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="apartment__content scroll-animation delay-2">
-                        <h2 class="apartment__name">{{ $property->name }}</h2>
-
-                        <table class="apartment__data">
-                            <tbody>
-                            <tr>
-                                <th>Status:</th>
-                                <td>{!! roomStatusCard($property->status) !!}</td>
-                            </tr>
-                            <tr>
-                                <th>Cena:</th>
-                                @if($property->price_brutto && $property->status == 1)
-                                <td @if($property->promotion_price) class="old-price" @endif>@money($property->price_brutto)
-                                    <br>
-                                    <span style="font-weight: normal !important;font-size: 11px;color: black;font-family: 'regular',sans-serif;">@money($property->price_brutto / $property->area)/m<sup>2</sup></span>
-                                </td>
-                                @endif
-                                @if($property->promotion_price && $property->price_brutto && $property->highlighted && $property->status == 1)
-                                    <td class="promotion-price">@money($property->promotion_price)
-                                        <br>
-                                        <span style="font-weight: normal !important;font-size: 11px;color: black;font-family: 'regular',sans-serif;">@money($property->promotion_price / $property->area)/m<sup>2</sup></span>
-                                    </td>
-                                @endif
-                            </tr>
-                            <tr>
-                                <th>Powierzchnia:</th>
-                                <td>{{ $property->area }} m<sup>2</sup></td>
-                            </tr>
-                            <tr>
-                                <th>Piętro:</th>
-                                <td>{{ $property->floor->number }}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="text-center">
-                            @if($property->has_price_history)
-                            <a class="apartment__history-btn cta-link btn-history" data-id="{{ $property->id }}" href="#">Historia zmian ceny</a>
-                            <div id="modalHistory"></div>
-                            @else
-                            <p class="apartment__history-btn cta-link">Cena nie zmieniła się od 11.09.2025 r.</p>
-                            @endif
-                        </div>
-
-                        <div class="apartment__buttons">
-                            @if($investment->file_brochure)
-                            <a class="cta-link" target="_blank" href="{{ asset('/investment/brochure/'.$investment->file_brochure) }}">Pobierz prospekt informacyjny</a>
-                            @endif
-                            @if($property->file_pdf)
-                                <a class="cta-link" href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" target="_blank">Pobierz kartę apartamentu</a>
-                            @endif
-                            <a class="btn btn--primary" href="#contactForm">Umów spotkanie</a>
-                        </div>
-                    </div>
-
                 </div>
-
             </div>
         </section>
+
         <div id="contactForm"></div>
-        <section class="contact-form">
+        <section class="contact-form mt-5">
             <div class="wrapper--medium contact-form__wrapper">
-                <div class="contact-form__image scroll-animation delay-2">
-                    @if($property->file)
-                        <picture>
-                            <source type="image/webp" srcset="/investment/property/webp/{{$property->file_webp}}">
-                            <source type="image/jpeg" srcset="/investment/property/{{$property->file}}">
-                            <img src="/investment/property/{{$property->file}}" alt="{{$property->name}}" class="contact-form__img">
-                        </picture>
-                    @endif
-                </div>
 
                 <div class="contact-form__content scroll-animation">
                     <h3 class="contact-form__form-title">Formularz kontaktowy</h3>
@@ -225,7 +241,9 @@
 
             </div>
 
-        </section>  <section class="similar">
+        </section>
+
+        <section class="similar">
 
             <img src="{{ asset('images/decor-03.png') }}" alt="" class="decor-03 decor--left decor--top" />
 
@@ -362,4 +380,3 @@
         });
     </script>
 @endpush
-
