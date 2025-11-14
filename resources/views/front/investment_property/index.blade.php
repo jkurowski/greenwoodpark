@@ -62,7 +62,7 @@
                                 @endif
                             </div>
                             <div class="col-6 d-flex align-items-center justify-content-center">
-                                <div>
+                                <div class="ps-5">
                                     <h2 class="apartment__name">{{ $property->name }}</h2>
 
                                     <table class="apartment__data">
