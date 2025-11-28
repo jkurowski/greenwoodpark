@@ -38,7 +38,10 @@ class Floor extends Model
 
     public function findNext(int $investment, int $building = null, int $position)
     {
-        $query = $this->where('investment_id', $investment)->where('position', '>', $position)->orderBy('position');
+        $query = $this->where('investment_id', $investment)
+            ->where('position', '>', $position)
+            ->where('active', '=', 1)
+            ->orderBy('position');
 
         if ($building) {
             $query->where('building_id', $building);
@@ -49,7 +52,10 @@ class Floor extends Model
 
     public function findPrev(int $investment, int $building = null, int $position)
     {
-        $query = $this->where('investment_id', $investment)->where('position', '<', $position)->orderByDesc('position');
+        $query = $this->where('investment_id', $investment)
+            ->where('position', '<', $position)
+            ->where('active', '=', 1)
+            ->orderByDesc('position');
 
         if ($building) {
             $query->where('building_id', $building);
