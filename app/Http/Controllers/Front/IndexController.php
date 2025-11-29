@@ -22,7 +22,10 @@ class IndexController extends Controller
         $obligation = RodoSettings::find(1);
         $rules = RodoRules::orderBy('sort')->whereStatus(1)->get();
         $popup = 0;
-        $page = Page::find(2);
+        $page = (object) [
+            'slug' => ''
+        ];
+
         if(settings()->get("popup_status") == "1") {
             if(settings()->get("popup_mode") == "1") {
                 Cookie::queue('popup', null);
