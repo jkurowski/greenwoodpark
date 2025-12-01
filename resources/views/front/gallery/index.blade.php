@@ -40,10 +40,10 @@
                         <h2 class="gallery__title scroll-animation">{{ $g->name }}</h2>
                         <div class="gallery__items">
                             @foreach($g->photos as $image)
-                            <div class="gallery__item"
-                                 data-src="{{ asset('uploads/gallery/images/'.$image->file) }}"
-                                 data-thumb="{{ asset('uploads/gallery/images/thumbs/'.$image->file) }}"
-                                 data-type="image">
+                            <div class="gallery__item">
+                                <a href="{{ asset('uploads/gallery/images/'.$image->file) }}" class="glightbox" rel="gallery--{{ $g->id }}">
+                                    <img src="{{ asset('uploads/gallery/images/thumbs/'.$image->file) }}" alt="">
+                                </a>
                             </div>
                             @endforeach
                         </div>
@@ -59,3 +59,8 @@
         </section>
     </main>
 @endsection
+@push('scripts')
+    <script src="{{ asset('js/glightbox.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/glightbox.min.css') }}">
+    <script src="{{ asset('js/gallery.min.js') }}"></script>
+@endpush
